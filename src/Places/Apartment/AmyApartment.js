@@ -131,8 +131,14 @@ const AmyApartment = (props) => {
           <Col1>
             <SetCol1 />
           </Col1>
-          <Col2 BackImage={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP}></Col2>
-  
+          <Col2 BackImage = {" "}
+                    rowHeight = {" "}
+            >
+            <video autoPlay muted loop 
+            style ={{maxWidth: "100%"}}>
+                <source src={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP} type="video/mp4"/>
+            </video>
+            </Col2>   
           <Col3>
             <p>You hear a knock on the door. "Come in Sandy" Says Amy. And you see Sandy coming in. </p>
             <p>You can't even see Sandys reaction. Amy grabs your face and looks you in the eyes. "Don't enjoy this." She says.</p>
@@ -165,8 +171,14 @@ const AmyApartment = (props) => {
           <Col1>
             <SetCol1 />
           </Col1>
-          <Col2 BackImage={TwoLesbosSuckThirdLesboMilk_CUTSHORT}></Col2>
-  
+          <Col2 BackImage = {" "}
+                    rowHeight = {" "}
+            >
+            <video autoPlay muted loop 
+            style ={{maxWidth: "100%"}}>
+                <source src={TwoLesbosSuckThirdLesboMilk_CUTSHORT} type="video/mp4"/>
+            </video>
+            </Col2>  
           <Col3>
           <p>Amy places her hand on your chest. Both girls start sucking on your breasts. Kneading your milky mounds. You can feel the pressure building up. And the feeling of their lips makes you shiver. An orgasmic wave flows throug you. And your nipples slowly expand to make way for the flow that's about to discharge."</p>
             <p>You close your eyes and feel whats happening to you. You shake, you are dizzy and can't sand straight. Your senses overload. You are in orgasmic blizz.</p>
