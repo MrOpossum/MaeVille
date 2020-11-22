@@ -63,6 +63,7 @@ const Apartment = ( props ) => {
           flags = {props.flags}
           onChangeRelationship = {props.onChangeRelationship}
           name = {props.name}
+          onSetItem = {props.onSetItem}
           ></GoOutside>
         );
       };

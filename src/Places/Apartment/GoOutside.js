@@ -289,6 +289,8 @@ const GoOutside = ( props ) => {
             props.onAddMinutes(10);
             props.onPushFlag("LACBRAQGaveBraceletToSandySheWillBeInFarmAtNight"); //This flag is taken when you go to the farm. At any hour fuk it.
             props.onSpliceFlag("LACBRAQGiveBraceletToSandyOutsideWearing");
+            props.onSetItem("LacBracelet",0);
+            props.onSpliceFlag("WearingLacBracelet");
         }
         return(
             <>
