@@ -147,6 +147,7 @@ const Apartment = ( props ) => {
           items ={props.items}
           name = {props.name}
           onChangeRelationship = {props.onChangeRelationship}
+          onSetItem = {props.onSetItem}
           >
 
 
@@ -195,6 +196,7 @@ const Apartment = ( props ) => {
                 <Route exact path="/GameMap" component={GoToAppJs} />
                 <Route exact path="/Farm" component={GoToFarm} />
                 <Route exact path="/TheBarn" component={GoToFarm} />
+                <Route exact path="/TheFarmStore" component={GoToFarm} />
                 <Route exact path="/MilkCowsAtFarm" component={GoToFarm} />
 
                 <Route exact path="/SandyApartment" component={GoToSandyApartment} />

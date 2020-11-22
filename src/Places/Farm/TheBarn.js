@@ -59,9 +59,6 @@ const TheBarn = ( props ) => {
 <>
             <Col1>
                 <SetCol1
-                money = {props.money}
-                energy = {props.energy}
-                date = {props.date}
                 />
             </Col1>
             <Col2 BackImage = {FarmgirlOwner}>
@@ -83,6 +80,47 @@ const TheBarn = ( props ) => {
             </>
             
         );
+    } else if(props.flags.includes("LACBRAQWalkAroundBarnWithSandy")){
+        let LACBRAQGoHomeAloneAfterFarmDateSandy = () =>{
+            props.onChangeRelationship("Sandy",-1);
+            props.onAddMinutes(10);
+            props.onSpliceFlag("LACBRAQWalkAroundBarnWithSandy");
+            props.onAddAttractiveness(1);
+        }            
+
+        let LACBRAQAskSandyIfSheWantsToGoBackHome = () =>{
+            props.onChangeRelationship("Sandy",2);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQAskSandyIfSheWantsToGoBackHome");
+            props.onSpliceFlag("LACBRAQWalkAroundBarnWithSandy");
+            props.onSpliceFlag("DrankMilkwithLacBracelet");
+            props.onSpliceFlag("LACBRAQRefusedToGiveSandyBracelet");
+            props.onAddAttractiveness(1);
+        }
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {FarmBarn}>    
+            </Col2>
+            
+            <Col3 > 
+            <p>You two talk and walk and walk around the fact, Sandy has a lot to talk about, altough most of it are just trivial facts. "I love how wood smells", "did you know that cows can't go down stairs?". She is endearing, and you are really having fun.</p>
+            <p>Soon dawn comes...</p>
+                
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQGoHomeAloneAfterFarmDateSandy}>I am tired I want to go home alone</button>
+                </Link>  
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQAskSandyIfSheWantsToGoBackHome}>It's getting late. You ask sandy if she wants to go back home</button>
+                </Link>   
+                
+            </Col3>
+            </>
+        )
     }
     
     

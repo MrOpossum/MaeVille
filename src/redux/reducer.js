@@ -48,7 +48,9 @@ const reducer = (state = mainCharacter, action) =>{
         
         case actionTypes.PUSH_FLAG:
             let newFlags = state.flags;
-            newFlags.push(action.flagToAdd)
+            if(!newFlags.includes(action.flagToAdd)){
+                newFlags.push(action.flagToAdd)    
+            }
             return{
                 ...state,
                 flags: newFlags
@@ -154,6 +156,20 @@ const reducer = (state = mainCharacter, action) =>{
                 ...state,
                 currentLink: action.linkToSet
             }
+        
+            case actionTypes.ADD_ATTRACTIVENESS:
+            return{
+                ...state,
+                attractiveness: state.attractiveness + action.attractivenessToAdd
+            }
+        
+        case actionTypes.SET_ITEMS:
+            let setItems = state.items
+            setItems[action.itemToSet] = action.newItemAmmount;
+            return{
+                ...state,
+                items:setItems
+            }            
 
         default:
             return state;

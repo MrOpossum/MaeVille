@@ -76,6 +76,8 @@ const App = ( props ) => {
       onAddItem = {props.onAddItem}
       items = {props.items}
       name = {props.myName}
+      items = {props.items}
+      onSetItem = {props.onSetItem}
       ></Apartment>
     )
   }
@@ -113,6 +115,8 @@ const App = ( props ) => {
       skills = {props.skills}
       onAddEnergy = {props.onAddEnergy}
       onSetEnergy = {props.onSetEnergy}
+      onAddAttractiveness = {props.onAddAttractiveness}
+      attractiveness = {props.attractiveness}
       ></Farm>
     )
   }  
@@ -132,9 +136,11 @@ const App = ( props ) => {
           {/*I messed the routing so hard. that everything is mixed up. I think I should only route from one place?
           Thing is, that I am indeed writing the function separate. Get good with this routing stuff.
           */}
-          <Route exact path="/Farm" component={FarmSwitch} />
           <Route exact path="/GameMap" component={GameMapSwitch} />
+          
+          <Route exact path="/Farm" component={FarmSwitch} />
           <Route exact path="/TheBarn" component={FarmSwitch} />
+          <Route exact path="/TheFarmStore" component={FarmSwitch} />
           <Route exact path="/MilkCowsAtFarm" component={FarmSwitch} />
               
           
@@ -190,7 +196,9 @@ const mapDispatchToProps = dispatch =>{
     onSetHour: (_hourToSet) => dispatch({type:actionTypes.SET_HOUR,hourToSet: _hourToSet}),
     onAddEnergy: (_EnergyToAdd) => dispatch({type:actionTypes.ADD_ENERGY, energyToAdd: _EnergyToAdd}),
     onSetEnergy: (_EnergyToSet) => dispatch({type:actionTypes.SET_ENERGY, energyToSet: _EnergyToSet}),
-    onSetLink: (_linkToSet) => dispatch({type:actionTypes.SET_CURRENT_LINK, linkToSet: _linkToSet})
+    onSetLink: (_linkToSet) => dispatch({type:actionTypes.SET_CURRENT_LINK, linkToSet: _linkToSet}),
+    onAddAttractiveness: (_attractivenessToAdd) => dispatch({type:actionTypes.ADD_ATTRACTIVENESS, attractivenessToAdd : _attractivenessToAdd}),
+    onSetItem: (_itemToSet, _newItemAmmount) => dispatch({type: actionTypes.SET_ITEMS, itemToSet: _itemToSet, newItemAmmount: _newItemAmmount}),
 
 
     

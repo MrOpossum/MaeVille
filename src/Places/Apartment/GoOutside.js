@@ -322,6 +322,7 @@ const GoOutside = ( props ) => {
             props.onAddMinutes(10);
             props.onPushFlag("LACBRAQGoToFarmDateWithSandy"); 
             props.onSpliceFlag("LACBRAQDontGiveBraceletToSandyOutsideWearing");
+            props.onPushFlag("LACBRAQRefusedToGiveSandyBracelet");
         }
         let LACBRAQDontGoToFarmDateWithSandy = () =>{
             props.onChangeRelationship("Sandy",-2);
@@ -347,7 +348,7 @@ const GoOutside = ( props ) => {
             <p>"You know what, at least buy me some Ice cream, I am starving". Sandy sighs. "I heard the farm has some amaizng Ice cream"</p>
 
                 
-                <Link to={"/Farm"} style={{ textDecoration: "none" }}>
+                <Link to={"/TheFarmStore"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LACBRAQGoToFarmDateWithSandy}>Agree on a date</button>
                 </Link>                
 
@@ -382,6 +383,62 @@ const GoOutside = ( props ) => {
             <Col3 > 
                 <Link to={"/SandyApartment"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LACBRAQGoToSandyApartmentAfterYouRefusedToGiveBracelet}>Enter Sandys apartment</button>
+                </Link>                
+            </Col3>
+            </>
+        )
+    } else if(props.flags.includes("LACBRAQGoToFarmDateWithSandy")){
+        let LACBRAQArriveToTheBarnDateWithSandy = () =>{
+            props.onChangeRelationship("Sandy",2);
+            props.onAddMinutes(10);
+            props.onPushFlag("DrankMilkwithLacBracelet"); //Because you will have to drink milk after this.
+            props.onPushFlag("LACBRAQArriveToTheBarnDateWithSandy");
+            props.onSpliceFlag("LACBRAQGoToFarmDateWithSandy");
+            
+        }        
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {BegginingSandyOutside}>
+                
+            </Col2>
+            <p>"You see, we don't have to hate each other... Even tough you are a thief!" - Sandy says. You are not completely sure if she is teasing you or if there really is some murderous intent in her words.</p>
+            <p>"But I do love Ice cream!" She cheers. "In my farm my ma and I used to make Ice cream all the time. We made so many flavors, we had chocolate, vainilla, cinnamon, lemon, banana, strawberry, we had just plain milk, we had cream, we had oreo! We made so much Ice cream we would...</p>
+            <Col3 > 
+                <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQArriveToTheBarnDateWithSandy}>You arrive at the farm with your date, Sandy</button>
+                </Link>                
+            </Col3>
+            </>
+        )
+    }else if(props.flags.includes("LACBRAQAskSandyIfSheWantsToGoBackHome")){
+        let LACBRAQSandyTakesYouToHerApmtAfterGoingBackTogheterFromFarmDate = () =>{
+            props.onChangeRelationship("Sandy",2);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQSandyTakesYouToHerApmtAfterGoingBackTogheterFromFarmDate"); //Because you will have to drink milk after this.
+            props.onSpliceFlag("LACBRAQAskSandyIfSheWantsToGoBackHome");
+            
+        }        
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {BegginingSandyOutside}>
+                
+            </Col2>
+        <p>"Yes, I would love to".And you go back to your building. </p>
+        <p>Upon arrival you start feeling a strange pressure on your chest. You start feeling dizzy.</p>
+        <p>"Are you feeling well?" Asks Sandy. She can see by your expression that you are not feeling well. "Let's get you to my apartment, my ma' gave me a whole bunch of medicine we can use".</p>
+            <Col3 > 
+                <Link to={"/SandyApartment"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQSandyTakesYouToHerApmtAfterGoingBackTogheterFromFarmDate}>Sandy takes you into her apartment</button>
                 </Link>                
             </Col3>
             </>

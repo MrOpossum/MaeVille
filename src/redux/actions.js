@@ -19,3 +19,5 @@ export const SET_ENERGY = "SET_ENERGY";
 export const SET_DATE = "SET_DATE";
 export const SET_STATE = "SET_STATE";
 export const SET_CURRENT_LINK = "SET_CURRENT_LINK";
+export const ADD_ATTRACTIVENESS = "ADD_ATTRACTIVENESS";
+export const SET_ITEMS = "SET_ITEMS";
