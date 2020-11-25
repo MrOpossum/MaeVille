@@ -13,8 +13,32 @@ import AmyLivingRoom_withAmy_whiteTop from "../../Images/AmyApartment/AmyLivingR
 import SandyAndAmyInAmyApartment_KitchenImageTopAndWhiteTop from "../../Images/AmyApartment/SandyAndAmyInAmyApartment_KitchenImageTopAndWhiteTop.png";
 import ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP from "../../Images/AmyApartment/Scenes/ButtonBurstingFromShirt-NippyBleakAtlanticridleyturtle-mobile-CROPPEDONLYTOP.mp4";
 import TwoLesbosSuckThirdLesboMilk_CUTSHORT from "../../Images/AmyApartment/Scenes/TwoLesbosSuckThirdLesboMilk_CUTSHORT.mp4";
+import ApartmentHallway from "../../Images/Apartment/ApartmentHallway.jpg";
+
+import MastasiaMassiveBoobsAmyDidNotResistCut from "../../Images/AmyApartment/Scenes/LACBRAQ/MastasiaMassiveBoobsAmyDidNotResistCut.mp4";
+
+import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriRhoadesBlueCowgirlBikini_transparent.png";
+import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
+import P_g_whiteTop_frontView_Transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_whiteTop_frontView_Transparent.png";
 
 const AmyApartment = (props) => {
+  
+  let characterImageHeight = "400px";
+
+    if(props.flags.includes("SandyMidBreasts")){
+        var SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
+    } else{
+        var SandyImage = anri_emily_white_dress_transparent;
+    }
+
+    if(props.flags.includes("AmyLargeBreasts")){
+        var AmyImage = ""
+    } else{
+        var AmyImage = P_g_whiteTop_frontView_Transparent
+    }
+  
+  
+  
   if (props.flags.includes("LACBRAQGoToAmyApartment")) {
     let UnbuttonShirt = () => {
       props.onSpliceFlag("LACBRAQGoToAmyApartment");
@@ -100,7 +124,14 @@ const AmyApartment = (props) => {
         <Col1>
           <SetCol1 />
         </Col1>
-        <Col2 BackImage={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP}></Col2>
+        <Col2 BackImage = {" "}
+                    rowHeight = {" "}
+            >
+            <video autoPlay muted loop 
+            style ={{width: "100%", height: "100%"}}>
+                <source src={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP} type="video/mp4"/>
+            </video>
+            </Col2>   
 
         <Col3>
           <p> "{props.name} I do not have the time for games." Amy is losing her patience. You feel how your body moves by itself and starts exposing your breasts.</p>
@@ -135,10 +166,10 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay muted loop 
-            style ={{maxWidth: "100%"}}>
+            style ={{width: "100%", height: "100%"}}>
                 <source src={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP} type="video/mp4"/>
             </video>
-            </Col2>   
+            </Col2>    
           <Col3>
             <p>You hear a knock on the door. "Come in Sandy" Says Amy. And you see Sandy coming in. </p>
             <p>You can't even see Sandys reaction. Amy grabs your face and looks you in the eyes. "Don't enjoy this." She says.</p>
@@ -174,8 +205,8 @@ const AmyApartment = (props) => {
           <Col2 BackImage = {" "}
                     rowHeight = {" "}
             >
-            <video autoPlay muted loop 
-            style ={{maxWidth: "100%"}}>
+            <video autoPlay loop 
+            style ={{width: "100%", height: "100%"}}>
                 <source src={TwoLesbosSuckThirdLesboMilk_CUTSHORT} type="video/mp4"/>
             </video>
             </Col2>  
@@ -232,6 +263,86 @@ const AmyApartment = (props) => {
           </Col3>
         </>
       );
+  } else if(props.flags.includes("LACBRAQHelpSandyTakeBraceletBackGoToAmyApmt")){
+    let LACBRAQKnockOnAmysDoor = () =>{
+      props.onAddMinutes(10);
+      props.onSpliceFlag("LACBRAQHelpSandyTakeBraceletBackGoToAmyApmt");
+      if(Math.random() < .25){ //Amy uses the bracelet.
+        props.onPushFlag("LACBRAQAmyDoesNotResistHerselfAndUsesBracelet");
+      } else{ //Amy does not use the bracelet.
+        props.onPushFlag("LACBRAQAmyResistsHerselfAndDoesNotUseBracelet");
+      }
+  }
+
+
+    return(
+        <>
+        <Col1>
+            <SetCol1
+            />
+        </Col1>
+        <Col2 BackImage = {ApartmentHallway}>
+            <img src={SandyImage} height={characterImageHeight}></img> {/*Should I add Sandy image?*/}
+        </Col2>
+
+        <Col3 > 
+
+          <p>Sandy quickly leads you to Amys apartment.</p>
+          <p>"Here we are..." - Sandy says, there is a hint of hesitation in her voice. She positions herself just besides the door.</p>
+          <p>"She should not see me if I stay here" - Sandy whispers. "Go on..."</p>
+
+            <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {LACBRAQKnockOnAmysDoor}>Knock on the door</button>
+            </Link>  
+        </Col3>
+        </>
+    )
+  } else if(props.flags.includes("LACBRAQAmyDoesNotResistHerselfAndUsesBracelet")){
+    let LACBRAQGoIntoAmyApartmentSheDidNotResist = () =>{
+      props.onAddMinutes(10);
+      props.onSpliceFlag("LACBRAQAmyDoesNotResistHerselfAndUsesBracelet");
+      props.onPushFlag("aasdasdasdasd");
+    }
+
+
+    return(
+        <>
+        <Col1>
+            <SetCol1
+            />
+        </Col1>
+        <Col2 BackImage = {" "}
+                    rowHeight = {" "}
+            >
+            <video autoPlay loop 
+            style ={{width: "100%", height: "100%"}} controls>
+                <source src={MastasiaMassiveBoobsAmyDidNotResistCut} type="video/mp4"/>
+            </video>
+            </Col2>  
+
+        <Col3 > 
+
+            <p>You see a woman sporting the largest breasts you had ever seen. She is dripping milk and certainly enjoying herself.</p>
+            
+          
+
+            <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {LACBRAQGoIntoAmyApartmentSheDidNotResist}>Go in</button>
+            </Link>  
+        </Col3>
+        </>
+    )
+  } else if(props.flags.includes("LACBRAQAmyDoesNotResistHerselfAndUsesBracelet")){
+
+  }
+  
+  
+  
+  
+  else if(props.flags.includes("LACBRAQAmyResistsHerselfAndDoesNotUseBracelet")){
+    
+    props.onSpliceFlag("LACBRAQAmyResistsHerselfAndDoesNotUseBracelet");
+    console.log("LACBRAQAmyResistsHerselfAndDoesNotUseBracelet");
   }
   
   

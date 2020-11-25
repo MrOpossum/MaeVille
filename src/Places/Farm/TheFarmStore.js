@@ -23,12 +23,14 @@ const TheFarmStore = ( props ) => {
             props.onChangeRelationship("Sandy",2);
             props.onAddMinutes(10);
             props.onPushFlag("LACBRAQPickIceCreamFlavourAndEatItInSandyDate");
+            props.onPushFlag("DrankMilkwithLacBracelet");
             props.onSpliceFlag("LACBRAQGoToFarmDateWithSandy");
         }        
         let LACBRAQIdontwanticecreamSandyShovesDownThroat = () =>{
             props.onChangeRelationship("Sandy",-1);
             props.onAddMinutes(10);
             props.onPushFlag("LACBRAQIdontwanticecreamSandyShovesDownThroat");
+            props.onPushFlag("DrankMilkwithLacBracelet");
             props.onSpliceFlag("LACBRAQGoToFarmDateWithSandy");
         }        
 

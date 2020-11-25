@@ -35,6 +35,7 @@ const Apartment = ( props ) => {
           onSetEnergy = {props.onSetEnergy}
           onAddItem = {props.onAddItem}
           items ={props.items}
+          onChangeRelationship = {props.onChangeRelationship}
           ></Home>
         );
       };
@@ -64,6 +65,7 @@ const Apartment = ( props ) => {
           onChangeRelationship = {props.onChangeRelationship}
           name = {props.name}
           onSetItem = {props.onSetItem}
+          onAddMoney = {props.onAddMoney}
           ></GoOutside>
         );
       };

@@ -21,3 +21,4 @@ export const SET_STATE = "SET_STATE";
 export const SET_CURRENT_LINK = "SET_CURRENT_LINK";
 export const ADD_ATTRACTIVENESS = "ADD_ATTRACTIVENESS";
 export const SET_ITEMS = "SET_ITEMS";
+export const ADD_MONEY = "ADD_MONEY";

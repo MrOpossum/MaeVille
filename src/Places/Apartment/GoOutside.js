@@ -12,7 +12,31 @@ import BegginingSandyOutside from "../../Images/Apartment_outside/Sandy-A_outsid
 import BegginingAmyOutside from "../../Images/Apartment_outside/Amy-A_outside-BP_Gotti.png";
 import OutsideApartment from "../../Images/Apartment_outside/outside_apartment.jpg"
 import outside_apartment_amy_PalinGottiSwapWhiteTop from "../../Images/Apartment_outside/outside_apartment_amy-PalinGottiSwapWhiteTop.png";
+import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriRhoadesBlueCowgirlBikini_transparent.png";
+import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
+import P_g_whiteTop_frontView_Transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_whiteTop_frontView_Transparent.png";
+import P_g_red_tank_top_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_red_tank_top_transparent.png"
+
+
 const GoOutside = ( props ) => {
+    
+    console.log(props.flags);
+
+    let characterImageHeight = "400px";
+
+    if(props.flags.includes("SandyMidBreasts")){
+        var SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
+    } else{
+        var SandyImage = anri_emily_white_dress_transparent;
+    }
+
+    if(props.flags.includes("AmyLargeBreasts")){
+        var AmyImage = ""
+    } else{
+        var AmyImage = P_g_whiteTop_frontView_Transparent
+    }
+  
+
 
     if(props.flags.includes("WillMeetSandyOutsideApartment")){
         props.onSpliceFlag("WillMeetSandyOutsideApartment");
@@ -188,6 +212,8 @@ const GoOutside = ( props ) => {
             props.onChangeRelationship("Amy",3);
             props.onAddMinutes(10);
             props.onPushFlag("LACBRAQGoToAmyApartment");
+            props.onSpliceFlag("LACBRAQAmySawYouSheHadNoIdea_outside_part_2_truth");
+            props.onSpliceFlag("LACBRAQAmySawYouSheHadNoIdea_outside_part_2_lie");
         }
         return(
             <>
@@ -215,7 +241,8 @@ const GoOutside = ( props ) => {
             props.onChangeRelationship("Amy",-3);
             props.onAddMinutes(10);
             props.onPushFlag("LACBRAQGoToAmyApartment");
-            props.onSpliceFlag("LACBRAQAmySawYouSheHadNoIdea_outside_part_2_lie")
+            props.onSpliceFlag("LACBRAQAmySawYouSheHadNoIdea_outside_part_2_lie");
+            props.onSpliceFlag("LACBRAQAmySawYouSheHadNoIdea_outside_part_2_truth");
         }
         return(
             <>
@@ -223,7 +250,7 @@ const GoOutside = ( props ) => {
                 <SetCol1
                 />
             </Col1>
-            <Col2 BackImage = {OutsideApartment}>
+            <Col2 BackImage = {outside_apartment_amy_PalinGottiSwapWhiteTop}>
                 
             </Col2>
     
@@ -250,6 +277,7 @@ const GoOutside = ( props ) => {
             props.onChangeRelationship("Sandy",-3);
             props.onAddMinutes(10);
             props.onPushFlag("LACBRAQDontGiveBraceletToSandyOutsideWearing");
+            props.onPushFlag("LACBRAQRefusedToGiveSandyBracelet");
             props.onSpliceFlag("LACBRAQSandyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk")
         }
 
@@ -445,6 +473,343 @@ const GoOutside = ( props ) => {
             </Col3>
             </>
         )
+    } else if(props.flags.includes("LACBRAQAmyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk")){
+        
+        if(props.flags.includes("MET_AMY")){
+            let LACBRAQLieToAmyWhereYouGotBracelet = () =>{
+                props.onChangeRelationship("Amy",-3);
+                props.onAddMinutes(10);
+                props.onPushFlag("LACBRAQAmyWantsToBuyBracelet"); 
+                props.onSpliceFlag("LACBRAQAmyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk");
+                
+            }       
+            
+            let LACBRAQTruthToAmyWhereYouGotBracelet = () =>{
+                props.onChangeRelationship("Amy",1);
+                props.onAddMinutes(10);
+                props.onPushFlag("LACBRAQAmyWantsToBuyBracelet"); 
+                props.onSpliceFlag("LACBRAQAmyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk");
+            }
+    
+            return(
+                <>
+                <Col1>
+                    <SetCol1
+                    />
+                </Col1>
+                <Col2 BackImage = {OutsideApartment}>
+                    <img src={AmyImage} height={characterImageHeight}></img>
+                </Col2>
+    
+                <Col3 > 
+                    <p>You see Amy approaching you. Hey {props.name}. Nice bracelet where did you get it?</p>
+                    <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {LACBRAQLieToAmyWhereYouGotBracelet}>Lie</button>
+                        <button type="button" className="btn btn-primary" onClick = {LACBRAQTruthToAmyWhereYouGotBracelet}>Tell her the truth</button>
+                    </Link>                
+                </Col3>
+                </>
+            )
+        } else{
+            let LACBRAQLieToAmyWhereYouGotBracelet = () =>{
+                props.onChangeRelationship("Amy",-3);
+                props.onAddMinutes(10);
+                props.onPushFlag("LACBRAQAmyWantsToBuyBracelet"); 
+                props.onSpliceFlag("LACBRAQAmyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk");
+
+                props.onPushFlag("MET_AMY");
+                
+            }       
+            
+            let LACBRAQTruthToAmyWhereYouGotBracelet = () =>{
+                props.onChangeRelationship("Amy",1);
+                props.onAddMinutes(10);
+                props.onPushFlag("LACBRAQAmyWantsToBuyBracelet"); 
+                props.onSpliceFlag("LACBRAQAmyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk");
+
+                props.onPushFlag("MET_AMY");
+            }
+    
+            return(
+                <>
+                <Col1>
+                    <SetCol1
+                    />
+                </Col1>
+                <Col2 BackImage = {OutsideApartment}>
+                    <img src={AmyImage} height={characterImageHeight}></img>
+                </Col2>
+    
+                <Col3 > 
+                    <p>A girl approaches you. You had never seen her before. "Hello, I am Amy, I am sorry to interrupt in such an inappropiate manner, but. Where did you get that bracelet?" Amy queries.</p>
+
+                    <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {LACBRAQLieToAmyWhereYouGotBracelet}>Lie</button>
+                        <button type="button" className="btn btn-primary" onClick = {LACBRAQTruthToAmyWhereYouGotBracelet}>Tell her the truth</button>
+                    </Link>                
+                </Col3>
+                </>
+            )
+        }
+    } else if(props.flags.includes("LACBRAQAmyWantsToBuyBracelet")){
+        let LACBRAQSellAmyTheBracelet = () =>{
+            props.onChangeRelationship("Amy",2);
+            props.onAddMoney(300);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQsoldAmyTheBracelet"); //Converges here
+            props.onSpliceFlag("LACBRAQAmyWantsToBuyBracelet");
+        }
+        let LACBRAQDontSellAmyTheBracelet = () =>{
+            props.onChangeRelationship("Amy",-1);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQDidNotsellAmyTheBracelet"); 
+            props.onSpliceFlag("LACBRAQAmyWantsToBuyBracelet");
+        }
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                <img src={AmyImage} height={characterImageHeight}></img>
+            </Col2>
+
+            <Col3 > 
+                <p>Amy seems to be a bit puzzled. "It's just that I love it so much. Could you sell it to me? I'll give you 300$"</p>
+
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQSellAmyTheBracelet}>Sell her the bracelet</button>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQDontSellAmyTheBracelet}>Don't sell her the bracelet</button>
+                </Link>                
+            </Col3>
+            </>
+        )
+    } else if(props.flags.includes("LACBRAQsoldAmyTheBracelet")){
+        let LACBRAQAmyTookTheBracelet = () =>{
+            props.onChangeRelationship("Amy",1);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQAmyTookTheBracelet"); 
+            props.onSpliceFlag("LACBRAQsoldAmyTheBracelet");
+            props.onSetItem("LacBracelet",0)
+        }
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                <img src={AmyImage} height={characterImageHeight}></img>
+            </Col2>
+
+            <Col3 > 
+                <p>"Thank you." Amy says politely. "I just love this kind of things. And I never have the time to go buy them". Amy pauses for a moment. "Have a nice day {props.name}. We might see each other soon". Amy takes the bracelet and goes back to her apartment. </p>
+
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQAmyTookTheBracelet}>Continue the day</button>
+                </Link>                
+            </Col3>
+            </>
+        )
+    } else if (props.flags.includes("LACBRAQDidNotsellAmyTheBracelet")){
+        let LACBRAQAmyOffersMoreMoneyForBracelet = () =>{
+            props.onAddMoney(300);
+            props.onChangeRelationship("Amy",1);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQAmyTookTheBracelet"); 
+            props.onSpliceFlag("LACBRAQDidNotsellAmyTheBracelet");
+            props.onSetItem("LacBracelet",0)
+        }
+        
+        let LACBRAQAmyWillTakeTheBracelet_force = () =>{
+            props.onChangeRelationship("Amy",-2);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQAmyWillTakeTheBracelet_force"); 
+            props.onSpliceFlag("LACBRAQDidNotsellAmyTheBracelet");
+            props.onSetItem("LacBracelet",0)
+        }
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                <img src={AmyImage} height={characterImageHeight}></img>
+            </Col2>
+
+            <Col3 > 
+                
+                <p>"What! I know it's not expensive. 300$ is a lot for that bracelet." Amy pauses. "You know. I'll give you 500$, trust me. Take it." Those last words sounded rather like an order.</p>
+
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQAmyOffersMoreMoneyForBracelet}>Deal</button>
+                </Link>     
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQAmyWillTakeTheBracelet_force}>No. Means. No.</button>
+                </Link>     
+                           
+            </Col3>
+            </>
+        )
+    } else if(props.flags.includes("LACBRAQAmyWillTakeTheBracelet_force")){
+        let LACBRAQAmyTookTheBracelet_by_force = () =>{
+            props.onChangeRelationship("Amy",-3);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQAmyTookTheBracelet"); 
+            props.onSpliceFlag("LACBRAQAmyWillTakeTheBracelet_force");
+            props.onSetItem("LacBracelet",0);
+        }
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                <img src={AmyImage} height={characterImageHeight}></img>
+            </Col2>
+
+            <Col3 > 
+                
+                <p>"Fuck..." You hear Amy say. Then everything goes black for you. And after a second your vision comes back. Amy is not there. You look at your wrist and the bracelet is not there either.</p>
+
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQAmyTookTheBracelet_by_force}>Continue your day</button>
+                </Link>                
+            </Col3>
+            </>
+        )
+    }else if(props.flags.includes("LACBRAQAmyTookTheBracelet")){ //Converges here.
+        if(props.flags.includes("MET_SANDY")){
+            let LACBRAQHelpSandyTakeBraceletBack = () =>{
+                props.onChangeRelationship("Sandy",1);
+                props.onAddMinutes(10);
+                props.onPushFlag("LACBRAQHelpSandyTakeBraceletBack"); 
+                props.onSpliceFlag("LACBRAQAmyTookTheBracelet");
+            }
+            let DontHelpSandyTakeBraceletBack = () =>{ //End of quest. I need to 
+                props.onChangeRelationship("Sandy",-5);
+                props.onAddMinutes(10);
+                props.onPushFlag("LACBRAQDidNotHelpSandyTakeBraceletBack"); 
+                props.onSpliceFlag("LACBRAQAmyTookTheBracelet");
+            }
+    
+            return(
+                <>
+                <Col1>
+                    <SetCol1
+                    />
+                </Col1>
+                <Col2 BackImage = {OutsideApartment}>
+                    <img src={SandyImage} height={characterImageHeight}></img>
+                </Col2>
+    
+                <Col3 > 
+                    
+                    <p>Hey {props.name}. I saw that. Did that girl just take your bracelet? That was MY bracelet! I don't know why you had it. But we need to take it back, that bracelet is really important to me.</p>
+                
+    
+                    <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyTakeBraceletBack}>Let's take that bracelet back</button>
+                        <button type="button" className="btn btn-primary" onClick = {DontHelpSandyTakeBraceletBack}>Continue your day</button>
+                    </Link>    
+                </Col3>
+                </>
+            )
+        } else{
+            let LACBRAQHelpSandyTakeBraceletBack = () =>{
+                props.onChangeRelationship("Sandy",1);
+                props.onAddMinutes(10);
+                props.onPushFlag("LACBRAQHelpSandyTakeBraceletBack"); 
+                props.onSpliceFlag("LACBRAQAmyTookTheBracelet");
+                props.onPushFlag("MET_SANDY");
+            }
+            let DontHelpSandyTakeBraceletBack = () =>{ //End of quest. I need to 
+                props.onChangeRelationship("Sandy",-5);
+                props.onAddMinutes(10);
+                props.onPushFlag("LACBRAQDidNotHelpSandyTakeBraceletBack"); 
+                props.onSpliceFlag("LACBRAQAmyTookTheBracelet");
+                props.onPushFlag("MET_SANDY");
+            }
+    
+            return(
+                <>
+                <Col1>
+                    <SetCol1
+                    />
+                </Col1>
+                <Col2 BackImage = {OutsideApartment}>
+                    <img src={SandyImage} height={characterImageHeight}></img>
+                </Col2>
+    
+                <Col3 > 
+                    
+                    <p>Hey I saw that. Did that girl just take your bracelet? That was MY bracelet! I don't know why you had it. But we need to take it back, that bracelet is really important to me.</p>
+                    <p>I am Sandy, by the way. Nice to meet you</p>
+                
+    
+                    <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyTakeBraceletBack}>Let's take that bracelet back</button>
+                        <button type="button" className="btn btn-primary" onClick = {DontHelpSandyTakeBraceletBack}>Continue your day</button>
+                    </Link>    
+                </Col3>
+                </>
+            )
+
+        }
+    } else if(props.flags.includes("LACBRAQHelpSandyTakeBraceletBack")){
+        let LACBRAQHelpSandyTakeBraceletBackGoToAmyApmt = () =>{ //End of quest. I need to 
+            props.onChangeRelationship("Sandy",3);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQHelpSandyTakeBraceletBackGoToAmyApmt"); 
+            props.onSpliceFlag("LACBRAQHelpSandyTakeBraceletBack");
+        }
+        let DontHelpSandyTakeBraceletBack = () =>{ //End of quest. I need to 
+            props.onChangeRelationship("Sandy",-5);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQDidNotHelpSandyTakeBraceletBack"); 
+            props.onSpliceFlag("LACBRAQHelpSandyTakeBraceletBack");
+        }
+
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                <img src={SandyImage} height={characterImageHeight}></img>
+            </Col2>
+
+            <Col3 > 
+
+                <p>Okay {props.name}. That girl who just took the bracelet from you is a stuck up bitch. She thinks she can police over me and control what I do. We will show her that she can't just take my stuff.</p>
+
+                <p>But I can't fight her alone. She's too strong for me. So I need your help. The plan is simple, we knock her door, get inside her apartment, steal the bracelet and leave. You distract her and I take her stuff!</p>
+
+                <p>We don't really have time. So put on your best neighbor face and lets go!</p>
+                
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {DontHelpSandyTakeBraceletBack}>I don't want this</button>
+                </Link>    
+                <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyTakeBraceletBackGoToAmyApmt}>Let's take that bracelet back</button>
+                </Link>  
+            </Col3>
+            </>
+        )
+    } 
+    
+    else if(props.flags.includes("LACBRAQDidNotHelpSandyTakeBraceletBack")){
+        console.log("Pending: LACBRAQDidNotHelpSandyTakeBraceletBack");
+        props.onSpliceFlag("LACBRAQDidNotHelpSandyTakeBraceletBack");
     }
     
     

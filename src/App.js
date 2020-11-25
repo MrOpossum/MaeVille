@@ -16,6 +16,7 @@ import _1_Inspect from "./events/_1_Inspect";
 import Apartment from "./Places/Apartment";
 import Farm from "./Places/Farm";
 import GameMap from "./Places/GameMap";
+import { act } from 'react-dom/test-utils';
 
 const App = ( props ) => {
 
@@ -78,6 +79,7 @@ const App = ( props ) => {
       name = {props.myName}
       items = {props.items}
       onSetItem = {props.onSetItem}
+      onAddMoney = {props.onAddMoney}
       ></Apartment>
     )
   }
@@ -199,7 +201,7 @@ const mapDispatchToProps = dispatch =>{
     onSetLink: (_linkToSet) => dispatch({type:actionTypes.SET_CURRENT_LINK, linkToSet: _linkToSet}),
     onAddAttractiveness: (_attractivenessToAdd) => dispatch({type:actionTypes.ADD_ATTRACTIVENESS, attractivenessToAdd : _attractivenessToAdd}),
     onSetItem: (_itemToSet, _newItemAmmount) => dispatch({type: actionTypes.SET_ITEMS, itemToSet: _itemToSet, newItemAmmount: _newItemAmmount}),
-
+    onAddMoney: (_moneyToAdd) => dispatch({type:actionTypes.ADD_MONEY, moneyToAdd: _moneyToAdd}),
 
     
   }

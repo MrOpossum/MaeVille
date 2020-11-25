@@ -20,8 +20,6 @@ const SetCol1 = (props) => {
     const [open, setOpen] = React.useState(true);
     //Checking energy
     if(props.energy < 0 && !props.flags.includes("NO_MORE_ENERGY")){
-      console.log("noEnergy");
-      console.log(!props.flags.includes("NO_MORE_ENERGY"));
       if(!props.flags.includes("NO_MORE_ENERGY")){
         props.onPushFlag("NO_MORE_ENERGY");  
       } 

@@ -170,6 +170,12 @@ const reducer = (state = mainCharacter, action) =>{
                 ...state,
                 items:setItems
             }            
+        
+        case actionTypes.ADD_MONEY:
+            return{
+                ...state,
+                money: state.money + action.moneyToAdd
+            }
 
         default:
             return state;

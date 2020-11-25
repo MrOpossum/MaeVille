@@ -28,14 +28,13 @@ const Beginning = ( props ) => {
     let logTheFlags = () =>{
         console.log("Your flags are: ", props.flags);
     }
+
     
-    //Linked place:
-    console.log(props.currentLink)
 
     return(
             <>
             <Col1 BackImage = {madrid}>
-                <h1 id="col_1_title"> MayVille </h1>
+                <h1 id="col_1_title"> MaeVille </h1>
             </Col1>
             <Col2 BackImage = {anri_emily_lying_down_transparent}>
                 <h2>Welcome, I hope you enjoy the game.</h2>

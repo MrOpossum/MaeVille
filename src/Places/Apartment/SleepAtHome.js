@@ -15,7 +15,10 @@ import KennedyCMainCharacterBELacBraceletAndMilk from "../../Images/Apartment/Ke
 
 import MainCharBELacBraceletAndMilkEnd from "../../Images/Scenes/Lactation/720P_brunette_lactating_2.mp4";
 
+let gateSandyOrAmyWillFindYou = 0;
 const SleepAtHome = (props) => {
+
+  
   const addMinutesFunc = () => {
     props.onAddMinutes(10);
   };
@@ -45,7 +48,7 @@ const SleepAtHome = (props) => {
             You had no more energy. So you ran home and fell asleep. You will
             not sleep well.
           </p>
-          <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
+          <Link to={"/Home"} style={{ textDecoration: "none" }}>
             <button
               type="button"
               className="btn btn-primary"
@@ -216,7 +219,7 @@ const SleepAtHome = (props) => {
         </Col3>
       </>
     );
-  } else if (props.flags.includes("WearingLacBracelet") && props.items["LacBracelet"] > 0) {
+  } else if (props.flags.includes("WearingLacBracelet") && props.items["LacBracelet"] > 0 && !props.flags.includes("LACBRAQSandyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk" && !props.flags.includes("LACBRAQAmyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk")) && gateSandyOrAmyWillFindYou === 0) {
     
     let AmyOrSandyWillFindYouAfterSleepingWithLacBra = () => {
         if(Math.random() < .51){
@@ -229,6 +232,7 @@ const SleepAtHome = (props) => {
               );
         }
         props.onAddMinutes(10);    
+        gateSandyOrAmyWillFindYou = 1;
     };
 
     

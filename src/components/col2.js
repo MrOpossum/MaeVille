@@ -16,6 +16,7 @@ const Col2 = ( props ) => {
       };
     const myStyleRow = {
         height: `${(props.rowHeight ||"65vh")}`,
+        minHeight: "440px"
     }
 
     return( 
