@@ -69,24 +69,30 @@ const reducer = (state = mainCharacter, action) =>{
                 newFlags.push(action.flagToAdd)    
             }
             return{
-                ...state,
-                flags: newFlags
+                fullState: {
+                    ...state.fullState,
+                    flags: newFlags
+                }
+                
             }
         
         case actionTypes.CHANGE_RELATIONSHIP:
             return{
-                ...state,
-                relations:{
-                    ...state,
-                    [action.relationPerson]: state.fullState.relations[action.relationPerson] += action.relationAmmountToAdd
+                fullState:{
+                    ...state.fullState,
+                    relations:{
+                        [action.relationPerson]: state.fullState.relations[action.relationPerson] += action.relationAmmountToAdd
+                    }
                 }
             }
         case actionTypes.PUSH_STATUS:
             let newStatusAdd = state.fullState.status;
             newStatusAdd.push(action.statusToAdd)
             return{
-                ...state,
-                status: newStatusAdd
+                fullState: {
+                    ...state.fullState,
+                    status: newStatusAdd
+                }
             }
 
         case actionTypes.SPLICE_STATUS:
@@ -147,7 +153,6 @@ const reducer = (state = mainCharacter, action) =>{
             return{
                 fullState: {
                     ...state.fullState,
-                    date :  newDate,
                     energy: state.fullState.energy += action.energyToAdd
                 }
             }

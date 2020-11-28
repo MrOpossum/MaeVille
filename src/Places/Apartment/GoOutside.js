@@ -7,6 +7,15 @@ import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
 
 
+//Characters
+import anri_emily_NakedStanding_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_NakedStanding_transparent.png";
+import P_g_Naked_smile_1_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent.png";
+import P_g_Naked_smile_1_transparent_fight_1 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_1.png";
+import P_g_Naked_smile_1_transparent_fight_2 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_2.png";
+import P_g_Naked_smile_1_transparent_fight_3 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_3.png";
+import P_g_Naked_smile_1_transparent_fight_4 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_4.png";
+
+
 //Images
 import BegginingSandyOutside from "../../Images/Apartment_outside/Sandy-A_outside-Anri_Emily.png";
 import BegginingAmyOutside from "../../Images/Apartment_outside/Amy-A_outside-BP_Gotti.png";
@@ -14,7 +23,6 @@ import OutsideApartment from "../../Images/Apartment_outside/outside_apartment.j
 import outside_apartment_amy_PalinGottiSwapWhiteTop from "../../Images/Apartment_outside/outside_apartment_amy-PalinGottiSwapWhiteTop.png";
 import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriRhoadesBlueCowgirlBikini_transparent.png";
 import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
-import P_g_whiteTop_frontView_Transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_whiteTop_frontView_Transparent.png";
 import P_g_red_tank_top_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_red_tank_top_transparent.png"
 
 
@@ -23,19 +31,34 @@ const GoOutside = ( props ) => {
     console.log(props.flags);
 
     let characterImageHeight = "400px";
-    let AmyCharacterImageHeight = "500px";
+    let nakedCharacterImageHeight = "440px";
+    let AmyCharacterImageHeight = "430px";
 
-    if(props.flags.includes("SandyMidBreasts_1")){
-        var SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
-    } else{
-        var SandyImage = anri_emily_white_dress_transparent;
-    }
+  //The base image
+  var SandyImage = anri_emily_white_dress_transparent;
+  var SandyImageNaked = anri_emily_NakedStanding_transparent;
 
-    if(props.flags.includes("AmyLargeBreasts_1")){
-        var AmyImage = ""
-    } else{
-        var AmyImage = P_g_whiteTop_frontView_Transparent
-    }
+  var AmyImage = P_g_red_tank_top_transparent;
+  var AmyImageNaked = P_g_Naked_smile_1_transparent;
+
+  if(props.flags.includes("SandyMidBreasts_1")){
+      SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
+  } else{
+      SandyImage = anri_emily_white_dress_transparent;
+      SandyImageNaked = anri_emily_NakedStanding_transparent;
+  }
+
+  if(props.flags.includes("AmyLargeBreasts_1")){
+      AmyImage = ""
+  } else{
+      AmyImage = P_g_red_tank_top_transparent
+      AmyImageNaked = P_g_Naked_smile_1_transparent
+      var AmyImageFight = AmyImage
+      var AmyImageFight1 = P_g_Naked_smile_1_transparent_fight_1
+      var AmyImageFight2 = P_g_Naked_smile_1_transparent_fight_2
+      var AmyImageFight3 = P_g_Naked_smile_1_transparent_fight_3
+      var AmyImageFight4 = P_g_Naked_smile_1_transparent_fight_4
+  }
   
 
 
