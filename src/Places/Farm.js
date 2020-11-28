@@ -16,7 +16,6 @@ import TheFarmStore from "./Farm/TheFarmStore";
 
 const Farm = ( props ) => {
 
-
       let GameMapSwitch = () => {
         return (
           <>
@@ -124,7 +123,6 @@ const Farm = ( props ) => {
                 <Route exact path="/TheFarmStore" component={TheFarmStoreSwitch} />
                 <Route exact path="/MilkCowsAtFarm" component={MilkCowsAtFarmSwitch} />
                 <Route exact path="/SleepAtHome" component={ApartementSwitchToSleepAtHome} />
-                
 
                 <Redirect to="/TheBarn" />
                 </Switch>

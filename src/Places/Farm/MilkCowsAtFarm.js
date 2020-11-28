@@ -25,9 +25,10 @@ const MilkCowsAtFarm = ( props ) => {
         let currentEnergy = props.energy;
         currentEnergy = currentEnergy - 25 * (Math.random()/(props.skills["Milking"]+1))
         props.onSetEnergy(currentEnergy);
-        props.onAddSkills("Milking",Math.random() * 5);
+        props.onAddSkills("Milking",Math.random() * 2);
         props.onAddItem("farmCowMilkBottle",1);
-        props.onPushFlag("FindBraceletAfteRMilkingCows")
+        props.onPushFlag("FindBraceletAfteRMilkingCows");
+        props.onSpliceFlag("LACBRAQInterceptSandy");
     }
 
     let GenericCowMilk = () => {
@@ -45,10 +46,11 @@ const MilkCowsAtFarm = ( props ) => {
         const LACBRAQInterceptSandy = () =>{
             props.onAddMinutes(10); 
             props.onPushFlag("LACBRAQInterceptSandy");
+            props.onSpliceFlag("LacBraQSandyInFarm");
             props.onChangeRelationship("Sandy",2);
         }
 
-        props.onSpliceFlag("LacBraQSandyInFarm");
+        
 
         if(props.flags.includes("MET_SANDY")){
             return(
@@ -120,8 +122,6 @@ const MilkCowsAtFarm = ( props ) => {
 
         
     } else if(props.flags.includes("LACBRAQInterceptSandy")){
-        props.onSpliceFlag("LACBRAQInterceptSandy");
-
         
 
         return(
@@ -158,16 +158,18 @@ const MilkCowsAtFarm = ( props ) => {
     }
     
     else if(props.flags.includes("FindBraceletAfteRMilkingCows")){
-        props.onSpliceFlag("FindBraceletAfteRMilkingCows");
+        
 
         let LACBRAQWearBracelet = ()=>{
             props.onAddItem("LacBracelet",1)
             props.onPushFlag("WearingLacBracelet")
+            props.onSpliceFlag("FindBraceletAfteRMilkingCows");
         }
 
         let LACBRAQTakeBracelet = ()=>{
             props.onAddItem("LacBracelet",1);
             props.onPushFlag("TakeButNoWearBracelet");
+            props.onSpliceFlag("FindBraceletAfteRMilkingCows");
         }
 
 
@@ -204,6 +206,23 @@ const MilkCowsAtFarm = ( props ) => {
         </>
         )
 
+    } else if(props.flags.includes("NO_MORE_ENERGY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {FarmCowLyingDown}>            
+            </Col2>
+    
+            <Col3 > 
+                    <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary">You have no more energy, lets go home</button>
+                    </Link>
+            
+            </Col3>
+            </>
+            )
     }
     
     
@@ -214,9 +233,6 @@ const MilkCowsAtFarm = ( props ) => {
         <>
         <Col1>
             <SetCol1
-                money = {props.money}
-                energy = {props.energy}
-                date = {props.date}
             />
         </Col1>
         <Col2 BackImage = {FarmCowLyingDown}>            

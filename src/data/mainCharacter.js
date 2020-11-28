@@ -42,7 +42,9 @@ const mainCharacter = {
         Sandy:{
             mind: 11,
             physical: 13
-        }
+        },
+
+        stateHistory: []
 
     }
 }

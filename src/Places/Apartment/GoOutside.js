@@ -33,6 +33,11 @@ const GoOutside = ( props ) => {
     let characterImageHeight = "400px";
     let nakedCharacterImageHeight = "440px";
     let AmyCharacterImageHeight = "430px";
+  if(window.screen.width < 420){
+    let characterImageHeight = "200px";
+    let nakedCharacterImageHeight = "200px";
+    let AmyCharacterImageHeight = "200px";
+  }
 
   //The base image
   var SandyImage = anri_emily_white_dress_transparent;

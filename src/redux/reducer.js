@@ -101,8 +101,10 @@ const reducer = (state = mainCharacter, action) =>{
                 newStatusSplice.splice(newStatusSplice.indexOf(action.statusToRemove),1); //Before i just had this. I hope it works
             }
             return{
-                ...state,
-                status : newStatusSplice
+                fullState: {
+                    ...state.fullState,
+                    status : newStatusSplice
+                }
             }
         
         
@@ -112,14 +114,18 @@ const reducer = (state = mainCharacter, action) =>{
                 newStateFlagSplice.splice(newStateFlagSplice.indexOf(action.flagToRemove),1); //Before i just had this. I hope it works
             }
             return{
-                ...state,
-                flags: newStateFlagSplice
+                fullState: {
+                    ...state.fullState,
+                    flags: newStateFlagSplice
+                }
             }
         
         case actionTypes.ADD_CHEST:
             return{
-                ...state,
-                chest: state.fullState.chest += action.chestToAdd
+                fullState: {
+                    ...state.fullState,
+                    chest: state.fullState.chest += action.chestToAdd
+                }
             }
         
         case actionTypes.ADD_HEIGHT:
@@ -129,24 +135,30 @@ const reducer = (state = mainCharacter, action) =>{
             }         
         case actionTypes.ADD_BELLY:
             return{
-                ...state,
-                belly: state.fullState.belly += action.bellyToAdd
+                fullState: {
+                    ...state.fullState,
+                    belly: state.fullState.belly += action.bellyToAdd
+                }
             }                
                 
         case actionTypes.ADD_ITEMS:
             let newItems = state.fullState.items
             newItems[action.itemToAdd] = newItems[action.itemToAdd] += action.itemAmmountToAdd;
             return{
-                ...state,
-                items:newItems
+                fullState: {
+                    ...state.fullState,
+                    items:newItems
+                }
             }            
 
         case actionTypes.SET_HOUR: 
             const newDateHour = state.fullState.date;
             newDateHour.setHours(action.hourToSet);
             return{
-                ...state,
-                date :  newDateHour
+                fullState: {
+                    ...state.fullState,
+                    date :  newDateHour
+                }
             }            
 
         case actionTypes.ADD_ENERGY:
@@ -170,8 +182,10 @@ const reducer = (state = mainCharacter, action) =>{
             //Weird small bug. The minutes you pass get set twice. So Imma just divide by 2. If I remove strict mode, this does not happen
             
             return{
-                ...state,
-                date :  newDateToSet
+                fullState: {
+                    ...state.fullState,
+                    date :  newDateToSet
+                }
             }
         
         case actionTypes.SET_STATE:
@@ -183,29 +197,53 @@ const reducer = (state = mainCharacter, action) =>{
         
         case actionTypes.SET_CURRENT_LINK:
             return{
-                ...state,
-                currentLink: action.linkToSet
+                fullState: {
+                    ...state.fullState,
+                    currentLink: action.linkToSet
+                }
             }
         
             case actionTypes.ADD_ATTRACTIVENESS:
             return{
-                ...state,
-                attractiveness: state.fullState.attractiveness + action.attractivenessToAdd
+                fullState: {
+                    ...state.fullState,
+                    attractiveness: state.fullState.attractiveness + action.attractivenessToAdd
+                }
             }
         
         case actionTypes.SET_ITEMS:
             let setItems = state.fullState.items
             setItems[action.itemToSet] = action.newItemAmmount;
             return{
-                ...state,
-                items:setItems
+                fullState: {
+                    ...state.fullState,
+                    items:setItems
+                }
             }            
         
         case actionTypes.ADD_MONEY:
             return{
-                ...state,
-                money: state.fullState.money + action.moneyToAdd
+                fullState: {
+                    ...state.fullState,
+                    money: state.fullState.money + action.moneyToAdd
+                }
             }
+        
+        case actionTypes.PUSH_STATE_HISTORY:
+            let newHistory = state.fullState.stateHistory;
+            newHistory.push(action.historyToPush);    
+            if(newHistory.length > 5){
+                newHistory.shift();
+            }
+            return{
+                fullState:{
+                    ...state.fullState,
+                    stateHistory: newHistory
+
+                }
+            }
+            
+
 
         default:
             return state;

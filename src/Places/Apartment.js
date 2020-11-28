@@ -16,6 +16,10 @@ import SleepAtHome from "./Apartment/SleepAtHome"
 import SandyApartment from './Apartment/SandyApartment';
 import AmyApartment from "./Apartment/AmyApartment";
 
+import Barn from "./Farm/TheBarn";
+import MilkCowsAtFarm from "./Farm/MilkCowsAtFarm";
+import TheFarmStore from "./Farm/TheFarmStore";
+
 //Images
 
 const Apartment = ( props ) => {
@@ -109,12 +113,6 @@ const Apartment = ( props ) => {
       )
     }
 
-    let GoToFarm = () =>{
-      return(
-        <App></App>
-      )
-    }
-
     let SleepAtHomeSwitch = () =>{
       return( 
         <SleepAtHome
@@ -187,6 +185,88 @@ const Apartment = ( props ) => {
       )
     }
 
+    /////////////FARM:
+
+
+    let TheBarnSwitch = () =>{
+      return (
+          <>
+          <Barn
+          money = {props.money}
+          energy = {props.energy}
+          date = {props.date}
+          onAddMinutes = {props.onAddMinutes}
+          onSpliceFlag = {props.onSpliceFlag}
+          onPushFlag = {props.onPushFlag}
+          onSetHour = {props.onSetHour}
+          flags = {props.flags}
+          name = {props.name}
+          onAddItem = {props.onAddItem}
+          onAddAttractiveness = {props.onAddAttractiveness}
+          attractiveness = {props.attractiveness}
+          onChangeRelationship = {props.onChangeRelationship}
+          ></Barn>
+          </>
+        ); 
+    }
+
+    let MilkCowsAtFarmSwitch = () =>{
+      return (
+          <>
+          <MilkCowsAtFarm
+          money = {props.money}
+          energy = {props.energy}
+          date = {props.date}
+          onAddMinutes = {props.onAddMinutes}
+          onSpliceFlag = {props.onSpliceFlag}
+          onPushFlag = {props.onPushFlag}
+          onSetHour = {props.onSetHour}
+          flags = {props.flags}
+          name = {props.name}
+          onAddItem = {props.onAddItem}
+          onAddSkills = {props.onAddSkills}
+          onChangeRelationship = {props.onChangeRelationship}
+          skills = {props.skills}
+          onAddEnergy = {props.onAddEnergy}
+          onSetEnergy = {props.onSetEnergy}
+          ></MilkCowsAtFarm>
+          </>
+        ); 
+    }      
+
+    let ApartementSwitchToSleepAtHome = () =>{
+      return(
+          <Apartment
+          
+          
+          />
+      )
+    }
+
+    let TheFarmStoreSwitch = () =>{
+      return (
+          <>
+          <TheFarmStore
+          money = {props.money}
+          energy = {props.energy}
+          date = {props.date}
+          onAddMinutes = {props.onAddMinutes}
+          onSpliceFlag = {props.onSpliceFlag}
+          onPushFlag = {props.onPushFlag}
+          onSetHour = {props.onSetHour}
+          flags = {props.flags}
+          name = {props.name}
+          onAddItem = {props.onAddItem}
+          onAddSkills = {props.onAddSkills}
+          onChangeRelationship = {props.onChangeRelationship}
+          skills = {props.skills}
+          onAddEnergy = {props.onAddEnergy}
+          onSetEnergy = {props.onSetEnergy}
+          ></TheFarmStore>
+          </>
+        ); 
+    }  
+
     return(
 
         <Router>
@@ -202,10 +282,11 @@ const Apartment = ( props ) => {
                 <Route exact path="/LacBraQAmyMovingIn" component={LacBraQAmyMovingInSwitch} />
                 
                 <Route exact path="/GameMap" component={GoToAppJs} />
-                <Route exact path="/Farm" component={GoToFarm} />
-                <Route exact path="/TheBarn" component={GoToFarm} />
-                <Route exact path="/TheFarmStore" component={GoToFarm} />
-                <Route exact path="/MilkCowsAtFarm" component={GoToFarm} />
+
+                <Route exact path="/TheBarn" component={TheBarnSwitch} />
+                <Route exact path="/TheFarmStore" component={TheFarmStoreSwitch} />
+                <Route exact path="/MilkCowsAtFarm" component={MilkCowsAtFarmSwitch} />
+                <Route exact path="/SleepAtHome" component={ApartementSwitchToSleepAtHome} />
 
                 <Route exact path="/SandyApartment" component={GoToSandyApartment} />
                 <Route exact path="/AmyApartment" component={GoToAmyApartment} />

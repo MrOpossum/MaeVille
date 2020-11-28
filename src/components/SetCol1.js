@@ -1,59 +1,51 @@
 import React from 'react';
 import {connect} from "react-redux";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-
-import currentState from '../data/mainCharacter';
 
 import * as actionTypes from "../redux/actions";
 
 var fileDownload = require('js-file-download');
 
+var currentFlags = [];
+
 const SetCol1 = (props) => {
 
-    const [open, setOpen] = React.useState(true);
+    const [randomNumber, setRandomNumber] = React.useState(Math.random())
+
+
     //Checking energy
     if(props.energy < 0 && !props.flags.includes("NO_MORE_ENERGY")){
       if(!props.flags.includes("NO_MORE_ENERGY")){
         props.onPushFlag("NO_MORE_ENERGY");  
       } 
+    }
 
+      let quickSave = () =>{
+        let newCurrentLink = window.location.pathname;
+        props.onSetLink(newCurrentLink);
+        let currentFlagObject = {...props.currentFullState.flags};
+        let currentFlags = Object.values(currentFlagObject);
+        let myFullState = {
+          fullState: {
+            ...props.currentFullState,
+            stateHistory: []
+          }
+        }  
+        myFullState.fullState.flags = currentFlags;
+        props.onPushHistory(myFullState);
+
+        console.log(props.stateHistory);
+      }
+
+      let quickLoad = ()=>{
+        console.log("loaded state: ", props.stateHistory);
+        props.onSetState(props.stateHistory[props.stateHistory.length - 1]);
+        setRandomNumber(Math.random());
+      }
+        
       
 
-      const handleClose = () => {
-        setOpen(false);
-      };
-      return(
-        <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
-        <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        >
-        <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-           You are out of energy
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-        
-          <button type="button" className="btn btn-primary" onClick = {handleClose}>Go home to sleep</button>
-          
-        </DialogActions>
-      </Dialog>
-      </Link>
-      ) 
-    } 
-    
-    else{
 
       let downloadCharacterdata = () =>{
         //Change link here
@@ -68,15 +60,20 @@ const SetCol1 = (props) => {
         console.log(myCharacterFromJSON);
         fileDownload(myCharacterJSON, 'myCharacter.json');
       }
+
       return(
         <>
-        <p> Energy: {props.energy.toFixed(1)}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   {props.date.toString().slice(0,21)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Cash: ${props.money}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <Button color="secondary" style = {{marginLeft:"-10px"}} onClick = {downloadCharacterdata}>Save</Button>
+        <p> Energy: {props.energy.toFixed(1)}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   {props.date.toString().slice(0,21)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Cash: ${props.money}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          <Button color="secondary" style = {{marginLeft:"-10px"}} onClick = {downloadCharacterdata}>Save</Button>&nbsp;&nbsp;&nbsp;&nbsp; 
+          <Button color="primary" style = {{marginLeft:"-10px"}} onClick = {quickSave}>quick save</Button>&nbsp;&nbsp;&nbsp;&nbsp; 
+          
+          <Link to={props.currentLink} style={{ textDecoration: "none" }}>
+            <Button color="secondary" style = {{marginLeft:"-10px"}} onClick = {quickLoad} disabled = {props.stateHistory.length === 0} >Quick load</Button>
+          </Link>
         
         </p>
         </>
       )
-    }
 
     
   }
@@ -103,6 +100,7 @@ const mapStateToProps = state =>{
     relations: state.fullState.relations,
     currentLink: state.fullState.currentLink,
     currentFullState : state.fullState,
+    stateHistory : state.fullState.stateHistory
   };
 }
 
@@ -126,7 +124,9 @@ const mapDispatchToProps = dispatch =>{
     onSetHour: (_hourToSet) => dispatch({type:actionTypes.SET_HOUR,hourToSet: _hourToSet}),
     onAddEnergy: (_EnergyToAdd) => dispatch({type:actionTypes.ADD_ENERGY, energyToAdd: _EnergyToAdd}),
     onSetEnergy: (_EnergyToSet) => dispatch({type:actionTypes.SET_ENERGY, energyToSet: _EnergyToSet}),
-    onSetLink: (_linkToSet) => dispatch({type:actionTypes.SET_CURRENT_LINK, linkToSet: _linkToSet})
+    onSetLink: (_linkToSet) => dispatch({type:actionTypes.SET_CURRENT_LINK, linkToSet: _linkToSet}),
+    onPushHistory: (_historyToPush) => dispatch({type:actionTypes.PUSH_STATE_HISTORY, historyToPush: _historyToPush}),
+    onSetState: (_stateToSet) => dispatch({type:actionTypes.SET_STATE, stateToSet: _stateToSet}),
 
 
     

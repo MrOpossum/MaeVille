@@ -14,11 +14,11 @@ import CityMap from "../Images/Map/sageort.png"
 const GameMap = ( props ) => {
 
     const goToFarmClick = () =>{
-        props.onAddMinutes(30)
+        props.onAddMinutes(30);
     }
 
     const goToHomeClick = () =>{
-        props.onAddMinutes(20)
+        props.onAddMinutes(20);
     }
         return(
             <>
@@ -42,7 +42,7 @@ const GameMap = ( props ) => {
                 <Link to={"/Apartment"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {goToHomeClick}>Home</button>
                 </Link>
-                <Link to={"/Farm"} style={{ textDecoration: "none" }}>
+                <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {goToFarmClick}>Farm</button>
                 </Link>
                 <Link to={"/Store"} style={{ textDecoration: "none", display: "none" }}>

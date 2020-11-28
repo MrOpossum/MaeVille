@@ -13,7 +13,13 @@ import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Fla
 import P_g_whiteTop_frontView_Transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_whiteTop_frontView_Transparent.png";
 
 let characterImageHeight = "400px";
-let characterImageHeightAmy = "500px";
+    let nakedCharacterImageHeight = "440px";
+    let AmyCharacterImageHeight = "430px";
+  if(window.screen.width < 420){
+    let characterImageHeight = "200px";
+    let nakedCharacterImageHeight = "200px";
+    let AmyCharacterImageHeight = "200px";
+  }
 
 
 

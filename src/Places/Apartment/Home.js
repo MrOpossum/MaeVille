@@ -13,7 +13,13 @@ import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Fla
 
 
 let characterImageHeight = "400px";
-let characterImageHeightAmy = "500px";
+    let nakedCharacterImageHeight = "440px";
+    let AmyCharacterImageHeight = "430px";
+  if(window.screen.width < 420){
+    let characterImageHeight = "200px";
+    let nakedCharacterImageHeight = "200px";
+    let AmyCharacterImageHeight = "200px";
+  }
 
 const Home = ( props ) => {
 

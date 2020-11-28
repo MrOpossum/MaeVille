@@ -84,6 +84,8 @@ const App = ( props ) => {
       mind = {props.mind}
       Sandy = {props.Sandy}
       physical = {props.physical}
+      skills = {props.skills}
+      onAddSkills = {props.onAddSkills}
       ></Apartment>
     )
   }
@@ -103,30 +105,6 @@ const App = ( props ) => {
     );
   };    
 
-  let FarmSwitch = () => {
-    return(
-      <Farm
-      money = {props.money}
-      energy = {props.energy}
-      date = {props.date}
-      onAddMinutes = {props.onAddMinutes}
-      onSpliceFlag = {props.onSpliceFlag}
-      onPushFlag = {props.onPushFlag}
-      onSetHour = {props.onSetHour}
-      flags = {props.flags}
-      onChangeRelationship = {props.onChangeRelationship}
-      name = {props.myName}
-      onAddItem = {props.onAddItem}
-      onAddSkills = {props.onAddSkills}
-      skills = {props.skills}
-      onAddEnergy = {props.onAddEnergy}
-      onSetEnergy = {props.onSetEnergy}
-      onAddAttractiveness = {props.onAddAttractiveness}
-      attractiveness = {props.attractiveness}
-      ></Farm>
-    )
-  }  
-
   
   return( 
     <Router>
@@ -143,11 +121,6 @@ const App = ( props ) => {
           Thing is, that I am indeed writing the function separate. Get good with this routing stuff.
           */}
           <Route exact path="/GameMap" component={GameMapSwitch} />
-          
-          <Route exact path="/Farm" component={FarmSwitch} />
-          <Route exact path="/TheBarn" component={FarmSwitch} />
-          <Route exact path="/TheFarmStore" component={FarmSwitch} />
-          <Route exact path="/MilkCowsAtFarm" component={FarmSwitch} />
               
           
           <Redirect to="/Maeville" />
@@ -208,6 +181,8 @@ const mapDispatchToProps = dispatch =>{
     onAddAttractiveness: (_attractivenessToAdd) => dispatch({type:actionTypes.ADD_ATTRACTIVENESS, attractivenessToAdd : _attractivenessToAdd}),
     onSetItem: (_itemToSet, _newItemAmmount) => dispatch({type: actionTypes.SET_ITEMS, itemToSet: _itemToSet, newItemAmmount: _newItemAmmount}),
     onAddMoney: (_moneyToAdd) => dispatch({type:actionTypes.ADD_MONEY, moneyToAdd: _moneyToAdd}),
+    onAddSkills: (_skillToAdd, _skillAmmountToAdd) => dispatch({type:actionTypes.ADD_SKILLS, skillToAdd: _skillToAdd, skillAmmountToAdd: _skillAmmountToAdd}),
+
 
     
   }

@@ -55,9 +55,15 @@ const AmyApartment = (props) => {
     return num;
 }
   
-  let characterImageHeight = "400px";
-  let nakedCharacterImageHeight = "440px";
-  let AmyCharacterImageHeight = "430px";
+    var characterImageHeight = "400px";
+    var nakedCharacterImageHeight = "440px";
+    var AmyCharacterImageHeight = "430px";
+  if(window.screen.width < 300){
+    characterImageHeight   = "200px";
+    nakedCharacterImageHeight = "200px";
+    AmyCharacterImageHeight = "200px";
+  }
+  
 
   //The base image
   var SandyImage = anri_emily_white_dress_transparent;
