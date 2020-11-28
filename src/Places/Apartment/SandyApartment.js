@@ -608,7 +608,7 @@ const SandyApartment = ( props ) => {
                 <SetCol1/>
             </Col1>
             <Col2 BackImage={" "} rowHeight={" "}>
-            <video autoPlay loop style={{ maxWidth: "100%" }}>
+            <video autoPlay loop style={{ Width: "100%", height:"100%" }}>
                 <source src={LACBRAQ_LesbianWrestling_2} type="video/mp4" />
             </video>
             </Col2>      

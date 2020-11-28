@@ -132,7 +132,7 @@ const App = ( props ) => {
     <Router>
       <div>
       <Switch>
-          <Route exact path="/Beginning" component={BeginningSwitch} />
+          <Route exact path="/Maeville" component={BeginningSwitch} />
           <Route exact path="/_0_Start" component={_0_StartSwitch} />
           <Route exact path="/_1_Inspect" component={_1_InspectSwitch} />
           <Route exact path="/_1_Ignore" component={_1_IgnoreSwitch} />
@@ -150,7 +150,7 @@ const App = ( props ) => {
           <Route exact path="/MilkCowsAtFarm" component={FarmSwitch} />
               
           
-          <Redirect to="/Beginning" />
+          <Redirect to="/Maeville" />
         </Switch>
       </div>
     </Router>
