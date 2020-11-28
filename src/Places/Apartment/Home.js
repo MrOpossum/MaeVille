@@ -38,6 +38,11 @@ const Home = ( props ) => {
         props.onSetEnergy(100);
     }
 
+    const goToInventory = () => {
+        props.onAddMinutes(10);
+        props.onPushFlag("OpenInventoryAtHome")
+    }
+
     const goToTransformationHistory = () =>{
         props.onAddMinutes(10);
     }
@@ -275,6 +280,77 @@ const Home = ( props ) => {
             </Col3>
             </>
         );
+    } else if(props.flags.includes("OpenInventoryAtHome")){
+
+        const closeInventory = () =>{
+            props.onSpliceFlag("OpenInventoryAtHome");
+        }
+        const DrinkMilkFromInventory = () =>{
+            if(props.flags.includes("WearingLacBracelet")){
+                props.onPushFlag("DrankMilkwithLacBracelet");
+                props.onSpliceFlag("WearingLacBracelet");
+            }
+            props.onAddEnergy(5);
+            props.onAddMinutes(10);
+            if(props.energy > 100){
+                setEnergy100()
+            }
+            props.onAddItem("farmCowMilkBottle",-1);
+        }
+
+        const WearLACBraceletFromInventory = () =>{
+            props.onPushFlag("WearingLacBracelet");
+        }
+
+        const StopWearingLACBraceletFromInventory = () =>{
+            props.onSpliceFlag("WearingLacBracelet")
+        }
+
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {Bedroom}>
+                
+            </Col2>
+    
+            <Col3 > 
+                <p>
+                    Let's see what you got.
+                </p>
+    
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={closeInventory}>Close inventory</button>
+                </Link>
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={DrinkMilkFromInventory}  style={{display: 
+                        ( 
+                            (props.items.farmCowMilkBottle) ? "":"none"
+                        )}}
+                    
+                    >Drink milk</button>
+                </Link>
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={WearLACBraceletFromInventory} style={{display: 
+                        ( 
+                            (props.items.LacBracelet && !props.flags.includes("WearingLacBracelet")) ? "":"none"
+                        )
+                        }}>Wear white farm bracelet</button>
+                </Link>
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={StopWearingLACBraceletFromInventory} style={{display: 
+                        ( 
+                            (props.flags.includes("WearingLacBracelet")) ? "":"none"
+                        )}}
+                    
+                    >Stop wearing white farm bracelet</button>
+                </Link>
+                
+    
+            </Col3>
+            </>
+            )
     }
     
     
@@ -284,13 +360,7 @@ const Home = ( props ) => {
         return(
             <>
             <Col1>
-                <SetCol1
-                money = {props.money}
-                energy = {props.energy}
-                date = {props.date}
-                onAddMinutes = {props.onAddMinutes}
-                onAddEnergy = {props.onAddMinutes}
-                />
+                <SetCol1/>
             </Col1>
             <Col2 BackImage = {Bedroom}>
                 
@@ -310,7 +380,9 @@ const Home = ( props ) => {
                 <Link to={"/transformationHistory"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={goToTransformationHistory}>Transformation history</button>
                 </Link>
-                
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={goToInventory}>Inventory</button>
+                </Link>
     
             </Col3>
             </>

@@ -300,7 +300,8 @@ const GoOutside = ( props ) => {
             props.onChangeRelationship("Sandy",3);
             props.onAddMinutes(10);
             props.onPushFlag("LACBRAQGiveBraceletToSandyOutsideWearing");
-            props.onSpliceFlag("LACBRAQSandyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk")
+            props.onSpliceFlag("LACBRAQSandyWillFindYouAfterSleepingWithLacBraDidNotDrinkMilk");
+            props.onSpliceFlag("WearingLacBracelet");
         }
         let LACBRAQDontGiveBraceletToSandyOutsideWearing = () =>{
             props.onChangeRelationship("Sandy",-3);
@@ -527,7 +528,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img src={AmyImage} height={AmyCharacterImageHeight}></img>
+                    <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
                 </Col2>
     
                 <Col3 > 
@@ -566,7 +567,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img src={AmyImage} height={AmyCharacterImageHeight}></img>
+                    <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
                 </Col2>
     
                 <Col3 > 
@@ -602,7 +603,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={AmyImage} height={AmyCharacterImageHeight}></img>
+                <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -631,7 +632,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={AmyImage} height={AmyCharacterImageHeight}></img>
+                <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -668,7 +669,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={AmyImage} height={AmyCharacterImageHeight}></img>
+                <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -701,7 +702,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={AmyImage} height={AmyCharacterImageHeight}></img>
+                <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -736,7 +737,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img src={SandyImage} height={characterImageHeight}></img>
+                    <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
                 </Col2>
     
                 <Col3 > 
@@ -774,7 +775,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img src={SandyImage} height={characterImageHeight}></img>
+                    <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
                 </Col2>
     
                 <Col3 > 
@@ -814,7 +815,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={SandyImage} height={characterImageHeight}></img>
+                <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -840,6 +841,126 @@ const GoOutside = ( props ) => {
         console.log("Pending: LACBRAQDidNotHelpSandyTakeBraceletBack");
         props.onSpliceFlag("LACBRAQDidNotHelpSandyTakeBraceletBack");
         props.onPushFlag("SCIENCELABQSStart");
+
+    } else if(props.flags.includes("LACBRAQSandyWillFindYouTakeNoWearBracelet")){
+        
+        let LACBRAQYouHaveNotSeenSandyBraceletLIE = () =>{ //End of quest. I need to 
+            props.onChangeRelationship("Sandy",-3);
+            props.onAddMinutes(10);
+            props.onPushFlag("SCIENCELABQSStart"); //This flag changes Home where you can wear the bracelet. Maybe add inventory. And you set yourself for science quest.
+            props.onSpliceFlag("LACBRAQSandyWillFindYouTakeNoWearBracelet");
+            props.onPushFlag("LACBRAQRefusedToGiveSandyBracelet");
+        }
+
+        let LACBRAQYouHaveSandyBracelet = () =>{
+            props.onChangeRelationship("Sandy",3);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQIhaveYourBraceletSandy");
+            props.onSpliceFlag("LACBRAQSandyWillFindYouTakeNoWearBracelet");
+        }
+
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+            </Col2>
+
+            <Col3 > 
+
+            <p>You find sandy the next day you go out of yout apartment.</p>
+            <p>Hey, did you see a white bracelet lying around anywhere? I lost it yesterday, and I have looked everywhere! I looked at the farm, I looked around here, I searched my whole apartment and I am really darn annoyed!</p>
+
+            
+                
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQYouHaveSandyBracelet}>I have your bracelet</button>
+                </Link>    
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQYouHaveNotSeenSandyBraceletLIE}>I have not seen your bracelet (lie)</button>
+                </Link>  
+            </Col3>
+            </>
+        )
+        
+    } else if(props.flags.includes("LACBRAQIhaveYourBraceletSandy")){
+        let LACBRAQGiveBraceletToSandyNotWearing = () =>{
+            props.onChangeRelationship("Sandy",3);
+            props.onAddMinutes(10);
+            props.onPushFlag("LACBRAQGiveBraceletToSandyOutsideWearing");
+            props.onSpliceFlag("LACBRAQIhaveYourBraceletSandy");
+            props.onSpliceFlag("WearingLacBracelet");
+            props.onSetItem("LacBracelet",0);
+        }
+
+        let LACBRAQDontGiveBraceletToSandyNotWearing = () =>{
+            props.onAddMinutes(10);
+            props.onChangeRelationship("Sandy",-6);
+            props.onSpliceFlag("LACBRAQIhaveYourBraceletSandy");
+            props.onPushFlag("LACBRAQRefusedToGiveSandyBraceletYouToldHerYouHadIt");
+            
+        }
+
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+            </Col2>
+
+            <Col3 > 
+
+            <p>"Really! That's amazing." She sighs... "I am so relieved, you have no idea how exhausted I am... Could you hand it over??"</p>
+                
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQGiveBraceletToSandyNotWearing}>Sure</button>
+                </Link>    
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQDontGiveBraceletToSandyNotWearing}>It's mine now...</button>
+                </Link>  
+            </Col3>
+            </>
+        )
+    } else if (props.flags.includes("LACBRAQRefusedToGiveSandyBraceletYouToldHerYouHadIt")){
+        let LACBRAQEndLeaveNotGivingSandyBracelet = () =>{
+            props.onAddMinutes(10);
+            props.onChangeRelationship("Sandy",-3);
+            props.onSpliceFlag("LACBRAQRefusedToGiveSandyBraceletYouToldHerYouHadIt");
+            props.onPushFlag("LACBRAQFinsish");
+            props.onPushFlag("SCIENCELABQSStart");
+        }
+
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+            </Col2>
+
+            <Col3 > 
+
+            <p>"Really! That's amazing." She sighs... "I am so relieved, you have no idea how exhausted I am... Could you hand it over??"</p>
+                
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQEndLeaveNotGivingSandyBracelet}>Leave</button>
+                </Link>    
+            </Col3>
+            </>
+        )
+    } else if(props.flags.includes("SCIENCELABQSStart")){
+        
     }
     
     

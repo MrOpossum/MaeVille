@@ -258,8 +258,37 @@ const SleepAtHome = (props) => {
           </Col3>
         </>
       );
-    
-  
+  } else if(props.flags.includes("TakeButNoWearBracelet")){
+    let LACBRAQSandyWillFindYouTakeNoWearBracelet = () =>{
+      props.onAddMinutes(10);
+      props.onPushFlag("LACBRAQSandyWillFindYouTakeNoWearBracelet");
+      props.onSpliceFlag("TakeButNoWearBracelet");
+    }
+
+
+    return(
+        <>
+        <Col1>
+            <SetCol1
+            />
+        </Col1>
+        <Col2 BackImage={Bedroom}></Col2>
+
+        <Col3>
+          <p>What a nice night</p>
+
+          <Link to={"/Home"} style={{ textDecoration: "none" }}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={LACBRAQSandyWillFindYouTakeNoWearBracelet}
+            >
+              Start day
+            </button>
+          </Link>
+        </Col3>
+        </>
+    )
   }
   
   else {
