@@ -167,6 +167,7 @@ const MilkCowsAtFarm = ( props ) => {
 
         let LACBRAQTakeBracelet = ()=>{
             props.onAddItem("LacBracelet",1);
+            props.onPushFlag("TakeButNoWearBracelet");
         }
 
 

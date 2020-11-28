@@ -131,14 +131,19 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.ADD_ENERGY:
             return{
-                ...state,
-                energy: state.fullState.energy += action.energyToAdd
+                fullState: {
+                    ...state.fullState,
+                    date :  newDate,
+                    energy: state.fullState.energy += action.energyToAdd
+                }
             }
 
         case actionTypes.SET_ENERGY:
             return{
-                ...state,
-                energy: action.energyToSet
+                fullState: {
+                    ...state.fullState,
+                    energy: action.energyToSet
+                }
             }            
 
         case actionTypes.SET_DATE:

@@ -278,6 +278,7 @@ const AmyApartment = (props) => {
     let GoHomeAfterAmySendsYouHome = () => {
         props.onSpliceFlag("LACBRAQAmyAndSandyDrainedYouNowYouLeave");
         props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+        props.onPushFlag("MagicDiscovered");
         props.onAddMinutes(10);
         props.onAddItem("LacBracelet",-1);
         props.onSpliceFlag("WearingLacBracelet");
@@ -499,6 +500,7 @@ const AmyApartment = (props) => {
       props.onAddMinutes(10);
       props.onSpliceFlag("LACBRAQGoIntoAmyApartmentSheDidNotResist_4");
       props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+      props.onPushFlag("MagicDiscovered");
       props.onSetItem("LacBracelet",0);
       props.onSpliceFlag("WearingLacBracelet");
       props.onPushFlag("LACBRAQFinished");
@@ -958,6 +960,7 @@ const AmyApartment = (props) => {
       props.onAddMinutes(60);
       props.onSpliceFlag("LACBRAQDidDistractAmyLeave");
       props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+      props.onPushFlag("MagicDiscovered");
       props.onSetItem("LacBracelet",0);
       props.onSpliceFlag("WearingLacBracelet");
       props.onPushFlag("LACBRAQFinished");
@@ -1033,6 +1036,7 @@ const AmyApartment = (props) => {
       props.onAddMinutes(10);
       props.onSpliceFlag("LACBRAQAmyTellsYouGoToHerApmtAfter");
       props.onPushFlag("AmyTeachesMagicQuestInHerApartmentPart_1");
+      props.onPushFlag("MagicDiscovered");
     }
 
 
@@ -1152,6 +1156,7 @@ const AmyApartment = (props) => {
       props.onAddMinutes(10);
       props.onSpliceFlag("LACBRAQWonfightAgainstAmy");
       props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+      props.onPushFlag("MagicDiscovered");
       props.onSetItem("LacBracelet",0);
       props.onSpliceFlag("WearingLacBracelet");
       props.onPushFlag("LACBRAQFinished");

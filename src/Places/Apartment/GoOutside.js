@@ -811,6 +811,7 @@ const GoOutside = ( props ) => {
     else if(props.flags.includes("LACBRAQDidNotHelpSandyTakeBraceletBack")){
         console.log("Pending: LACBRAQDidNotHelpSandyTakeBraceletBack");
         props.onSpliceFlag("LACBRAQDidNotHelpSandyTakeBraceletBack");
+        props.onPushFlag("SCIENCELABQSStart");
     }
     
     

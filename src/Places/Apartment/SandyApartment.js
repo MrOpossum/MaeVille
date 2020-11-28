@@ -149,6 +149,7 @@ const SandyApartment = ( props ) => {
                 props.onSpliceFlag("LACBRAQSandySawYouSheHadNoIdea_4");
             }
             props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+            props.onPushFlag("MagicDiscovered");
             props.onChangeRelationship("Sandy",3);
             props.onAddMinutes(10);
             props.onAddItem("LacBracelet",-1);
@@ -349,6 +350,7 @@ const SandyApartment = ( props ) => {
     } else if(props.flags.includes("LACBRAQSandyExplainsMagicAfterDrainingYou")){
         let GoHomeAfterSandyForceDrainedYouEndOfLACBRAQ = () =>{
             props.onSpliceFlag("LACBRAQSandyExplainsMagicAfterDrainingYou");
+            props.onPushFlag("MagicDiscovered");
             props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
             props.onAddMinutes(10);
             props.onAddItem("LacBracelet",-1);

@@ -156,6 +156,7 @@ const Home = ( props ) => {
             props.onSpliceFlag("LACBRAQGoHomeWithSandyNoMilkDrink");
             props.onChangeRelationship("Sandy",1);
             props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+            props.onPushFlag("MagicDiscovered");
         }
         
 
@@ -192,6 +193,7 @@ const Home = ( props ) => {
             props.onSpliceFlag("LACBRAQGoHomeWithSandyMilkDrink");
             props.onChangeRelationship("Sandy",1);
             props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+            props.onPushFlag("MagicDiscovered");
         }
         
 
