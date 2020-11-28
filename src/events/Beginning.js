@@ -53,6 +53,8 @@ const Beginning = ( props ) => {
                     <button type="button" className="btn btn-primary" disabled = {disabledContinueButton}
                     onClick = {logTheFlags}>Continue from save file</button>
                 </Link>
+
+                <p>If you like the game, feel free to check my <a href ="https://www.patreon.com/user?u=45785741&fan_landing=true">Patreon</a> The games latest updates, cheats and plans are there!</p>
             </Col2>
 
             <Col3 BackImage = {madrid} > 

@@ -175,6 +175,11 @@ const Apartment = ( props ) => {
           items ={props.items}
           name = {props.name}
           onChangeRelationship = {props.onChangeRelationship}
+          Amy = {props.Amy}
+          mind = {props.mind}
+          onSetItem = {props.onSetItem}
+          Sandy = {props.Sandy}
+          physical = {props.physical}
           >
 
 

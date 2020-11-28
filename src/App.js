@@ -80,6 +80,10 @@ const App = ( props ) => {
       items = {props.items}
       onSetItem = {props.onSetItem}
       onAddMoney = {props.onAddMoney}
+      Amy = {props.Amy}
+      mind = {props.mind}
+      Sandy = {props.Sandy}
+      physical = {props.physical}
       ></Apartment>
     )
   }
@@ -156,25 +160,27 @@ const App = ( props ) => {
 
 const mapStateToProps = state =>{
   return{
-    myName: state.name,
-    date: state.date,
-    lust: state.lust,
-    skills: state.skills,
-    physical: state.physical,
-    mind: state.mind,
-    attractiveness: state.attractiveness,
-    pronoun : state.pronoun,
-    energy: state.energy,
-    chest: state.chest,
-    belly: state.belly,
-    height: state.height,
-    status: state.status,
-    environmentStatus: state.environmentStatus,
-    items: state.items,
-    money: state.money,
-    flags: state.flags,
-    relations: state.relations,
-    currentLink: state.currentLink
+    myName: state.fullState.name,
+    date: state.fullState.date,
+    lust: state.fullState.lust,
+    skills: state.fullState.skills,
+    physical: state.fullState.physical,
+    mind: state.fullState.mind,
+    attractiveness: state.fullState.attractiveness,
+    pronoun : state.fullState.pronoun,
+    energy: state.fullState.energy,
+    chest: state.fullState.chest,
+    belly: state.fullState.belly,
+    height: state.fullState.height,
+    status: state.fullState.status,
+    environmentStatus: state.fullState.environmentStatus,
+    items: state.fullState.items,
+    money: state.fullState.money,
+    flags: state.fullState.flags,
+    relations: state.fullState.relations,
+    currentLink: state.fullState.currentLink,
+    Amy: state.fullState.Amy,
+    Sandy: state.fullState.Sandy,
   };
 }
 

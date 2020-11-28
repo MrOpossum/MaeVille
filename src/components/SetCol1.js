@@ -60,9 +60,12 @@ const SetCol1 = (props) => {
         let newCurrentLink = window.location.pathname;
         props.onSetLink(newCurrentLink);
         console.log(newCurrentLink);
-        var myCharacterJSON = JSON.stringify(currentState);
+        let myFullState = {
+          fullState: props.currentFullState
+        }
+        var myCharacterJSON = JSON.stringify(myFullState);
         var myCharacterFromJSON = JSON.parse(myCharacterJSON);
-        console.log(myCharacterFromJSON)
+        console.log(myCharacterFromJSON);
         fileDownload(myCharacterJSON, 'myCharacter.json');
       }
       return(
@@ -80,25 +83,26 @@ const SetCol1 = (props) => {
 
 const mapStateToProps = state =>{
   return{
-    myName: state.name,
-    date: state.date,
-    lust: state.lust,
-    skills: state.skills,
-    physical: state.physical,
-    mind: state.mind,
-    attractiveness: state.attractiveness,
-    pronoun : state.pronoun,
-    energy: state.energy,
-    chest: state.chest,
-    belly: state.belly,
-    height: state.height,
-    status: state.status,
-    environmentStatus: state.environmentStatus,
-    items: state.items,
-    money: state.money,
-    flags: state.flags,
-    relations: state.relations,
-    currentLink: state.currentLink
+    myName: state.fullState.name,
+    date: state.fullState.date,
+    lust: state.fullState.lust,
+    skills: state.fullState.skills,
+    physical: state.fullState.physical,
+    mind: state.fullState.mind,
+    attractiveness: state.fullState.attractiveness,
+    pronoun : state.fullState.pronoun,
+    energy: state.fullState.energy,
+    chest: state.fullState.chest,
+    belly: state.fullState.belly,
+    height: state.fullState.height,
+    status: state.fullState.status,
+    environmentStatus: state.fullState.environmentStatus,
+    items: state.fullState.items,
+    money: state.fullState.money,
+    flags: state.fullState.flags,
+    relations: state.fullState.relations,
+    currentLink: state.fullState.currentLink,
+    currentFullState : state.fullState,
   };
 }
 

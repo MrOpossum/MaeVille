@@ -193,7 +193,7 @@ const SleepAtHome = (props) => {
           <SetCol1 />
         </Col1>
         <Col2 BackImage={" "} rowHeight={" "}>
-          <video autoPlay muted loop style={{ maxWidth: "100%" }}>
+          <video autoPlay loop style ={{width: "100%", height: "100%"}} controls>
             <source src={MainCharBELacBraceletAndMilkEnd} type="video/mp4" />
           </video>
         </Col2>
@@ -290,24 +290,24 @@ const SleepAtHome = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    myName: state.name,
-    date: state.date,
-    lust: state.lust,
-    skills: state.skills,
-    physical: state.physical,
-    mind: state.mind,
-    attractiveness: state.attractiveness,
-    pronoun: state.pronoun,
-    energy: state.energy,
-    chest: state.chest,
-    belly: state.belly,
-    height: state.height,
-    status: state.status,
-    environmentStatus: state.environmentStatus,
-    items: state.items,
-    money: state.money,
-    flags: state.flags,
-    relations: state.relations,
+    myName: state.fullState.name,
+    date: state.fullState.date,
+    lust: state.fullState.lust,
+    skills: state.fullState.skills,
+    physical: state.fullState.physical,
+    mind: state.fullState.mind,
+    attractiveness: state.fullState.attractiveness,
+    pronoun: state.fullState.pronoun,
+    energy: state.fullState.energy,
+    chest: state.fullState.chest,
+    belly: state.fullState.belly,
+    height: state.fullState.height,
+    status: state.fullState.status,
+    environmentStatus: state.fullState.environmentStatus,
+    items: state.fullState.items,
+    money: state.fullState.money,
+    flags: state.fullState.flags,
+    relations: state.fullState.relations,
   };
 };
 

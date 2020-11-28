@@ -1,4 +1,4 @@
-import mainCharacter from "../data/mainCharacter"
+import mainCharacter from "../data/mainCharacter";
 import * as actionTypes from "./actions";
 //A reducer is a function
 const reducer = (state = mainCharacter, action) =>{
@@ -9,24 +9,27 @@ const reducer = (state = mainCharacter, action) =>{
                 name : action.newName
             }
         case actionTypes.ADD_MINUTES: 
-            const newDate = state.date;
+            const newDate = new Date(state.fullState.date);
             const currentMinutes = newDate.getMinutes();
             //Weird small bug. The minutes you pass get set twice. So Imma just divide by 2. If I remove strict mode, this does not happen
             newDate.setMinutes(currentMinutes + action.minutesToAdd);
             
             return{
-                ...state,
-                date :  newDate,
-                energy: state.energy - Math.ceil(action.minutesToAdd * .075)
+                fullState: {
+                    ...state.fullState,
+                    date :  newDate,
+                    energy: state.fullState.energy - Math.ceil(action.minutesToAdd * .075)
+                }
+                
             }
 
         case actionTypes.ADD_LUST:
             return{
                 ...state,
-                lust: state.lust + action.lustToAdd,
+                lust: state.fullState.lust + action.lustToAdd,
             }
         case actionTypes.SET_LUST:
-            if(state.lust > 100){
+            if(state.fullState.lust > 100){
                 return{
                     ...state,
                     lust: 100
@@ -39,7 +42,7 @@ const reducer = (state = mainCharacter, action) =>{
             }
         
         case actionTypes.ADD_SKILLS:
-            let newSkills = state.skills;
+            let newSkills = state.fullState.skills;
             newSkills[action.skillToAdd] += action.skillAmmountToAdd;
             return{
                ...state,
@@ -47,7 +50,7 @@ const reducer = (state = mainCharacter, action) =>{
             }
         
         case actionTypes.PUSH_FLAG:
-            let newFlags = state.flags;
+            let newFlags = state.fullState.flags;
             if(!newFlags.includes(action.flagToAdd)){
                 newFlags.push(action.flagToAdd)    
             }
@@ -61,11 +64,11 @@ const reducer = (state = mainCharacter, action) =>{
                 ...state,
                 relations:{
                     ...state,
-                    [action.relationPerson]: state.relations[action.relationPerson] += action.relationAmmountToAdd
+                    [action.relationPerson]: state.fullState.relations[action.relationPerson] += action.relationAmmountToAdd
                 }
             }
         case actionTypes.PUSH_STATUS:
-            let newStatusAdd = state.status;
+            let newStatusAdd = state.fullState.status;
             newStatusAdd.push(action.statusToAdd)
             return{
                 ...state,
@@ -73,8 +76,10 @@ const reducer = (state = mainCharacter, action) =>{
             }
 
         case actionTypes.SPLICE_STATUS:
-            let newStatusSplice = state.status;
-            newStatusSplice.splice(newStatusSplice.indexOf(action.statusToRemove),1);
+            let newStatusSplice = state.fullState.status;
+            if(newStatusSplice.includes(action.statusToRemove)){
+                newStatusSplice.splice(newStatusSplice.indexOf(action.statusToRemove),1); //Before i just had this. I hope it works
+            }
             return{
                 ...state,
                 status : newStatusSplice
@@ -82,7 +87,7 @@ const reducer = (state = mainCharacter, action) =>{
         
         
         case actionTypes.SPLICE_FLAG:
-            let newStateFlagSplice = state.flags;
+            let newStateFlagSplice = state.fullState.flags;
             if(newStateFlagSplice.includes(action.flagToRemove)){
                 newStateFlagSplice.splice(newStateFlagSplice.indexOf(action.flagToRemove),1); //Before i just had this. I hope it works
             }
@@ -94,22 +99,22 @@ const reducer = (state = mainCharacter, action) =>{
         case actionTypes.ADD_CHEST:
             return{
                 ...state,
-                chest: state.chest += action.chestToAdd
+                chest: state.fullState.chest += action.chestToAdd
             }
         
         case actionTypes.ADD_HEIGHT:
             return{
                 ...state,
-                height: state.height += action.heightToAdd
+                height: state.fullState.height += action.heightToAdd
             }         
         case actionTypes.ADD_BELLY:
             return{
                 ...state,
-                belly: state.belly += action.bellyToAdd
+                belly: state.fullState.belly += action.bellyToAdd
             }                
                 
         case actionTypes.ADD_ITEMS:
-            let newItems = state.items
+            let newItems = state.fullState.items
             newItems[action.itemToAdd] = newItems[action.itemToAdd] += action.itemAmmountToAdd;
             return{
                 ...state,
@@ -117,7 +122,7 @@ const reducer = (state = mainCharacter, action) =>{
             }            
 
         case actionTypes.SET_HOUR: 
-            const newDateHour = state.date;
+            const newDateHour = state.fullState.date;
             newDateHour.setHours(action.hourToSet);
             return{
                 ...state,
@@ -127,7 +132,7 @@ const reducer = (state = mainCharacter, action) =>{
         case actionTypes.ADD_ENERGY:
             return{
                 ...state,
-                energy: state.energy += action.energyToAdd
+                energy: state.fullState.energy += action.energyToAdd
             }
 
         case actionTypes.SET_ENERGY:
@@ -147,9 +152,10 @@ const reducer = (state = mainCharacter, action) =>{
         
         case actionTypes.SET_STATE:
             const newState = action.stateToSet;
-            newState["date"] = new Date(newState["date"]);
+            console.log(newState)
+            newState["fullState"].date = new Date(newState["fullState"].date);
             
-            return newState;
+            return newState
         
         case actionTypes.SET_CURRENT_LINK:
             return{
@@ -160,11 +166,11 @@ const reducer = (state = mainCharacter, action) =>{
             case actionTypes.ADD_ATTRACTIVENESS:
             return{
                 ...state,
-                attractiveness: state.attractiveness + action.attractivenessToAdd
+                attractiveness: state.fullState.attractiveness + action.attractivenessToAdd
             }
         
         case actionTypes.SET_ITEMS:
-            let setItems = state.items
+            let setItems = state.fullState.items
             setItems[action.itemToSet] = action.newItemAmmount;
             return{
                 ...state,
@@ -174,7 +180,7 @@ const reducer = (state = mainCharacter, action) =>{
         case actionTypes.ADD_MONEY:
             return{
                 ...state,
-                money: state.money + action.moneyToAdd
+                money: state.fullState.money + action.moneyToAdd
             }
 
         default:

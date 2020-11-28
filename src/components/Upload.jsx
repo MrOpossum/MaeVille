@@ -9,11 +9,7 @@ function Upload(props) {
     const fileReader = new FileReader();
     fileReader.readAsText(e.target.files[0], "UTF-8");
     fileReader.onload = e => {
-        //console.log(e.target.result);
-        //setFiles(e.target.result);
         var myCharacterFromJSON = JSON.parse(e.target.result);
-        //console.log(myCharacterFromJSON);
-        //console.log(new Date(myCharacterFromJSON["date"]));
         //Setting everything.
         props.onSetState(myCharacterFromJSON);
 

@@ -23,14 +23,15 @@ const GoOutside = ( props ) => {
     console.log(props.flags);
 
     let characterImageHeight = "400px";
+    let AmyCharacterImageHeight = "500px";
 
-    if(props.flags.includes("SandyMidBreasts")){
+    if(props.flags.includes("SandyMidBreasts_1")){
         var SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
     } else{
         var SandyImage = anri_emily_white_dress_transparent;
     }
 
-    if(props.flags.includes("AmyLargeBreasts")){
+    if(props.flags.includes("AmyLargeBreasts_1")){
         var AmyImage = ""
     } else{
         var AmyImage = P_g_whiteTop_frontView_Transparent
@@ -498,7 +499,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img src={AmyImage} height={characterImageHeight}></img>
+                    <img src={AmyImage} height={AmyCharacterImageHeight}></img>
                 </Col2>
     
                 <Col3 > 
@@ -537,7 +538,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img src={AmyImage} height={characterImageHeight}></img>
+                    <img src={AmyImage} height={AmyCharacterImageHeight}></img>
                 </Col2>
     
                 <Col3 > 
@@ -573,7 +574,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={AmyImage} height={characterImageHeight}></img>
+                <img src={AmyImage} height={AmyCharacterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -602,7 +603,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={AmyImage} height={characterImageHeight}></img>
+                <img src={AmyImage} height={AmyCharacterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -639,7 +640,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={AmyImage} height={characterImageHeight}></img>
+                <img src={AmyImage} height={AmyCharacterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -672,7 +673,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img src={AmyImage} height={characterImageHeight}></img>
+                <img src={AmyImage} height={AmyCharacterImageHeight}></img>
             </Col2>
 
             <Col3 > 
@@ -717,7 +718,7 @@ const GoOutside = ( props ) => {
     
                     <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
                         <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyTakeBraceletBack}>Let's take that bracelet back</button>
-                        <button type="button" className="btn btn-primary" onClick = {DontHelpSandyTakeBraceletBack}>Continue your day</button>
+                        <button type="button" className="btn btn-primary" onClick = {DontHelpSandyTakeBraceletBack}>I don't want to get involved</button>
                     </Link>    
                 </Col3>
                 </>

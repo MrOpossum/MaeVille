@@ -19,7 +19,7 @@ import LACBRAQMilkFarmGrowComics_suckSandyInBarnComp from "../../Images/Farm/Bar
 const TheBarn = ( props ) => {
 
 
-    if(props.flags.includes("SandyMidBreasts")){
+    if(props.flags.includes("SandyMidBreasts_1")){
         var SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
     } else if(!SandyImage){
         var SandyImage = anri_emily_white_dress_transparent;
@@ -142,7 +142,7 @@ const TheBarn = ( props ) => {
             props.onSpliceFlag("LACBRAQGaveBraceletToSandySheWillBeInFarmAtNight");
             //End of LACBRAQ
             props.onPushFlag("LACBRAQFinsihed");
-            props.onPushFlag("SandyMidBreasts"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
+            props.onPushFlag("SandyMidBreasts_1"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
         }
 
         return(
@@ -174,14 +174,14 @@ const TheBarn = ( props ) => {
             props.onAddMinutes(10);
             props.onSpliceFlag("LACBRAQInspectSandyDrinkingFromUdder");
             props.onPushFlag("LACBRAQHelpSandyIntoBarn");
-            props.onPushFlag("SandyMidBreasts"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
+            props.onPushFlag("SandyMidBreasts_1"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
         }
         let LACBRAQGetSandySuckingMilkLeave = () =>{
             props.onAddMinutes(10);
             props.onSpliceFlag("LACBRAQGaveBraceletToSandySheWillBeInFarmAtNight");
             //End of LACBRAQ
             props.onPushFlag("LACBRAQFinsihed");
-            props.onPushFlag("SandyMidBreasts"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
+            props.onPushFlag("SandyMidBreasts_1"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
         }
 
         return(
@@ -204,7 +204,7 @@ const TheBarn = ( props ) => {
                 <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyIntoBarn}>Help Sandy into the barn</button>
                 </Link>
-                <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LACBRAQGetSandySuckingMilkLeave}>Leave</button>
                 </Link>                                  
                 

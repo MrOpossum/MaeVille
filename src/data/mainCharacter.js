@@ -1,4 +1,5 @@
 const mainCharacter = {
+    fullState : {
         date: new Date(2020,0,1,0,0),
         name : "Max",
         pronoun : "he",
@@ -33,7 +34,17 @@ const mainCharacter = {
             Amy: 0,
             Sandy: 0
         },
-        currentLink:"/Apartment"
+        currentLink:"/Apartment",
+        Amy:{
+            mind: 14,
+            physical: 12
+        },
+        Sandy:{
+            mind: 11,
+            physical: 13
+        }
+
+    }
 }
 
 export default mainCharacter;

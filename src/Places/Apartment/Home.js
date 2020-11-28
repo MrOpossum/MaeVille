@@ -7,16 +7,17 @@ import SetCol1 from "../../components/SetCol1";
 
 
 //Images
-import Bedroom from "../../Images/Bedroom/Apartment.jpg"
+import Bedroom from "../../Images/Bedroom/Apartment.jpg";
 import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriRhoadesBlueCowgirlBikini_transparent.png";
 import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
 
 
 let characterImageHeight = "400px";
+let characterImageHeightAmy = "500px";
 
 const Home = ( props ) => {
 
-    if(props.flags.includes("SandyMidBreasts")){
+    if(props.flags.includes("SandyMidBreasts_1")){
         var SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
     } else{
         var SandyImage = anri_emily_white_dress_transparent;
@@ -29,6 +30,10 @@ const Home = ( props ) => {
     const SleepAtHomeClickFunc = () =>{
         props.onAddMinutes(480);
         props.onSetEnergy(100);
+    }
+
+    const goToTransformationHistory = () =>{
+        props.onAddMinutes(10);
     }
 
     const setEnergy100 = () =>{
@@ -293,6 +298,9 @@ const Home = ( props ) => {
                 </Link>
                 <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={SleepAtHomeClickFunc}>Sleep</button>
+                </Link>
+                <Link to={"/transformationHistory"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={goToTransformationHistory}>Transformation history</button>
                 </Link>
                 
     
