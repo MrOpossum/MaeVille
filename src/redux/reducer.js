@@ -5,8 +5,10 @@ const reducer = (state = mainCharacter, action) =>{
     switch(action.type){
         case actionTypes.CHANGE_NAME:
             return{
-                ...state,
-                name : action.newName
+                fullState: {
+                    ...state.fullState,
+                    name : action.newName
+                }
             }
         case actionTypes.ADD_MINUTES: 
             const newDate = new Date(state.fullState.date);
@@ -25,18 +27,27 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.ADD_LUST:
             return{
-                ...state,
-                lust: state.fullState.lust + action.lustToAdd,
+                fullState: {
+                    ...state.fullState,
+                    lust: state.fullState.lust + action.lustToAdd,
+                }
+                
             }
         case actionTypes.SET_LUST:
             if(state.fullState.lust > 100){
                 return{
-                    ...state,
-                    lust: 100
+                    fullState: {
+                        ...state.fullState,
+                        lust: 100
+                    }
                 }
             } else{
                 return{
-                    ...state
+                    fullState: {
+                        ...state.fullState,
+                        lust: action.lustToSet,
+                    }
+                    
                 }
                 
             }
@@ -45,8 +56,11 @@ const reducer = (state = mainCharacter, action) =>{
             let newSkills = state.fullState.skills;
             newSkills[action.skillToAdd] += action.skillAmmountToAdd;
             return{
-               ...state,
-               skills : newSkills 
+                fullState: {
+                    ...state.fullState,
+                    skills : newSkills 
+                }
+               
             }
         
         case actionTypes.PUSH_FLAG:
