@@ -143,6 +143,9 @@ const TheBarn = ( props ) => {
             //End of LACBRAQ
             props.onPushFlag("LACBRAQFinsihed");
             props.onPushFlag("SandyMidBreasts_1"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
+            props.onPushFlag("SCIENCELABQSStart");
+            props.onSpliceFlag("WearingLacBracelet");
+            props.onSetItem("LacBracelet",0);
         }
 
         return(
@@ -183,6 +186,8 @@ const TheBarn = ( props ) => {
             props.onPushFlag("LACBRAQFinsihed");
             props.onPushFlag("SandyMidBreasts_1"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
             props.onPushFlag("SCIENCELABQSStart");
+            props.onSpliceFlag("WearingLacBracelet");
+            props.onSetItem("LacBracelet",0);
         }
 
         return(

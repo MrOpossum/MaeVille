@@ -12,14 +12,12 @@ import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriR
 import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
 
 
-let characterImageHeight = "400px";
-    let nakedCharacterImageHeight = "440px";
-    let AmyCharacterImageHeight = "430px";
-  if(window.screen.width < 420){
-    let characterImageHeight = "200px";
-    let nakedCharacterImageHeight = "200px";
-    let AmyCharacterImageHeight = "200px";
-  }
+var characterImageHeight = "70vh";
+var characterImageWidth = "49vw";
+if(window.screen.width < 400){
+characterImageHeight   = "50vh";
+characterImageWidth   = "49vw";
+}
 
 const Home = ( props ) => {
 
@@ -44,6 +42,10 @@ const Home = ( props ) => {
     }
 
     const goToTransformationHistory = () =>{
+        props.onAddMinutes(10);
+    }
+
+    const goToAmyApartment = () =>{
         props.onAddMinutes(10);
     }
 
@@ -178,7 +180,7 @@ const Home = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {Bedroom}>    
-                <img src={SandyImage} height={characterImageHeight}></img>
+                <img src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
             
             <Col3 > 
@@ -215,7 +217,7 @@ const Home = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {Bedroom}>    
-                <img src={SandyImage} height={characterImageHeight}></img>
+                <img src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
             
             <Col3 > 
@@ -357,6 +359,10 @@ const Home = ( props ) => {
     
     
     else{
+
+        let goToSandyApartment = () =>{
+            props.onAddMinutes(10);
+        }
         return(
             <>
             <Col1>
@@ -383,6 +389,23 @@ const Home = ( props ) => {
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={goToInventory}>Inventory</button>
                 </Link>
+
+                <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={goToAmyApartment} style = {{
+                        display:(props.flags.includes("AmyTeachesMagicQuestInHerApartmentPart_1") ? "": "none")
+                    }}
+                    
+                    >Go to Amy's apartment</button>
+                </Link>
+                <Link to={"/SandyApartment"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={goToSandyApartment} style = {{
+                        display:(props.flags.includes("SandyTeachesMagicQuestInHerApartmentPart_1") ? "": "none")
+                    }}
+                    
+                    >Go to Sandy's apartment</button>
+                </Link>                
+
+                
     
             </Col3>
             </>

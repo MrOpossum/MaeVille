@@ -14,7 +14,9 @@ import P_g_Naked_smile_1_transparent_fight_1 from "../../Images/Characters/Palin
 import P_g_Naked_smile_1_transparent_fight_2 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_2.png";
 import P_g_Naked_smile_1_transparent_fight_3 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_3.png";
 import P_g_Naked_smile_1_transparent_fight_4 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_4.png";
-
+import Palin_gotti_School_1_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_1_transparent.png";
+import Palin_gotti_School_2_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_2_transparent.png";
+import Palin_gotti_School_3_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_3_transparent.png";
 
 //Images
 import BegginingSandyOutside from "../../Images/Apartment_outside/Sandy-A_outside-Anri_Emily.png";
@@ -30,13 +32,11 @@ const GoOutside = ( props ) => {
     
     console.log(props.flags);
 
-    let characterImageHeight = "400px";
-    let nakedCharacterImageHeight = "440px";
-    let AmyCharacterImageHeight = "430px";
-  if(window.screen.width < 420){
-    let characterImageHeight = "200px";
-    let nakedCharacterImageHeight = "200px";
-    let AmyCharacterImageHeight = "200px";
+    var characterImageHeight = "70vh";
+    var characterImageWidth = "49vw";
+  if(window.screen.width < 400){
+    characterImageHeight   = "50vh";
+    characterImageWidth   = "49vw";
   }
 
   //The base image
@@ -55,7 +55,11 @@ const GoOutside = ( props ) => {
 
   if(props.flags.includes("AmyLargeBreasts_1")){
       AmyImage = ""
-  } else{
+  } else if(props.flags.includes("Amy_college")){
+    AmyImage = Palin_gotti_School_1_transparent;
+      AmyImageNaked = Palin_gotti_School_2_transparent;
+      let AmyImageNaked_2_down = Palin_gotti_School_3_transparent;
+  }else{
       AmyImage = P_g_red_tank_top_transparent
       AmyImageNaked = P_g_Naked_smile_1_transparent
       var AmyImageFight = AmyImage
@@ -528,7 +532,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
+                    <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
                 </Col2>
     
                 <Col3 > 
@@ -567,7 +571,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
+                    <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
                 </Col2>
     
                 <Col3 > 
@@ -603,7 +607,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
+                <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -632,13 +636,13 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
+                <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
                 <p>"Thank you." Amy says politely. "I just love this kind of things. And I never have the time to go buy them". Amy pauses for a moment. "Have a nice day {props.name}. We might see each other soon". Amy takes the bracelet and goes back to her apartment. </p>
 
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LACBRAQAmyTookTheBracelet}>Continue the day</button>
                 </Link>                
             </Col3>
@@ -669,7 +673,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
+                <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -702,7 +706,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={AmyImage} height={AmyCharacterImageHeight}></img>
+                <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -737,7 +741,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+                    <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
                 </Col2>
     
                 <Col3 > 
@@ -775,7 +779,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+                    <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
                 </Col2>
     
                 <Col3 > 
@@ -815,7 +819,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+                <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -826,21 +830,51 @@ const GoOutside = ( props ) => {
 
                 <p>We don't really have time. So put on your best neighbor face and lets go!</p>
                 
-                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {DontHelpSandyTakeBraceletBack}>I don't want this</button>
-                </Link>    
                 <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyTakeBraceletBackGoToAmyApmt}>Let's take that bracelet back</button>
                 </Link>  
+                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {DontHelpSandyTakeBraceletBack}>I don't want this</button>
+                </Link>    
+                
             </Col3>
             </>
         )
     } 
     
     else if(props.flags.includes("LACBRAQDidNotHelpSandyTakeBraceletBack")){
-        console.log("Pending: LACBRAQDidNotHelpSandyTakeBraceletBack");
-        props.onSpliceFlag("LACBRAQDidNotHelpSandyTakeBraceletBack");
-        props.onPushFlag("SCIENCELABQSStart");
+        
+        let LACBRAQEndNowScienceQ = () =>{
+            props.onSpliceFlag("LACBRAQDidNotHelpSandyTakeBraceletBack");
+            props.onPushFlag("SCIENCELABQSStart");
+            props.onSpliceFlag("WearingLacBracelet");
+            props.onSetItem("LacBracelet",0);
+        }
+        
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+                
+            </Col2>
+    
+            <Col3 > 
+                <p>It's a nice day</p>
+
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary"  onClick = {LACBRAQEndNowScienceQ}>Go home</button>
+                </Link>
+
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQEndNowScienceQ}>Game map</button>
+                </Link>
+    
+            </Col3>
+            </>
+            ) 
 
     } else if(props.flags.includes("LACBRAQSandyWillFindYouTakeNoWearBracelet")){
         
@@ -867,7 +901,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+                <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -913,7 +947,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+                <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -946,7 +980,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={SandyImage} height={characterImageHeight}></img>
+                <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -960,7 +994,23 @@ const GoOutside = ( props ) => {
             </>
         )
     } else if(props.flags.includes("SCIENCELABQSStart")){
-        
+
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+            </Col2>
+
+            <Col3 > 
+
+            <p>Building this new quest.</p>
+            </Col3>
+            </>
+        )
     }
     
     

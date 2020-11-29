@@ -15,17 +15,6 @@ import ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP
 import TwoLesbosSuckThirdLesboMilk_CUTSHORT from "../../Images/AmyApartment/Scenes/TwoLesbosSuckThirdLesboMilk_CUTSHORT.mp4";
 import ApartmentHallway from "../../Images/Apartment/ApartmentHallway.jpg";
 
-///Characters
-import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Characters/Anri_Rhoades_2/AnriRhoadesBlueCowgirlBikini_transparent.png";
-import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
-import P_g_whiteTop_frontView_Transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_whiteTop_frontView_Transparent.png";
-import anri_emily_NakedStanding_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_NakedStanding_transparent.png";
-import P_g_Naked_smile_1_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent.png";
-import P_g_Naked_smile_1_transparent_fight_1 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_1.png";
-import P_g_Naked_smile_1_transparent_fight_2 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_2.png";
-import P_g_Naked_smile_1_transparent_fight_3 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_3.png";
-import P_g_Naked_smile_1_transparent_fight_4 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_4.png";
-
 //LACBRAQ
 import MastasiaMassiveBoobsAmyDidNotResistCut from "../../Images/AmyApartment/Scenes/LACBRAQ/MastasiaMassiveBoobsAmyDidNotResistCut.mp4";
 import LACBRAQSandySucksAmyBreast_amyapmt from "../../Images/AmyApartment/Scenes/LACBRAQ/LACBRAQSandySucksAmyBreast_amyapmt.mp4"
@@ -35,6 +24,9 @@ import LACBRAQBurstingOutOfShirtFatishWoman from "../../Images/AmyApartment/Scen
 import LACBRAQSandyBreastGrowthInAmyApmtAndMilkManuu from "../../Images/AmyApartment/Scenes/LACBRAQ/LACBRAQSandyBreastGrowthInAmyApmtAndMilkManuu.mp4";
 import LACBRAQYouSuckSandysBreastsFullOfMilk from "../../Images/AmyApartment/Scenes/LACBRAQ/LACBRAQYouSuckSandysBreastsFullOfMilk.mp4";
 import LACBRAQSandyEngorgedBreastsWontDrinkMilk from "../../Images/AmyApartment/Scenes/LACBRAQ/LACBRAQSandyEngorgedBreastsWontDrinkMilk.jpg";
+////SANTMQ
+import SANTQAmyFuckedSchoolgirlUniform from "../../Images/AmyApartment/Scenes/SANTMQ/SANTQAmyFuckedSchoolgirlUniform.mp4";
+
 
 let diceRollCount = 0;
 let currentDiceRoll = 0;
@@ -55,41 +47,6 @@ const AmyApartment = (props) => {
     return num;
 }
   
-    var characterImageHeight = "400px";
-    var nakedCharacterImageHeight = "440px";
-    var AmyCharacterImageHeight = "430px";
-  if(window.screen.width < 300){
-    characterImageHeight   = "200px";
-    nakedCharacterImageHeight = "200px";
-    AmyCharacterImageHeight = "200px";
-  }
-  
-
-  //The base image
-  var SandyImage = anri_emily_white_dress_transparent;
-  var SandyImageNaked = anri_emily_NakedStanding_transparent;
-
-  var AmyImage = P_g_whiteTop_frontView_Transparent;
-  var AmyImageNaked = P_g_Naked_smile_1_transparent;
-
-  if(props.flags.includes("SandyMidBreasts_1")){
-      SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
-  } else{
-      SandyImage = anri_emily_white_dress_transparent;
-      SandyImageNaked = anri_emily_NakedStanding_transparent;
-  }
-
-  if(props.flags.includes("AmyLargeBreasts_1")){
-      AmyImage = ""
-  } else{
-      AmyImage = P_g_whiteTop_frontView_Transparent
-      AmyImageNaked = P_g_Naked_smile_1_transparent
-      var AmyImageFight = AmyImage
-      var AmyImageFight1 = P_g_Naked_smile_1_transparent_fight_1
-      var AmyImageFight2 = P_g_Naked_smile_1_transparent_fight_2
-      var AmyImageFight3 = P_g_Naked_smile_1_transparent_fight_3
-      var AmyImageFight4 = P_g_Naked_smile_1_transparent_fight_4
-  }
   
   
   
@@ -337,7 +294,7 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {ApartmentHallway}>
-            <img alt = {"Not found"} src={SandyImage} height={characterImageHeight}></img> {/*Should I add Sandy image?*/}
+            <img alt = {"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img> {/*Should I add Sandy image?*/}
         </Col2>
 
         <Col3 > 
@@ -519,8 +476,8 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {SandyImageNaked} height={nakedCharacterImageHeight} ></img>
-          <img alt = {"Not found"} src = {AmyImageNaked} height={nakedCharacterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.SandyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} ></img>
+          <img alt = {"Not found"} src = {props.AmyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
         </Col2>  
         <Col3 > 
 
@@ -557,7 +514,7 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {AmyImage} height = {AmyCharacterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
            
         </Col2>  
 
@@ -624,7 +581,7 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-           <img alt = {"Not found"} src={AmyImage} height = {AmyCharacterImageHeight}></img>
+           <img alt = {"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
         </Col2>  
 
         <Col3 > 
@@ -689,7 +646,7 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {AmyImage} height={AmyCharacterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
            
         </Col2>  
 
@@ -725,8 +682,8 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {SandyImage} height={characterImageHeight} ></img>
-          <img alt = {"Not found"} src = {AmyImage} height={AmyCharacterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} ></img>
+          <img alt = {"Not found"} src = {props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
            
         </Col2>  
 
@@ -771,7 +728,7 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {SandyImageNaked} height = {characterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.SandyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
         </Col2>  
 
         <Col3 > 
@@ -980,8 +937,8 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {SandyImageNaked} height={characterImageHeight} ></img>
-          <img alt = {"Not found"} src = {AmyImageNaked} height={characterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.SandyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} ></img>
+          <img alt = {"Not found"} src = {props.AmyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
         </Col2>  
 
         <Col3 > 
@@ -1042,6 +999,7 @@ const AmyApartment = (props) => {
       props.onAddMinutes(10);
       props.onSpliceFlag("LACBRAQAmyTellsYouGoToHerApmtAfter");
       props.onPushFlag("AmyTeachesMagicQuestInHerApartmentPart_1");
+      props.onPushFlag("Amy_college");
       props.onPushFlag("MagicDiscovered");
     }
 
@@ -1053,8 +1011,8 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {SandyImageNaked} height={nakedCharacterImageHeight} ></img>
-          <img alt = {"Not found"} src = {AmyImage} height={AmyCharacterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.SandyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} ></img>
+          <img alt = {"Not found"} src = {props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
         </Col2>   
 
         <Col3 > 
@@ -1105,25 +1063,25 @@ const AmyApartment = (props) => {
     
 
     
-
+      var CurrentAmyImageFight = props.AmyImageFight
       switch(stateOfFight){
         case 1:
-          AmyImageFight = AmyImageFight1;
+          CurrentAmyImageFight = props.AmyImageFight1;
           break
         case 2:
-          AmyImageFight = AmyImageFight2;
+          CurrentAmyImageFight = props.AmyImageFight2;
           break
         case 3:
-          AmyImageFight = AmyImageFight3;
+          CurrentAmyImageFight = props.AmyImageFight3;
           break
         case 4:
-          AmyImageFight = AmyImageFight4;
+          CurrentAmyImageFight = props.AmyImageFight4;
           break
         case 5:
-          AmyImageFight = AmyImageNaked 
+          CurrentAmyImageFight = props.AmyImageNaked 
           break
         default:
-          AmyImageFight = AmyImage
+          CurrentAmyImageFight = props.AmyImage
           break
       }
     
@@ -1136,7 +1094,7 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {AmyImageFight} height={characterImageHeight}></img>
+          <img alt = {"Not found"} src = {CurrentAmyImageFight} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
         </Col2>  
 
         <Col3 > 
@@ -1178,8 +1136,8 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {SandyImage} height={characterImageHeight} ></img>
-          <img alt = {"Not found"} src = {AmyImageNaked} height={nakedCharacterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} ></img>
+          <img alt = {"Not found"} src = {props.AmyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
         </Col2>  
 
         <Col3 > 
@@ -1215,8 +1173,8 @@ const AmyApartment = (props) => {
             />
         </Col1>
         <Col2 BackImage = {AmyLivingRoom}>
-          <img alt = {"Not found"} src = {SandyImageNaked} height={nakedCharacterImageHeight} ></img>
-          <img alt = {"Not found"} src = {AmyImage} height={AmyCharacterImageHeight}></img>
+          <img alt = {"Not found"} src = {props.SandyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} ></img>
+          <img alt = {"Not found"} src = {props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
         </Col2>  
 
         <Col3 > 
@@ -1237,6 +1195,118 @@ const AmyApartment = (props) => {
             </Link>  
         </Col3>
         </>
+    )
+  } else if(props.flags.includes("AmyTeachesMagicQuestInHerApartmentPart_1")){
+    let SANTMQAmyApartmentConnectRocks = () =>{
+      props.onAddMinutes(10);
+      props.onPushFlag("SANTMQAmyApartmentConnectRocks");
+      props.onSpliceFlag("AmyTeachesMagicQuestInHerApartmentPart_1");
+    }
+
+
+    return(
+        <>
+        <Col1>
+            <SetCol1
+            />
+        </Col1>
+        <Col2 BackImage = {AmyLivingRoom}>
+          <img alt = {"Not found"} src = {props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+        </Col2>  
+
+        <Col3 > 
+
+            <p>You get to Amys apartment. The air is tense. It seems like this girl never stops working.</p>
+            <p>"Hello {props.name}." Amy interrupts your train of tought. "I don't have much time. But since you impressed me I'll teach you a bit." Amy says. This class will be about Surface spells.</p>
+            <p>"Surface spells are spells that cover areas of land. And the more land covered the more preparation and power you need to cast it. One example of a surface spell is the spell my family casted over this building."</p>
+            <p>"Surface spells can also appear in nature. According to my reasearch Maeville is covered by a natural surface spell... It... It seems that Maeville makes people horny. And this place has a really high chance to spawn lust-related artifacts or runes."</p>
+            <p>Amy rubs her thighs togheter. You notice she's blushing.</p>
+            <p>"{props.name} Let's make this a bit more interactive, so you can learn.
+            I'll show you how to cast a simple surface spell. And if you do it right, I'll reward you." - Amy winks.</p>
+            <p>Amy gives you four marked rocks and a chalk. "The spell is simple, these rocks are already charged. You just need to place them on the floor and connect them with the chalk"</p>
+
+            <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {SANTMQAmyApartmentConnectRocks}>Connect the rocks</button>
+            </Link>  
+        </Col3>
+        </>
+
+    )
+  } else if(props.flags.includes("SANTMQAmyApartmentConnectRocks")){
+    let SANTMQAmyTeachesMagicBreathe = () =>{
+      props.onAddMinutes(10);
+      props.onPushFlag("SANTMQAmyTeachesMagicBreathe");
+      props.onSpliceFlag("SANTMQAmyApartmentConnectRocks");
+    }
+
+
+    return(
+        <>
+        <Col1>
+            <SetCol1
+            />
+        </Col1>
+        <Col2 BackImage = {AmyLivingRoom}>
+          <img alt = {"Not found"} src = {props.AmyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+        </Col2>  
+
+        <Col3 > 
+
+              <p>The floor starts glowing. And you hear Amy giggle. </p>
+              <p>"Pretty common magic actually" Amy glances at your dick. "You know what it does? </p>
+              <p>"The rocks I gave you are pretty common around here. They are aphrodisiacs. And now everything inside that square you made will slowly get aroused." Amy steps into the square. "This is an Amazing feeling" Amy moans. "But you are still weak, when I do this I can't control myself". Amy is breathing heavily.</p>
+
+              <p>"Now {props.name}, focus on feeling the energy around us. Feel the magic, focus on you breath".</p>
+
+
+
+            <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {SANTMQAmyTeachesMagicBreathe}>Take a deep breath</button>
+            </Link>  
+        </Col3>
+        </>
+
+    )
+  } else if (props.flags.includes("SANTMQAmyTeachesMagicBreathe")){
+    let SANTMQAmyTeachesMagicBreathe = () =>{
+      props.onAddMinutes(10);
+      props.onPushFlag("SANTMQAmyTeachesMagicBreathe");
+      props.onSpliceFlag("SANTMQAmyApartmentConnectRocks");
+    }
+
+
+    return(
+        <>
+        <Col1>
+            <SetCol1
+            />
+        </Col1>
+        <Col2>
+        <video autoPlay loop 
+            style ={{width: "100%", height: "100%"}}>
+                <source src={SANTQAmyFuckedSchoolgirlUniform} type="video/mp4"/>
+            </video>
+        </Col2>  
+
+        <Col3 > 
+
+                    <p>You close you eyes, breathe, and feel the energy around you. You feel it at the tip of your nose, your ears, you feel it in the tingling around your cock.</p>
+                    <p>"Ahhh... Unhhhg..." Amy moans. "I love it when men are focused" Amy pants. "Come closer {props.name}"
+                    You step into the surface spell and you feel your already hard cock getting harder. You see Amys gaze 
+                    "I allways wanted to try this" Amy comments, and jumps towards your dick.
+                    "Ffuukckkk YES!" Amy moans. Getting pounded by your rock hard erection.</p>
+        
+
+
+
+
+
+            <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {SANTMQAmyTeachesMagicBreathe}>Take a deep breath</button>
+            </Link>  
+        </Col3>
+        </>
+
     )
   }
   

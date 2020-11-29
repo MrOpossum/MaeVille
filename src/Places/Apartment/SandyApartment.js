@@ -43,9 +43,6 @@ const SandyApartment = ( props ) => {
             <>
             <Col1>
                 <SetCol1
-                money = {props.money}
-                energy = {props.energy}
-                date = {props.date}
                 />
             </Col1>
             <Col2 BackImage = {SandyLivingRoom_Sandy_Top_Grin}>
@@ -668,6 +665,48 @@ const SandyApartment = ( props ) => {
             </Col3>
             </>
             );
+    } else if(props.flags.includes("SandyTeachesMagicQuestInHerApartmentPart_1")){
+        let SANTMQSandyWillBeInStore = () =>{
+            props.onAddMinutes(10);
+            props.onPushFlag("SANTMQSandyWillBeInStore");
+            props.onSpliceFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+          }
+      
+      
+          return(
+              <>
+              <Col1>
+                  <SetCol1
+                  />
+              </Col1>
+              <Col2 BackImage = {SandyLivingRoom}>
+                    <img alt = {"Not found"} src = {props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+              </Col2>  
+      
+              <Col3 > 
+      
+
+                        <p>"Hello {props.name}! Let's teach you magic" Sandy says quickly. "We need to get you up to speed really fast but worry not, I have amazing teaching skills. My ma' allways said I was a great teacher, I could talk and explain things all day! Are you ready to learn? Of course you are!, let's start with the first lesson:"</p>
+                    <p>"Magic comes from nature, space, everything around us, magic does not come from humans, we people just try to use it so it does what we want. People can't store magic, we don't have mana or anything like that... Well there are some people that can store magic, but they ain't really storing it in them, but in some part of them. I kno of a woman who stores energy in her boobs and when she's preparing to fight her boobs get giantic!" Sandy sighs and looks at her own bust.</p>
+
+                    <p>"So how do we use magic? Well we use runes, items, ritualls and spells. To do magic you have to meet some conditions and you have to be skilled, else nothing will work or you might get bad side effects."</p>
+
+                    <p>"You have a sense of magic now. Magic items will have an aura on them. You should take every magic item you see, they might be useful later. But be careful, there are items that can think for themselves! And they could change you against your will." </p>
+                    
+                    <p>"Next lesson." Sandy quickly changes the conversation "About fighting or engaging in an activity, when you fight what matters is the other persons strenght. Right now you are completely average. You are around a {props.physical}, I am around {props.Sandy.physical} and Amy is around a {props.Amy.physical}, remember that items and being prepared can turn the tide of battles.</p>
+                    <p>"Another important thing, in Maeville there are magical places, I just moved here, but I know there is a bar downtown where wizards like to go, there is also the Fur Forest, I heard really strong creatures live there. Be very careful when traveling, you are weak and if you are not prepared you will be broken."</p>
+
+                    <p>"That's it for now. To finish your training I need you to help me do a little task. I still want to grow larger breasts you know." Sandy touches her chest "I think we can gather ingredients for a ritual that will get me another cup size. I'll need a transfer rune, which we can find one in the store. And I'll need some busty girl to take give me some boobage."</p>
+
+                    <p>"Find me in the store when you are ready". Sandy skips around her apartment and signals you to go.</p>
+      
+                  <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                      <button type="button" className="btn btn-primary" onClick = {SANTMQSandyWillBeInStore}>Go home</button>
+                  </Link>  
+              </Col3>
+              </>
+      
+          )
     }
 
 
