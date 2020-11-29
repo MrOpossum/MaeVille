@@ -399,6 +399,7 @@ const Apartment = ( props ) => {
           skills = {props.skills}
           onAddEnergy = {props.onAddEnergy}
           onSetEnergy = {props.onSetEnergy}
+          onAddMoney = {props.onAddMoney}
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}

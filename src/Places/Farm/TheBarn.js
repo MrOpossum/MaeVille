@@ -359,7 +359,7 @@ const TheBarn = ( props ) => {
                 <Link to={"/MilkCowsAtFarm"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick={addMinutesFunc}>Milk the cows</button>
                 </Link>
-                <Link to={"/FarmStore"} style={{ textDecoration: "none" }}>
+                <Link to={"/TheFarmStore"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick={addMinutesFunc}>Go to the farm store</button>
                 </Link>
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>

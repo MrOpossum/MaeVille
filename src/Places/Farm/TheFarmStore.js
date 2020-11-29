@@ -201,6 +201,11 @@ const TheFarmStore = ( props ) => {
     */
     
     else{
+
+        let buyMilkAtFarmStore = () =>{
+            props.onAddItem("farmCowMilkBottle",1);
+            props.onAddMoney(-5);
+        }
         return(
             <>
             <Col1>
@@ -222,7 +227,11 @@ const TheFarmStore = ( props ) => {
                     <button type="button" className="btn btn-primary" onClick={addMinutesFunc}>Game Map</button>
                 </Link>
                 <Link to={"/TheFarmStore"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick={addMinutesFunc}>Buy Milk - 5$</button>
+                    <button type="button" className="btn btn-primary" onClick={buyMilkAtFarmStore} disabled= 
+                        {( 
+                            (props.money >= 5) ? false: true
+                        )}
+                        >Buy Milk - 5$</button>
                 </Link>
 
 

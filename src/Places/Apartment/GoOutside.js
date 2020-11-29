@@ -7,68 +7,16 @@ import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
 
 
-//Characters
-import anri_emily_NakedStanding_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_NakedStanding_transparent.png";
-import P_g_Naked_smile_1_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent.png";
-import P_g_Naked_smile_1_transparent_fight_1 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_1.png";
-import P_g_Naked_smile_1_transparent_fight_2 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_2.png";
-import P_g_Naked_smile_1_transparent_fight_3 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_3.png";
-import P_g_Naked_smile_1_transparent_fight_4 from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_Naked_smile_1_transparent_fight_4.png";
-import Palin_gotti_School_1_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_1_transparent.png";
-import Palin_gotti_School_2_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_2_transparent.png";
-import Palin_gotti_School_3_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_3_transparent.png";
 
 //Images
 import BegginingSandyOutside from "../../Images/Apartment_outside/Sandy-A_outside-Anri_Emily.png";
 import BegginingAmyOutside from "../../Images/Apartment_outside/Amy-A_outside-BP_Gotti.png";
 import OutsideApartment from "../../Images/Apartment_outside/outside_apartment.jpg"
 import outside_apartment_amy_PalinGottiSwapWhiteTop from "../../Images/Apartment_outside/outside_apartment_amy-PalinGottiSwapWhiteTop.png";
-import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriRhoadesBlueCowgirlBikini_transparent.png";
-import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
-import P_g_red_tank_top_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_red_tank_top_transparent.png"
-
 
 const GoOutside = ( props ) => {
     
     console.log(props.flags);
-
-    var characterImageHeight = "70vh";
-    var characterImageWidth = "49vw";
-  if(window.screen.width < 400){
-    characterImageHeight   = "50vh";
-    characterImageWidth   = "49vw";
-  }
-
-  //The base image
-  var SandyImage = anri_emily_white_dress_transparent;
-  var SandyImageNaked = anri_emily_NakedStanding_transparent;
-
-  var AmyImage = P_g_red_tank_top_transparent;
-  var AmyImageNaked = P_g_Naked_smile_1_transparent;
-
-  if(props.flags.includes("SandyMidBreasts_1")){
-      SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
-  } else{
-      SandyImage = anri_emily_white_dress_transparent;
-      SandyImageNaked = anri_emily_NakedStanding_transparent;
-  }
-
-  if(props.flags.includes("AmyLargeBreasts_1")){
-      AmyImage = ""
-  } else if(props.flags.includes("Amy_college")){
-    AmyImage = Palin_gotti_School_1_transparent;
-      AmyImageNaked = Palin_gotti_School_2_transparent;
-      let AmyImageNaked_2_down = Palin_gotti_School_3_transparent;
-  }else{
-      AmyImage = P_g_red_tank_top_transparent
-      AmyImageNaked = P_g_Naked_smile_1_transparent
-      var AmyImageFight = AmyImage
-      var AmyImageFight1 = P_g_Naked_smile_1_transparent_fight_1
-      var AmyImageFight2 = P_g_Naked_smile_1_transparent_fight_2
-      var AmyImageFight3 = P_g_Naked_smile_1_transparent_fight_3
-      var AmyImageFight4 = P_g_Naked_smile_1_transparent_fight_4
-  }
-  
 
 
     if(props.flags.includes("WillMeetSandyOutsideApartment")){
@@ -532,7 +480,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                    <img alt ={"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
                 </Col2>
     
                 <Col3 > 
@@ -571,7 +519,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                    <img alt ={"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
                 </Col2>
     
                 <Col3 > 
@@ -607,7 +555,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -636,7 +584,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -673,7 +621,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -706,7 +654,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={AmyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -741,7 +689,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                    <img alt ={"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
                 </Col2>
     
                 <Col3 > 
@@ -779,7 +727,7 @@ const GoOutside = ( props ) => {
                     />
                 </Col1>
                 <Col2 BackImage = {OutsideApartment}>
-                    <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                    <img alt ={"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
                 </Col2>
     
                 <Col3 > 
@@ -819,7 +767,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -901,7 +849,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -947,7 +895,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -980,7 +928,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                <img alt ={"Not found"} src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
