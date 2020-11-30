@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Maeville/static/css/main.7d180cbf.chunk.css",
-    "main.js": "/Maeville/static/js/main.5d571545.chunk.js",
-    "main.js.map": "/Maeville/static/js/main.5d571545.chunk.js.map",
+    "main.js": "/Maeville/static/js/main.a21fbb38.chunk.js",
+    "main.js.map": "/Maeville/static/js/main.a21fbb38.chunk.js.map",
     "runtime-main.js": "/Maeville/static/js/runtime-main.be447f83.js",
     "runtime-main.js.map": "/Maeville/static/js/runtime-main.be447f83.js.map",
     "static/js/2.5be8430a.chunk.js": "/Maeville/static/js/2.5be8430a.chunk.js",
@@ -95,6 +95,6 @@
     "static/js/runtime-main.be447f83.js",
     "static/js/2.5be8430a.chunk.js",
     "static/css/main.7d180cbf.chunk.css",
-    "static/js/main.5d571545.chunk.js"
+    "static/js/main.a21fbb38.chunk.js"
   ]
 }
