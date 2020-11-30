@@ -510,6 +510,7 @@ const Apartment = ( props ) => {
         items ={props.items}
         onChangeRelationship = {props.onChangeRelationship}
         physical = {props.physical}
+        Sandy = {props.Sandy}
 
         characterImageHeight = {characterImageHeight}
         characterImageWidth   = {characterImageWidth}

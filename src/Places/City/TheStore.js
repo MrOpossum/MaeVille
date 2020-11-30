@@ -71,7 +71,11 @@ const TheStore = (props) => {
             </>
   
       )
-    }   else {
+    }   
+    
+    
+    
+    else {
         let GoToGameMap = () =>{
             props.onAddMinutes(10);
         }

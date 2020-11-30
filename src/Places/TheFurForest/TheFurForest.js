@@ -214,7 +214,7 @@ const TheFurForest = (props) => {
       )
     } else if(props.flags.includes("SANTMQGetCloserToGoblins")){
         let SANTMQDistractGoblinsRock = () =>{
-            let myRoll = Math.round(props.physical * normal_distribution()*2,0);
+            myRoll = Math.round(props.physical * normal_distribution()*2,0);
             
             if(myRoll >= 10){
                 props.onPushFlag("SANTMQDistractedGoblinsSucessfully");
@@ -318,16 +318,20 @@ const TheFurForest = (props) => {
                 rollCount = -1;
                 props.onSpliceFlag("SANTMQCouldNotDistractGoblinsSucessfully");
                 props.onPushFlag("SANTMQDefeatedGoblinsAfterFurry");
+                myRoll = 0;
+                sandyRoll = 0;
+                goblinRolls = 0;
             } else{
                 if(goblinRolls > Math.max(myRoll,sandyRoll)){
                     props.onSpliceFlag("SANTMQCouldNotDistractGoblinsSucessfully");
                     props.onPushFlag("SANTMQGoblinsDefeatedSandyAndYouAfterFurry");
+                    myRoll = 0;
+                    sandyRoll = 0;
+                    goblinRolls = 0;
                 }
             }
             
-            myRoll = 0;
-            sandyRoll = 0;
-            goblinRolls = 0;
+
             props.onAddMinutes(10);
             rollCount += 1;
         }
@@ -348,9 +352,8 @@ const TheFurForest = (props) => {
                    
                    <p>The goblins realize you are trying to steal from them.</p>
                    <p>You need to defeat the four goblins defeat their highest roll. You and Sandy roll.</p>
-                   <p>You need to defeat four goblins.</p>
 
-                    <p>You rolled {(myRoll ? `${myRoll} and the goblins rolled ${goblinRolls}` :"You have not rolled")}</p>
+                    <p>You rolled {(myRoll ? `${Math.max(sandyRoll,myRoll)} and the goblins rolled ${goblinRolls}` :"You have not rolled")}</p>
             
             <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick = {SANTMQFightingGoblinsAfterFurryRollDie}>Roll dice</button>
@@ -569,23 +572,27 @@ const TheFurForest = (props) => {
     } else if(props.flags.includes("SANTMQFightTheGoblinsAloneInSandyBody")){
         let SANTMQFightGoblinsAloneRollDie = () =>{
 
-            sandyRoll = Math.round(props.Sandy.physical * normal_distribution()*2,0);
+            sandyRoll = Math.round(props.Sandy.physical * normal_distribution()*2,0)
             goblinRolls = Math.max(Math.round(6 * normal_distribution()*2,0),Math.round(6 * normal_distribution()*2,0),Math.round(6 * normal_distribution()*2,0),Math.round(6 * normal_distribution()*2,0));
 
             if(rollCount >= 4){
                 rollCount = -1;
                 props.onSpliceFlag("SANTMQFightTheGoblinsAloneInSandyBody");
                 props.onPushFlag("SANTMQFightInSandyBodyYouWin");
+                myRoll = 0;
+                sandyRoll = 0;
+                goblinRolls = 0;
             } else{
                 if(goblinRolls > sandyRoll){
                     props.onSpliceFlag("SANTMQFightTheGoblinsAloneInSandyBody");
                     props.onPushFlag("SANTMQFightInSandyBodyGoblinWins");
+                    myRoll = 0;
+                    sandyRoll = 0;
+                    goblinRolls = 0;
                 }
             }
             
-            myRoll = 0;
-            sandyRoll = 0;
-            goblinRolls = 0;
+            
             props.onAddMinutes(10);
             rollCount += 1;
         }
@@ -605,10 +612,9 @@ const TheFurForest = (props) => {
             <Col3 > 
             
             
-            <p>You need to defeat the four goblins, they rolled -4 goblin rolls- defeat the highest one. You and Sandy roll.</p>
-            <p>You need to defeat four goblins.</p>
+            <p>You need to defeat the four goblins, defeat their highest roll. You and Sandy roll.</p>
 
-            <p>You rolled {(myRoll ? `${myRoll} and the goblins rolled ${goblinRolls}` :"You have not rolled")}</p>
+            <p>You rolled {(sandyRoll ? `${sandyRoll} and the goblins rolled ${goblinRolls}` :"You have not rolled")}</p>
             
             <Link to={"/TheFurForest"} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick = {SANTMQFightGoblinsAloneRollDie}>Roll die</button>
