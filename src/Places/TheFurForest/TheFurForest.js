@@ -347,7 +347,7 @@ const TheFurForest = (props) => {
             <Col3 > 
                    
                    <p>The goblins realize you are trying to steal from them.</p>
-                   <p>You need to defeat the four goblins, they rolled -4 goblin rolls- defeat the highest one. You and Sandy roll.</p>
+                   <p>You need to defeat the four goblins defeat their highest roll. You and Sandy roll.</p>
                    <p>You need to defeat four goblins.</p>
 
                     <p>You rolled {(myRoll ? `${myRoll} and the goblins rolled ${goblinRolls}` :"You have not rolled")}</p>
