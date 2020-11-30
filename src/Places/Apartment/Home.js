@@ -167,6 +167,9 @@ const Home = ( props ) => {
         let LACBRAQWakeUpInApartmentSandyLeaves = () =>{
             props.onAddMinutes(10);
             props.onSpliceFlag("LACBRAQGoHomeWithSandyNoMilkDrink");
+            props.onSpliceFlag("WearingLacBracelet");
+            props.onSetItem("LacBracelet",0);
+
             props.onChangeRelationship("Sandy",1);
             props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
             props.onPushFlag("MagicDiscovered");
@@ -235,50 +238,6 @@ const Home = ( props ) => {
             </Link>
                                           
                 
-            </Col3>
-            </>
-        );
-    } else if(props.flags.includes("LACBRAQDrankSandyMilk")){
-        const DrankMilkWithLacBraClick = () =>{
-            props.onPushFlag("DrankMilkwithLacBracelet");
-            props.onSpliceFlag("WearingLacBracelet");
-            props.onSpliceFlag("LACBRAQDrankSandyMilk");
-            props.onAddEnergy(5);
-            props.onAddMinutes(10);
-            if(props.energy > 100){
-                setEnergy100()
-            }
-            props.onAddItem("farmCowMilkBottle",-1);
-        }
-        return(
-            <>
-            <Col1>
-                <SetCol1/>
-            </Col1>
-            <Col2 BackImage = {Bedroom}>
-                
-            </Col2>
-    
-            <Col3 > 
-                <p>
-                    You are home. It has been an nice day until now. You feel a little groggy.
-                </p>
-
-                <p>
-                    Note that you have some fresh milk in your inventory. Drinking it would help you get some energy.
-                </p>
-    
-                <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary">Go outside</button>
-                </Link>
-                <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={DrankMilkWithLacBraClick}>Drink milk</button>
-                </Link>
-                <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={SleepAtHomeClickFunc}>Sleep</button>
-                </Link>
-                
-    
             </Col3>
             </>
         );

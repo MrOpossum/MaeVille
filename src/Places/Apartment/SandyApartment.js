@@ -737,6 +737,44 @@ const SandyApartment = ( props ) => {
               </>
       
           )
+    } else if(props.flags.includes("SANTMQLostToGoblinsPassoutAfterSwap")){
+        let SANTMQSandyWillBeInStore = () =>{
+            props.onAddMinutes(10);
+            props.onPushFlag("SANTMQSandyInStoreRecoveredTheCat");
+            props.onSpliceFlag("SANTMQLostToGoblinsPassoutAfterSwap");
+            props.onChangeRelationship("Sandy",-10);
+          }
+      
+      
+          return(
+              <>
+              <Col1>
+                  <SetCol1
+                  />
+              </Col1>
+              <Col2 BackImage = {SandyLivingRoom}>
+                    <img alt = {"Not found"} src = {props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+              </Col2>  
+      
+              <Col3 > 
+
+                    <p>You wake up at Sandys apartment. Your body feels heavy and sore.</p>
+                    <p>Sandy slaps you. Hard.</p>
+                    
+                    <p>"You motherfucking ass!" Sandy yells. "You low-world bitch city dry croackroach!" Sandy is furious. Drums in your head pounding. "You took my body! Ran off and got raped by some goblins!"</p>
+                    <p>"YOU KNOW. I LITERALLY JUST GOT US BOTH INTO THE WATER AND WE SWAPPED BODIES AGAIN!" Sandy stomps her feet. "BUT YOU HAD TO RUN AWAY WITH MY BODY!"</p>
+                    <p>Sandy cries. "I have showered and cleaned myself for hours... I still feel like shit..."</p>
+                    <p>*Meow* You see pirate roaming around in Sandy's apartment.</p>
+                    <p>Heavy scilence looms in the room. A roaring stomp breaks the atmosphere. "FUCK! GOSH! HECK! DAMN!" Sandy screams. "See me at the fucking store. I'll take the cat after showering again." Sandy pushes you out of her apartment.</p>
+
+      
+                  <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                      <button type="button" className="btn btn-primary" onClick = {SANTMQSandyWillBeInStore}>Go home</button>
+                  </Link>  
+              </Col3>
+              </>
+      
+          )
     }
 
 
