@@ -670,6 +670,7 @@ const SandyApartment = ( props ) => {
             props.onAddMinutes(10);
             props.onPushFlag("SANTMQSandyWillBeInStore");
             props.onSpliceFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+            props.onPushFlag("STORE_DISCOVERED");
           }
       
       
@@ -684,9 +685,7 @@ const SandyApartment = ( props ) => {
               </Col2>  
       
               <Col3 > 
-      
-
-                        <p>"Hello {props.name}! Let's teach you magic" Sandy says quickly. "We need to get you up to speed really fast but worry not, I have amazing teaching skills. My ma' allways said I was a great teacher, I could talk and explain things all day! Are you ready to learn? Of course you are!, let's start with the first lesson:"</p>
+                    <p>"Hello {props.name}! Let's teach you magic" Sandy says quickly. "We need to get you up to speed really fast but worry not, I have amazing teaching skills. My ma' allways said I was a great teacher, I could talk and explain things all day! Are you ready to learn? Of course you are!, let's start with the first lesson:"</p>
                     <p>"Magic comes from nature, space, everything around us, magic does not come from humans, we people just try to use it so it does what we want. People can't store magic, we don't have mana or anything like that... Well there are some people that can store magic, but they ain't really storing it in them, but in some part of them. I kno of a woman who stores energy in her boobs and when she's preparing to fight her boobs get giantic!" Sandy sighs and looks at her own bust.</p>
 
                     <p>"So how do we use magic? Well we use runes, items, ritualls and spells. To do magic you have to meet some conditions and you have to be skilled, else nothing will work or you might get bad side effects."</p>
@@ -699,6 +698,37 @@ const SandyApartment = ( props ) => {
                     <p>"That's it for now. To finish your training I need you to help me do a little task. I still want to grow larger breasts you know." Sandy touches her chest "I think we can gather ingredients for a ritual that will get me another cup size. I'll need a transfer rune, which we can find one in the store. And I'll need some busty girl to take give me some boobage."</p>
 
                     <p>"Find me in the store when you are ready". Sandy skips around her apartment and signals you to go.</p>
+      
+                  <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                      <button type="button" className="btn btn-primary" onClick = {SANTMQSandyWillBeInStore}>Go home</button>
+                  </Link>  
+              </Col3>
+              </>
+      
+          )
+    } else if(props.flags.includes("SANTMQLostToGoblinsPassoutAfterfurry")){
+        let SANTMQSandyWillBeInStore = () =>{
+            props.onAddMinutes(10);
+            props.onPushFlag("SANTMQSandyInStoreRecoveredTheCat");
+            props.onSpliceFlag("SANTMQLostToGoblinsPassoutAfterfurry");
+          }
+      
+      
+          return(
+              <>
+              <Col1>
+                  <SetCol1
+                  />
+              </Col1>
+              <Col2 BackImage = {SandyLivingRoom}>
+                    <img alt = {"Not found"} src = {props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+              </Col2>  
+      
+              <Col3 > 
+
+                <p>You wake up at Sandys apartment. Your body feels heavy and sore.</p>
+                <p>"You wouldn't wake up after the goblin incident" Sandy explains. "So I brought you here."</p>
+                <p>*Meow* You hear a cat. Sandy grins. "I also managed to take pirate away from those goblins. {props.name} go home and recover. Then find me in the store"   </p>
       
                   <Link to={"/Home"} style={{ textDecoration: "none" }}>
                       <button type="button" className="btn btn-primary" onClick = {SANTMQSandyWillBeInStore}>Go home</button>

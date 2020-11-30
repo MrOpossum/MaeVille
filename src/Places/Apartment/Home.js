@@ -383,7 +383,7 @@ const Home = ( props ) => {
                 <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={SleepAtHomeClickFunc}>Sleep</button>
                 </Link>
-                <Link to={"/transformationHistory"} style={{ textDecoration: "none" }}>
+                <Link to={"/TransformationHistory"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={goToTransformationHistory}>Transformation history</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
@@ -403,7 +403,8 @@ const Home = ( props ) => {
                     }}
                     
                     >Go to Sandy's apartment</button>
-                </Link>                
+                </Link>      
+                        
 
                 
     

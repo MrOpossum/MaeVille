@@ -19,6 +19,9 @@ import AmyApartment from "./Apartment/AmyApartment";
 import Barn from "./Farm/TheBarn";
 import MilkCowsAtFarm from "./Farm/MilkCowsAtFarm";
 import TheFarmStore from "./Farm/TheFarmStore";
+import TransfromationHistory from "./Apartment/transformationHistory";
+import TheStore from "./City/TheStore";
+import TheFurForest from "./TheFurForest/TheFurForest";
 
 ///Characters
 import AnriRhoadesBlueCowgirlBikini_transparent from "../Images/Characters/Anri_Rhoades_2/AnriRhoadesBlueCowgirlBikini_transparent.png";
@@ -33,13 +36,14 @@ import P_g_Naked_smile_1_transparent_fight_4 from "../Images/Characters/Palin-go
 import Palin_gotti_School_1_transparent from "../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_1_transparent.png";
 import Palin_gotti_School_2_transparent from "../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_2_transparent.png";
 import Palin_gotti_School_3_transparent from "../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_3_transparent.png";
+import Vergara_Nadia_store_dress_transparent from "../Images/Characters/Maria_NStyles_Vergara/Vergara_Nadia_store_dress_transparent.png";
 
 //Images
 
 const Apartment = ( props ) => {
   
   var characterImageHeight = "70vh";
-  var characterImageWidth = "49vw";
+  var characterImageWidth = "40vw";
   if(window.screen.width < 400){
     characterImageHeight   = "50vh";
   }
@@ -51,6 +55,8 @@ const Apartment = ( props ) => {
 
   var AmyImage = P_g_whiteTop_frontView_Transparent;
   var AmyImageNaked = P_g_Naked_smile_1_transparent;
+
+  var MariaImage = Vergara_Nadia_store_dress_transparent;
 
   if(props.flags.includes("SandyMidBreasts_1")){
       SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
@@ -418,6 +424,112 @@ const Apartment = ( props ) => {
         ); 
     }  
 
+    let GoToTransfromationHistory = () => {
+      return (
+        <TransfromationHistory
+        money = {props.money}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        ></TransfromationHistory>
+      );
+    };
+
+    let GoToTheStore = () => {
+      return (
+        <TheStore
+        money = {props.money}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        ></TheStore>
+      );
+    };
+
+    
+
+    let GoToTheFurForest = () => {
+      return (
+        <TheFurForest
+        money = {props.money}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        ></TheFurForest>
+      );
+    };
+    
+    
+
     return(
 
         <Router>
@@ -441,6 +553,12 @@ const Apartment = ( props ) => {
 
                 <Route exact path="/SandyApartment" component={GoToSandyApartment} />
                 <Route exact path="/AmyApartment" component={GoToAmyApartment} />
+
+                <Route exact path="/TransformationHistory" component={GoToTransfromationHistory} />
+                <Route exact path="/TheStore" component={GoToTheStore} />
+                <Route exact path="/TheFurForest" component={GoToTheFurForest} />
+
+
                 
 
                 <Redirect to="/Home" />

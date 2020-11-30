@@ -45,16 +45,24 @@ const GameMap = ( props ) => {
                 <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {goToFarmClick}>Farm</button>
                 </Link>
-                <Link to={"/Store"} style={{ textDecoration: "none", display: "none" }}>
-                    <button type="button" className="btn btn-primary" disabled>Store</button>
+                <Link to={"/TheStore"} style = {{
+                        display:(props.flags.includes("STORE_DISCOVERED") ? "": "none")
+                    }}
+                >
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick}>The store</button>
                 </Link>
-                <Link to={"/Park"} style={{ textDecoration: "none" , display: "none"}}>
-                    <button type="button" className="btn btn-primary" disabled>Park</button>
+                <Link to={"/TheFurForest"} style = {{
+                        display:(props.flags.includes("FUR_FOREST_DISCOVERED") ? "": "none")
+                    }}
+                >
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick}>The Fur forest</button>
                 </Link>
                 <Link to={"/TwilightLabs"} style={{ textDecoration: "none" , display: "none"}}>
                     <button type="button" className="btn btn-primary" disabled>Twilight Labs</button>
                 </Link>
+
                 
+                   
     
             </Col3>
             </>

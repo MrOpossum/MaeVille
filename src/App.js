@@ -14,9 +14,7 @@ import _0_Start from "./events/_0_Start";
 import _1_Ignore from "./events/_1_Ignore";
 import _1_Inspect from "./events/_1_Inspect";
 import Apartment from "./Places/Apartment";
-import Farm from "./Places/Farm";
 import GameMap from "./Places/GameMap";
-import { act } from 'react-dom/test-utils';
 
 const App = ( props ) => {
 
@@ -100,6 +98,22 @@ const App = ( props ) => {
       onSpliceFlag = {props.onSpliceFlag}
       onPushFlag = {props.onPushFlag}
       onSetHour = {props.onSetHour}
+      flags = {props.flags}
+      onChangeRelationship = {props.onChangeRelationship}
+      onAddEnergy = {props.onAddEnergy}
+      onSetEnergy = {props.onSetEnergy}
+      onAddItem = {props.onAddItem}
+      items = {props.items}
+      name = {props.myName}
+      items = {props.items}
+      onSetItem = {props.onSetItem}
+      onAddMoney = {props.onAddMoney}
+      Amy = {props.Amy}
+      mind = {props.mind}
+      Sandy = {props.Sandy}
+      physical = {props.physical}
+      skills = {props.skills}
+      onAddSkills = {props.onAddSkills}
       ></GameMap>
       </>
     );

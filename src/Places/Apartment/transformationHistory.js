@@ -8,34 +8,10 @@ import SetCol1 from "../../components/SetCol1";
 
 import Bedroom from "../../Images/Bedroom/Apartment.jpg";
 
-import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriRhoadesBlueCowgirlBikini_transparent.png";
 import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
-import P_g_whiteTop_frontView_Transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_whiteTop_frontView_Transparent.png";
-
-let characterImageHeight = "400px";
-    let nakedCharacterImageHeight = "440px";
-    let AmyCharacterImageHeight = "430px";
-  if(window.screen.width < 420){
-    let characterImageHeight = "200px";
-    let nakedCharacterImageHeight = "200px";
-    let AmyCharacterImageHeight = "200px";
-  }
-
-
+import P_g_red_tank_top_transparent from "../../Images/Characters/Palin-gotti-Mid_amy/P_g_red_tank_top_transparent.png";
 
 const transformationHistory = ( props ) => {
-
-    if(props.flags.includes("SandyMidBreasts_1")){
-        var SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
-    } else{
-        var SandyImage = anri_emily_white_dress_transparent;
-    }
-
-    if(props.flags.includes("AmyLargeBreasts_1")){
-        var AmyImage = ""
-    } else{
-        var AmyImage = P_g_whiteTop_frontView_Transparent
-    }
     
     if(props.flags.includes("TransformationHistorySandy")){
         
@@ -50,14 +26,8 @@ const transformationHistory = ( props ) => {
                 <SetCol1/>
             </Col1>
             <Col2 BackImage = {Bedroom}>
-                <div className = "row">
-                    <div className = "col-6">
-                        <img src={SandyImage} height={characterImageHeight}></img>
-                    </div>
-                    <div className = "col-6">
-                        <img src={P_g_whiteTop_frontView_Transparent} height={characterImageHeight}></img>
-                    </div>
-                </div>
+                <img alt = {"Not found"} src={anri_emily_white_dress_transparent} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                <img alt = {"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
     
             <Col3 > 
@@ -82,14 +52,8 @@ const transformationHistory = ( props ) => {
                 <SetCol1/>
             </Col1>
             <Col2 BackImage = {Bedroom}>
-                <div className = "row">
-                    <div className = "col-6">
-                        <img src={AmyImage} height={characterImageHeightAmy}></img>
-                    </div>
-                    <div className = "col-6">
-                        <img src={anri_emily_white_dress_transparent} height={characterImageHeightAmy}></img>
-                    </div>
-                </div>
+            <img alt = {"Not found"} src={P_g_red_tank_top_transparent} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            <img alt = {"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
     
             <Col3 > 
@@ -118,16 +82,6 @@ const transformationHistory = ( props ) => {
             props.onAddMinutes(10);
         }
     
-        let amyEnabledButton = "none";
-        let sandyEnabledButton = "none";
-
-        if(props.flags.includes("MET_AMY")){
-            amyEnabledButton = "";
-        }
-
-        if(props.flags.includes("MET_SANDY")){
-            sandyEnabledButton = "";
-        }
         return(
             <>
             <Col1>
@@ -143,13 +97,21 @@ const transformationHistory = ( props ) => {
                 </p>
     
                 <Link to={"/transformationHistory"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={inspectSandyChanges} style = {{display:sandyEnabledButton}}>Sandy</button>
+                    <button type="button" className="btn btn-primary" onClick ={inspectSandyChanges} style={{display: 
+                        ( 
+                            (props.flags.includes("MET_SANDY")) ? "":"none"
+                        )}}
+                        >Sandy</button>
                 </Link>
                 <Link to={"/transformationHistory"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={inspectAmyChanges} style = {{display:amyEnabledButton}}>Amy</button>
+                    <button type="button" className="btn btn-primary" onClick ={inspectAmyChanges} style={{display: 
+                        ( 
+                            (props.flags.includes("MET_AMY")) ? "":"none"
+                        )}}
+                        >Amy</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick={transformationGoBackHome}>Go back home</button>
+                    <button type="button" className="btn btn-primary" onClick={transformationGoBackHome}>Go back</button>
                 </Link>
                 
     

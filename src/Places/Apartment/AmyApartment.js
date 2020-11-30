@@ -45,7 +45,7 @@ const AmyApartment = (props) => {
     num = num / 10.0 + 0.5; // Translate to 0 -> 1
     if (num > 1 || num < 0) return normal_distribution(); // resample between 0 and 1
     return num;
-}
+  } 
   
   
   
@@ -1281,7 +1281,9 @@ const AmyApartment = (props) => {
             <SetCol1
             />
         </Col1>
-        <Col2>
+        <Col2 BackImage = {" "}
+                    rowHeight = {" "}
+            >
         <video autoPlay loop 
             style ={{width: "100%", height: "100%"}}>
                 <source src={SANTQAmyFuckedSchoolgirlUniform} type="video/mp4"/>
