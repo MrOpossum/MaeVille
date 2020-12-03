@@ -24,11 +24,6 @@ const GameMap = ( props ) => {
             <>
             <Col1>
                 <SetCol1
-                money = {props.money}
-                energy = {props.energy}
-                date = {props.date}
-                onAddMinutes = {props.onAddMinutes}
-                onAddEnergy = {props.onAddMinutes}
                 />
             </Col1>
             <Col2 BackImage = {CityMap}>
@@ -56,6 +51,12 @@ const GameMap = ( props ) => {
                     }}
                 >
                     <button type="button" className="btn btn-primary" onClick={goToHomeClick}>The Fur forest</button>
+                </Link>
+                <Link to={"/TheBarOutside"} style = {{
+                        display:(props.flags.includes("BAR_DISCOVERED") ? "": "none")
+                    }}
+                >
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick}>The Bar</button>
                 </Link>
                 <Link to={"/TwilightLabs"} style={{ textDecoration: "none" , display: "none"}}>
                     <button type="button" className="btn btn-primary" disabled>Twilight Labs</button>

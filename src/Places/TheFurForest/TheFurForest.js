@@ -355,7 +355,7 @@ const TheFurForest = (props) => {
 
                     <p>You rolled {(myRoll ? `${Math.max(sandyRoll,myRoll)} and the goblins rolled ${goblinRolls}` :"You have not rolled")}</p>
             
-            <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+            <Link to={"/TheFurForest"} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick = {SANTMQFightingGoblinsAfterFurryRollDie}>Roll dice</button>
             </Link>  
 

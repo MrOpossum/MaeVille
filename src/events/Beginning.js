@@ -27,6 +27,7 @@ const Beginning = ( props ) => {
 
     let logTheFlags = () =>{
         console.log("Your flags are: ", props.flags);
+        console.log(props.currentLink);
     }
 
     

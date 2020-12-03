@@ -22,6 +22,8 @@ import TheFarmStore from "./Farm/TheFarmStore";
 import TransfromationHistory from "./Apartment/transformationHistory";
 import TheStore from "./City/TheStore";
 import TheFurForest from "./TheFurForest/TheFurForest";
+import TheBarOutside from "./TheBar/TheBarOutside";
+import TheBar from "./TheBar/TheBar";
 
 ///Characters
 import AnriRhoadesBlueCowgirlBikini_transparent from "../Images/Characters/Anri_Rhoades_2/AnriRhoadesBlueCowgirlBikini_transparent.png";
@@ -37,13 +39,15 @@ import Palin_gotti_School_1_transparent from "../Images/Characters/Palin-gotti-M
 import Palin_gotti_School_2_transparent from "../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_2_transparent.png";
 import Palin_gotti_School_3_transparent from "../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_3_transparent.png";
 import Vergara_Nadia_store_dress_transparent from "../Images/Characters/Maria_NStyles_Vergara/Vergara_Nadia_store_dress_transparent.png";
+import Evelyn_b3_s1 from "../Images/Characters/Evelyn/Evelyn_b3_s1.png";
+import Evelyn_b3_s1_butt_transparent from "../Images/Characters/Evelyn/Evelyn_b3_s1_butt_transparent.png"
 
 //Images
 
 const Apartment = ( props ) => {
   
   var characterImageHeight = "70vh";
-  var characterImageWidth = "40vw";
+  var characterImageWidth = "28vw";
   if(window.screen.width < 400){
     characterImageHeight   = "50vh";
   }
@@ -57,6 +61,15 @@ const Apartment = ( props ) => {
   var AmyImageNaked = P_g_Naked_smile_1_transparent;
 
   var MariaImage = Vergara_Nadia_store_dress_transparent;
+
+  var EveImage =Evelyn_b3_s1;
+  var EveImageButt = Evelyn_b3_s1_butt_transparent;
+
+  if(props.flags.includes("Eve_b4_s1")){
+
+  } else{
+    EveImage = Evelyn_b3_s1;
+  }
 
   if(props.flags.includes("SandyMidBreasts_1")){
       SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
@@ -114,6 +127,8 @@ const Apartment = ( props ) => {
           AmyImageFight2 = {AmyImageFight2}
           AmyImageFight3 = {AmyImageFight3}
           AmyImageFight4 = {AmyImageFight4}
+          EveImage = {EveImage}
+          EveImageButt = {EveImageButt}EveImageButt = {EveImageButt}
           ></Home>
         );
       };
@@ -157,6 +172,8 @@ const Apartment = ( props ) => {
           AmyImageFight2 = {AmyImageFight2}
           AmyImageFight3 = {AmyImageFight3}
           AmyImageFight4 = {AmyImageFight4}
+          EveImage = {EveImage}
+          EveImageButt = {EveImageButt}
           ></GoOutside>
         );
       };
@@ -251,6 +268,8 @@ const Apartment = ( props ) => {
           AmyImageFight2 = {AmyImageFight2}
           AmyImageFight3 = {AmyImageFight3}
           AmyImageFight4 = {AmyImageFight4}
+          EveImage = {EveImage}
+          EveImageButt = {EveImageButt}
           >
 
 
@@ -294,6 +313,8 @@ const Apartment = ( props ) => {
           AmyImageFight2 = {AmyImageFight2}
           AmyImageFight3 = {AmyImageFight3}
           AmyImageFight4 = {AmyImageFight4}
+          EveImage = {EveImage}
+          EveImageButt = {EveImageButt}
           >
 
 
@@ -334,6 +355,8 @@ const Apartment = ( props ) => {
           AmyImageFight2 = {AmyImageFight2}
           AmyImageFight3 = {AmyImageFight3}
           AmyImageFight4 = {AmyImageFight4}
+          EveImage = {EveImage}
+          EveImageButt = {EveImageButt}
           ></Barn>
           </>
         ); 
@@ -372,6 +395,8 @@ const Apartment = ( props ) => {
           AmyImageFight2 = {AmyImageFight2}
           AmyImageFight3 = {AmyImageFight3}
           AmyImageFight4 = {AmyImageFight4}
+          EveImage = {EveImage}
+          EveImageButt = {EveImageButt}
           ></MilkCowsAtFarm>
           </>
         ); 
@@ -419,6 +444,8 @@ const Apartment = ( props ) => {
           AmyImageFight2 = {AmyImageFight2}
           AmyImageFight3 = {AmyImageFight3}
           AmyImageFight4 = {AmyImageFight4}
+          EveImage = {EveImage}
+          EveImageButt = {EveImageButt}
           ></TheFarmStore>
           </>
         ); 
@@ -528,6 +555,89 @@ const Apartment = ( props ) => {
         ></TheFurForest>
       );
     };
+
+    
+    let GoToTheBarOutside = () =>{
+      return (
+        <TheBarOutside
+        money = {props.money}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MariaImage = {MariaImage}
+        ></TheBarOutside>
+      );
+    };
+
+    let GoToTheBar = () =>{
+      return (
+        <TheBar
+        money = {props.money}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+          EveImageButt = {EveImageButt}
+        ></TheBar>
+      );
+    };
     
     
 
@@ -558,6 +668,9 @@ const Apartment = ( props ) => {
                 <Route exact path="/TransformationHistory" component={GoToTransfromationHistory} />
                 <Route exact path="/TheStore" component={GoToTheStore} />
                 <Route exact path="/TheFurForest" component={GoToTheFurForest} />
+
+                <Route exact path="/TheBar" component={GoToTheBar} />
+                <Route exact path="/TheBarOutside" component={GoToTheBarOutside} />
 
 
                 

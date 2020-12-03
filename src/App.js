@@ -84,6 +84,7 @@ const App = ( props ) => {
       physical = {props.physical}
       skills = {props.skills}
       onAddSkills = {props.onAddSkills}
+      attractiveness = {props.attractiveness}
       ></Apartment>
     )
   }
@@ -119,7 +120,6 @@ const App = ( props ) => {
     );
   };    
 
-  
   return( 
     <Router>
       <div>
@@ -131,10 +131,30 @@ const App = ( props ) => {
 
 
           <Route exact path="/Apartment" component={ApartmentSwitch} />
+          <Route exact path="/Home" component={ApartmentSwitch} />
+          <Route exact path="/GameMap" component={GameMapSwitch} />
+          
+
+            <Route exact path="/GoOutside" component={ApartmentSwitch} />
+            <Route exact path="/FapInApartment" component={ApartmentSwitch} />
+            <Route exact path="/SleepAtHome" component={ApartmentSwitch} />
+            <Route exact path="/LacBraQHelpSandyOpenDoor" component={ApartmentSwitch} />
+            <Route exact path="/LacBraQAmyMovingIn" component={ApartmentSwitch} />
+            <Route exact path="/TheBarn" component={ApartmentSwitch} />
+            <Route exact path="/TheFarmStore" component={ApartmentSwitch} />
+            <Route exact path="/MilkCowsAtFarm" component={ApartmentSwitch} />
+            <Route exact path="/SleepAtHome" component={ApartmentSwitch} />
+            <Route exact path="/SandyApartment" component={ApartmentSwitch} />
+            <Route exact path="/AmyApartment" component={ApartmentSwitch} />
+            <Route exact path="/TransformationHistory" component={ApartmentSwitch} />
+            <Route exact path="/TheStore" component={ApartmentSwitch} />
+            <Route exact path="/TheFurForest" component={ApartmentSwitch} />
+            <Route exact path="/TheBar" component={ApartmentSwitch} />
+            <Route exact path="/TheBarOutside" component={ApartmentSwitch} />
           {/*I messed the routing so hard. that everything is mixed up. I think I should only route from one place?
           Thing is, that I am indeed writing the function separate. Get good with this routing stuff.
           */}
-          <Route exact path="/GameMap" component={GameMapSwitch} />
+          
               
           
           <Redirect to="/Maeville" />

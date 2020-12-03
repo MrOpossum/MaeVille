@@ -12,21 +12,7 @@ import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriR
 import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
 
 
-var characterImageHeight = "70vh";
-var characterImageWidth = "49vw";
-if(window.screen.width < 400){
-characterImageHeight   = "50vh";
-characterImageWidth   = "49vw";
-}
-
 const Home = ( props ) => {
-
-    if(props.flags.includes("SandyMidBreasts_1")){
-        var SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
-    } else{
-        var SandyImage = anri_emily_white_dress_transparent;
-    }
-
     const addMinutesFunc = () =>{
         props.onAddMinutes(20)
     }
@@ -61,11 +47,6 @@ const Home = ( props ) => {
             <>
             <Col1>
                 <SetCol1
-                money = {props.money}
-                energy = {props.energy}
-                date = {props.date}
-                onAddMinutes = {props.onAddMinutes}
-                onAddEnergy = {props.onAddMinutes}
                 />
             </Col1>
             <Col2 BackImage = {Bedroom}>
@@ -183,7 +164,7 @@ const Home = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {Bedroom}>    
-                <img src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
             
             <Col3 > 
@@ -220,7 +201,7 @@ const Home = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {Bedroom}>    
-                <img src={SandyImage} style ={{width : characterImageWidth, height: characterImageHeight}}></img>
+                <img src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
             
             <Col3 > 

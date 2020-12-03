@@ -32,7 +32,9 @@ const mainCharacter = {
         flags : ["FARM_UNVISITED"],
         relations : {
             Amy: 0,
-            Sandy: 0
+            Sandy: 0,
+            Eve: 0,
+            
         },
         currentLink:"/Apartment",
         Amy:{

@@ -1268,10 +1268,10 @@ const AmyApartment = (props) => {
 
     )
   } else if (props.flags.includes("SANTMQAmyTeachesMagicBreathe")){
-    let SANTMQAmyTeachesMagicBreathe = () =>{
+    let SANTMQAmyCumsAfterGettingPounded = () =>{
       props.onAddMinutes(10);
-      props.onPushFlag("SANTMQAmyTeachesMagicBreathe");
-      props.onSpliceFlag("SANTMQAmyApartmentConnectRocks");
+      props.onPushFlag("SANTMQAmyCumsAfterGettingPounded");
+      props.onSpliceFlag("SANTMQAmyTeachesMagicBreathe");
     }
 
 
@@ -1284,15 +1284,15 @@ const AmyApartment = (props) => {
         <Col2 BackImage = {" "}
                     rowHeight = {" "}
             >
-        <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}}>
+        <video autoPlay loop
+            style ={{width: "100%", height: "100%"}} controls>
                 <source src={SANTQAmyFuckedSchoolgirlUniform} type="video/mp4"/>
             </video>
         </Col2>  
 
         <Col3 > 
 
-                    <p>You close you eyes, breathe, and feel the energy around you. You feel it at the tip of your nose, your ears, you feel it in the tingling around your cock.</p>
+                    <p>You close your eyes, breathe, and feel the energy around you. You feel it at the tip of your nose, your ears, you feel it in the tingling around your cock.</p>
                     <p>"Ahhh... Unhhhg..." Amy moans. "I love it when men are focused" Amy pants. "Come closer {props.name}"
                     You step into the surface spell and you feel your already hard cock getting harder. You see Amys gaze 
                     "I allways wanted to try this" Amy comments, and jumps towards your dick.
@@ -1304,7 +1304,41 @@ const AmyApartment = (props) => {
 
 
             <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
-                <button type="button" className="btn btn-primary" onClick = {SANTMQAmyTeachesMagicBreathe}>Take a deep breath</button>
+                <button type="button" className="btn btn-primary" onClick = {SANTMQAmyCumsAfterGettingPounded}>cum</button>
+            </Link>  
+        </Col3>
+        </>
+
+    )
+  } else if(props.flags.includes("SANTMQAmyCumsAfterGettingPounded")){
+    let SANTMQLeaveAmyHouseAfterFucking = () =>{
+      props.onAddMinutes(10);
+      props.onPushFlag("AMY_MONEY_BLESSING");
+      props.onSpliceFlag("SANTMQAmyCumsAfterGettingPounded");
+      props.onPushFlag("SandyTeachesMagicQuestInHerApartmentPart_1");
+    }
+
+
+
+    return(
+        <>
+        <Col1>
+            <SetCol1
+            />
+        </Col1>
+        <Col2 BackImage = {AmyLivingRoom}>
+          <img alt = {"Not found"} src = {props.AmyImageNaked} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+        </Col2>   
+
+        <Col3 > 
+
+        
+          <p>Amy sights. And kisses you. 
+          "{props.name}. That was a good lesson. But I can't teach you more. You should go to Sandys apartment, she'll teach you more." Says Amy. "Also, My family has a global blessing which gives us money from time to time. I'll make sure you get some of that." Amy winks. </p>
+          <p>"Now leave baby, I need to keep studying".</p>
+
+            <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {SANTMQLeaveAmyHouseAfterFucking}>Leave</button>
             </Link>  
         </Col3>
         </>

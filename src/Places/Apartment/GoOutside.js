@@ -933,7 +933,10 @@ const GoOutside = ( props ) => {
 
             <Col3 > 
 
-            <p>"Really! That's amazing." She sighs... "I am so relieved, you have no idea how exhausted I am... Could you hand it over??"</p>
+            <p>"You thief!" Sandy exclaims. "I told you it's mine, you are stealing from me!" - Sandy accuses you.</p>
+            <p>"Hey, I found it, so im keeping it" You argue..</p>
+            <p> "You... Arggg.... Fine, it aint worth much anyways" Sandy leaves. Annoyed</p>
+                
                 
                 <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LACBRAQEndLeaveNotGivingSandyBracelet}>Leave</button>
@@ -942,8 +945,7 @@ const GoOutside = ( props ) => {
             </>
         )
     } else if(props.flags.includes("SCIENCELABQSStart")){
-
-
+        
         return(
             <>
             <Col1>
@@ -954,7 +956,7 @@ const GoOutside = ( props ) => {
             </Col2>
 
             <Col3 > 
-
+            "COMPANY_DISCOVERED"
             <p>Building this new quest.</p>
             </Col3>
             </>
