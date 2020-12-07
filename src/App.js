@@ -84,7 +84,14 @@ const App = ( props ) => {
       physical = {props.physical}
       skills = {props.skills}
       onAddSkills = {props.onAddSkills}
+      onSetCharacterStats = {props.onSetCharacterStats}
+      charactersStats = {props.charactersStats}
       attractiveness = {props.attractiveness}
+      relations = {props.relations}
+      onSetResearchTime = {props.onSetResearchTime}
+      researchTime = {props.researchTime}
+      lab = {props.lab}
+      onSetLab = {props.onSetLab}
       ></Apartment>
     )
   }
@@ -115,6 +122,8 @@ const App = ( props ) => {
       physical = {props.physical}
       skills = {props.skills}
       onAddSkills = {props.onAddSkills}
+      onSetCharacterStats = {props.onSetCharacterStats}
+      charactersStats = {props.charactersStats}
       ></GameMap>
       </>
     );
@@ -151,6 +160,9 @@ const App = ( props ) => {
             <Route exact path="/TheFurForest" component={ApartmentSwitch} />
             <Route exact path="/TheBar" component={ApartmentSwitch} />
             <Route exact path="/TheBarOutside" component={ApartmentSwitch} />
+            <Route exact path="/TheHill" component={ApartmentSwitch} />
+            <Route exact path="/TheLab" component={ApartmentSwitch} />
+            <Route exact path="/TheLabOutside" component={ApartmentSwitch} />
           {/*I messed the routing so hard. that everything is mixed up. I think I should only route from one place?
           Thing is, that I am indeed writing the function separate. Get good with this routing stuff.
           */}
@@ -162,6 +174,7 @@ const App = ( props ) => {
       </div>
     </Router>
   );
+  
 
 } //End of App.
 
@@ -188,6 +201,9 @@ const mapStateToProps = state =>{
     currentLink: state.fullState.currentLink,
     Amy: state.fullState.Amy,
     Sandy: state.fullState.Sandy,
+    researchTime: state.fullState.researchTime,
+    lab: state.fullState.lab,
+    charactersStats: state.fullState.charactersStats,
   };
 }
 
@@ -216,7 +232,9 @@ const mapDispatchToProps = dispatch =>{
     onSetItem: (_itemToSet, _newItemAmmount) => dispatch({type: actionTypes.SET_ITEMS, itemToSet: _itemToSet, newItemAmmount: _newItemAmmount}),
     onAddMoney: (_moneyToAdd) => dispatch({type:actionTypes.ADD_MONEY, moneyToAdd: _moneyToAdd}),
     onAddSkills: (_skillToAdd, _skillAmmountToAdd) => dispatch({type:actionTypes.ADD_SKILLS, skillToAdd: _skillToAdd, skillAmmountToAdd: _skillAmmountToAdd}),
-
+    onSetResearchTime: (_researchType, _researchTimeToSet) => dispatch({type:actionTypes.SET_RESEARCH_TIMES, researchType: _researchType, researchTimeToSet: _researchTimeToSet}),
+    onSetLab: (_labItem, _setLabItem) => dispatch({type: actionTypes.SET_LAB, labItem: _labItem, setLabItem: _setLabItem}),
+    onSetCharacterStats: (_character, _characterStatToChange, _NewStat) => dispatch({type: actionTypes.SET_CHARACTER_STATS, character: _character, characterStatToChange: _characterStatToChange, NewStat: _NewStat}),
 
     
   }

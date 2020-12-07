@@ -29,6 +29,7 @@ const MilkCowsAtFarm = ( props ) => {
         props.onAddItem("farmCowMilkBottle",1);
         props.onPushFlag("FindBraceletAfteRMilkingCows");
         props.onSpliceFlag("LACBRAQInterceptSandy");
+        props.onSpliceFlag("LacBraQSandyInFarm");
     }
 
     let GenericCowMilk = () => {
@@ -171,6 +172,10 @@ const MilkCowsAtFarm = ( props ) => {
             props.onPushFlag("TakeButNoWearBracelet");
             props.onSpliceFlag("FindBraceletAfteRMilkingCows");
         }
+        let LACBRAQLeaveStartScience =()=>{
+            props.onPushFlag("SCIENCELABQSStart");
+            props.onSpliceFlag("FindBraceletAfteRMilkingCows");
+        }
 
 
         return(
@@ -199,7 +204,7 @@ const MilkCowsAtFarm = ( props ) => {
                 </Link>
 
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" >Leave</button> {/* Quest over */}
+                    <button type="button" className="btn btn-primary" onClick= {LACBRAQLeaveStartScience}>Leave</button> {/* Quest over */}
                 </Link>
         
         </Col3>

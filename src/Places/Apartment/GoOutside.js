@@ -6,7 +6,7 @@ import Col2 from "../../components/col2";
 import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
 
-
+import TruckAndLogo from "../../Images/TheLab/TruckAndLogo.png"
 
 //Images
 import BegginingSandyOutside from "../../Images/Apartment_outside/Sandy-A_outside-Anri_Emily.png";
@@ -24,7 +24,7 @@ const GoOutside = ( props ) => {
         props.onPushFlag("LacBraQSandyInFarm");
 
         let handleLacBraQHelpSandyOpenDoor = () =>{
-            props.onChangeRelationship("Sandy",10);
+            props.onChangeRelationship("Sandy",1);
             props.onAddMinutes(10);
         }
         
@@ -829,7 +829,7 @@ const GoOutside = ( props ) => {
         let LACBRAQYouHaveNotSeenSandyBraceletLIE = () =>{ //End of quest. I need to 
             props.onChangeRelationship("Sandy",-3);
             props.onAddMinutes(10);
-            props.onPushFlag("SCIENCELABQSStart"); //This flag changes Home where you can wear the bracelet. Maybe add inventory. And you set yourself for science quest.
+            props.onPushFlag("SCIENCELABQSStart");
             props.onSpliceFlag("LACBRAQSandyWillFindYouTakeNoWearBracelet");
             props.onPushFlag("LACBRAQRefusedToGiveSandyBracelet");
         }
@@ -945,6 +945,12 @@ const GoOutside = ( props ) => {
             </>
         )
     } else if(props.flags.includes("SCIENCELABQSStart")){
+        let SCIENCELABQSStartInLab = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("SCIENCELABQSStart");
+            props.onPushFlag("SCIENCELABQSStartInLab");
+            props.onPushFlag("LAB_DISCOVERED");
+        }
         
         return(
             <>
@@ -953,12 +959,30 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
+                        <img alt ={"Not found"} src={TruckAndLogo} style ={{width : "70vw", height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
-            "COMPANY_DISCOVERED"
-            <p>Building this new quest.</p>
+            
+                <p>You see a truck in the street. It says: "Make some cash! Internship position availiable. Aply at Twilight labs!</p>
+            
+            
+
+
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={SCIENCELABQSStartInLab} >Go home</button>
+                </Link>
+
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={SCIENCELABQSStartInLab}>Game map</button>
+                </Link>
+
+                <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={SCIENCELABQSStartInLab}>To the lab</button>
+                </Link>
+
             </Col3>
+
             </>
         )
     }

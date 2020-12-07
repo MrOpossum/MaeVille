@@ -300,6 +300,14 @@ const Home = ( props ) => {
     
     else{
 
+
+        let SleepForXTime = () =>{
+            props.onAddMinutes(240);
+            props.onAddEnergy(40);
+            if(props.energy > 100){
+                setEnergy100();
+            }
+        }
         let goToSandyApartment = () =>{
             props.onAddMinutes(10);
         }
@@ -328,6 +336,9 @@ const Home = ( props ) => {
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={goToInventory}>Inventory</button>
+                </Link>
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={SleepForXTime}>Sleep for 4 hours</button>
                 </Link>
 
                 <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>

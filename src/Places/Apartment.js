@@ -24,6 +24,9 @@ import TheStore from "./City/TheStore";
 import TheFurForest from "./TheFurForest/TheFurForest";
 import TheBarOutside from "./TheBar/TheBarOutside";
 import TheBar from "./TheBar/TheBar";
+import TheHill from "./City/TheHill";
+import TheLabOutside from "./TheLab/TheLabOutside";
+import TheLab from "./TheLab/TheLab";
 
 ///Characters
 import AnriRhoadesBlueCowgirlBikini_transparent from "../Images/Characters/Anri_Rhoades_2/AnriRhoadesBlueCowgirlBikini_transparent.png";
@@ -39,8 +42,37 @@ import Palin_gotti_School_1_transparent from "../Images/Characters/Palin-gotti-M
 import Palin_gotti_School_2_transparent from "../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_2_transparent.png";
 import Palin_gotti_School_3_transparent from "../Images/Characters/Palin-gotti-Mid_amy/Palin_gotti_School_3_transparent.png";
 import Vergara_Nadia_store_dress_transparent from "../Images/Characters/Maria_NStyles_Vergara/Vergara_Nadia_store_dress_transparent.png";
-import Evelyn_b3_s1 from "../Images/Characters/Evelyn/Evelyn_b3_s1.png";
-import Evelyn_b3_s1_butt_transparent from "../Images/Characters/Evelyn/Evelyn_b3_s1_butt_transparent.png"
+//Eve
+import Evelyn_b7_s1 from "../Images/Characters/Evelyn/Evelyn_b7_s1.png";
+import Evelyn_b7_s1_butt_transparent from "../Images/Characters/Evelyn/Evelyn_b7_s1_butt_transparent.png"
+import Evelyn_b7_s1_sd1 from "../Images/Characters/Evelyn/Evelyn_b7_s1_sd1.png";
+import Evelyn_b7_s1_sd2 from "../Images/Characters/Evelyn/Evelyn_b7_s1_sd2.png";
+import Evelyn_b7_s1_sd3 from "../Images/Characters/Evelyn/Evelyn_b7_s1_sd3.png";
+import Evelyn_b7_s1_sd4_fuckVideo from "../Images/Characters/Evelyn/Evelyn_b7_s1_sd4_fuckVideo.mp4";
+//Amy
+import Amy_b4_h2_f1_m2_s1 from "../Images/Characters/Amy/Amy_b4_h2_f1_m2_s1.png";
+import Amy_b4_h2_f1_m2_s2 from "../Images/Characters/Amy/Amy_b4_h2_f1_m2_s2.png";
+import Amy_b4_h2_f1_m2_s3 from "../Images/Characters/Amy/Amy_b4_h2_f1_m2_s3.png";
+import Amy_b7_h2_f1_m2_s1 from "../Images/Characters/Amy/Amy_b7_h2_f1_m2_s1.png";
+import Amy_b7_h2_f1_m2_s2 from "../Images/Characters/Amy/Amy_b7_h2_f1_m2_s2.png";
+import Amy_b7_h2_f1_m2_s3 from "../Images/Characters/Amy/Amy_b7_h2_f1_m2_s3.png";
+import Amy_b10_h2_f1_m2_s1 from "../Images/Characters/Amy/Amy_b10_h2_f1_m2_s1.png";
+import Amy_b10_h2_f1_m2_s2 from "../Images/Characters/Amy/Amy_b10_h2_f1_m2_s2.png";
+import Amy_b10_h2_f1_m2_s3 from "../Images/Characters/Amy/Amy_b10_h2_f1_m2_s3.png";
+//Sandy
+import Sandy_b1_h2_f1_m2_s1 from "../Images/Characters/Sandy/Sandy_b1_h2_f1_m2_s1.png";
+import Sandy_b1_h2_f1_m2_s2 from "../Images/Characters/Sandy/Sandy_b1_h2_f1_m2_s2.png";
+import Sandy_b1_h2_f1_m2_s3 from "../Images/Characters/Sandy/Sandy_b1_h2_f1_m2_s3.png";
+import Sandy_b6_h2_f1_m2_s1 from "../Images/Characters/Sandy/Sandy_b6_h2_f1_m2_s1.png";
+import Sandy_b6_h2_f1_m2_s2 from "../Images/Characters/Sandy/Sandy_b6_h2_f1_m2_s2.png";
+import Sandy_b6_h2_f1_m2_s3 from "../Images/Characters/Sandy/Sandy_b6_h2_f1_m2_s3.png";
+import Sandy_b8_h2_f1_m2_s1 from "../Images/Characters/Sandy/Sandy_b8_h2_f1_m2_s1.png";
+import Sandy_b8_h2_f1_m2_s2 from "../Images/Characters/Sandy/Sandy_b8_h2_f1_m2_s2.png";
+import Sandy_b8_h2_f1_m2_s3 from "../Images/Characters/Sandy/Sandy_b8_h2_f1_m2_s3.png";
+
+
+import MaddyBusiness_transparent_b_1 from "../Images/Characters/Maddeline/MaddyBusiness_transparent_b_1.png";
+
 
 //Images
 
@@ -48,8 +80,8 @@ const Apartment = ( props ) => {
   
   var characterImageHeight = "70vh";
   var characterImageWidth = "28vw";
-  if(window.screen.width < 400){
-    characterImageHeight   = "50vh";
+  if(window.screen.width < 600){
+    characterImageWidth = "40vw";
   }
 
 
@@ -62,38 +94,106 @@ const Apartment = ( props ) => {
 
   var MariaImage = Vergara_Nadia_store_dress_transparent;
 
-  var EveImage =Evelyn_b3_s1;
-  var EveImageButt = Evelyn_b3_s1_butt_transparent;
-
-  if(props.flags.includes("Eve_b4_s1")){
-
+  var EveImage =Evelyn_b7_s1;
+  var EveImageButt = Evelyn_b7_s1_butt_transparent;
+  var EveImageS1 = Evelyn_b7_s1_sd1;
+  var EveImageS2 = Evelyn_b7_s1_sd2;
+  var EveImageS3 = Evelyn_b7_s1_sd3;
+  var fuckingEveVideo_s4 = Evelyn_b7_s1_sd4_fuckVideo; //Note the video changes if you are woman. Add later ofc
+  
+  var MaddyImage = MaddyBusiness_transparent_b_1;
+  
+  //Eve
+  if(props.charactersStats.Eve.breast === 1){
+  
   } else{
-    EveImage = Evelyn_b3_s1;
+    EveImage = Evelyn_b7_s1;
+    EveImageS1 = Evelyn_b7_s1_sd1;
+    EveImageS2 = Evelyn_b7_s1_sd2;
+    EveImageS3 = Evelyn_b7_s1_sd3;
+    fuckingEveVideo_s4 = Evelyn_b7_s1_sd4_fuckVideo;
   }
 
-  if(props.flags.includes("SandyMidBreasts_1")){
-      SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;
-  } else{
+  //Sandy
+  var SandyImageS1;
+  var SandyImageS2;
+  var SandyImageS3;
+
+  if(props.charactersStats.Sandy.breast <= 3){
       SandyImage = anri_emily_white_dress_transparent;
       SandyImageNaked = anri_emily_NakedStanding_transparent;
+      SandyImageS1 = Sandy_b1_h2_f1_m2_s1;
+      SandyImageS2 = Sandy_b1_h2_f1_m2_s2;
+      SandyImageS3 = Sandy_b1_h2_f1_m2_s3;
+
+  } else if(props.charactersStats.Sandy.breast <= 6){
+      SandyImage = AnriRhoadesBlueCowgirlBikini_transparent;    
+      SandyImageS1 = Sandy_b6_h2_f1_m2_s1;
+      SandyImageS2 = Sandy_b6_h2_f1_m2_s2;
+      SandyImageS3 = Sandy_b6_h2_f1_m2_s3;
+      SandyImageNaked = Sandy_b6_h2_f1_m2_s3;
+
+  } else {
+      SandyImage = Sandy_b8_h2_f1_m2_s1;  
+      SandyImageNaked = Sandy_b8_h2_f1_m2_s3;  
+      SandyImageS1 = Sandy_b8_h2_f1_m2_s1;
+      SandyImageS2 = Sandy_b8_h2_f1_m2_s2;
+      SandyImageS3 = Sandy_b8_h2_f1_m2_s3;
   }
 
-  if(props.flags.includes("AmyLargeBreasts_1")){
-      AmyImage = ""
-  } else if(props.flags.includes("Amy_College")){
+
+  //Amy
+  var AmyImageS1;
+  var AmyImageS2;
+  var AmyImageS3;
+  if(props.charactersStats.Amy.breast <= 3){
+    //Pass
+  } else if(props.charactersStats.Amy.breast <= 6){
+    AmyImage = P_g_whiteTop_frontView_Transparent;
+    AmyImageNaked = P_g_Naked_smile_1_transparent;
+    var AmyImageFight = AmyImage;
+    var AmyImageFight1 = P_g_Naked_smile_1_transparent_fight_1;
+    var AmyImageFight2 = P_g_Naked_smile_1_transparent_fight_2;
+    var AmyImageFight3 = P_g_Naked_smile_1_transparent_fight_3;
+    var AmyImageFight4 = P_g_Naked_smile_1_transparent_fight_4;
+    AmyImageS1 = Amy_b4_h2_f1_m2_s1;
+    AmyImageS2 = Amy_b4_h2_f1_m2_s2;
+    AmyImageS3 = Amy_b4_h2_f1_m2_s3;
+
+    if(props.flags.includes("Amy_College")){
       AmyImage = Palin_gotti_School_1_transparent;
       AmyImageNaked = Palin_gotti_School_2_transparent;
       var AmyImageNaked_2_down = Palin_gotti_School_3_transparent;
-
+    }
+  } else if(props.charactersStats.Amy.breast <= 9){
+      AmyImage = Amy_b7_h2_f1_m2_s1;  
+      AmyImageNaked = Amy_b7_h2_f1_m2_s3;  
+      AmyImageS1 = Amy_b7_h2_f1_m2_s1;
+      AmyImageS2 = Amy_b7_h2_f1_m2_s2;
+      AmyImageS3 = Amy_b7_h2_f1_m2_s3;
+  } else {
+    AmyImage = Amy_b10_h2_f1_m2_s1;  
+    AmyImageNaked = Amy_b10_h2_f1_m2_s3;  
+    AmyImageS1 = Amy_b10_h2_f1_m2_s1;
+    AmyImageS2 = Amy_b10_h2_f1_m2_s2;
+    AmyImageS3 = Amy_b10_h2_f1_m2_s3;
   }
-  else{
-      AmyImage = P_g_whiteTop_frontView_Transparent
-      AmyImageNaked = P_g_Naked_smile_1_transparent
-      var AmyImageFight = AmyImage
-      var AmyImageFight1 = P_g_Naked_smile_1_transparent_fight_1
-      var AmyImageFight2 = P_g_Naked_smile_1_transparent_fight_2
-      var AmyImageFight3 = P_g_Naked_smile_1_transparent_fight_3
-      var AmyImageFight4 = P_g_Naked_smile_1_transparent_fight_4
+
+
+
+  //Maddy
+  if(props.charactersStats.Maddy.breast <= 3){
+    MaddyImage = MaddyBusiness_transparent_b_1;
+  }else{
+    
+  }
+
+
+
+  var DrugStealthModifier = 1;
+
+  if(props.flags.includes("ResearchApplicationII")){
+    DrugStealthModifier = 1.2;
   }
 
 
@@ -114,9 +214,12 @@ const Apartment = ( props ) => {
           onAddItem = {props.onAddItem}
           items ={props.items}
           onChangeRelationship = {props.onChangeRelationship}
+          onSetItem = {props.onSetItem}
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}       
           SandyImage = {SandyImage}
           SandyImageNaked = {SandyImageNaked}
           AmyImage = {AmyImage}
@@ -128,7 +231,19 @@ const Apartment = ( props ) => {
           AmyImageFight3 = {AmyImageFight3}
           AmyImageFight4 = {AmyImageFight4}
           EveImage = {EveImage}
-          EveImageButt = {EveImageButt}EveImageButt = {EveImageButt}
+          EveImageButt = {EveImageButt}
+          EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}       
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
           ></Home>
         );
       };
@@ -162,6 +277,8 @@ const Apartment = ( props ) => {
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
           SandyImage = {SandyImage}
           SandyImageNaked = {SandyImageNaked}
           AmyImage = {AmyImage}
@@ -174,6 +291,17 @@ const Apartment = ( props ) => {
           AmyImageFight4 = {AmyImageFight4}
           EveImage = {EveImage}
           EveImageButt = {EveImageButt}
+          EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
           ></GoOutside>
         );
       };
@@ -258,6 +386,8 @@ const Apartment = ( props ) => {
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
           SandyImage = {SandyImage}
           SandyImageNaked = {SandyImageNaked}
           AmyImage = {AmyImage}
@@ -270,6 +400,17 @@ const Apartment = ( props ) => {
           AmyImageFight4 = {AmyImageFight4}
           EveImage = {EveImage}
           EveImageButt = {EveImageButt}
+          EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
           >
 
 
@@ -303,6 +444,8 @@ const Apartment = ( props ) => {
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
           SandyImage = {SandyImage}
           SandyImageNaked = {SandyImageNaked}
           AmyImage = {AmyImage}
@@ -315,6 +458,17 @@ const Apartment = ( props ) => {
           AmyImageFight4 = {AmyImageFight4}
           EveImage = {EveImage}
           EveImageButt = {EveImageButt}
+          EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
           >
 
 
@@ -345,6 +499,8 @@ const Apartment = ( props ) => {
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
           SandyImage = {SandyImage}
           SandyImageNaked = {SandyImageNaked}
           AmyImage = {AmyImage}
@@ -357,6 +513,17 @@ const Apartment = ( props ) => {
           AmyImageFight4 = {AmyImageFight4}
           EveImage = {EveImage}
           EveImageButt = {EveImageButt}
+          EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
           ></Barn>
           </>
         ); 
@@ -385,6 +552,8 @@ const Apartment = ( props ) => {
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
           SandyImage = {SandyImage}
           SandyImageNaked = {SandyImageNaked}
           AmyImage = {AmyImage}
@@ -397,6 +566,17 @@ const Apartment = ( props ) => {
           AmyImageFight4 = {AmyImageFight4}
           EveImage = {EveImage}
           EveImageButt = {EveImageButt}
+          EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
           ></MilkCowsAtFarm>
           </>
         ); 
@@ -434,6 +614,8 @@ const Apartment = ( props ) => {
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
           SandyImage = {SandyImage}
           SandyImageNaked = {SandyImageNaked}
           AmyImage = {AmyImage}
@@ -446,6 +628,17 @@ const Apartment = ( props ) => {
           AmyImageFight4 = {AmyImageFight4}
           EveImage = {EveImage}
           EveImageButt = {EveImageButt}
+          EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
           ></TheFarmStore>
           </>
         ); 
@@ -470,6 +663,8 @@ const Apartment = ( props ) => {
 
         characterImageHeight = {characterImageHeight}
         characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
         SandyImage = {SandyImage}
         SandyImageNaked = {SandyImageNaked}
         AmyImage = {AmyImage}
@@ -480,6 +675,17 @@ const Apartment = ( props ) => {
         AmyImageFight2 = {AmyImageFight2}
         AmyImageFight3 = {AmyImageFight3}
         AmyImageFight4 = {AmyImageFight4}
+        EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
         ></TransfromationHistory>
       );
     };
@@ -503,6 +709,8 @@ const Apartment = ( props ) => {
 
         characterImageHeight = {characterImageHeight}
         characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
         SandyImage = {SandyImage}
         SandyImageNaked = {SandyImageNaked}
         AmyImage = {AmyImage}
@@ -514,6 +722,17 @@ const Apartment = ( props ) => {
         AmyImageFight3 = {AmyImageFight3}
         AmyImageFight4 = {AmyImageFight4}
         MariaImage = {MariaImage}
+        EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
         ></TheStore>
       );
     };
@@ -538,9 +757,13 @@ const Apartment = ( props ) => {
         onChangeRelationship = {props.onChangeRelationship}
         physical = {props.physical}
         Sandy = {props.Sandy}
+        name = {props.name}
+        
 
         characterImageHeight = {characterImageHeight}
         characterImageWidth   = {characterImageWidth}
+        onSetCharacterStats = {props.onSetCharacterStats}
+        charactersStats = {props.charactersStats}  
         SandyImage = {SandyImage}
         SandyImageNaked = {SandyImageNaked}
         AmyImage = {AmyImage}
@@ -552,6 +775,20 @@ const Apartment = ( props ) => {
         AmyImageFight3 = {AmyImageFight3}
         AmyImageFight4 = {AmyImageFight4}
         MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+        EveImageS2 = {EveImageS2}
+        EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+        fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+        DrugStealthModifier = {DrugStealthModifier}
         ></TheFurForest>
       );
     };
@@ -581,6 +818,8 @@ const Apartment = ( props ) => {
 
         characterImageHeight = {characterImageHeight}
         characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
         SandyImage = {SandyImage}
         SandyImageNaked = {SandyImageNaked}
         AmyImage = {AmyImage}
@@ -594,6 +833,17 @@ const Apartment = ( props ) => {
         EveImage = {EveImage}
         EveImageButt = {EveImageButt}
         MariaImage = {MariaImage}
+        EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
         ></TheBarOutside>
       );
     };
@@ -622,6 +872,8 @@ const Apartment = ( props ) => {
 
         characterImageHeight = {characterImageHeight}
         characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
         SandyImage = {SandyImage}
         SandyImageNaked = {SandyImageNaked}
         AmyImage = {AmyImage}
@@ -634,10 +886,194 @@ const Apartment = ( props ) => {
         AmyImageFight4 = {AmyImageFight4}
         MariaImage = {MariaImage}
         EveImage = {EveImage}
-          EveImageButt = {EveImageButt}
+        EveImageButt = {EveImageButt}
+        EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
         ></TheBar>
       );
     };
+
+    let GoToTheHill = () =>{
+      return (
+        <TheHill
+        money = {props.money}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+        relations = {props.relations}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+        EveImageS2 = {EveImageS2}
+        EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+        fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
+        ></TheHill>
+      );
+    };
+    let GoToTheLabOutside = () =>{
+      return (
+        <TheLabOutside
+        money = {props.money}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+        relations = {props.relations}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+          EveImageS2 = {EveImageS2}
+          EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+          fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
+        ></TheLabOutside>
+      );
+    };
+    let GoToTheLab = () =>{
+      return (
+        <TheLab
+        money = {props.money}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+        relations = {props.relations}
+        onSetResearchTime = {props.onSetResearchTime}
+        researchTime = {props.researchTime}
+        lab = {props.lab}
+        onSetLab = {props.onSetLab}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+        EveImageS2 = {EveImageS2}
+        EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+        fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
+        ></TheLab>
+      );
+    };
+
+   
+
     
     
 
@@ -671,6 +1107,11 @@ const Apartment = ( props ) => {
 
                 <Route exact path="/TheBar" component={GoToTheBar} />
                 <Route exact path="/TheBarOutside" component={GoToTheBarOutside} />
+
+                <Route exact path="/TheHill" component={GoToTheHill} />
+                
+                <Route exact path="/TheLab" component={GoToTheLab} />
+                <Route exact path="/TheLabOutside" component={GoToTheLabOutside} />
 
 
                 

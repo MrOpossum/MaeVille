@@ -35,33 +35,44 @@ const GameMap = ( props ) => {
                 <p>Where to go?</p>
                 
                 <Link to={"/Apartment"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {goToHomeClick}>Home</button>
+                    <button type="button" className="btn btn-primary" onClick = {goToHomeClick} style = {{width:"150px"}}>Home</button>
                 </Link>
                 <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {goToFarmClick}>Farm</button>
+                    <button type="button" className="btn btn-primary" onClick = {goToFarmClick} style = {{width:"150px"}}>Farm</button>
                 </Link>
                 <Link to={"/TheStore"} style = {{
                         display:(props.flags.includes("STORE_DISCOVERED") ? "": "none")
                     }}
                 >
-                    <button type="button" className="btn btn-primary" onClick={goToHomeClick}>The store</button>
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The store</button>
                 </Link>
                 <Link to={"/TheFurForest"} style = {{
                         display:(props.flags.includes("FUR_FOREST_DISCOVERED") ? "": "none")
                     }}
                 >
-                    <button type="button" className="btn btn-primary" onClick={goToHomeClick}>The Fur forest</button>
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The Fur forest</button>
                 </Link>
                 <Link to={"/TheBarOutside"} style = {{
                         display:(props.flags.includes("BAR_DISCOVERED") ? "": "none")
                     }}
                 >
-                    <button type="button" className="btn btn-primary" onClick={goToHomeClick}>The Bar</button>
-                </Link>
-                <Link to={"/TwilightLabs"} style={{ textDecoration: "none" , display: "none"}}>
-                    <button type="button" className="btn btn-primary" disabled>Twilight Labs</button>
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The Bar</button>
                 </Link>
 
+                <Link to={"/TheHill"} style = {{
+                        display:(props.flags.includes("HILL_DISCOVERED") ? "": "none")
+                    }}
+                >
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The Hill</button>
+                </Link>
+
+
+                <Link to={"/TheLabOutside"} style = {{
+                        display:(props.flags.includes("LAB_DISCOVERED") ? "": "none")
+                    }}
+                >
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The Lab</button>
+                </Link>
                 
                    
     

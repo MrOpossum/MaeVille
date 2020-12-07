@@ -35,12 +35,14 @@ const TheBar = (props) => {
             props.onPushFlag("EVEMQApproachEveAtTheBarMeetHer"); 
             props.onSpliceFlag("EVEMQMeetEveAtTheBar");
             props.onPushFlag("BAR_DISCOVERED");
+            props.onPushFlag("MET_EVE");
         }
 
         let ABInfoMeteorShowerAskForTip = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("ABInfoMeteorShowerAskForTip"); 
             props.onPushFlag("BAR_DISCOVERED");
+            props.onSpliceFlag("EVEMQMeetEveAtTheBar");
         }
     
         return(
@@ -213,12 +215,15 @@ const TheBar = (props) => {
             props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onSpliceFlag("EVEMQIamPropsName");
             props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
         }
 
         let ABIAnythingElseGoingOnAfterMeetingEve = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("ABIAnythingElseGoingOnAfterMeetingEve");
             props.onSpliceFlag("EVEMQIamPropsName");
+            props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
         }
         
     
@@ -261,17 +266,22 @@ const TheBar = (props) => {
     }else if(props.flags.includes("EVEMQComplimentMoonEarings")){
         let EVEMQEveWillBeAtTheHill = () =>{
             props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onChangeRelationship("Eve",5);
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onSpliceFlag("EVEMQComplimentMoonEarings");
+            props.onPushFlag("MET_EVE");
         }
 
         let ABIAnythingElseGoingOnAfterMeetingEve = () =>{
             props.onAddMinutes(10);
+            props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onChangeRelationship("Eve",5);
             props.onPushFlag("ABIAnythingElseGoingOnAfterMeetingEve");
             props.onSpliceFlag("EVEMQComplimentMoonEarings");
+            props.onPushFlag("MET_EVE");
         }
         
     
@@ -315,6 +325,7 @@ const TheBar = (props) => {
     }else if(props.flags.includes("EVEMQComplimentClothes")){
         let EVEMQEveWillBeAtTheHill = () =>{
             props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onChangeRelationship("Eve",5);
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQEveWillBeAtTheHill");
@@ -322,6 +333,8 @@ const TheBar = (props) => {
         }
 
         let ABIAnythingElseGoingOnAfterMeetingEve = () =>{
+            props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onAddMinutes(10);
             props.onChangeRelationship("Eve",5);
             props.onPushFlag("ABIAnythingElseGoingOnAfterMeetingEve");
@@ -369,6 +382,7 @@ const TheBar = (props) => {
     }else if(props.flags.includes("EVEMQComplimentEyeliner")){
         let EVEMQEveWillBeAtTheHill = () =>{
             props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onChangeRelationship("Eve",5);
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQEveWillBeAtTheHill");
@@ -376,6 +390,8 @@ const TheBar = (props) => {
         }
 
         let ABIAnythingElseGoingOnAfterMeetingEve = () =>{
+            props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onAddMinutes(10);
             props.onChangeRelationship("Eve",5);
             props.onPushFlag("ABIAnythingElseGoingOnAfterMeetingEve");
@@ -428,6 +444,7 @@ const TheBar = (props) => {
             props.onAddMinutes(10);
             props.onPushFlag("ABInfoTippedTheBartender50MeteorShower");
             props.onSpliceFlag("EVEMQApproachEveAtTheBarMeetHerHoller");
+            props.onPushFlag("HILL_DISCOVERED")
         }
 
         let ABInfoTippedTheBartender50MeteorShowerDontTip = () =>{
@@ -477,14 +494,16 @@ const TheBar = (props) => {
             props.onChangeRelationship("Eve",5);
             props.onAddMinutes(10);
             props.onPushFlag("ABInfoTippedTheBartender50MeteorShower");
-            props.onSpliceFlag("EVEMQApproachEveAtTheBarMeetHerHoller");
+            props.onSpliceFlag("EVEMQApproachEveAtTheBarMeetHerStayShut");
+            props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
         }
 
         let ABInfoTippedTheBartender50MeteorShowerDontTip = () =>{
             props.onChangeRelationship("Eve",5);
             props.onAddMinutes(10);
             props.onPushFlag("ABInfoTippedTheBartender50MeteorShowerDontTip");
-            props.onSpliceFlag("EVEMQApproachEveAtTheBarMeetHerHoller");
+            props.onSpliceFlag("EVEMQApproachEveAtTheBarMeetHerStayShut");
         }
     
         return(
@@ -510,7 +529,7 @@ const TheBar = (props) => {
     
             
                 <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShower}>Place $50 in the jar</button>
+                    <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShower} disabled = {props.money > 50 ? false: true}>Place $50 in the jar</button>
                 </Link> 
                 <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShowerDontTip}>Don't tip the bartender</button>
@@ -531,6 +550,9 @@ const TheBar = (props) => {
             props.onAddMinutes(10);
             props.onPushFlag("ABInfoTippedTheBartender50MeteorShower");
             props.onSpliceFlag("ABInfoMeteorShowerAskForTip");
+            props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
+            props.onPushFlag("MET_EVE");
         }
 
         let ABInfoTippedTheBartender50MeteorShowerDontTip = () =>{
@@ -574,12 +596,16 @@ const TheBar = (props) => {
     } else if(props.flags.includes("ABInfoTippedTheBartender50MeteorShower")){
         let EVEMQEveWillBeAtTheHill = () =>{
             props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onSpliceFlag("ABInfoTippedTheBartender50MeteorShower");
         }
 
         let ABIAnythingElseGoingOnAfterMeetingEve = () =>{
+            props.onPushFlag("HILL_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
+            props.onPushFlag("EVEMQEveWillBeAtTheHill");
             props.onAddMinutes(10);
             props.onPushFlag("ABIAnythingElseGoingOnAfterMeetingEve");
             props.onSpliceFlag("ABInfoTippedTheBartender50MeteorShower");
@@ -656,9 +682,10 @@ const TheBar = (props) => {
     } else if(props.flags.includes("ABIAnythingElseGoingOnAfterMeetingEve")){
         let ABInfoLeaveBarDiscoverTheCompany = () =>{
             props.onAddMinutes(10);
-            props.onPushFlag("COMPANY_DISCOVERED");
             props.onSpliceFlag("ABIAnythingElseGoingOnAfterMeetingEve");
             props.onSpliceFlag("SCIENCELABQSStart");
+            props.onPushFlag("LAB_DISCOVERED");
+            props.onPushFlag("SCIENCELABQSStartInLab");
         }
     
         return(

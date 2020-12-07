@@ -11,12 +11,18 @@ const Col2 = ( props ) => {
         backgroundImage: `url(${(props.BackImage)})`,
         backgroundSize: `${(props.backSize || "cover")}`,
         backgroundRepeat: `${(props.backRepeat || "no-repeat")}`,
-        backgroundPosition: `${(props.backPosition || "center")}`
+        backgroundPosition: `${(props.backPosition || "center")}`,
+        minWidth:"420px",
+        minHeight: "420px"
         
       };
+    
+    let rowHeight = "440px"
+    window.innerHeight *.73 > 440 ? rowHeight = "73vh" : rowHeight = "440px";
     const myStyleRow = {
-        height: `${(props.rowHeight ||"70vh")}`,
-        minHeight: "440px"
+        height: {rowHeight},
+        minHeight: "440px",
+        minWidth:"420px",
     }
 
     return( 

@@ -81,6 +81,7 @@ const reducer = (state = mainCharacter, action) =>{
                 fullState:{
                     ...state.fullState,
                     relations:{
+                        ...state.fullState.relations,
                         [action.relationPerson]: state.fullState.relations[action.relationPerson] += action.relationAmmountToAdd
                     }
                 }
@@ -242,6 +243,42 @@ const reducer = (state = mainCharacter, action) =>{
 
                 }
             }
+
+        case actionTypes.SET_RESEARCH_TIMES:{
+            return{
+                fullState:{
+                    ...state.fullState,
+                    researchTime:{
+                        ...state.fullState.researchTime,
+                        [action.researchType]: action.researchTimeToSet
+                    }
+                }
+            }
+        }
+
+        case actionTypes.SET_LAB:{
+            return{
+                fullState:{
+                    ...state.fullState,
+                    lab:{
+                        ...state.fullState.lab,
+                        [action.labItem]: action.setLabItem
+                    }
+                }
+            }
+        }
+
+        case actionTypes.SET_CHARACTER_STATS:{
+            return{
+                fullState:{
+                    ...state.fullState,
+                    charactersStats:{
+                        ...state.fullState.charactersStats,
+                        [action.character[action.characterStatToChange]] : action.NewStat,
+                    }
+                }
+            }
+        }
             
 
 

@@ -5,6 +5,10 @@ import Col1 from "../../components/col1";
 import Col2 from "../../components/col2";
 import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
+import Evelyn from "../../Characters/Evelyn";
+import Amy from "../../Characters/Amy";
+import Sandy from "../../Characters/Sandy";
+
 
 //Images
 import TheFurForestEntrance from "../../Images/TheFurForest/FurForestEntrance.jpg";
@@ -24,6 +28,8 @@ var myRoll = 0;
 var sandyRoll = 0;
 var goblinRolls = 0;
 var rollCount = 0;
+var CurrentLocation = "/TheFurForest";
+
 
 const TheFurForest = (props) => {
 
@@ -768,9 +774,126 @@ const TheFurForest = (props) => {
             props.onAddMinutes(10);
             props.onPushFlag("GoToTheFoxesHideoutFirstTime");
         }
+
+        let furForestLinks = () =>{
+            return(
+                <Link to={"/TheFurForest"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GoToFoxesHideout} style = {{
+                        display:(props.flags.includes("TFFWTheFurForestQuestStart") || props.flags.includes("DISCOVERED_FUR_FOX_HIDEOUT") ? "": "none")
+                    }}
+                    >Find the Fox's hideout</button>
+                </Link>  
+            )  
+        }
     
-    
+        
+        if(props.flags.includes("WITH_EVE")){
+                return(
+                    <>
+                    <Col1>
+                        <SetCol1></SetCol1>
+                    </Col1>
+                    <Evelyn
+                        backImageChar = {TheFurForestEntrance}
+                        ImageChar = {props.EveImage}
+                        ImageCharS1 = {props.EveImageS1}
+                        ImageCharS2 = {props.EveImageS2}
+                        ImageCharS3 = {props.EveImageS3}
+                        VideoCharFuckingS4 = {props.fuckingEveVideo_s4}
+                        characterImageWidth = {props.characterImageWidth}
+                        characterImageHeight = {props.characterImageHeight}
+                        CurrentLocation = {CurrentLocation}
+                        DrugStealthModifier = {props.DrugStealthModifier}
+                    > 
+                        
+                    </Evelyn>
+                    </>
+                )
+        }
+
+        if(props.flags.includes("WITH_AMY")){
+            return(
+                <>
+                <Col1>
+                    <SetCol1></SetCol1>
+                </Col1>
+                <Amy
+                    backImageChar = {TheFurForestEntrance}
+                    ImageChar = {props.AmyImage}
+                    ImageCharS1 = {props.AmyImageS1}
+                    ImageCharS2 = {props.AmyImageS2}
+                    ImageCharS3 = {props.AmyImageS3}
+                    VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
+                    characterImageWidth = {props.characterImageWidth}
+                    characterImageHeight = {props.characterImageHeight}
+                    CurrentLocation = {CurrentLocation}
+                    DrugStealthModifier = {props.DrugStealthModifier}
+                > 
+                    
+                </Amy>
+                </>
+            )
+        }
+
+
+        if(Math.random() < .05 && props.flags.includes("MET_EVE")){
+            
+            return(
+                <>
+                <Col1>
+                    <SetCol1></SetCol1>
+                </Col1>
+                <Evelyn
+                    backImageChar = {TheFurForestEntrance}
+                    ImageChar = {props.EveImage}
+                    ImageCharS1 = {props.EveImageS1}
+                    ImageCharS2 = {props.EveImageS2}
+                    ImageCharS3 = {props.EveImageS3}
+                    VideoCharFuckingS4 = {props.fuckingEveVideo_s4}
+                    characterImageWidth = {props.characterImageWidth}
+                    characterImageHeight = {props.characterImageHeight}
+                    CurrentLocation = {CurrentLocation}
+                    DrugStealthModifier = {props.DrugStealthModifier}
+                > 
+                    <p>Hello {props.name}, Isn't the forest pretty?</p>
+                    {furForestLinks()}
+                </Evelyn>
+                </>
+            )
+        }
+        
+        if(Math.random() < 0.10 && props.flags.includes("MET_AMY")){
+            
+            return(
+                <>
+                <Col1>
+                    <SetCol1></SetCol1>
+                </Col1>
+                <Amy
+                    backImageChar = {TheFurForestEntrance}
+                    ImageChar = {props.AmyImage}
+                    ImageCharS1 = {props.AmyImageS1}
+                    ImageCharS2 = {props.AmyImageS2} 
+                    ImageCharS3 = {props.AmyImageS3}
+                    VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
+                    characterImageWidth = {props.characterImageWidth}
+                    characterImageHeight = {props.characterImageHeight}
+                    CurrentLocation = {CurrentLocation}
+                    DrugStealthModifier = {props.DrugStealthModifier}
+                > 
+                    <p>Hello {props.name}, I was doing some research on these trees</p>
+                    {furForestLinks()}
+                </Amy>
+                </>
+            )
+        }
+
+
+
         return(
+
+            
+
             <>
             <Col1>
                 <SetCol1
@@ -806,4 +929,4 @@ const TheFurForest = (props) => {
 }
 
 
-export default TheFurForest;
+export default TheFurForest

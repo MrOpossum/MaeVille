@@ -55,9 +55,6 @@ const TheBarn = ( props ) => {
                 <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={HowDoesFarmWorkFunc}>Yes, how does this farm work?</button>
                 </Link>
-                <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary">No, I don't need help</button>
-                </Link>
                 
             </Col3>
             </>
@@ -142,7 +139,13 @@ const TheBarn = ( props ) => {
             props.onSpliceFlag("LACBRAQGaveBraceletToSandySheWillBeInFarmAtNight");
             //End of LACBRAQ
             props.onPushFlag("LACBRAQFinsihed");
-            props.onPushFlag("SandyMidBreasts_1"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
+            if(props.charactersStats.Sandy < 6){
+                props.onSetCharacterStats("Sandy","breast",8);    
+            } 
+             else{
+                props.onSetCharacterStats("Sandy","breast",10);
+            }
+            
             props.onPushFlag("SCIENCELABQSStart");
             props.onSpliceFlag("WearingLacBracelet");
             props.onSetItem("LacBracelet",0);
@@ -177,14 +180,24 @@ const TheBarn = ( props ) => {
             props.onAddMinutes(10);
             props.onSpliceFlag("LACBRAQInspectSandyDrinkingFromUdder");
             props.onPushFlag("LACBRAQHelpSandyIntoBarn");
-            props.onPushFlag("SandyMidBreasts_1"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
+            if(props.charactersStats.Sandy < 6){
+                props.onSetCharacterStats("Sandy","breast",8);    
+            } 
+             else{
+                props.onSetCharacterStats("Sandy","breast",10);
+            }
         }
         let LACBRAQGetSandySuckingMilkLeave = () =>{
             props.onAddMinutes(10);
             props.onSpliceFlag("LACBRAQGaveBraceletToSandySheWillBeInFarmAtNight");
             //End of LACBRAQ
             props.onPushFlag("LACBRAQFinsihed");
-            props.onPushFlag("SandyMidBreasts_1"); //I should start adding the images over. Instead of photoshop. And get the larger breasts img. New sandy body.
+            if(props.charactersStats.Sandy < 6){
+                props.onSetCharacterStats("Sandy","breast",8);    
+            } 
+             else{
+                props.onSetCharacterStats("Sandy","breast",10);
+            }
             props.onPushFlag("SCIENCELABQSStart");
             props.onSpliceFlag("WearingLacBracelet");
             props.onSetItem("LacBracelet",0);
