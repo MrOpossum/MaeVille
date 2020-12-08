@@ -322,7 +322,7 @@ const TheHill = (props) => {
     } else if(props.flags.includes("EVEMQKeepMoonstoneAtHill")){
         let EVEMQEveWillBeAtGallery = () =>{
             props.onAddMinutes(10);
-            props.onSpliceFlag("EVEMQGiveMoonstoneToEveAthill");
+            props.onSpliceFlag("EVEMQKeepMoonstoneAtHill");
         }
 
         return(
@@ -464,6 +464,7 @@ const TheHill = (props) => {
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQGiveMoonstoneToEveAthill");
             props.onSpliceFlag("EVEMQLookAtTheStarsAtHill");
+            props.onSpliceFlag("EVEMQDodgedMeteoritesExcellentAtHill");
             props.onChangeRelationship("Eve",5);
         }
 
@@ -471,6 +472,7 @@ const TheHill = (props) => {
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQKeepMoonstoneAtHill");
             props.onSpliceFlag("EVEMQLookAtTheStarsAtHill");
+            props.onSpliceFlag("EVEMQDodgedMeteoritesExcellentAtHill");
             props.onChangeRelationship("Eve",-2);
             props.onAddItem("moonStone",1);
         }

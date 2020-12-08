@@ -76,6 +76,117 @@ const TheBarOutside = (props) => {
             props.onAddMinutes(10);
             props.onAddMoney(-100);
         }
+
+
+        let theBarLinks = () =>{
+            return(
+                <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {EnterTheBar} disabled = {(props.money > 100 ? false:true)}>Pay $100 to enter the bar</button>
+                </Link> 
+            )  
+        }
+    
+        
+        if(props.flags.includes("WITH_EVE")){
+                return(
+                    <>
+                    <Col1>
+                        <SetCol1></SetCol1>
+                    </Col1>
+                    <Evelyn
+                        backImageChar = {TheFurForestEntrance}
+                        ImageChar = {props.EveImage}
+                        ImageCharS1 = {props.EveImageS1}
+                        ImageCharS2 = {props.EveImageS2}
+                        ImageCharS3 = {props.EveImageS3}
+                        VideoCharFuckingS4 = {props.fuckingEveVideo_s4}
+                        characterImageWidth = {props.characterImageWidth}
+                        characterImageHeight = {props.characterImageHeight}
+                        CurrentLocation = {CurrentLocation}
+                        DrugStealthModifier = {props.DrugStealthModifier}
+                    > 
+                        
+                    </Evelyn>
+                    </>
+                )
+        }
+
+        if(props.flags.includes("WITH_AMY")){
+            return(
+                <>
+                <Col1>
+                    <SetCol1></SetCol1>
+                </Col1>
+                <Amy
+                    backImageChar = {TheFurForestEntrance}
+                    ImageChar = {props.AmyImage}
+                    ImageCharS1 = {props.AmyImageS1}
+                    ImageCharS2 = {props.AmyImageS2}
+                    ImageCharS3 = {props.AmyImageS3}
+                    VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
+                    characterImageWidth = {props.characterImageWidth}
+                    characterImageHeight = {props.characterImageHeight}
+                    CurrentLocation = {CurrentLocation}
+                    DrugStealthModifier = {props.DrugStealthModifier}
+                > 
+                    
+                </Amy>
+                </>
+            )
+        }
+
+
+        if(Math.random() < .05 && props.flags.includes("MET_EVE")){
+            
+            return(
+                <>
+                <Col1>
+                    <SetCol1></SetCol1>
+                </Col1>
+                <Evelyn
+                    backImageChar = {TheFurForestEntrance}
+                    ImageChar = {props.EveImage}
+                    ImageCharS1 = {props.EveImageS1}
+                    ImageCharS2 = {props.EveImageS2}
+                    ImageCharS3 = {props.EveImageS3}
+                    VideoCharFuckingS4 = {props.fuckingEveVideo_s4}
+                    characterImageWidth = {props.characterImageWidth}
+                    characterImageHeight = {props.characterImageHeight}
+                    CurrentLocation = {CurrentLocation}
+                    DrugStealthModifier = {props.DrugStealthModifier}
+                > 
+                    <p>Hello {props.name}, I love this bar, they have really nice cocktails</p>
+                    {theBarLinks()}
+                </Evelyn>
+                </>
+            )
+        }
+        
+        if(Math.random() < 0.10 && props.flags.includes("MET_AMY")){
+            
+            return(
+                <>
+                <Col1>
+                    <SetCol1></SetCol1>
+                </Col1>
+                <Amy
+                    backImageChar = {TheFurForestEntrance}
+                    ImageChar = {props.AmyImage}
+                    ImageCharS1 = {props.AmyImageS1}
+                    ImageCharS2 = {props.AmyImageS2} 
+                    ImageCharS3 = {props.AmyImageS3}
+                    VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
+                    characterImageWidth = {props.characterImageWidth}
+                    characterImageHeight = {props.characterImageHeight}
+                    CurrentLocation = {CurrentLocation}
+                    DrugStealthModifier = {props.DrugStealthModifier}
+                > 
+                    <p>Hello {props.name}, There are some really influential people here</p>
+                    {theBarLinks()}
+                </Amy>
+                </>
+            )
+        }
     
     
         return(

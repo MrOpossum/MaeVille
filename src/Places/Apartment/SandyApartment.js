@@ -57,7 +57,7 @@ const SandyApartment = ( props ) => {
                 Sandy approaches you, grabs your breast and starts kneading them. Lighting goes through your spine. </p>
 
                 <Link to={"/SandyApartment"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick={LACBRAQSandySawYouSheHadNoIdeaClick1}>You shiver and feel light headed.</button>
+                    <button type="button" className="btn btn-primary" onClick={LACBRAQSandySawYouSheHadNoIdeaClick1} style = {{width: props.standardButtonWidth}}>You shiver and feel light headed.</button>
                 </Link>
     
             </Col3>
@@ -81,7 +81,7 @@ const SandyApartment = ( props ) => {
                     rowHeight = {" "}
             >
             <video autoPlay muted loop 
-            style ={{maxWidth: "100%"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={SandySuckleLACBRAQpt1} type="video/mp4"/>
             </video>
             </Col2>     

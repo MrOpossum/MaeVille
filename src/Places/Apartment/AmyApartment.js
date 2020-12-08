@@ -139,7 +139,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP} type="video/mp4"/>
             </video>
             </Col2>   
@@ -177,7 +177,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay muted loop 
-            style ={{width: "100%", height: "100%"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP} type="video/mp4"/>
             </video>
             </Col2>    
@@ -217,7 +217,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={TwoLesbosSuckThirdLesboMilk_CUTSHORT} type="video/mp4"/>
             </video>
             </Col2>  
@@ -361,7 +361,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}} controls>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
                 <source src={MastasiaMassiveBoobsAmyDidNotResistCut} type="video/mp4"/>
             </video>
             </Col2>  
@@ -399,7 +399,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}} controls>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
                 <source src={LACBRAQSandySucksAmyBreast_amyapmt} type="video/mp4"/>
             </video>
             </Col2>  
@@ -434,7 +434,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}} controls>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
                 <source src={LACBRAQAmyGivesYouBJAmyApmt} type="video/mp4"/>
             </video>
             </Col2>  
@@ -764,7 +764,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}} controls>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
                 <source src={LACBRAQSandyStartsFillingUp} type="video/mp4"/>
             </video>
             </Col2>  
@@ -806,7 +806,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}} controls>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
                 <source src={LACBRAQBurstingOutOfShirtFatishWoman} type="video/mp4"/>
             </video>
             </Col2>  
@@ -855,7 +855,7 @@ const AmyApartment = (props) => {
               rowHeight = {" "}
         >
           <video autoPlay loop 
-          style ={{width: "100%", height: "100%"}} controls>
+          style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
               <source src={LACBRAQSandyBreastGrowthInAmyApmtAndMilkManuu} type="video/mp4"/>
           </video>
         </Col2>   
@@ -899,7 +899,7 @@ const AmyApartment = (props) => {
               rowHeight = {" "}
         >
           <video autoPlay loop 
-          style ={{width: "100%", height: "100%"}} controls>
+          style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
               <source src={LACBRAQYouSuckSandysBreastsFullOfMilk} type="video/mp4"/>
           </video>
         </Col2>   
@@ -1285,7 +1285,7 @@ const AmyApartment = (props) => {
                     rowHeight = {" "}
             >
         <video autoPlay loop
-            style ={{width: "100%", height: "100%"}} controls>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
                 <source src={SANTQAmyFuckedSchoolgirlUniform} type="video/mp4"/>
             </video>
         </Col2>  

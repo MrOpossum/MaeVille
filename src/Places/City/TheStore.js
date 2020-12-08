@@ -41,7 +41,7 @@ const TheStore = (props) => {
             </Col1>
             <Col2 BackImage = {TheStoreFront}>
                     <img alt = {"Not found"} src = {props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
-                    <img alt = {"Not found"} src = {props.MariaImage} style ={{width : "25vw", height: props.characterImageHeight}}></img>
+                    <img alt = {"Not found"} src = {props.MariaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>  
     
             <Col3 > 
@@ -95,7 +95,7 @@ const TheStore = (props) => {
             </Col1>
             <Col2 BackImage = {TheStoreFront}>
                     <img alt = {"Not found"} src = {props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
-                    <img alt = {"Not found"} src = {props.MariaImage} style ={{width : "25vw", height: props.characterImageHeight}}></img>
+                    <img alt = {"Not found"} src = {props.MariaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>  
     
             <Col3 > 

@@ -198,7 +198,7 @@ const TheFurForest = (props) => {
             </Col1>
             <Col2 BackImage = {" "} rowHeight = {" "}>
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={SANTMQFurryFoxFuckingVideo} type="video/mp4"/>
             </video>
             </Col2>  
@@ -463,7 +463,7 @@ const TheFurForest = (props) => {
             </Col1>
             <Col2 BackImage = {" "} rowHeight = {" "}>
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={SmallBreastsGoblinGangbangNoPregnant} type="video/mp4"/>
             </video>
             </Col2>  
@@ -731,7 +731,7 @@ const TheFurForest = (props) => {
             </Col1>
             <Col2 BackImage = {" "} rowHeight = {" "}>
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={SmallBreastsGoblinGangbangNoPregnant} type="video/mp4"/>
             </video>
             </Col2>  

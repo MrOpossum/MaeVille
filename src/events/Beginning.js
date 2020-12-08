@@ -38,7 +38,11 @@ const Beginning = ( props ) => {
                 <h1 id="col_1_title"> MaeVille </h1>
             </Col1>
             <Col2 BackImage = {anri_emily_lying_down_transparent}>
-                <h2>Welcome, I hope you enjoy the game.</h2>
+                
+            </Col2>
+
+            <Col3> 
+            <h2>Welcome, I hope you enjoy the game.</h2>
                 <p>I plan to build an amazing open-world game for all transformation lovers.</p>
                 <p>This game contains graphic adult content. Only play this if you are 18 or older</p>
                 <Link to={"/_0_Start"} style={{ textDecoration: "none" }}>
@@ -56,9 +60,6 @@ const Beginning = ( props ) => {
                 </Link>
 
                 <p>If you like the game, feel free to check my <a href ="https://www.patreon.com/user?u=45785741&fan_landing=true">Patreon</a> The games latest updates, cheats and plans are there!</p>
-            </Col2>
-
-            <Col3 BackImage = {madrid} > 
             </Col3>
             </>
         )

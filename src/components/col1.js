@@ -8,11 +8,9 @@ const Col1 = ( props ) => {
     let myStyleCol = {
         backgroundImage: `url(${props.BackImage})`,
         backgroundSize: `${props.backSize}`,
-        minWidth:"420px",
       };
     let myStyleRow = {
-        height:`120px`,
-        minWidth:"420px",
+        minHeight:`120px`,
     }
 
 

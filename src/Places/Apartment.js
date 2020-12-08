@@ -78,10 +78,10 @@ import MaddyBusiness_transparent_b_1 from "../Images/Characters/Maddeline/MaddyB
 
 const Apartment = ( props ) => {
   
-  var characterImageHeight = "70vh";
+  var characterImageHeight = "500px";
   var characterImageWidth = "28vw";
   if(window.screen.width < 600){
-    characterImageWidth = "40vw";
+    characterImageWidth = "48vw";
   }
 
 
@@ -192,6 +192,9 @@ const Apartment = ( props ) => {
 
   var DrugStealthModifier = 1;
 
+  var standardButtonWidth = "300px";
+  var col2Height = "500px"; //make sure it's the same as col2
+
   if(props.flags.includes("ResearchApplicationII")){
     DrugStealthModifier = 1.2;
   }
@@ -202,6 +205,8 @@ const Apartment = ( props ) => {
         return (
           <Home
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -253,6 +258,8 @@ const Apartment = ( props ) => {
             <FapInApartment
               onAddMinutes = {props.onAddMinutes}
               money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
               energy = {props.energy}
               date = {props.date}
             />
@@ -263,6 +270,8 @@ const Apartment = ( props ) => {
         return (
           <GoOutside
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -311,6 +320,8 @@ const Apartment = ( props ) => {
         return (
           <LacBraQHelpSandyOpenDoor
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -327,6 +338,8 @@ const Apartment = ( props ) => {
         return (
           <LacBraQAmyMovingIn
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -349,6 +362,8 @@ const Apartment = ( props ) => {
       return( 
         <SleepAtHome
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -367,6 +382,8 @@ const Apartment = ( props ) => {
       return(
         <SandyApartment
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -383,6 +400,7 @@ const Apartment = ( props ) => {
           onSetItem = {props.onSetItem}
           Amy = {props.Amy}
           Sandy = {props.Sandy}
+          physical = {props.physical}
 
           characterImageHeight = {characterImageHeight}
           characterImageWidth   = {characterImageWidth}
@@ -422,6 +440,8 @@ const Apartment = ( props ) => {
       return(
         <AmyApartment
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -484,6 +504,8 @@ const Apartment = ( props ) => {
           <>
           <Barn
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -534,6 +556,8 @@ const Apartment = ( props ) => {
           <>
           <MilkCowsAtFarm
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -596,6 +620,8 @@ const Apartment = ( props ) => {
           <>
           <TheFarmStore
           money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
           energy = {props.energy}
           date = {props.date}
           onAddMinutes = {props.onAddMinutes}
@@ -648,6 +674,8 @@ const Apartment = ( props ) => {
       return (
         <TransfromationHistory
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -694,6 +722,8 @@ const Apartment = ( props ) => {
       return (
         <TheStore
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -743,6 +773,8 @@ const Apartment = ( props ) => {
       return (
         <TheFurForest
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -798,6 +830,8 @@ const Apartment = ( props ) => {
       return (
         <TheBarOutside
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -852,6 +886,8 @@ const Apartment = ( props ) => {
       return (
         <TheBar
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -906,6 +942,8 @@ const Apartment = ( props ) => {
       return (
         <TheHill
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -961,6 +999,8 @@ const Apartment = ( props ) => {
       return (
         <TheLabOutside
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -1016,6 +1056,8 @@ const Apartment = ( props ) => {
       return (
         <TheLab
         money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}

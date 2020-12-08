@@ -14,7 +14,7 @@ import TheLabInside from "../../Images/TheLab/TheLabInside.jpg";
 
 
 
-
+let currentYear = 2020;
 const TheLab = (props) => {
 
     const ingredientList = [
@@ -78,7 +78,7 @@ const TheLab = (props) => {
             }
         },
         {
-            name:"Microscope",
+            name:"microscope",
             price: 600,
             action: () =>{
                 props.onAddItem("microscope",1);
@@ -86,7 +86,7 @@ const TheLab = (props) => {
             }
         },
         {
-            name:"Mana Infuser",
+            name:"mana Infuser",
             price: 3000,
             action: () =>{
                 props.onAddItem("manaInfuser",1);
@@ -98,11 +98,15 @@ const TheLab = (props) => {
     const prepareList = [
         {
             name:"Height I",
+            itemName: "height1drug",
             price: 300,
             action: () =>{
                 props.onAddItem("height1drug",1);
-                props.onAddMoney(-300)
+                props.onAddMoney(-300);
+                props.onAddItem("elvenPowder",-2);
+                props.onAddItem("enhancedSilicone",-1);
             },
+            description: "Has a chance of making the recipient taller. (Not implemented)" ,
             ingredients: [
                 {
                     nameDisplay: "Elven powder",
@@ -123,10 +127,14 @@ const TheLab = (props) => {
         },
         {
             name:"Breast I",
+            itemName: "breast1drug",
             price: 200,
+            description: "Has a chance of making the recipient bustier" ,
             action: () =>{
                 props.onAddItem("breast1drug",1);
-                props.onAddMoney(-200)
+                props.onAddMoney(-200);
+                props.onAddItem("elvenPowder",-2);
+                props.onAddItem("enhancedSilicone",-1);
             },
             ingredients: [
                 {
@@ -148,10 +156,13 @@ const TheLab = (props) => {
         },
         {
             name:"Lactation I",
+            itemName: "lactation1drug",
             price: 200,
+            description: "Has a chance of making the recipient lactate. (Not implemented)" ,
             action: () =>{
                 props.onAddItem("lactation1drug",1);
                 props.onAddMoney(-200);
+                props.onAddItem("cowgirlMilk",-2);
             },
             ingredients: [
                 {
@@ -160,7 +171,7 @@ const TheLab = (props) => {
                     quantity: 2
                 },
                 {
-                    nameDisplay: "Microscope",
+                    nameDisplay: "microscope",
                     name: "microscope",
                     quantity: 1
                 },
@@ -168,10 +179,15 @@ const TheLab = (props) => {
         },
         {
             name:"Strength I",
+            itemName: "strenght1drug",
             price: 500,
+            description: "Has a chance of making the recipient grow muscle. (Not implemented)" ,
             action: () =>{
                 props.onAddItem("strength1drug",1);
-                props.onAddMoney(-500)
+                props.onAddMoney(-500);
+                props.onAddItem("enchantedIron",-2);
+                props.onAddItem("elvenPowder",-2);
+                
             },
             ingredients: [
                 {
@@ -193,10 +209,15 @@ const TheLab = (props) => {
         },
         {
             name:"Mind Control I",
+            itemName: "mindControl1drug",
             price: 600,
+            description: "Has a chance of making the recipient more receptive to you. (Not implemented)" ,
             action: () =>{
                 props.onAddItem("mindControl1drug",1);
-                props.onAddMoney(-600)
+                props.onAddMoney(-600);
+                props.onAddItem("enchantedIron",-1);
+                props.onAddItem("elvenPowder",-1);
+                props.onAddItem("brazilianSpiderVenom",-1);
             },
             ingredients: [
                 {
@@ -223,10 +244,13 @@ const TheLab = (props) => {
         },
         {
             name:"Lust I",
+            itemName: "lust1drug",
             price: 150,
+            description: "Has a chance of making the recipient hornier. (Not implemented)" ,
             action: () =>{
                 props.onAddItem("lust1drug",1);
-                props.onAddMoney(-150)
+                props.onAddMoney(-150);
+                props.onAddItem("brazilianSpiderVenom",-2);
             },
             ingredients: [
                 {
@@ -330,7 +354,7 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("lust",props.researchTime.lust - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.lust < 0){
+                if(props.researchTime.lust <= 0){
                     props.onPushFlag("ResearchLustII");
                     props.onSpliceFlag("ResearchLustI");
                     props.onSetResearchTime("lust",72);
@@ -633,26 +657,54 @@ const TheLab = (props) => {
             props.onSpliceFlag("TLQGoToPrepare");
         }
 
-        function areIngredientsAvailiable(currentDrug) {
+        function areIngredientsAvailiable(currentDrug) { //You need to check for every ingredient
+            var requirementCount = 0
+            var ingredientCount = 0
             currentDrug.ingredients.forEach( (ingredientRequired) =>{
-                if( !(ingredientRequired.quantity <= props.items[ingredientRequired.name]) ){
-                    return false
+                ingredientCount += 1
+                if( (ingredientRequired.quantity <= props.items[ingredientRequired.name]) ){
+                    requirementCount += 1;
                 }
             });
 
-            return true //CHECK IF THIS WORKS
+            if(requirementCount === ingredientCount){
+                return true
+            } else{
+                return false
+            }
         }
+
+        let firstColumnWidth = "250px";
+        let secondColumnWidth = "750px";
 
         return(
             <>
             <Col1><SetCol1/></Col1>
             
             <Col2>
+                <div>
+                <button type="button" className="btn btn-secondary" style={{width: firstColumnWidth}}>Name</button>
+                <button type="button" className="btn btn-secondary" style={{width: secondColumnWidth}}>Description</button>
+                <button type="button" className="btn btn-secondary" style={{width: "100px"}}>Inventory</button>
+                </div>
                 {prepareList.map((drug, index)=>{
-                    return (<button type="button" className="btn btn-primary" style={{width:"250px"}} 
-                        onClick = {drug.action} disabled ={ ((props.money > drug.price ) && (!areIngredientsAvailiable(drug))) ? false:true}>{drug.name} - ${drug.price}
-                    </button>)   
+                    return (
+                        <div>
+                            <button type="button" className="btn btn-primary" style={{width: firstColumnWidth}}  key = {index + "durgtoprepare"}
+                                onClick = {drug.action} disabled ={ ((props.money > drug.price ) && (areIngredientsAvailiable(drug))) ? false:true}>{drug.name} - ${drug.price}
+                            </button>
+
+                            <button type="button" className="btn btn-primary" style={{ width: secondColumnWidth}}  key = {index + "durgtoprepareRequirements"}> 
+                                {drug.description}
+                            </button>
+
+                            <button type="button" className="btn btn-primary" style={{ width: "100px"}}  key = {index + "durgtoprepareRequirements"}> 
+                                {props.items[drug.itemName]}
+                            </button>
+                        </div>
+                    )   
                 })}
+                
             </Col2>  
     
             <Col3> 
@@ -782,10 +834,16 @@ const TheLab = (props) => {
             props.onPushFlag("TLQGoToCompany");
         }
 
+
+        console.log()
         let TLQClaimSalary = () =>{
-            if(props.lab.lastPaidWeek > props.date.getWeek()){
+            if(props.lab.lastPaidWeek <= props.date.getWeek() || props.date.getFullYear() > currentYear){
                 props.onSetLab("lastPaidWeek", props.date.getWeek());
                 props.onAddMoney(200);
+                props.onAddMinutes(10);
+            }
+            if(props.date.getFullYear() > currentYear){
+                currentYear += 1;
             }
         }
     

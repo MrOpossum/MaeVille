@@ -18,6 +18,8 @@ import GameMap from "./Places/GameMap";
 
 const App = ( props ) => {
 
+  var standardButtonWidth = "300px";
+
   
   let BeginningSwitch = () => {
     return (
@@ -100,6 +102,7 @@ const App = ( props ) => {
       <>
       <GameMap
       money = {props.money}
+      standardButtonWidth = {standardButtonWidth}
       energy = {props.energy}
       date = {props.date}
       onAddMinutes = {props.onAddMinutes}

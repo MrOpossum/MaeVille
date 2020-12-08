@@ -193,7 +193,7 @@ const SleepAtHome = (props) => {
           <SetCol1 />
         </Col1>
         <Col2 BackImage={" "} rowHeight={" "}>
-          <video autoPlay loop style ={{width: "100%", height: "100%"}} controls>
+          <video autoPlay loop style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
             <source src={MainCharBELacBraceletAndMilkEnd} type="video/mp4" />
           </video>
         </Col2>

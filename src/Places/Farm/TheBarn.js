@@ -210,7 +210,7 @@ const TheBarn = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {FarmBarn}>    
-                <img src={SandyImage} height={"400px"} style={{}}></img>
+                <img src={SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>
             
             <Col3 > 
@@ -221,10 +221,10 @@ const TheBarn = ( props ) => {
                 Sandy stands up and runs towards the nearby barn. But you can see she is having trouble keeping her balance. "{props.name} help me into the barn!"</p>           
                 
                 <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyIntoBarn}>Help Sandy into the barn</button>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyIntoBarn} style={{width: props.standardButtonWidth}}>Help Sandy into the barn</button>
                 </Link>
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {LACBRAQGetSandySuckingMilkLeave}>Leave</button>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQGetSandySuckingMilkLeave} style={{width: props.standardButtonWidth}}>Leave</button>
                 </Link>                                  
                 
             </Col3>
@@ -249,20 +249,16 @@ const TheBarn = ( props ) => {
         return(
             <>
             <Col1>
-                <SetCol1
-                />
+                <SetCol1/>
             </Col1>
-            <Col2 BackImage = {" "}
-                    rowHeight = {" "}
-            >
-            <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}} controls>
-                <source src={LACBRAQMilkFarmGrowComicsPage9_comp} type="video/mp4"/>
-            </video>
+            <Col2 BackImage={" "}>
+                <video autoPlay loop style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
+                    <source src={LACBRAQMilkFarmGrowComicsPage9_comp} type="video/mp4" />
+                </video>
             </Col2>
             
             
-            <Col3 > 
+            <Col3> 
                 <p>"F..FFuuuuckkkkk" Sandy shouts. She's sweating. "It's startinngggg..." Sandy is flustered. She is shaking. "{props.name}, my breaasttss..." And you see it. Her shirt slowly rising. Her chest growing. Her whole body trembling.</p>        
                 <p>"This feels sooo.... gooood...." Sandy moans. "GOD!" Sandy moves her hand to her chest. "I can feel them stretchinnngggg..." Sandy is panting. Her shirt stretching to it's limits.</p>
                 <p>"I feel like bursting!" .... "riiiipppp...." her shirt giving out to the pressure. Massive breasts overflowing. Her nipples erected like thumbs.</p>
@@ -270,10 +266,10 @@ const TheBarn = ( props ) => {
                 <p> "YESSSS!" Sandy shouts, her whole body tembling and orgasming. She is milking herself. And the flow of milk is subsiding. You get closer...</p>
 
                 <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {LACBRAQSandySuckHerNipplesInBarn}>Suck her nipples</button>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQSandySuckHerNipplesInBarn} style={{width: props.standardButtonWidth}}>Suck her nipples</button>
                 </Link>
                 <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyUpInBarn}>Help her up</button>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQHelpSandyUpInBarn} style={{width: props.standardButtonWidth}}>Help her up</button>
                 </Link>
                                           
                 
@@ -305,7 +301,7 @@ const TheBarn = ( props ) => {
             
 
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {LACBRAQGoHomeWithSandyFinished}>Go back home and fall asleep</button>
+                    <button type="button" className="btn btn-primary" onClick = {LACBRAQGoHomeWithSandyFinished} style={{width: props.standardButtonWidth}}>Go back home and fall asleep</button>
                 </Link>
                                           
                 
@@ -330,7 +326,7 @@ const TheBarn = ( props ) => {
                 />
             </Col1>
             <video autoPlay loop 
-            style ={{maxWidth: "100%", margin:"auto"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={LACBRAQMilkFarmGrowComics_suckSandyInBarnComp} type="video/mp4"/>
             </video>
             

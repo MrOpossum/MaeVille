@@ -66,7 +66,7 @@ const MilkCowsAtFarm = ( props ) => {
                 />
                 </Col1>
                 <Col2 BackImage = {FarmCowLyingDown}>            
-                <img src = {AnriEmilyFarmGirl} style = {{height: "65vh"}} alt = {"Can't Find"}/>
+                <img src = {AnriEmilyFarmGirl} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} alt = {"Can't Find"}/>
                 </Col2>
         
                 <Col3 > 
@@ -74,10 +74,10 @@ const MilkCowsAtFarm = ( props ) => {
                     <p>You see that Sandy just finished filling her third flask of milk. She hurriedly gets up and heads to the exit.</p>
         
                       <Link to={"/MilkCowsAtFarm"} style={{ textDecoration: "none" }}>
-                            <button type="button" className="btn btn-primary" onClick ={LACBRAQInterceptSandy}>Intercept Sandy</button>
+                            <button type="button" className="btn btn-primary" onClick ={LACBRAQInterceptSandy} style = {{width: props.standardButtonWidth}}>Intercept Sandy</button>
                       </Link>
                       <Link to={"/MilkCowsAtFarm"} style={{ textDecoration: "none" }}>
-                            <button type="button" className="btn btn-primary" onClick ={FindBraceletWithCowsBeginning}>Let Sandy go and milk the cows</button>
+                            <button type="button" className="btn btn-primary" onClick ={FindBraceletWithCowsBeginning} style = {{width: props.standardButtonWidth}}>Let Sandy go and milk the cows</button>
                       </Link>
         
                 </Col3>
@@ -100,7 +100,7 @@ const MilkCowsAtFarm = ( props ) => {
                 />
                 </Col1>
                 <Col2 BackImage = {FarmCowLyingDown}>            
-                <img src = {AnriEmilyFarmGirl} style = {{height: "65vh"}} alt = {"Can't Find"}/>
+                <img src = {AnriEmilyFarmGirl} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} alt = {"Can't Find"}/>
                 </Col2>
         
                 <Col3 > 
@@ -109,10 +109,10 @@ const MilkCowsAtFarm = ( props ) => {
                     <p>Hey! I have seen you. You live in the same building as I. I am Sandy. You are?</p>
         
                       <Link to={"/MilkCowsAtFarm"} style={{ textDecoration: "none" }}>
-                        <button type="button" className="btn btn-primary" onClick ={LACBRAQInterceptSandy}>My name is {props.name}</button>
+                        <button type="button" className="btn btn-primary" onClick ={LACBRAQInterceptSandy} style = {{width: props.standardButtonWidth}}>My name is {props.name}</button>
                       </Link>
                       <Link to={"/MilkCowsAtFarm"} style={{ textDecoration: "none" }}>
-                            <button type="button" className="btn btn-primary" onClick ={FindBraceletWithCowsBeginning}>Let Sandy go and milk the cows</button>
+                            <button type="button" className="btn btn-primary" onClick ={FindBraceletWithCowsBeginning} style = {{width: props.standardButtonWidth}}>Let Sandy go and milk the cows</button>
                       </Link>
         
                 </Col3>
@@ -137,7 +137,7 @@ const MilkCowsAtFarm = ( props ) => {
                 />
                 </Col1>
                 <Col2 BackImage = {FarmCowLyingDown}>      
-                <img src = {AnriEmilyFarmGirl} style = {{height: "65vh"}} alt = {"Can't Find"}/>      
+                <img src = {AnriEmilyFarmGirl} style ={{width : props.characterImageWidth, height: props.characterImageHeight}} alt = {"Can't Find"}/>      
                 </Col2>
         
                 <Col3 > 
@@ -147,10 +147,10 @@ const MilkCowsAtFarm = ( props ) => {
                 <p>"{props.name}, I have so much to do, we'll talk later, ok?"</p>
         
                       <Link to={"/MilkCowsAtFarm"} style={{ textDecoration: "none" }}>
-                        <button type="button" className="btn btn-primary" onClick ={FindBraceletWithCowsBeginning}>Milk the cows</button>
+                        <button type="button" className="btn btn-primary" onClick ={FindBraceletWithCowsBeginning} style = {{width: props.standardButtonWidth}}>Milk the cows</button>
                       </Link>
                       <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                            <button type="button" className="btn btn-primary" onClick ={addMinutesFunc}>Leave the farm</button>
+                            <button type="button" className="btn btn-primary" onClick ={addMinutesFunc} style = {{width: props.standardButtonWidth}}>Leave the farm</button>
                       </Link>
         
                 </Col3>
@@ -196,15 +196,15 @@ const MilkCowsAtFarm = ( props ) => {
 
                 
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={LACBRAQWearBracelet}>Wear the bracelet and leave</button>
+                    <button type="button" className="btn btn-primary" onClick ={LACBRAQWearBracelet} style = {{width: props.standardButtonWidth}}>Wear the bracelet and leave</button>
                 </Link>
 
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={LACBRAQTakeBracelet}>Take the bracelet but don't wear it</button>
+                    <button type="button" className="btn btn-primary" onClick ={LACBRAQTakeBracelet} style = {{width: props.standardButtonWidth}}>Take the bracelet but don't wear it</button>
                 </Link>
 
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick= {LACBRAQLeaveStartScience}>Leave</button> {/* Quest over */}
+                    <button type="button" className="btn btn-primary" onClick= {LACBRAQLeaveStartScience} style = {{width: props.standardButtonWidth}}>Leave</button> {/* Quest over */}
                 </Link>
         
         </Col3>
@@ -222,7 +222,7 @@ const MilkCowsAtFarm = ( props ) => {
     
             <Col3 > 
                     <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
-                        <button type="button" className="btn btn-primary">You have no more energy, lets go home</button>
+                        <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>You have no more energy, lets go home</button>
                     </Link>
             
             </Col3>
@@ -247,10 +247,10 @@ const MilkCowsAtFarm = ( props ) => {
                 <p>Milking cows takes some skill, but you will get better.</p>
                 <p>You think your skill is around: {Math.floor(props.skills["Milking"])}</p>
                 <Link to={"/MilkCowsAtFarm"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={GenericCowMilk}>Milk the cows</button>
+                    <button type="button" className="btn btn-primary" onClick ={GenericCowMilk} style = {{width: props.standardButtonWidth}}>Milk the cows</button>
                 </Link>
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary">Leave the farm</button>
+                    <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>Leave the farm</button>
                 </Link>
         
         </Col3>

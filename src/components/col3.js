@@ -11,13 +11,11 @@ const Col3 = ( props ) => {
         backgroundSize: `${props.backSize}`,
         backgroundRepeat: `${props.backRepeat}`,
         backgroundPosition: `${props.backPosition}`,
-        minWidth:"420px",
       };
 
     const myStyleRow = {
         backgroundColor: `rgba(44, 41, 41, 0.26)`,
         paddingBottom: `10px`,
-        minWidth:"420px",
     }
     return( 
         <div className="row" id="index_row_2" style={myStyleRow}>

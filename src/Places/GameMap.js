@@ -31,39 +31,40 @@ const GameMap = ( props ) => {
             </Col2>
     
             <Col3 > 
-                
                 <p>Where to go?</p>
+
+                
                 
                 <Link to={"/Apartment"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {goToHomeClick} style = {{width:"150px"}}>Home</button>
+                    <button type="button" className="btn btn-primary" onClick = {goToHomeClick} style = {{width: props.standardButtonWidth}}>Home</button>
                 </Link>
                 <Link to={"/TheBarn"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {goToFarmClick} style = {{width:"150px"}}>Farm</button>
+                    <button type="button" className="btn btn-primary" onClick = {goToFarmClick} style = {{width: props.standardButtonWidth}}>Farm</button>
                 </Link>
                 <Link to={"/TheStore"} style = {{
                         display:(props.flags.includes("STORE_DISCOVERED") ? "": "none")
                     }}
                 >
-                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The store</button>
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The store</button>
                 </Link>
                 <Link to={"/TheFurForest"} style = {{
                         display:(props.flags.includes("FUR_FOREST_DISCOVERED") ? "": "none")
                     }}
                 >
-                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The Fur forest</button>
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The Fur forest</button>
                 </Link>
                 <Link to={"/TheBarOutside"} style = {{
                         display:(props.flags.includes("BAR_DISCOVERED") ? "": "none")
                     }}
                 >
-                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The Bar</button>
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The Bar</button>
                 </Link>
 
                 <Link to={"/TheHill"} style = {{
                         display:(props.flags.includes("HILL_DISCOVERED") ? "": "none")
                     }}
                 >
-                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The Hill</button>
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The Hill</button>
                 </Link>
 
 
@@ -71,7 +72,7 @@ const GameMap = ( props ) => {
                         display:(props.flags.includes("LAB_DISCOVERED") ? "": "none")
                     }}
                 >
-                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width:"150px"}}>The Lab</button>
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The Lab</button>
                 </Link>
                 
                    

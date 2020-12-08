@@ -8,10 +8,9 @@ import SetCol1 from "../../components/SetCol1";
 
 //Images
 import Bedroom from "../../Images/Bedroom/Apartment.jpg";
-import AnriRhoadesBlueCowgirlBikini_transparent from "../../Images/Bedroom/AnriRhoadesBlueCowgirlBikini_transparent.png";
-import anri_emily_white_dress_transparent from "../../Images/Characters/Anri-Flat-EM/anri_emily_white_dress_transparent.png";
 
 
+const buttonWidth = "300px";
 const Home = ( props ) => {
     const addMinutesFunc = () =>{
         props.onAddMinutes(20)
@@ -59,10 +58,10 @@ const Home = ( props ) => {
                 </p>
                 
                 <Link to={"/FapInApartment"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={addMinutesFunc}>Masturbate</button>
+                    <button type="button" className="btn btn-primary" onClick ={addMinutesFunc} style={{width: props.standardButtonWidth}}>Masturbate</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary">Ignore it</button>
+                    <button type="button" className="btn btn-primary" style={{width: props.standardButtonWidth}}>Ignore it</button>
                 </Link>
     
             </Col3>
@@ -94,7 +93,7 @@ const Home = ( props ) => {
                 </p>
                 
                 <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary">Go outside</button>
+                    <button type="button" className="btn btn-primary" style={{width: props.standardButtonWidth}}>Go outside</button>
                 </Link>
     
             </Col3>
@@ -131,13 +130,13 @@ const Home = ( props ) => {
                 </p>
     
                 <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary">Go outside</button>
+                    <button type="button" className="btn btn-primary" style={{width: props.standardButtonWidth}}>Go outside</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={DrankMilkWithLacBraClick}>Drink milk</button>
+                    <button type="button" className="btn btn-primary" onClick ={DrankMilkWithLacBraClick} style={{width: props.standardButtonWidth}}> Drink milk</button>
                 </Link>
                 <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={SleepAtHomeClickFunc}>Sleep</button>
+                    <button type="button" className="btn btn-primary" onClick ={SleepAtHomeClickFunc} style={{width: props.standardButtonWidth}}>Sleep</button>
                 </Link>
                 
     
@@ -177,7 +176,7 @@ const Home = ( props ) => {
             <p>"You should also know that you will be safe inside this building. Let me tell ya: In this same building there is another magic user. Her name is Amy. And her family is really powerful. They made this building a fortess, nothing evil can get in here. So if you are ever in doubt. Just get back here like a muddy pig" - Sandy laughs at her own joke.
             "Have my number, Come see me when you can. I need to show you the basics of magic"</p>
             <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                <button type="button" className="btn btn-primary" onClick = {LACBRAQWakeUpInApartmentSandyLeaves}>I should see Sandy soon</button>
+                <button type="button" className="btn btn-primary" onClick = {LACBRAQWakeUpInApartmentSandyLeaves} style={{width: props.standardButtonWidth}}>I should see Sandy soon</button>
             </Link>
                                           
                 
@@ -215,7 +214,7 @@ const Home = ( props ) => {
             "Have my number, Come see me when you can. I need to show you the basics of magic"</p>
             <p>"Oh, and by the way. Avoid dairy and don't touch your chest for a few days. You drank my milk, and you might start up some weird reaction"</p>
             <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                <button type="button" className="btn btn-primary" onClick = {LACBRAQWakeUpInApartmentSandyLeaves_PossibleMilkReaction}>I should see Sandy soon</button>
+                <button type="button" className="btn btn-primary" onClick = {LACBRAQWakeUpInApartmentSandyLeaves_PossibleMilkReaction} style={{width: props.standardButtonWidth}}>I should see Sandy soon</button>
             </Link>
                                           
                 
@@ -263,13 +262,16 @@ const Home = ( props ) => {
                 </p>
     
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={closeInventory}>Close inventory</button>
+                    <button type="button" className="btn btn-primary" onClick ={closeInventory} style={{width: props.standardButtonWidth}}>Close inventory</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={DrinkMilkFromInventory}  style={{display: 
                         ( 
                             (props.items.farmCowMilkBottle) ? "":"none"
-                        )}}
+                        ),
+                        width: props.standardButtonWidth
+                    
+                    }}
                     
                     >Drink milk</button>
                 </Link>
@@ -277,14 +279,16 @@ const Home = ( props ) => {
                     <button type="button" className="btn btn-primary" onClick ={WearLACBraceletFromInventory} style={{display: 
                         ( 
                             (props.items.LacBracelet && !props.flags.includes("WearingLacBracelet")) ? "":"none"
-                        )
+                        ), width: props.standardButtonWidth
                         }}>Wear white farm bracelet</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={StopWearingLACBraceletFromInventory} style={{display: 
                         ( 
                             (props.flags.includes("WearingLacBracelet")) ? "":"none"
-                        )}}
+                        ),
+                        width: props.standardButtonWidth
+                    }}
                     
                     >Stop wearing white farm bracelet</button>
                 </Link>
@@ -324,33 +328,33 @@ const Home = ( props ) => {
                 <p>
                     You are home.
                 </p>
-    
+            
                 <Link to={"/GoOutside"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary">Go outside</button>
+                    <button type="button" className="btn btn-primary" style={{width: props.standardButtonWidth, alignSelf:"center"}}>Go outside</button>
                 </Link>
                 <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={SleepAtHomeClickFunc}>Sleep</button>
+                    <button type="button" className="btn btn-primary" onClick ={SleepAtHomeClickFunc} style={{width: props.standardButtonWidth}}>Sleep</button>
                 </Link>
                 <Link to={"/TransformationHistory"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={goToTransformationHistory}>Transformation history</button>
+                    <button type="button" className="btn btn-primary" onClick ={goToTransformationHistory} style={{width: props.standardButtonWidth}}>Transformation history</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={goToInventory}>Inventory</button>
+                    <button type="button" className="btn btn-primary" onClick ={goToInventory} style={{width: props.standardButtonWidth}}>Inventory</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={SleepForXTime}>Sleep for 4 hours</button>
+                    <button type="button" className="btn btn-primary" onClick ={SleepForXTime} style={{width: props.standardButtonWidth}}>Sleep for 4 hours</button>
                 </Link>
 
                 <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={goToAmyApartment} style = {{
-                        display:(props.flags.includes("AmyTeachesMagicQuestInHerApartmentPart_1") ? "": "none")
+                        display:(props.flags.includes("AmyTeachesMagicQuestInHerApartmentPart_1") ? "": "none"), width: props.standardButtonWidth
                     }}
                     
                     >Go to Amy's apartment</button>
                 </Link>
                 <Link to={"/SandyApartment"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={goToSandyApartment} style = {{
-                        display:(props.flags.includes("SandyTeachesMagicQuestInHerApartmentPart_1") ? "": "none")
+                        display:(props.flags.includes("SandyTeachesMagicQuestInHerApartmentPart_1") ? "": "none"), width: props.standardButtonWidth
                     }}
                     
                     >Go to Sandy's apartment</button>

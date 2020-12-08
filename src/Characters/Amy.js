@@ -286,7 +286,7 @@ const Amy = (props) => {
             <>
             <Col2 BackImage = {" "} rowHeight = {" "}>
             <video autoPlay loop 
-            style ={{width: "100%", height: "100%"}}>
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={props.VideoCharFuckingS4} type="video/mp4"/>
             </video>
             </Col2>   
