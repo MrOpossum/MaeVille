@@ -34,7 +34,7 @@ const TheGalleryOutside = (props) => {
                 <SetCol1
                 />
             </Col1>
-            <Col2 BackImage = {TheGallery}>
+            <Col2 BackImage = {""}>
                     
             </Col2>  
     
