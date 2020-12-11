@@ -1288,8 +1288,8 @@ const Apartment = ( props ) => {
                 <Route exact path="/TheLab" component={GoToTheLab} />
                 <Route exact path="/TheLabOutside" component={GoToTheLabOutside} />
 
-                <Route exact path="/TheGalleryOutside" component={GoToTheGalleryOutside} />
-                <Route exact path="/TheGallery" component={GoToTheGallery} />
+                {/* <Route exact path="/TheGalleryOutside" component={GoToTheGalleryOutside} />
+                <Route exact path="/TheGallery" component={GoToTheGallery} /> */}
 
 
                 
