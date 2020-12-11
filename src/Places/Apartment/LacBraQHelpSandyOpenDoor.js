@@ -57,11 +57,7 @@ const LacBraQHelpSandyOpenDoor = ( props ) => {
     return(
         <>
         <Col1>
-            <SetCol1
-                money = {props.money}
-                energy = {props.energy}
-                date = {props.date}
-            />
+            <SetCol1/>
         </Col1>
         <Col2 BackImage = {BegginingSandyOutside}>            
         </Col2>
@@ -71,12 +67,12 @@ const LacBraQHelpSandyOpenDoor = ( props ) => {
               <p>You then present yourself. Just after you finish she answers exitedly - "Thank you! I am Sandy. Just moved in! We are neighbors! This city is great, did you know there is a farm just outside the city? I think I will go there, since I come from a farm, but now I'm here because I need to study and get a job. I think I will get a job as a......". She talks, a lot. And you can feel her zest for life in every sentence.</p>
               
               <Link to={"/LacBraQHelpSandyOpenDoor"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={KeepListeningToSandyFunc}>Keep listening</button>
+                    <button type="button" className="btn btn-primary" onClick ={KeepListeningToSandyFunc} style = {{width: props.standardButtonWidth}}>Keep listening</button>
               </Link>
               
 
               <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={addMinutesFunc}>Head out</button>
+                    <button type="button" className="btn btn-primary" onClick ={addMinutesFunc} style = {{width: props.standardButtonWidth}}>Head out</button>
               </Link>
 
         </Col3>

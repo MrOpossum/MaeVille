@@ -274,8 +274,20 @@ const reducer = (state = mainCharacter, action) =>{
                     ...state.fullState,
                     charactersStats:{
                         ...state.fullState.charactersStats,
-                        [action.character[action.characterStatToChange]] : action.NewStat,
+                        [action.character]:{
+                            ...state.fullState.charactersStats.currentChar,
+                            [action.characterStatToChange]:  action.NewStat
+                        }
                     }
+                }
+            }
+        }
+
+        case actionTypes.SET_GENDER:{
+            return{
+                fullState:{
+                    ...state.fullState,
+                    gender: action.genderToSet
                 }
             }
         }

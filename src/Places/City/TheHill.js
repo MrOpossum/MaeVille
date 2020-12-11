@@ -12,14 +12,21 @@ import Col2 from "../../components/col2";
 import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
 
+//Characters
+import Evelyn from "../../Characters/Evelyn";
+import Amy from "../../Characters/Amy";
+import Sandy from "../../Characters/Sandy";
+
 //Images
 import StarryNight from "../../Images/TheHill/TheHillStarryNight.png"
 import TheHillImage from "../../Images/TheHill/TheHill.jpg"
 
 ////EVEMQ
-import Band_of_cholos from "../../Images/Characters/Cholos/Band_of_cholos_transparent.png"
+import Band_of_cholos from "../../Images/Characters/Cholos/Band_of_cholos_transparent.png";
 
 
+
+var CurrentLocation = "/TheHill";
 
 const TheHill = (props) => {
 
@@ -36,8 +43,26 @@ const TheHill = (props) => {
       } 
 
 
+      if(props.flags.includes("NO_MORE_ENERGY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {""}>            
+            </Col2>
+    
+            <Col3 > 
+                    <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>You have no more energy, lets go home</button>
+                    </Link>
+            
+            </Col3>
+            </>
+            )
+        }
 
-    if( ( (props.date.getHours() > 18 || props.date.getHours() < 5) && props.flags.includes("EVEMQEveWillBeAtTheHill"))  ) {
+    else if( ( (props.date.getHours() > 18 || props.date.getHours() < 5) && props.flags.includes("EVEMQEveWillBeAtTheHill"))  ) {
         if(props.flags.includes("EVEMQEveWillBeAtTheHill")){
             
             let EVEMQApproachEveAtHillGood = () =>{
@@ -515,6 +540,164 @@ const TheHill = (props) => {
         let GoToGameMap = () =>{
             props.onAddMinutes(10);
         }
+
+        let theLinks = () =>{
+            return(
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                </Link>  
+            )  
+        }
+
+        if(props.flags.includes("WITH_EVE")){
+            return(
+                <>
+                <Col1>
+                    <SetCol1></SetCol1>
+                </Col1>
+                <Evelyn
+                    backImageChar = {TheHillImage}
+                    ImageChar = {props.EveImage}
+                    ImageCharS1 = {props.EveImageS1}
+                    ImageCharS2 = {props.EveImageS2}
+                    ImageCharS3 = {props.EveImageS3}
+                    VideoCharFuckingS4 = {props.fuckingEveVideo_s4}
+                    characterImageWidth = {props.characterImageWidth}
+                    characterImageHeight = {props.characterImageHeight}
+                    CurrentLocation = {CurrentLocation}
+                    DrugStealthModifier = {props.DrugStealthModifier}
+                > 
+                    
+                </Evelyn>
+                </>
+            )
+    }
+
+    if(props.flags.includes("WITH_SANDY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Sandy
+                backImageChar = {TheHillImage}
+                ImageChar = {props.SandyImage}
+                ImageCharS1 = {props.SandyImageS1}
+                ImageCharS2 = {props.SandyImageS2}
+                ImageCharS3 = {props.SandyImageS3}
+                VideoCharFuckingS4 = {props.fuckingSandyVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                
+            </Sandy>
+            </>
+        )
+    }
+
+    if(props.flags.includes("WITH_AMY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Amy
+                backImageChar = {TheHillImage}
+                ImageChar = {props.AmyImage}
+                ImageCharS1 = {props.AmyImageS1}
+                ImageCharS2 = {props.AmyImageS2}
+                ImageCharS3 = {props.AmyImageS3}
+                VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                
+            </Amy>
+            </>
+        )
+    }
+
+
+    if(Math.random() < .05 && props.flags.includes("MET_EVE")){
+        
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Evelyn
+                backImageChar = {TheHillImage}
+                ImageChar = {props.EveImage}
+                ImageCharS1 = {props.EveImageS1}
+                ImageCharS2 = {props.EveImageS2}
+                ImageCharS3 = {props.EveImageS3}
+                VideoCharFuckingS4 = {props.fuckingEveVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                <p>Hello {props.name} I come here to see the stars and relax. </p>
+                {theLinks()}
+            </Evelyn>
+            </>
+        )
+    } else if(Math.random() < 0.10 && props.flags.includes("MET_AMY")){
+        
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Amy
+                backImageChar = {TheHillImage}
+                ImageChar = {props.AmyImage}
+                ImageCharS1 = {props.AmyImageS1}
+                ImageCharS2 = {props.AmyImageS2} 
+                ImageCharS3 = {props.AmyImageS3}
+                VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                <p>Hey! This is a really nice place to study the stars</p>
+                {theLinks()}
+            </Amy>
+            </>
+        )
+    } else if(Math.random() < 0.15 && props.flags.includes("MET_SANDY")){
+        
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Sandy
+                backImageChar = {TheHillImage}
+                ImageChar = {props.SandyImage}
+                ImageCharS1 = {props.SandyImageS1}
+                ImageCharS2 = {props.SandyImageS2}
+                ImageCharS3 = {props.SandyImageS3}
+                VideoCharFuckingS4 = {props.fuckingSandyVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                <p>Howdy {props.name}. I love this place, away from all the mess of the city</p>
+                {theLinks()}
+            </Sandy>
+            </>
+        )
+    }
+
+
+
     
     
         return(

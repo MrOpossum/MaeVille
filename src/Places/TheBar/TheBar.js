@@ -36,6 +36,7 @@ const TheBar = (props) => {
             props.onSpliceFlag("EVEMQMeetEveAtTheBar");
             props.onPushFlag("BAR_DISCOVERED");
             props.onPushFlag("MET_EVE");
+            props.onPushFlag("SCIENCELABQSStart");
         }
 
         let ABInfoMeteorShowerAskForTip = () =>{
@@ -43,6 +44,7 @@ const TheBar = (props) => {
             props.onPushFlag("ABInfoMeteorShowerAskForTip"); 
             props.onPushFlag("BAR_DISCOVERED");
             props.onSpliceFlag("EVEMQMeetEveAtTheBar");
+            props.onPushFlag("SCIENCELABQSStart");
         }
     
         return(
@@ -478,7 +480,7 @@ const TheBar = (props) => {
 
     
                 <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShower}>Place $50 in the jar</button>
+                    <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShower} disabled={props.money < 50}>Place $50 in the jar</button>
                 </Link> 
                 <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShowerDontTip}>Don't tip the bartender</button>
@@ -583,7 +585,7 @@ const TheBar = (props) => {
     
             
                 <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShower}>Place $50 in the jar</button>
+                    <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShower} disabled={props.money < 50}>Place $50 in the jar</button>
                 </Link> 
                 <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {ABInfoTippedTheBartender50MeteorShowerDontTip}>Don't tip the bartender</button>
@@ -713,7 +715,46 @@ const TheBar = (props) => {
   
       )
     }
+    else if(props.flags.includes("BartenderWillTellYouAboutTheGallery")){
+
+        let leaveBarAndTip = () =>{
+            props.onAddMinutes(10);
+            props.onAddMoney(-50);
+            props.onPushFlag("GALLERY_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtGallery");
+        }
+
+        let leaveBarGalleryDiscovered = () =>{
+            props.onAddMinutes(10);
+            props.onPushFlag("GALLERY_DISCOVERED");
+            props.onPushFlag("EVEMQEveWillBeAtGallery");
+        }
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {BarInside}>
+                    <img alt = {"Not found"} src = {BabishSinsMerge_transparent} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>  
     
+            <Col3 > 
+                   
+                   
+                <p>"Pst... You", The bartender says. "I you better tip me for this. There is a gallery exhibiting some good art. You might want to check it out." The bartender signals to his jar, and leaves to talk to another customer.</p>
+    
+                <Link to={"/TheBarOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {leaveBarGalleryDiscovered}>Leave bar</button>
+                </Link>  
+                <Link to={"/TheBarOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {leaveBarAndTip} disabled = {props.money < 50 ? true : false}>Tip $50 and leave</button>
+                </Link>  
+            </Col3>
+            </>
+  
+      )
+    }
     
     
     else {

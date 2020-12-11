@@ -37,6 +37,9 @@ const App = ( props ) => {
       <_0_Start
             changeName = {props.onNameChange}
             name = {props.myName}
+            onSpliceFlag = {props.onSpliceFlag}
+            onPushFlag = {props.onPushFlag}
+            onAddMoney = {props.onAddMoney}
       ></_0_Start>
     )
   }
@@ -64,6 +67,8 @@ const App = ( props ) => {
     return(
       <Apartment
       money = {props.money}
+      gender = {props.gender}
+      onSetGender = {props.onSetGender}
       energy = {props.energy}
       date = {props.date}
       onAddMinutes = {props.onAddMinutes}
@@ -102,6 +107,8 @@ const App = ( props ) => {
       <>
       <GameMap
       money = {props.money}
+      gender = {props.gender}
+      onSetGender = {props.onSetGender}
       standardButtonWidth = {standardButtonWidth}
       energy = {props.energy}
       date = {props.date}
@@ -166,6 +173,8 @@ const App = ( props ) => {
             <Route exact path="/TheHill" component={ApartmentSwitch} />
             <Route exact path="/TheLab" component={ApartmentSwitch} />
             <Route exact path="/TheLabOutside" component={ApartmentSwitch} />
+            <Route exact path="/TheGalleryOutside" component={ApartmentSwitch} />
+            <Route exact path="/TheGallery" component={ApartmentSwitch} />
           {/*I messed the routing so hard. that everything is mixed up. I think I should only route from one place?
           Thing is, that I am indeed writing the function separate. Get good with this routing stuff.
           */}
@@ -190,7 +199,7 @@ const mapStateToProps = state =>{
     physical: state.fullState.physical,
     mind: state.fullState.mind,
     attractiveness: state.fullState.attractiveness,
-    pronoun : state.fullState.pronoun,
+    gender : state.fullState.gender,
     energy: state.fullState.energy,
     chest: state.fullState.chest,
     belly: state.fullState.belly,
@@ -238,6 +247,7 @@ const mapDispatchToProps = dispatch =>{
     onSetResearchTime: (_researchType, _researchTimeToSet) => dispatch({type:actionTypes.SET_RESEARCH_TIMES, researchType: _researchType, researchTimeToSet: _researchTimeToSet}),
     onSetLab: (_labItem, _setLabItem) => dispatch({type: actionTypes.SET_LAB, labItem: _labItem, setLabItem: _setLabItem}),
     onSetCharacterStats: (_character, _characterStatToChange, _NewStat) => dispatch({type: actionTypes.SET_CHARACTER_STATS, character: _character, characterStatToChange: _characterStatToChange, NewStat: _NewStat}),
+    onSetGender: (_genderToSet) => dispatch({type: actionTypes.SET_GENDER, genderToSet: _genderToSet}),
 
     
   }

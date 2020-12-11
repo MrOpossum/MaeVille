@@ -8,16 +8,39 @@ import SetCol1 from "../../components/SetCol1";
 
 //Images
 
-import outsideBar from "../../Images/TheBar/outsideBar.jpg"
+import outsideBar from "../../Images/TheBar/outsideBar.jpg";
+import Evelyn from "../../Characters/Evelyn";
+import Amy from "../../Characters/Amy";
+import Sandy from "../../Characters/Sandy";
 
 ////SANTMQ
 
 
-
+var CurrentLocation = "/TheBarOutside";
 
 const TheBarOutside = (props) => {
 
-    if(props.flags.includes("SANTMQSandyWillBeInBar")){
+
+    if(props.flags.includes("NO_MORE_ENERGY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {""}>            
+            </Col2>
+    
+            <Col3 > 
+                    <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>You have no more energy, lets go home</button>
+                    </Link>
+            
+            </Col3>
+            </>
+            )
+        }
+
+    else if(props.flags.includes("SANTMQSandyWillBeInBar")){
         let GoToGameMap = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQMeetEveAtTheBar");
@@ -56,9 +79,6 @@ const TheBarOutside = (props) => {
                 <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {GoToTheBar}>Enter the bar</button>
                 </Link>  
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
-                </Link>  
             </Col3>
             </>
   
@@ -68,6 +88,12 @@ const TheBarOutside = (props) => {
     
     
     else {
+
+
+        if(!props.flags.includes("GALLERY_DISCOVERED")){
+            props.onPushFlag("BartenderWillTellYouAboutTheGallery");
+        }
+
         let GoToGameMap = () =>{
             props.onAddMinutes(10);
         }
@@ -78,73 +104,22 @@ const TheBarOutside = (props) => {
         }
 
 
-        let theBarLinks = () =>{
+        let theLinks = () =>{
             return(
                 <Link to={"/TheBar"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {EnterTheBar} disabled = {(props.money > 100 ? false:true)}>Pay $100 to enter the bar</button>
                 </Link> 
             )  
         }
-    
-        
+
         if(props.flags.includes("WITH_EVE")){
-                return(
-                    <>
-                    <Col1>
-                        <SetCol1></SetCol1>
-                    </Col1>
-                    <Evelyn
-                        backImageChar = {TheFurForestEntrance}
-                        ImageChar = {props.EveImage}
-                        ImageCharS1 = {props.EveImageS1}
-                        ImageCharS2 = {props.EveImageS2}
-                        ImageCharS3 = {props.EveImageS3}
-                        VideoCharFuckingS4 = {props.fuckingEveVideo_s4}
-                        characterImageWidth = {props.characterImageWidth}
-                        characterImageHeight = {props.characterImageHeight}
-                        CurrentLocation = {CurrentLocation}
-                        DrugStealthModifier = {props.DrugStealthModifier}
-                    > 
-                        
-                    </Evelyn>
-                    </>
-                )
-        }
-
-        if(props.flags.includes("WITH_AMY")){
-            return(
-                <>
-                <Col1>
-                    <SetCol1></SetCol1>
-                </Col1>
-                <Amy
-                    backImageChar = {TheFurForestEntrance}
-                    ImageChar = {props.AmyImage}
-                    ImageCharS1 = {props.AmyImageS1}
-                    ImageCharS2 = {props.AmyImageS2}
-                    ImageCharS3 = {props.AmyImageS3}
-                    VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
-                    characterImageWidth = {props.characterImageWidth}
-                    characterImageHeight = {props.characterImageHeight}
-                    CurrentLocation = {CurrentLocation}
-                    DrugStealthModifier = {props.DrugStealthModifier}
-                > 
-                    
-                </Amy>
-                </>
-            )
-        }
-
-
-        if(Math.random() < .05 && props.flags.includes("MET_EVE")){
-            
             return(
                 <>
                 <Col1>
                     <SetCol1></SetCol1>
                 </Col1>
                 <Evelyn
-                    backImageChar = {TheFurForestEntrance}
+                    backImageChar = {outsideBar}
                     ImageChar = {props.EveImage}
                     ImageCharS1 = {props.EveImageS1}
                     ImageCharS2 = {props.EveImageS2}
@@ -155,39 +130,136 @@ const TheBarOutside = (props) => {
                     CurrentLocation = {CurrentLocation}
                     DrugStealthModifier = {props.DrugStealthModifier}
                 > 
-                    <p>Hello {props.name}, I love this bar, they have really nice cocktails</p>
-                    {theBarLinks()}
+                    
                 </Evelyn>
                 </>
             )
-        }
+    }
+
+    if(props.flags.includes("WITH_SANDY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Sandy
+                backImageChar = {outsideBar}
+                ImageChar = {props.SandyImage}
+                ImageCharS1 = {props.SandyImageS1}
+                ImageCharS2 = {props.SandyImageS2}
+                ImageCharS3 = {props.SandyImageS3}
+                VideoCharFuckingS4 = {props.fuckingSandyVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                
+            </Sandy>
+            </>
+        )
+    }
+
+    if(props.flags.includes("WITH_AMY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Amy
+                backImageChar = {outsideBar}
+                ImageChar = {props.AmyImage}
+                ImageCharS1 = {props.AmyImageS1}
+                ImageCharS2 = {props.AmyImageS2}
+                ImageCharS3 = {props.AmyImageS3}
+                VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                
+            </Amy>
+            </>
+        )
+    }
+
+
+    if(Math.random() < .05 && props.flags.includes("MET_EVE")){
         
-        if(Math.random() < 0.10 && props.flags.includes("MET_AMY")){
-            
-            return(
-                <>
-                <Col1>
-                    <SetCol1></SetCol1>
-                </Col1>
-                <Amy
-                    backImageChar = {TheFurForestEntrance}
-                    ImageChar = {props.AmyImage}
-                    ImageCharS1 = {props.AmyImageS1}
-                    ImageCharS2 = {props.AmyImageS2} 
-                    ImageCharS3 = {props.AmyImageS3}
-                    VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
-                    characterImageWidth = {props.characterImageWidth}
-                    characterImageHeight = {props.characterImageHeight}
-                    CurrentLocation = {CurrentLocation}
-                    DrugStealthModifier = {props.DrugStealthModifier}
-                > 
-                    <p>Hello {props.name}, There are some really influential people here</p>
-                    {theBarLinks()}
-                </Amy>
-                </>
-            )
-        }
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Evelyn
+                backImageChar = {outsideBar}
+                ImageChar = {props.EveImage}
+                ImageCharS1 = {props.EveImageS1}
+                ImageCharS2 = {props.EveImageS2}
+                ImageCharS3 = {props.EveImageS3}
+                VideoCharFuckingS4 = {props.fuckingEveVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                <p>Hello {props.name} I come here to see the stars and relax. </p>
+                {theLinks()}
+            </Evelyn>
+            </>
+        )
+    } else if(Math.random() < 0.10 && props.flags.includes("MET_AMY")){
+        
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Amy
+                backImageChar = {outsideBar}
+                ImageChar = {props.AmyImage}
+                ImageCharS1 = {props.AmyImageS1}
+                ImageCharS2 = {props.AmyImageS2} 
+                ImageCharS3 = {props.AmyImageS3}
+                VideoCharFuckingS4 = {props.fuckingAmyVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                <p>Hey! This is a really nice place to study the stars</p>
+                {theLinks()}
+            </Amy>
+            </>
+        )
+    } else if(Math.random() < 0.15 && props.flags.includes("MET_SANDY")){
+        
+        return(
+            <>
+            <Col1>
+                <SetCol1></SetCol1>
+            </Col1>
+            <Sandy
+                backImageChar = {outsideBar}
+                ImageChar = {props.SandyImage}
+                ImageCharS1 = {props.SandyImageS1}
+                ImageCharS2 = {props.SandyImageS2}
+                ImageCharS3 = {props.SandyImageS3}
+                VideoCharFuckingS4 = {props.fuckingSandyVideo_s4}
+                characterImageWidth = {props.characterImageWidth}
+                characterImageHeight = {props.characterImageHeight}
+                CurrentLocation = {CurrentLocation}
+                DrugStealthModifier = {props.DrugStealthModifier}
+            > 
+                <p>Howdy {props.name}. I love this place, away from all the mess of the city</p>
+                {theLinks()}
+            </Sandy>
+            </>
+        )
+    }
     
+
     
         return(
             <>

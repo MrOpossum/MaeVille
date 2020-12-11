@@ -16,6 +16,7 @@ const Col3 = ( props ) => {
     const myStyleRow = {
         backgroundColor: `rgba(44, 41, 41, 0.26)`,
         paddingBottom: `10px`,
+        minWidth:"460px"
     }
     return( 
         <div className="row" id="index_row_2" style={myStyleRow}>

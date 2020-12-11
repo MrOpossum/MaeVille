@@ -19,6 +19,26 @@ const _0_Start = ( props ) => {
         } else{
             props.changeName(document.getElementById("_0_Start_name_input").value);
         }
+    }
+
+    function LetsGoNoTut(){
+        if(document.getElementById("_0_Start_name_input").value === ""){
+            props.changeName("Max");    
+        } else{
+            props.changeName(document.getElementById("_0_Start_name_input").value);
+        }
+
+        props.onSpliceFlag("FARM_UNVISITED");
+        props.onPushFlag("MET_AMY");
+        props.onPushFlag("MET_SANDY");
+        props.onPushFlag("MET_EVE");
+        props.onPushFlag("STORE_DISCOVERED");
+        props.onPushFlag("FUR_FOREST_DISCOVERED");
+        props.onPushFlag("BAR_DISCOVERED");
+        props.onPushFlag("HILL_DISCOVERED");
+        props.onPushFlag("EVEMQMeetEveAtTheBar");
+        props.onPushFlag("SCIENCELABQSStart");
+        props.onAddMoney(300);
 
     }
 
@@ -35,12 +55,34 @@ const _0_Start = ( props ) => {
         </Col2>
 
         <Col3 > 
-        <Link to={"/_1_Inspect"} style={{ textDecoration: "none" }}>
-            <button type="button" className="btn btn-primary" onClick={changeNameFunc}>Inspect</button>
-        </Link>
-        <Link to={"/_1_Ignore"} style={{ textDecoration: "none" }}>
-            <button type="button" className="btn btn-primary" onClick={changeNameFunc}>Ingore</button>
-        </Link>
+            <Link to={"/_1_Inspect"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick={changeNameFunc}>Inspect</button>
+            </Link>
+            <Link to={"/_1_Ignore"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick={changeNameFunc}>Ingore</button>
+            </Link>
+            
+            <p>Hello! This game is in early development, and I realized that the beginning might be confusing. So if you want to see some kindof random events with some sexy scenes attached, you are most welcome. ( ͡° ͜ʖ ͡°)</p>
+            <p>Else. If you want to start the game ASAP. Just read the following <a>spoilers</a> </p>
+            <p>.Do.</p>
+            <p>.You.</p>
+            <p>.To.</p>
+            <p>.Read.</p>
+            <p>.The.</p>
+            <p>.Spoilers.</p>
+            <p>.?.</p>
+            <p>Lets give you some juicy spoilers then.</p>
+            <p>What you need to know is that two witches (Amy, and Sandy) just moved into your apartment building.</p>
+            <p>Turns out that one of them accidentally involved you into a world of magic.</p>
+            <p>Amy comes from a long dinasty of wizards, and her family is pretty wealthy. Sandy is a "new blood" witch. Which means that she is the first in her family to learn magic.</p>
+            <p>The witches moved here because this city, Maeville, has awakened strong (lewd) magic. And plenty of wizards have come to try their luck and discover what this place has to offer. But be careful, magic can change you in unexpected ways.</p>
+            <p>In this game I'm building an open world where you can choose your path. Will you become a scientist who wants do know why magic works? Will you become a fighter who wants to become stronger than anyone else? Will you find runes to transform yourself, or seduce others?</p>
+            <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick={LetsGoNoTut}>Let's go.</button>
+            </Link>
+
+
+            
         </Col3>
         </>
         )
@@ -49,4 +91,5 @@ const _0_Start = ( props ) => {
 
     }
 export default _0_Start;
+
 

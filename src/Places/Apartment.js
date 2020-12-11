@@ -27,6 +27,8 @@ import TheBar from "./TheBar/TheBar";
 import TheHill from "./City/TheHill";
 import TheLabOutside from "./TheLab/TheLabOutside";
 import TheLab from "./TheLab/TheLab";
+import TheGallery from "./TheGallery/TheGallery";
+import TheGalleryOutside from "./TheGallery/TheGalleryOutside";
 
 ///Characters
 import AnriRhoadesBlueCowgirlBikini_transparent from "../Images/Characters/Anri_Rhoades_2/AnriRhoadesBlueCowgirlBikini_transparent.png";
@@ -70,8 +72,9 @@ import Sandy_b8_h2_f1_m2_s1 from "../Images/Characters/Sandy/Sandy_b8_h2_f1_m2_s
 import Sandy_b8_h2_f1_m2_s2 from "../Images/Characters/Sandy/Sandy_b8_h2_f1_m2_s2.png";
 import Sandy_b8_h2_f1_m2_s3 from "../Images/Characters/Sandy/Sandy_b8_h2_f1_m2_s3.png";
 
-
+//Maddy
 import MaddyBusiness_transparent_b_1 from "../Images/Characters/Maddeline/MaddyBusiness_transparent_b_1.png";
+import Maddy_S4_H4_t from "../Images/Characters/Maddeline/Maddy_S4_H4_t.png";
 
 
 //Images
@@ -79,9 +82,11 @@ import MaddyBusiness_transparent_b_1 from "../Images/Characters/Maddeline/MaddyB
 const Apartment = ( props ) => {
   
   var characterImageHeight = "500px";
-  var characterImageWidth = "28vw";
+  var characterImageWidth = "23vw";
   if(window.screen.width < 600){
-    characterImageWidth = "48vw";
+    characterImageWidth = "45vw";
+  } else if(window.screen.width < 1280){
+    characterImageWidth = "35vw";
   }
 
 
@@ -182,10 +187,10 @@ const Apartment = ( props ) => {
 
 
   //Maddy
-  if(props.charactersStats.Maddy.breast <= 3){
+  if(props.charactersStats.Maddy.breast <= 3 && props.charactersStats.Maddy.heigth < 4 && props.charactersStats.Maddy.muscle < 4){
     MaddyImage = MaddyBusiness_transparent_b_1;
-  }else{
-    
+  }else if(props.charactersStats.Maddy.breast < 4 && props.charactersStats.Maddy.heigth >= 4 && props.charactersStats.Maddy.muscle >= 4){
+    MaddyImage = Maddy_S4_H4_t;
   }
 
 
@@ -196,7 +201,9 @@ const Apartment = ( props ) => {
   var col2Height = "500px"; //make sure it's the same as col2
 
   if(props.flags.includes("ResearchApplicationII")){
-    DrugStealthModifier = 1.2;
+    DrugStealthModifier = 1.5;
+  } else if(props.flags.includes("ResearchApplicationIII")){
+    DrugStealthModifier = 3;
   }
 
 
@@ -741,6 +748,7 @@ const Apartment = ( props ) => {
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
+          onAddMoney = {props.onAddMoney}
         SandyImage = {SandyImage}
         SandyImageNaked = {SandyImageNaked}
         AmyImage = {AmyImage}
@@ -773,8 +781,9 @@ const Apartment = ( props ) => {
       return (
         <TheFurForest
         money = {props.money}
-          standardButtonWidth = {standardButtonWidth}
-          col2Height = {col2Height}
+        standardButtonWidth = {standardButtonWidth}
+        col2Height = {col2Height}
+        onAddMoney = {props.onAddMoney}
         energy = {props.energy}
         date = {props.date}
         onAddMinutes = {props.onAddMinutes}
@@ -1114,6 +1123,130 @@ const Apartment = ( props ) => {
       );
     };
 
+    let GoToTheGalleryOutside = () =>{
+      return (
+        <TheGalleryOutside
+        money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+        relations = {props.relations}
+        onSetResearchTime = {props.onSetResearchTime}
+        researchTime = {props.researchTime}
+        lab = {props.lab}
+        onSetLab = {props.onSetLab}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+        EveImageS2 = {EveImageS2}
+        EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+        fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
+        ></TheGalleryOutside>
+      );
+    };
+    
+    let GoToTheGallery = () =>{
+      return (
+        <TheGallery
+        money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+        relations = {props.relations}
+        onSetResearchTime = {props.onSetResearchTime}
+        researchTime = {props.researchTime}
+        lab = {props.lab}
+        onSetLab = {props.onSetLab}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+        EveImageS2 = {EveImageS2}
+        EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+        fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
+        ></TheGallery>
+      );
+    };    
+
    
 
     
@@ -1154,6 +1287,9 @@ const Apartment = ( props ) => {
                 
                 <Route exact path="/TheLab" component={GoToTheLab} />
                 <Route exact path="/TheLabOutside" component={GoToTheLabOutside} />
+
+                <Route exact path="/TheGalleryOutside" component={GoToTheGalleryOutside} />
+                <Route exact path="/TheGallery" component={GoToTheGallery} />
 
 
                 

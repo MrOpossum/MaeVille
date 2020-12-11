@@ -116,8 +116,7 @@ const SandyApartment = ( props ) => {
             <Col2 BackImage = {" "}
                     rowHeight = {" "}
             >
-          <video autoPlay muted loop 
-          style ={{maxWidth: "100%"}}>
+          <video autoPlay muted loop >
             <source src={LACBRAQ_B_SUCK_ABELLA_DANGER_LAC_SCENE_CUT_TO_ONLY_SUCK_CROPPED} type="video/mp4"/>
           </video>
         </Col2>     

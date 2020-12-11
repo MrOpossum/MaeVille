@@ -19,7 +19,24 @@ const GoOutside = ( props ) => {
     console.log(props.flags);
 
 
-    if(props.flags.includes("WillMeetSandyOutsideApartment")){
+    if(props.flags.includes("NO_MORE_ENERGY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {""}>            
+            </Col2>
+    
+            <Col3 > 
+                    <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>You have no more energy, lets go home</button>
+                    </Link>
+            
+            </Col3>
+            </>
+            )
+        } else if(props.flags.includes("WillMeetSandyOutsideApartment")){
 
         let handleLacBraQHelpSandyOpenDoor = () =>{
             props.onChangeRelationship("Sandy",1);
@@ -45,10 +62,6 @@ const GoOutside = ( props ) => {
                 <p>While leaving the building you see a girl you had never seen before struggling to open the main door.</p>
                 <Link to={"/LacBraQHelpSandyOpenDoor"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick={handleLacBraQHelpSandyOpenDoor} style = {{width: props.standardButtonWidth}}>Help her open the door and present yourself</button>
-                </Link>
-
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>Head out and ignore her</button>
                 </Link>
     
             </Col3>
@@ -77,10 +90,6 @@ const GoOutside = ( props ) => {
 
                 <Link to={"/LacBraQAmyMovingIn"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick={LacBraQSandyInFarm} style = {{width: props.standardButtonWidth}}>Approach her and present yourself</button>
-                </Link>
-
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>Head out and ignore her</button>
                 </Link>
     
             </Col3>

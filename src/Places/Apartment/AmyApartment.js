@@ -136,9 +136,9 @@ const AmyApartment = (props) => {
           <SetCol1 />
         </Col1>
         <Col2 BackImage = {" "}
-                    rowHeight = {" "}
+              rowHeight = {" "}
             >
-            <video autoPlay loop 
+            <video autoPlay loop controls
             style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP} type="video/mp4"/>
             </video>
@@ -176,7 +176,7 @@ const AmyApartment = (props) => {
           <Col2 BackImage = {" "}
                     rowHeight = {" "}
             >
-            <video autoPlay muted loop 
+            <video autoPlay controls loop 
             style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={ButtonBurstingFromShirtNippyBleakAtlanticridleyturtlemobileCROPPEDONLYTOP} type="video/mp4"/>
             </video>
@@ -216,7 +216,7 @@ const AmyApartment = (props) => {
           <Col2 BackImage = {" "}
                     rowHeight = {" "}
             >
-            <video autoPlay loop 
+            <video autoPlay loop controls
             style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={TwoLesbosSuckThirdLesboMilk_CUTSHORT} type="video/mp4"/>
             </video>
@@ -360,7 +360,7 @@ const AmyApartment = (props) => {
         <Col2 BackImage = {" "}
                     rowHeight = {" "}
             >
-            <video autoPlay loop 
+            <video autoPlay loop controls
             style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
                 <source src={MastasiaMassiveBoobsAmyDidNotResistCut} type="video/mp4"/>
             </video>
@@ -1284,8 +1284,8 @@ const AmyApartment = (props) => {
         <Col2 BackImage = {" "}
                     rowHeight = {" "}
             >
-        <video autoPlay loop
-            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} controls>
+        <video autoPlay loop controls
+            style ={{width: "100%", height: props.col2Height, objectFit: "cover"}} >
                 <source src={SANTQAmyFuckedSchoolgirlUniform} type="video/mp4"/>
             </video>
         </Col2>  

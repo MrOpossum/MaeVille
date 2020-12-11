@@ -24,5 +24,6 @@ export const SET_ITEMS = "SET_ITEMS";
 export const ADD_MONEY = "ADD_MONEY";
 export const PUSH_STATE_HISTORY = "PUSH_STATE_HISTORY";
 export const SET_RESEARCH_TIMES = "SET_RESEARCH_TIMES";
-export const SET_LAB = "SET_LAB"
+export const SET_LAB = "SET_LAB";
 export const SET_CHARACTER_STATS = "SET_CHARACTER_STATS";
+export const SET_GENDER = "SET_GENDER";

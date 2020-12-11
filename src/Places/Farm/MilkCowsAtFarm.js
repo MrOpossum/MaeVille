@@ -202,10 +202,6 @@ const MilkCowsAtFarm = ( props ) => {
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={LACBRAQTakeBracelet} style = {{width: props.standardButtonWidth}}>Take the bracelet but don't wear it</button>
                 </Link>
-
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick= {LACBRAQLeaveStartScience} style = {{width: props.standardButtonWidth}}>Leave</button> {/* Quest over */}
-                </Link>
         
         </Col3>
         </>

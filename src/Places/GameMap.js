@@ -13,6 +13,29 @@ import CityMap from "../Images/Map/sageort.png"
 
 const GameMap = ( props ) => {
 
+
+    if(props.flags.includes("NO_MORE_ENERGY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {""}>            
+            </Col2>
+    
+            <Col3 > 
+                    <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>You have no more energy, lets go home</button>
+                    </Link>
+            
+            </Col3>
+            </>
+            )
+        }
+    else{
+
+    
+    
     const goToFarmClick = () =>{
         props.onAddMinutes(30);
     }
@@ -74,6 +97,13 @@ const GameMap = ( props ) => {
                 >
                     <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The Lab</button>
                 </Link>
+
+                <Link to={"/TheGalleryOutside"} style = {{
+                        display:(props.flags.includes("GALLERY_DISCOVERED") ? "": "none")
+                    }}
+                >
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The gallery</button>
+                </Link>
                 
                    
     
@@ -82,6 +112,7 @@ const GameMap = ( props ) => {
 
             )
     }
+}
 
 
 export default GameMap;

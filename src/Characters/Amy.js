@@ -8,6 +8,7 @@ import * as actionTypes from "../redux/actions";
 import {connect} from "react-redux";
 
 const Amy = (props) => {
+    console.log(props.charactersStats)
 
     let GoToGameMap = () =>{
         props.onAddMinutes(10)
@@ -128,6 +129,11 @@ const Amy = (props) => {
 
     if(props.flags.includes("FLIRTED_AMY")){
 
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("FLIRTED_AMY");
+        }
+
         let GoToSeduce = () =>{
             props.onPushFlag("WITH_AMY");
             props.onSpliceFlag("FLIRTED_AMY");
@@ -155,21 +161,9 @@ const Amy = (props) => {
                 <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {GoToSeduce}>Seduce</button>
                 </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GiveItems}>Give item</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {convinceTakeDrug}>Convince to take drug</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {stealthTakeDrug}>Give drug stealthly</button>
-                </Link>  
                 
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Back</button>
                 </Link>  
                     
             </Col3>
@@ -177,10 +171,14 @@ const Amy = (props) => {
   
       )
     } else if(props.flags.includes("SEDUCED_AMY")){
-        
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("SEDUCED_AMY");
+        }
+
         let GoToKiss  = () =>{
             props.onPushFlag("WITH_AMY");
-            props.flags.onSpliceFlag("SEDUCED_AMY");
+            props.onSpliceFlag("SEDUCED_AMY");
 
             if((Math.random() *100 + props.relations.Amy) > 90){
                 props.onPushFlag("KISS_AMY");
@@ -207,19 +205,7 @@ const Amy = (props) => {
                 </Link>  
 
                 <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GiveItems}>Give item</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {convinceTakeDrug}>Convince to take drug</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {stealthTakeDrug}>Give drug stealthly</button>
-                </Link>  
-
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Game map</button>
                 </Link>  
                     
             </Col3>
@@ -227,9 +213,15 @@ const Amy = (props) => {
   
       )
     } else if(props.flags.includes("KISS_AMY")){
+
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("KISS_AMY");
+        }
+        
         let GoToFuck  = () =>{
             props.onPushFlag("WITH_AMY");
-            props.flags.onSpliceFlag("KISS_AMY");
+            props.onSpliceFlag("KISS_AMY");
 
             if((Math.random() *100 + props.relations.Amy) > 130){
                 props.onPushFlag("FUCK_AMY");
@@ -258,19 +250,7 @@ const Amy = (props) => {
                 </Link>  
 
                 <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GiveItems}>Give item</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {convinceTakeDrug}>Convince to take drug</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {stealthTakeDrug}>Give drug stealthly</button>
-                </Link>  
-
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Back</button>
                 </Link>  
                     
             </Col3>
@@ -279,13 +259,16 @@ const Amy = (props) => {
       )
     } else if(props.flags.includes("FUCK_AMY")){
         
-            
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("FUCK_AMY");
+        }
         
 
         return(
             <>
             <Col2 BackImage = {" "} rowHeight = {" "}>
-            <video autoPlay loop 
+            <video autoPlay loop  controls
             style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={props.VideoCharFuckingS4} type="video/mp4"/>
             </video>
@@ -293,26 +276,14 @@ const Amy = (props) => {
     
             <Col3 > 
 
-            <p>Passion pushes you togheter, AMY can't get enough of you. AMY is tired but does not care, she does not want rest. AMY craved the ache, AMYlyn wants you inside her. All. The. Time. You put your weight on top of her, she squeezes you in further and further. You see AMY's face, and your sweat dropping on her body. AMY then mounts you, she holds you in and gets you inside her.</p>
-                <p>You two go mad. Your cock splitting AMY in two. AMY holds you down, her breasts to your face, your hands exploring her body.</p>
-                <p>You heave and pant, there is no end to the pleasure. And you two copy each others movements, lick, kiss, fuck each other. It all culminates in AMYlyn cumming and collapsing over your stomach.</p>
+            <p>Passion pushes you togheter, Amy can't get enough of you. Amy is tired but does not care, she does not want rest. Amy craved the ache, Amy wants you inside her. All. The. Time. You put your weight on top of her, she squeezes you in further and further. You see Amy's face, and your sweat dropping on her body. AMY then mounts you, she holds you in and gets you inside her.</p>
+                <p>You two go mad. Your cock splitting her in two. Amy holds you down, her breasts to your face, your hands exploring her body.</p>
+                <p>You heave and pant, there is no end to the pleasure. And you two copy each others movements, lick, kiss, fuck each other. It all culminates in Amy cumming and collapsing over your stomach.</p>
                 
-                
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GiveItems}>Give item</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {convinceTakeDrug}>Convince to take drug</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {stealthTakeDrug}>Give drug stealthly</button>
-                </Link>  
+            
 
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Back</button>
                 </Link>  
                     
             </Col3>
@@ -399,44 +370,43 @@ const Amy = (props) => {
             props.onAddMinutes(15);
             props.onSpliceFlag("CONVINCE_TAKE_DRUG_SUCCESS");
 
-            let effectivenessMod = 0.1 * drugNumber;
-            
+            let effectivenessMod = .1 * drugNumber;
             if(drugToTake.includes("breast")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","breast", props.charactersStats.AMY.breast + 1)
+                    props.onSetCharacterStats("Amy","breast", props.charactersStats.Amy.breast + 1)
                 }
                 props.onAddMinutes(10);
-                props.onPushFlag("AMYCommentsOnLargerBreasts6");
+                props.onPushFlag("AMYCommentsOnLargerBreasts");
             } else if(drugToTake.includes("height")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","height", props.charactersStats.AMY.height + 1)
+                    props.onSetCharacterStats("Amy","height", props.charactersStats.Amy.height + 1)
                 }
                 props.onAddMinutes(10);
-                props.onPushFlag("AMYCommentsOnTaller4");
+                props.onPushFlag("AMYCommentsOnTaller");
             } else if(drugToTake.includes("lactation")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","lactation", props.charactersStats.AMY.lactation + 1)
+                    props.onSetCharacterStats("Amy","lactation", props.charactersStats.Amy.lactation + 1)
                 }
                 props.onAddMinutes(10);
-                props.onPushFlag("AMYCommentsOnMilk1");
+                props.onPushFlag("AMYCommentsOnMilk");
             }else if(drugToTake.includes("mindControl")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","mindControl", props.charactersStats.AMY.mindControl + 1)
+                    props.onSetCharacterStats("Amy","mindControl", props.charactersStats.Amy.mindControl + 1)
                 }
                 props.onAddMinutes(10);
-                props.onPushFlag("AMYCommentsOnMindControl1");
+                props.onPushFlag("AMYCommentsOnMindControl");
             }else if(drugToTake.includes("lust")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","lust", props.charactersStats.AMY.lust + 1)
+                    props.onSetCharacterStats("Amy","lust", props.charactersStats.Amy.lust + 1)
                 }
                 props.onAddMinutes(10);
-                props.onPushFlag("AMYCommentsOnLust1");
+                props.onPushFlag("AMYCommentsOnLust");
             }else if(drugToTake.includes("strength")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","strength", props.charactersStats.AMY.strength + 1)
+                    props.onSetCharacterStats("Amy","strength", props.charactersStats.Amy.strength + 1)
                 }
                 props.onAddMinutes(10);
-                props.onPushFlag("AMYCommentsOnStrength11");
+                props.onPushFlag("AMYCommentsOnStrength");
             }
             props.onSpliceFlag("CONVINCE_TAKE_DRUG_SUCCESS");
         }
@@ -476,7 +446,7 @@ const Amy = (props) => {
 
                 
                 <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoBackFromDrug} style ={{width: "190px"}}>NAMYrmind</button>
+                    <button type="button" className="btn btn-primary" onClick = {GoBackFromDrug} style ={{width: "190px"}}>Nevermind</button>
                 </Link>  
 
                 
@@ -498,6 +468,7 @@ const Amy = (props) => {
             
             if(drugToTake.includes("breast")){
                 if(effectivenessMod > Math.random()){
+                    console.log("asldjsalkdjdslkfaahdslfjkahdsflkahsdfl")
                     props.onSetCharacterStats("Amy","breast", props.charactersStats.AMY.breast + 1)
                 }
                 props.onAddMinutes(10);
@@ -549,8 +520,8 @@ const Amy = (props) => {
     
             <Col3 > 
 
-                <p>You stealthly manage to give AMYlyn the drug. Which drug will you give her?</p>
-                <p>Oppossum tip: NAMYr do this in real life. ;) </p>
+                <p>You stealthly manage to give Amy the drug. Which drug will you give her?</p>
+                <p>Oppossum tip: Never do this in real life.  </p>
 
                 {
                 itemKeys.map((item, indexKey)=>{
@@ -572,7 +543,7 @@ const Amy = (props) => {
 
                 
                 <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoBackFromDrug} style ={{width: "190px"}}>NAMYrmind</button>
+                    <button type="button" className="btn btn-primary" onClick = {GoBackFromDrug} style ={{width: "190px"}}>Nevermind</button>
                 </Link>  
 
                 

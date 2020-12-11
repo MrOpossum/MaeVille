@@ -128,6 +128,11 @@ const Evelyn = (props) => {
 
     if(props.flags.includes("FLIRTED_EVE")){
 
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("FLIRTED_EVE");
+        }
+
         let GoToSeduce = () =>{
             props.onPushFlag("WITH_EVE");
             props.onSpliceFlag("FLIRTED_EVE");
@@ -157,19 +162,7 @@ const Evelyn = (props) => {
                 </Link>  
 
                 <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GiveItems}>Give item</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {convinceTakeDrug}>Convince to take drug</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {stealthTakeDrug}>Give drug stealthly</button>
-                </Link>  
-                
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Back</button>
                 </Link>  
                     
             </Col3>
@@ -177,10 +170,15 @@ const Evelyn = (props) => {
   
       )
     } else if(props.flags.includes("SEDUCED_EVE")){
+
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("SEDUCED_EVE");
+        }
         
         let GoToKiss  = () =>{
             props.onPushFlag("WITH_EVE");
-            props.flags.onSpliceFlag("SEDUCED_EVE");
+            props.onSpliceFlag("SEDUCED_EVE");
 
             if((Math.random() *100 + props.relations.Eve) > 90){
                 props.onPushFlag("KISS_EVE");
@@ -207,19 +205,7 @@ const Evelyn = (props) => {
                 </Link>  
 
                 <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GiveItems}>Give item</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {convinceTakeDrug}>Convince to take drug</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {stealthTakeDrug}>Give drug stealthly</button>
-                </Link>  
-
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Back</button>
                 </Link>  
                     
             </Col3>
@@ -227,9 +213,15 @@ const Evelyn = (props) => {
   
       )
     } else if(props.flags.includes("KISS_EVE")){
+
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("KISS_EVE");
+        }
+
         let GoToFuck  = () =>{
             props.onPushFlag("WITH_EVE");
-            props.flags.onSpliceFlag("KISS_EVE");
+            props.onSpliceFlag("KISS_EVE");
 
             if((Math.random() *100 + props.relations.Eve) > 130){
                 props.onPushFlag("FUCK_EVE");
@@ -258,20 +250,8 @@ const Evelyn = (props) => {
                 </Link>  
 
                 <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GiveItems}>Give item</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {convinceTakeDrug}>Convince to take drug</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {stealthTakeDrug}>Give drug stealthly</button>
-                </Link>  
-
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
-                </Link>  
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Back</button>
+                </Link> 
                     
             </Col3>
             </>
@@ -279,13 +259,16 @@ const Evelyn = (props) => {
       )
     } else if(props.flags.includes("FUCK_EVE")){
         
-            
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("FUCK_EVE");
+        }    
         
 
         return(
             <>
             <Col2 BackImage = {" "} rowHeight = {" "}>
-            <video autoPlay loop 
+            <video autoPlay loop controls
             style ={{width: "100%", height: props.col2Height, objectFit: "cover"}}>
                 <source src={props.VideoCharFuckingS4} type="video/mp4"/>
             </video>
@@ -297,23 +280,11 @@ const Evelyn = (props) => {
                 <p>You two go mad. Your cock splitting eve in two. Eve holds you down, her breasts to your face, your hands exploring her body.</p>
                 <p>You heave and pant, there is no end to the pleasure. And you two copy each others movements, lick, kiss, fuck each other. It all culminates in Evelyn cumming and collapsing over your stomach.</p>
                 
-                
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GiveItems}>Give item</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {convinceTakeDrug}>Convince to take drug</button>
-                </Link>  
-
-                <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {stealthTakeDrug}>Give drug stealthly</button>
-                </Link>  
+            
 
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
-                </Link>  
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Back</button>
+                </Link> 
                     
             </Col3>
             </>
@@ -550,7 +521,7 @@ const Evelyn = (props) => {
             <Col3 > 
 
                 <p>You stealthly manage to give Evelyn the drug. Which drug will you give her?</p>
-                <p>Oppossum tip: Never do this in real life. ;) </p>
+                <p>Oppossum tip: Never do this in real life.  </p>
 
                 {
                 itemKeys.map((item, indexKey)=>{
@@ -581,7 +552,32 @@ const Evelyn = (props) => {
             </>
   
       )
-    } else if(props.flags.includes("STEALTH_TAKE_DRUG_FAIL")){
+    } else if( (!props.flags.includes("EVEMQEveWillBeAtGallery")) && props.relations.Eve  > 15){
+        let GoBack = () =>{
+            props.onAddMinutes(10);
+            props.onPushFlag("EVEMQEveWillBeAtGallery");
+            props.onPushFlag("GALLERY_DISCOVERED");
+        }    
+        
+
+        return(
+            <>
+            <Col2 BackImage = {props.backImageChar}>
+                <img alt = {"Not found"} src = {props.ImageChar} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>    
+    
+            <Col3 > 
+
+                <p>Hey {props.name}! I finally found you! I wanted you to know that there will be an exhibition at the gallery. And my art will be there!</p>
+                <p>You should go.</p>
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GoBack}>Back</button>
+                </Link> 
+                    
+            </Col3>
+            </>
+  
+      )
 
     }
     
@@ -592,10 +588,10 @@ const Evelyn = (props) => {
             props.onPushFlag("WITH_EVE");
             if( (Math.random() *100 + props.relations.Eve) > 50  ){
                 props.onPushFlag("FLIRTED_EVE");
-                props.onChangeRelationship("Eve",Math.round(Math.random(),0))
+                props.onChangeRelationship("Eve",Math.round(Math.random()*3,0))
             } else {
                 props.onPushFlag("FLIRTED_EVE_BAD");
-                props.onChangeRelationship("Eve",-Math.round(Math.random()/2,0))
+                props.onChangeRelationship("Eve",-Math.round(Math.random(),0))
             }
             
         }

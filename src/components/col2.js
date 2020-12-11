@@ -17,6 +17,7 @@ const Col2 = ( props ) => {
     
     const myStyleRow = {
         height: "500px",
+        minWidth: "460px"
         
     }
 

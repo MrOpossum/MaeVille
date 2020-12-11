@@ -2,7 +2,7 @@ const mainCharacter = {
     fullState : {
         date: new Date(2020,0,1,0,0),
         name : "Max",
-        pronoun : "he",
+        gender : "M",
     
         physical : 10,
         mind : 10,
@@ -41,7 +41,14 @@ const mainCharacter = {
             breast1drug:0,
             lactation1drug:0,
             mindControl1drug:0,
-            lust1drug:0
+            lust1drug:0,
+            baseSerum1drug: 0,
+            height2drug: 0,
+            strenght2drug:0,
+            breast2drug:0,
+            lactation2drug:0,
+            mindControl2drug:0,
+            lust2drug:0,
         },
         money : 0,
     
@@ -106,13 +113,13 @@ const mainCharacter = {
             }
         },
         researchTime:{
-            height: 96,
-            breast: 72,
-            lactation: 72,
-            strenght: 120,
-            mindControl: 144,
-            lust: 48,
-            application: 144,
+            height: 48,
+            breast: 36,
+            lactation: 36,
+            strenght: 60,
+            mindControl: 100,
+            lust: 32,
+            application: 100,
         },
 
         stateHistory: [],

@@ -72,18 +72,12 @@ const TheStore = (props) => {
   
       )
     } else if(props.flags.includes("SANTMQSandyInStoreRecoveredTheCat")){
-        let GoToGameMap = () =>{
-            props.onAddMinutes(10);
-            props.onSpliceFlag("SANTMQSandyInStoreRecoveredTheCat");
-            props.onPushFlag("BAR_DISCOVERED");
-            props.onPushFlag("SANTMQSandyWillBeInBar");
-        }
-
         let GoToTheBar = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("SANTMQSandyWillBeInBar");
             props.onSpliceFlag("SANTMQSandyInStoreRecoveredTheCat");
             props.onPushFlag("BAR_DISCOVERED");
+            props.onAddMoney(150)
         }
     
     
@@ -108,9 +102,6 @@ const TheStore = (props) => {
                     <p>"{props.name}, We got this toghether, and I don't think it's fair for me to run out with the rune. Here, have $150, It's as much money as I can give you."</p>
                     <p>"I will take care of the next steps to get myself some larger titties with this baby. Even if it's just a cup size. But first, let me take to the bar, it's a place where mages hang out, you could even pick up someone there." Sandy winks.</p>
     
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
-                </Link>  
                 <Link to={"/TheBarOutside"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {GoToTheBar}>Lets go to the bar</button>
                 </Link>  

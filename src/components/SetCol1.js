@@ -64,11 +64,11 @@ const SetCol1 = (props) => {
       return(
         <>
         <p> Energy: {props.energy.toFixed(1)}  &nbsp;   {props.date.toString().slice(0,21)} &nbsp;  Cash: ${props.money} &nbsp; 
-          <Button color="secondary" style = {{marginLeft:"-10px"}} onClick = {downloadCharacterdata}>Save</Button>&nbsp; 
-          <Button color="primary" style = {{marginLeft:"-10px"}} onClick = {quickSave}>quick save</Button>&nbsp;
+          <Button color="secondary" style = {{marginLeft:"-10px", width:"100px"}} onClick = {downloadCharacterdata}>Save</Button>&nbsp; 
+          <Button color="primary" style = {{marginLeft:"-10px", width:"130px"}} onClick = {quickSave}>quick save</Button>&nbsp;
           
           <Link to={props.currentLink} style={{ textDecoration: "none" }}>
-            <Button color="secondary" style = {{marginLeft:"-10px"}} onClick = {quickLoad} disabled = {props.stateHistory.length === 0} >Quick load</Button>
+            <Button color="secondary" style = {{marginLeft:"-10px", width:"130px"}} onClick = {quickLoad} disabled = {props.stateHistory.length === 0} >Quick load</Button>
           </Link>
         
         </p>

@@ -11,7 +11,8 @@ import SetCol1 from "../../components/SetCol1";
 //Images
 import TheLabInside from "../../Images/TheLab/TheLabInside.jpg";
 
-
+import FMG_gif from "../../Images/TheLab/MADYAQ/FMG_gif.mp4"
+import RippedAbsWomanFuckedInCouch from "../../Images/TheLab/MADYAQ/RippedAbsWomanFuckedInCouch.mp4"
 
 
 let currentYear = 2020;
@@ -21,6 +22,7 @@ const TheLab = (props) => {
         {
             name:"elven Powder",
             price: 60,
+            itemName: "elvenPowder",
             action: () =>{
                 props.onAddItem("elvenPowder",1);
                 props.onAddMoney(-60)
@@ -28,6 +30,7 @@ const TheLab = (props) => {
         },
         {
             name:"cowgirl milk",
+            itemName: "cowgirlMilk",
             price: 35,
             action: () =>{
                 props.onAddItem("cowgirlMilk",1);
@@ -37,6 +40,7 @@ const TheLab = (props) => {
         {
             name:"enhanced silicone",
             price: 80,
+            itemName: "enhancedSilicone",
             action: () =>{
                 props.onAddItem("enhancedSilicone",1);
                 props.onAddMoney(-80)
@@ -45,6 +49,7 @@ const TheLab = (props) => {
         {
             name:"enchanted Iron",
             price: 120,
+            itemName: "enchantedIron",
             action: () =>{
                 props.onAddItem("enchantedIron",1);
                 props.onAddMoney(-120)
@@ -53,6 +58,7 @@ const TheLab = (props) => {
         {
             name:"brazilian spider Venom",
             price: 50,
+            itemName: "brazilianSpiderVenom",
             action: () =>{
                 props.onAddItem("brazilianSpiderVenom",1);
                 props.onAddMoney(-50)
@@ -63,6 +69,7 @@ const TheLab = (props) => {
     const equipmentList = [
         {
             name:"centrifuge",
+            itemName: "centrifuge",
             price: 1200,
             action: () =>{
                 props.onAddItem("centrifuge",1);
@@ -71,6 +78,7 @@ const TheLab = (props) => {
         },
         {
             name:"oven",
+            itemName: "oven",
             price: 800,
             action: () =>{
                 props.onAddItem("oven",1);
@@ -79,6 +87,7 @@ const TheLab = (props) => {
         },
         {
             name:"microscope",
+            itemName: "microscope",
             price: 600,
             action: () =>{
                 props.onAddItem("microscope",1);
@@ -87,6 +96,7 @@ const TheLab = (props) => {
         },
         {
             name:"mana Infuser",
+            itemName: "manaInfuser",
             price: 3000,
             action: () =>{
                 props.onAddItem("manaInfuser",1);
@@ -100,13 +110,15 @@ const TheLab = (props) => {
             name:"Height I",
             itemName: "height1drug",
             price: 300,
+            flag: "ResearchHeightI",
             action: () =>{
                 props.onAddItem("height1drug",1);
                 props.onAddMoney(-300);
                 props.onAddItem("elvenPowder",-2);
                 props.onAddItem("enhancedSilicone",-1);
+                props.onAddMinutes(480);
             },
-            description: "Has a chance of making the recipient taller. (Not implemented)" ,
+            description: "Has a chance of making the recipient taller." ,
             ingredients: [
                 {
                     nameDisplay: "Elven powder",
@@ -130,11 +142,13 @@ const TheLab = (props) => {
             itemName: "breast1drug",
             price: 200,
             description: "Has a chance of making the recipient bustier" ,
+            flag: "ResearchBreastI",
             action: () =>{
                 props.onAddItem("breast1drug",1);
                 props.onAddMoney(-200);
                 props.onAddItem("elvenPowder",-2);
                 props.onAddItem("enhancedSilicone",-1);
+                props.onAddMinutes(480);
             },
             ingredients: [
                 {
@@ -158,11 +172,13 @@ const TheLab = (props) => {
             name:"Lactation I",
             itemName: "lactation1drug",
             price: 200,
+            flag: "ResearchLactationI",
             description: "Has a chance of making the recipient lactate. (Not implemented)" ,
             action: () =>{
                 props.onAddItem("lactation1drug",1);
                 props.onAddMoney(-200);
                 props.onAddItem("cowgirlMilk",-2);
+                props.onAddMinutes(480);
             },
             ingredients: [
                 {
@@ -182,11 +198,13 @@ const TheLab = (props) => {
             itemName: "strenght1drug",
             price: 500,
             description: "Has a chance of making the recipient grow muscle. (Not implemented)" ,
+            flag: "ResearchStrengthI",
             action: () =>{
                 props.onAddItem("strength1drug",1);
                 props.onAddMoney(-500);
                 props.onAddItem("enchantedIron",-2);
                 props.onAddItem("elvenPowder",-2);
+                props.onAddMinutes(480);
                 
             },
             ingredients: [
@@ -210,6 +228,7 @@ const TheLab = (props) => {
         {
             name:"Mind Control I",
             itemName: "mindControl1drug",
+            flag: "ResearchMindControlI",
             price: 600,
             description: "Has a chance of making the recipient more receptive to you. (Not implemented)" ,
             action: () =>{
@@ -218,6 +237,7 @@ const TheLab = (props) => {
                 props.onAddItem("enchantedIron",-1);
                 props.onAddItem("elvenPowder",-1);
                 props.onAddItem("brazilianSpiderVenom",-1);
+                props.onAddMinutes(480);
             },
             ingredients: [
                 {
@@ -246,10 +266,213 @@ const TheLab = (props) => {
             name:"Lust I",
             itemName: "lust1drug",
             price: 150,
+            flag: "ResearchLustI",
             description: "Has a chance of making the recipient hornier. (Not implemented)" ,
             action: () =>{
                 props.onAddItem("lust1drug",1);
                 props.onAddMoney(-150);
+                props.onAddMinutes(480);
+                props.onAddItem("brazilianSpiderVenom",-2);
+            },
+            ingredients: [
+                {
+                    nameDisplay: "Brazilian spider venom",
+                    name: "brazilianSpiderVenom",
+                    quantity: 2
+                },
+                {
+                    nameDisplay: "Oven",
+                    name: "oven",
+                    quantity: 1
+                },
+            ]
+        },
+        {
+            name:"Base serum",
+            itemName: "baseSerum1drug",
+            flag: "BaseSerum1drug",
+            price: 50,
+            description: "A base serum the company will buy" ,
+            action: () =>{
+                props.onAddItem("baseSerum1drug",1);
+                props.onAddMoney(-50);
+                props.onAddItem("enhancedSilicone",-2);
+                props.onAddMinutes(480);
+            },
+            ingredients: [
+                {
+                    nameDisplay: "Enahnced Silicone",
+                    name: "enhancedSilicone",
+                    quantity: 2
+                },
+            ]
+        },
+        {////////////////////Second tier
+            name:"Height II",
+            itemName: "height2drug",
+            price: 300,
+            flag: "ResearchHeightII",
+            action: () =>{
+                props.onAddItem("height2drug",1);
+                props.onAddMoney(-300);
+                props.onAddItem("elvenPowder",-2);
+                props.onAddItem("enhancedSilicone",-1);
+                props.onAddMinutes(480);
+            },
+            description: "Has a chance of making the recipient taller. (Not implemented)" ,
+            ingredients: [
+                {
+                    nameDisplay: "Elven powder",
+                    name: "elvenPowder",
+                    quantity: 2
+                },
+                {
+                    nameDisplay: "Enhanced silicone",
+                    name: "enhancedSilicone",
+                    quantity: 1
+                },
+                {
+                    nameDisplay: "Centrifuge",
+                    name: "centrifuge",
+                    quantity: 1
+                },
+            ]
+        },
+        {
+            name:"Breast II",
+            itemName: "breast2drug",
+            price: 200,
+            description: "Has a chance of making the recipient bustier" ,
+            flag: "ResearchBreastII",
+            action: () =>{
+                props.onAddItem("breast2drug",1);
+                props.onAddMoney(-200);
+                props.onAddItem("elvenPowder",-2);
+                props.onAddItem("enhancedSilicone",-1);
+                props.onAddMinutes(480);
+            },
+            ingredients: [
+                {
+                    nameDisplay: "Elven powder",
+                    name: "elvenPowder",
+                    quantity: 1
+                },
+                {
+                    nameDisplay: "Enhanced silicone",
+                    name: "enhancedSilicone",
+                    quantity: 2
+                },
+                {
+                    nameDisplay: "Oven",
+                    name: "oven",
+                    quantity: 1
+                },
+            ]
+        },
+        {
+            name:"Lactation II",
+            itemName: "lactation2drug",
+            price: 200,
+            flag: "ResearchLactationII",
+            description: "Has a chance of making the recipient lactate. (Not implemented)" ,
+            action: () =>{
+                props.onAddItem("lactation2drug",1);
+                props.onAddMoney(-200);
+                props.onAddItem("cowgirlMilk",-2);
+                props.onAddMinutes(480);
+            },
+            ingredients: [
+                {
+                    nameDisplay: "Cowgirl Milk",
+                    name: "cowgirlMilk",
+                    quantity: 2
+                },
+                {
+                    nameDisplay: "microscope",
+                    name: "microscope",
+                    quantity: 1
+                },
+            ]
+        },
+        {
+            name:"Strength II",
+            itemName: "strenght2drug",
+            price: 500,
+            description: "Has a chance of making the recipient grow muscle. (Not implemented)" ,
+            flag: "ResearchStrengthII",
+            action: () =>{
+                props.onAddItem("strength2drug",1);
+                props.onAddMoney(-500);
+                props.onAddItem("enchantedIron",-2);
+                props.onAddItem("elvenPowder",-2);
+                props.onAddMinutes(480);
+                
+            },
+            ingredients: [
+                {
+                    nameDisplay: "Enchanted iron",
+                    name: "enchantedIron",
+                    quantity: 2
+                },
+                {
+                    nameDisplay: "Elven powder",
+                    name: "elvenPowder",
+                    quantity: 2
+                },
+                {
+                    nameDisplay: "Centrifuge",
+                    name: "centrifuge",
+                    quantity: 1
+                },
+            ]
+        },
+        {
+            name:"Mind Control II",
+            itemName: "mindControl2drug",
+            flag: "ResearchMindControlII",
+            price: 600,
+            description: "Has a chance of making the recipient more receptive to you. (Not implemented)" ,
+            action: () =>{
+                props.onAddItem("mindControl2drug",1);
+                props.onAddMoney(-600);
+                props.onAddItem("enchantedIron",-1);
+                props.onAddItem("elvenPowder",-1);
+                props.onAddItem("brazilianSpiderVenom",-1);
+                props.onAddMinutes(480);
+            },
+            ingredients: [
+                {
+                    nameDisplay: "Enchanted iron",
+                    name: "enchantedIron",
+                    quantity: 1
+                },
+                {
+                    nameDisplay: "Elven powder",
+                    name: "elvenPowder",
+                    quantity: 1
+                },
+                {
+                    nameDisplay: "Brazilian spider venom",
+                    name: "brazilianSpiderVenom",
+                    quantity: 1
+                },
+                {
+                    nameDisplay: "Centrifuge",
+                    name: "centrifuge",
+                    quantity: 1
+                },
+            ]
+        },
+        {
+            name:"Lust II",
+            itemName: "lust2drug",
+            price: 150,
+            flag: "ResearchLustII",
+            description: "Has a chance of making the recipient hornier. (Not implemented)" ,
+            action: () =>{
+                props.onAddItem("lust2drug",1);
+                props.onAddMoney(-150);
+                props.onAddMinutes(480);
                 props.onAddItem("brazilianSpiderVenom",-2);
             },
             ingredients: [
@@ -276,8 +499,9 @@ const TheLab = (props) => {
                 props.onAddMoney(-10);
                 if(props.researchTime.height < 0){
                     props.onPushFlag("ResearchHeightII");
+                    props.onPushFlag("MADYAQYouResearchedHeightII");
                     props.onSpliceFlag("ResearchHeightI");
-                    props.onSetResearchTime("height",128);
+                    props.onSetResearchTime("height",64);
                 }
             },
             name: " Height I",
@@ -290,10 +514,10 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("breast",props.researchTime.breast - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.breast < 0){
                     props.onPushFlag("ResearchBreastII");
                     props.onSpliceFlag("ResearchBreastI");
-                    props.onSetResearchTime("breast",128);
+                    props.onSetResearchTime("breast",64);
                 }
             },
             name: " Breast I",
@@ -306,10 +530,10 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("lactation",props.researchTime.lactation - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.lactation < 0){
                     props.onPushFlag("ResearchLactationII");
                     props.onSpliceFlag("ResearchLactationI");
-                    props.onSetResearchTime("lactation",128);
+                    props.onSetResearchTime("lactation",64);
                 }
             },
             name: " Lactation I",
@@ -322,10 +546,11 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("strenght",props.researchTime.strenght - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.strenght < 0){
                     props.onPushFlag("ResearchStrengthII");
+                    props.onPushFlag("MADYAQYouResearchedStrengthII");
                     props.onSpliceFlag("ResearchStrengthI");
-                    props.onSetResearchTime("strenght",172);
+                    props.onSetResearchTime("strenght",70);
                 }
             },
             name: " Strength I",
@@ -338,10 +563,10 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("mindControl",props.researchTime.mindControl - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.mindControl < 0){
                     props.onPushFlag("ResearchMindControlII");
                     props.onSpliceFlag("ResearchMindControlI");
-                    props.onSetResearchTime("mindControl",200);
+                    props.onSetResearchTime("mindControl",80);
                 }
             },
             name: "Mind control I",
@@ -357,7 +582,7 @@ const TheLab = (props) => {
                 if(props.researchTime.lust <= 0){
                     props.onPushFlag("ResearchLustII");
                     props.onSpliceFlag("ResearchLustI");
-                    props.onSetResearchTime("lust",72);
+                    props.onSetResearchTime("lust",35);
                 }
             },
             name: "Lust I",
@@ -370,10 +595,10 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("application",props.researchTime.application - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.application < 0){
                     props.onPushFlag("ResearchApplicationII");
                     props.onSpliceFlag("ResearchApplicationI");
-                    props.onSetResearchTime("application",224);
+                    props.onSetResearchTime("application",100);
                 }
             },
             name: " Application I",
@@ -389,7 +614,7 @@ const TheLab = (props) => {
                 if(props.researchTime.height < 0){
                     props.onPushFlag("ResearchHeightIII");
                     props.onSpliceFlag("ResearchHeightII");
-                    props.onSetResearchTime("height",128);
+                    props.onSetResearchTime("height",64);
                 }
             },
             name: " Height II",
@@ -402,10 +627,10 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("breast",props.researchTime.breast - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.breast < 0){
                     props.onPushFlag("ResearchBreastIII");
                     props.onSpliceFlag("ResearchBreastII");
-                    props.onSetResearchTime("breast",128);
+                    props.onSetResearchTime("breast",64);
                 }
             },
             name: " Breast II",
@@ -418,10 +643,10 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("lactation",props.researchTime.lactation - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.lactation < 0){
                     props.onPushFlag("ResearchLactationIII");
                     props.onSpliceFlag("ResearchLactationII");
-                    props.onSetResearchTime("lactation",128);
+                    props.onSetResearchTime("lactation",64);
                 }
             },
             name: " Lactation II",
@@ -434,10 +659,10 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("strenght",props.researchTime.strenght - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.strenght < 0){
                     props.onPushFlag("ResearchStrengthIII");
                     props.onSpliceFlag("ResearchStrengthII");
-                    props.onSetResearchTime("strenght",172);
+                    props.onSetResearchTime("strenght",80);
                 }
             },
             name: " Strength II",
@@ -450,10 +675,10 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("mindControl",props.researchTime.mindControl - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.mindControl < 0){
                     props.onPushFlag("ResearchMindControlIII");
                     props.onSpliceFlag("ResearchMindControlII");
-                    props.onSetResearchTime("mindControl",200);
+                    props.onSetResearchTime("mindControl",100);
                 }
             },
             name: "Mind control II",
@@ -469,7 +694,7 @@ const TheLab = (props) => {
                 if(props.researchTime.lust < 0){
                     props.onPushFlag("ResearchLustIII");
                     props.onSpliceFlag("ResearchLustII");
-                    props.onSetResearchTime("lust",72);
+                    props.onSetResearchTime("lust",40);
                 }
             },
             name: "Lust II",
@@ -482,31 +707,164 @@ const TheLab = (props) => {
                 props.onAddMinutes(240);
                 props.onSetResearchTime("application",props.researchTime.application - 4);
                 props.onAddMoney(-10);
-                if(props.researchTime.height < 0){
+                if(props.researchTime.application < 0){
                     props.onPushFlag("ResearchApplicationIII");
                     props.onSpliceFlag("ResearchApplicationII");
-                    props.onSetResearchTime("application",224);
+                    props.onSetResearchTime("application",100);
                 }
             },
             name: " Application II",
             cost: 10,
             time: props.researchTime.application
-        },        
+        },,////NEXTONE - 3///////////////////////////////////////////////////////////
+        {
+            flag: "ResearchHeightIII",
+            action: () =>{
+                props.onAddMinutes(240);
+                props.onSetResearchTime("height",props.researchTime.height - 4);
+                props.onAddMoney(-10);
+                if(props.researchTime.height < 0){
+                    props.onPushFlag("ResearchHeightIV");
+                    props.onSpliceFlag("ResearchHeightIII");
+                    props.onSetResearchTime("height",64);
+                }
+            },
+            name: "Height III",
+            cost: 10,
+            time: props.researchTime.height
+        },
+        {
+            flag: "ResearchBreastIII",
+            action: () =>{
+                props.onAddMinutes(240);
+                props.onSetResearchTime("breast",props.researchTime.breast - 4);
+                props.onAddMoney(-10);
+                if(props.researchTime.breast < 0){
+                    props.onPushFlag("ResearchBreastIV");
+                    props.onSpliceFlag("ResearchBreastIII");
+                    props.onSetResearchTime("breast",64);
+                }
+            },
+            name: " Breast III",
+            cost: 12,
+            time: props.researchTime.breast
+        },
+        {
+            flag: "ResearchLactationIII",
+            action: () =>{
+                props.onAddMinutes(240);
+                props.onSetResearchTime("lactation",props.researchTime.lactation - 4);
+                props.onAddMoney(-10);
+                if(props.researchTime.lactation < 0){
+                    props.onPushFlag("ResearchLactationIV");
+                    props.onSpliceFlag("ResearchLactationIII");
+                    props.onSetResearchTime("lactation",64);
+                }
+            },
+            name: " Lactation II",
+            cost: 10,
+            time: props.researchTime.lactation
+        },
+        {
+            flag: "ResearchStrengthIII",
+            action: () =>{
+                props.onAddMinutes(240);
+                props.onSetResearchTime("strenght",props.researchTime.strenght - 4);
+                props.onAddMoney(-10);
+                if(props.researchTime.strenght < 0){
+                    props.onPushFlag("ResearchStrengthIV");
+                    props.onSpliceFlag("ResearchStrengthIII");
+                    props.onSetResearchTime("strenght",80);
+                }
+            },
+            name: " Strength III",
+            cost: 20,
+            time: props.researchTime.strenght
+        },
+        {
+            flag: "ResearchMindControlIII",
+            action: () =>{
+                props.onAddMinutes(240);
+                props.onSetResearchTime("mindControl",props.researchTime.mindControl - 4);
+                props.onAddMoney(-10);
+                if(props.researchTime.mindControl < 0){
+                    props.onPushFlag("ResearchMindControlIV");
+                    props.onSpliceFlag("ResearchMindControlIII");
+                    props.onSetResearchTime("mindControl",80);
+                }
+            },
+            name: "Mind control III",
+            cost: 22,
+            time: props.researchTime.mindControl
+        },
+        {
+            flag: "ResearchLustIII",
+            action: () =>{
+                props.onAddMinutes(240);
+                props.onSetResearchTime("lust",props.researchTime.lust - 4);
+                props.onAddMoney(-10);
+                if(props.researchTime.lust < 0){
+                    props.onPushFlag("ResearchLustIV");
+                    props.onSpliceFlag("ResearchLustIII");
+                    props.onSetResearchTime("lust",30);
+                }
+            },
+            name: "Lust III",
+            cost: 8,
+            time: props.researchTime.lust
+        },
+        {
+            flag: "ResearchApplicationIII",
+            action: () =>{
+                props.onAddMinutes(240);
+                props.onSetResearchTime("application",props.researchTime.application - 4);
+                props.onAddMoney(-10);
+                if(props.researchTime.application < 0){
+                    props.onPushFlag("ResearchApplicationIV");
+                    props.onSpliceFlag("ResearchApplicationIII");
+                    props.onSetResearchTime("application",100);
+                }
+            },
+            name: "Application III",
+            cost: 10,
+            time: props.researchTime.application
+        },           
+        
         
     ]
 
-    if(props.flags.includes("TLQStartGoToLab")){
+
+    if(props.flags.includes("NO_MORE_ENERGY")){
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {""}>            
+            </Col2>
+    
+            <Col3 > 
+                    <Link to={"/SleepAtHome"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" style = {{width: props.standardButtonWidth}}>You have no more energy, lets go home</button>
+                    </Link>
+            
+            </Col3>
+            </>
+            )
+    } else if(props.flags.includes("TLQStartGoToLab")){
         
         let TLQStartWorkingOnTheLab = () =>{
             props.onAddMinutes(10);
             props.onSpliceFlag("TLQStartGoToLab");
-            props.onPushFlag("ResearchHeightI")
-            props.onPushFlag("ResearchBreastI")
-            props.onPushFlag("ResearchLactationI")
-            props.onPushFlag("ResearchStrengthI")
-            props.onPushFlag("ResearchMindControlI")
-            props.onPushFlag("ResearchLustI")
-            props.onPushFlag("ResearchApplicationI")
+            props.onPushFlag("ResearchHeightI");
+            props.onPushFlag("ResearchBreastI");
+            props.onPushFlag("ResearchLactationI");
+            props.onPushFlag("ResearchStrengthI");
+            props.onPushFlag("ResearchMindControlI");
+            props.onPushFlag("ResearchLustI");
+            props.onPushFlag("ResearchApplicationI");
+            props.onPushFlag("BaseSerum1drug");
+            props.onPushFlag("MADYAQHasNotFukedYouAfterSecondResearch");
         }
 
         
@@ -606,9 +964,19 @@ const TheLab = (props) => {
             
             <Col2>
                 {ingredientList.map((ingredient, index  )=>{
-                    return (<button type="button" className="btn btn-primary" style={{width:"250px"}} 
-                        onClick = {ingredient.action} disabled ={props.money > ingredient.price ? false:true}>{ingredient.name} - ${ingredient.price}
-                    </button>)   
+                    return (
+                        <div>
+                    <button type="button" className="btn btn-primary" style={{width:"250px"}} 
+                        onClick = {ingredient.action} disabled ={props.money > ingredient.price ? false:true}>
+                            {ingredient.name} - ${ingredient.price}
+                    </button>
+
+                    <button type="button" className="btn btn-primary" style={{width:"50px"}} >
+                        {props.items[ingredient.itemName]}
+                    </button>
+                    </div>
+                    
+                    )   
                 })}
             </Col2>  
     
@@ -627,17 +995,28 @@ const TheLab = (props) => {
             props.onSpliceFlag("TLQGoToEquipment");
         }
 
-        
-    
+        let firstColumnWidth = "250px";
         return(
             <>
             <Col1><SetCol1/></Col1>
             
             <Col2>
+                <div>
+                    <button type="button" className="btn btn-secondary" style={{width: firstColumnWidth}}>Name</button>
+                    <button type="button" className="btn btn-secondary" style={{width: "100px"}}>Inventory</button>
+                </div>
                 {equipmentList.map((equipment, index  )=>{
-                    return (<button type="button" className="btn btn-primary" style={{width:"250px"}} 
-                        onClick = {equipment.action} disabled ={ (props.money > equipment.price ) || (props.items[equipment.name] > 0) ? false:true}>{equipment.name} - ${equipment.price}
-                    </button>)   
+                    return (
+                        <div>
+                        <button type="button" className="btn btn-primary" style={{width:"250px"}} key = {index + "equipmentListMap"}
+                            onClick = {equipment.action} disabled ={ (props.money > equipment.price ) || (props.items[equipment.name] > 0) ? false:true}>{equipment.name} - ${equipment.price}
+                        </button>
+
+                        <button type="button" className="btn btn-primary" style={{width:"100px"}} key = {index + "equipmentListMapName"}>
+                            {props.items[equipment.itemName]}
+                        </button>
+                        </div>
+                    )   
                 })}
             </Col2>  
     
@@ -675,7 +1054,6 @@ const TheLab = (props) => {
         }
 
         let firstColumnWidth = "250px";
-        let secondColumnWidth = "750px";
 
         return(
             <>
@@ -684,21 +1062,17 @@ const TheLab = (props) => {
             <Col2>
                 <div>
                 <button type="button" className="btn btn-secondary" style={{width: firstColumnWidth}}>Name</button>
-                <button type="button" className="btn btn-secondary" style={{width: secondColumnWidth}}>Description</button>
                 <button type="button" className="btn btn-secondary" style={{width: "100px"}}>Inventory</button>
                 </div>
                 {prepareList.map((drug, index)=>{
+                    console.log(drug.flag)
                     return (
                         <div>
-                            <button type="button" className="btn btn-primary" style={{width: firstColumnWidth}}  key = {index + "durgtoprepare"}
-                                onClick = {drug.action} disabled ={ ((props.money > drug.price ) && (areIngredientsAvailiable(drug))) ? false:true}>{drug.name} - ${drug.price}
+                            <button type="button" className="btn btn-primary" key = {index + "durgtoprepare"}
+                                onClick = {drug.action} disabled ={ ((props.money > drug.price ) && (areIngredientsAvailiable(drug)) && props.energy > 40) ? false:true}  style = {{ width: firstColumnWidth, display: props.flags.includes(drug.flag) ? " ": "none"  }}>{drug.name} - ${drug.price}
                             </button>
 
-                            <button type="button" className="btn btn-primary" style={{ width: secondColumnWidth}}  key = {index + "durgtoprepareRequirements"}> 
-                                {drug.description}
-                            </button>
-
-                            <button type="button" className="btn btn-primary" style={{ width: "100px"}}  key = {index + "durgtoprepareRequirements"}> 
+                            <button type="button" className="btn btn-primary" style={{ width: "100px", display: props.flags.includes(drug.flag) ? " ": "none"  }}  key = {index + "durgtoprepareRequirements"}> 
                                 {props.items[drug.itemName]}
                             </button>
                         </div>
@@ -708,7 +1082,8 @@ const TheLab = (props) => {
             </Col2>  
     
             <Col3> 
-    
+            
+            {props.energy < 40 ? <p>You need at least 40 energy to prepare a drug</p> : ""}
             <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {TLQGoBack}>Go back</button>
                 </Link> 
@@ -726,6 +1101,7 @@ const TheLab = (props) => {
         const possibleDrugsList = [
             {
                 name: "height1drug",
+                displayName: "Height 1",
                 sellPrice: 900,
                 action: () =>{
                     props.onAddItem("height1drug",-1)
@@ -734,6 +1110,7 @@ const TheLab = (props) => {
             },
             {
                 name: "lactation1drug",
+                displayName: "Lactation 1",
                 sellPrice: 700,
                 action: () =>{
                     props.onAddItem("lactation1drug",-1)
@@ -742,6 +1119,7 @@ const TheLab = (props) => {
             },
             {
                 name: "breast1drug",
+                displayName: "Breast 1",
                 sellPrice: 800,
                 action: () =>{
                     props.onAddItem("breast1drug",-1)
@@ -750,6 +1128,7 @@ const TheLab = (props) => {
             },
             {
                 name: "strenght1drug",
+                displayName: "Strength 1",
                 sellPrice: 1500,
                 action: () =>{
                     props.onAddItem("strenght1drug",-1)
@@ -758,6 +1137,7 @@ const TheLab = (props) => {
             },
             {
                 name: "mindControl1drug",
+                displayName: "Mind control 1",
                 sellPrice: 2000,
                 action: () =>{
                     props.onAddItem("mindControl1drug",-1)
@@ -766,10 +1146,20 @@ const TheLab = (props) => {
             },
             {
                 name: "lust1drug",
+                displayName: "Lust 1",
                 sellPrice: 600,
                 action: () =>{
                     props.onAddItem("lust1drug",-1)
                     props.onAddMoney(600)
+                }
+            },
+            {
+                name: "baseSerum1drug",
+                displayName: "Base serum 1",
+                sellPrice: 250,
+                action: () =>{
+                    props.onAddItem("baseSerum1drug",-1)
+                    props.onAddMoney(250)
                 }
             },
         ];
@@ -779,10 +1169,10 @@ const TheLab = (props) => {
             <Col1><SetCol1/></Col1>
             
             <Col2>
-                <p>Here will show up any drug you can sell to the company.</p>
+                <p>Here will show up any drug you can sell to the company. If you have any.</p>
                 {possibleDrugsList.map((drug, index)=>{
                     return (<button type="button" className="btn btn-primary" style={{width:"250px", display : ((props.items[drug.name] > 0 )) ? " ":"none"}} 
-                        onClick = {drug.action} display ={ ((props.items[drug.name] > 0 )) ? " ":"none"}>{drug.name} - ${drug.sellPrice}
+                        onClick = {drug.action} display ={ ((props.items[drug.name] > 0 )) ? " ":"none"}>{drug.displayName} - ${drug.sellPrice}
                     </button>)   
                 })}
             </Col2>  
@@ -791,6 +1181,211 @@ const TheLab = (props) => {
     
             <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {TLQGoBack}>Go back</button>
+                </Link> 
+            </Col3>
+            </>
+  
+      )
+    } else if(props.flags.includes("TLQGoToDescriptions")){
+        let TLQGoBack = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("TLQGoToDescriptions");
+        }
+
+        let AlertItemDescription = (desc,ingredients) =>{
+
+            let fullDescription = `${desc}. You need: `
+            ingredients.forEach((ingredient)=>{
+                fullDescription += "\n" + ingredient.quantity + " " + ingredient.nameDisplay + ". "
+            })
+            alert(fullDescription);
+        }
+
+
+        return(
+            <>
+            <Col1><SetCol1/></Col1>
+            
+            <Col2>
+                
+                {prepareList.map((drug, index)=>{
+                return (
+                        <button type="button" className="btn btn-primary" key = {index + "durgDescRequirements"} 
+                       style={{display: props.flags.includes(drug.flag) ? " ": "none"}} onClick= {() => AlertItemDescription(drug.description,drug.ingredients)}> 
+                            {drug.name}
+                        </button>
+                )   
+                })}
+            </Col2>  
+    
+            <Col3> 
+    
+            <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {TLQGoBack}>Go back</button>
+                </Link> 
+            </Col3>
+            </>
+  
+      )
+    } else if(props.flags.includes("ResearchHeightII") && props.flags.includes("ResearchStrengthII") && props.flags.includes("MADYAQHasNotFukedYouAfterSecondResearch")){
+        let MADYAQPrepareHeightAndMuscleII = () =>{
+            props.onSpliceFlag("MADYAQYouResearchedHeightII");
+            props.onSpliceFlag("MADYAQYouResearchedStrengthII");
+            props.onSpliceFlag("MADYAQHasNotFukedYouAfterSecondResearch");
+            props.onAddMinutes(10);
+            props.onPushFlag("MADYAQPrepareHeightAndMuscleII");
+        }
+        if(props.gender === "M"){
+            return(
+                <>
+                <Col1><SetCol1/></Col1>
+                
+                <Col2 BackImage = {TheLabInside}>
+                        <img alt = {"Not found"} src = {props.MaddyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                </Col2>   
+        
+                <Col3> 
+    
+                    <p>You see Maddy entering you office. She sees you, clears her throat and says: "{props.name}, your research has been successful in the height and muscle increase area"</p>
+                    <p>Maddy gets closer to you and whispers "I need you to prepare one dose of each right now. That's an order intern"</p>
+                    
+            
+                    <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                            <button type="button" className="btn btn-primary" onClick = {MADYAQPrepareHeightAndMuscleII}>Prepare the drugs</button>
+                    </Link> 
+                </Col3>
+                </>
+      
+          )
+        } else if(props.gender === "F"){
+
+        }
+        
+    }
+    
+    else if(props.flags.includes("MADYAQYouResearchedHeightII")){
+        
+        let MADYAQGoBack = () =>{
+            props.onSpliceFlag("MADYAQYouResearchedHeightII");
+            props.onAddMinutes(10);
+            props.onAddMoney(500);
+        }
+
+
+        return(
+            <>
+            <Col1><SetCol1/></Col1>
+            
+            <Col2 BackImage = {TheLabInside}>
+                    <img alt = {"Not found"} src = {props.MaddyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>   
+    
+            <Col3> 
+
+            <p>You see maddy approaching you "Hello intern. It seems that you have completed some research in the area of height increase" </p>
+            <p>"I must tell you that I am really interested in this area. And I think that you should research about strength next." She says, a mixture of professionalism and excitement in her voice</p>
+            <p>"I'll give you $500 extra funding so you can start researching ASAP." Maddy suggests. And leaves.</p>
+    
+            <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {MADYAQGoBack}>Go back</button>
+                </Link> 
+            </Col3>
+            </>
+  
+      )
+    }else if(props.flags.includes("MADYAQYouResearchedStrengthII")){
+        
+        let MADYAQGoBack = () =>{
+            props.onSpliceFlag("MADYAQYouResearchedStrengthII");
+            props.onAddMinutes(10);
+            props.onAddMoney(500);
+        }
+
+
+        return(
+            <>
+            <Col1><SetCol1/></Col1>
+            
+            <Col2 BackImage = {TheLabInside}>
+                    <img alt = {"Not found"} src = {props.MaddyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>   
+    
+            <Col3> 
+
+            <p>You see maddy approaching you "Hello intern. It seems that you have completed some research in the area of strength increase" </p>
+            <p>"I must tell you that I am really interested in this area. And I think that you should research about height next." She says, a mixture of professionalism and excitement in her voice</p>
+            <p>"I'll give you $500 extra funding so you can start researching ASAP." Maddy suggests. And leaves.</p>
+    
+            <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {MADYAQGoBack}>Go back</button>
+                </Link> 
+            </Col3>
+            </>
+  
+      )
+    } else if(props.flags.includes("MADYAQPrepareHeightAndMuscleII")){
+        let MADYAQGoBack = () =>{
+            props.onSpliceFlag("MADYAQPrepareHeightAndMuscleII");
+            props.onAddMinutes(10);
+            props.onSetCharacterStats("Maddy","muscle", props.charactersStats.Maddy.height + 2)
+            props.onSetCharacterStats("Maddy","height", props.charactersStats.Maddy.muscle + 2)
+            props.onPushFlag("MADYAQMaddyGrabsYouAndFucksYouAfterResearchII")
+        }
+
+
+        
+        return(
+            <>
+            <Col1><SetCol1/></Col1>
+            
+            <Col2 BackImage = {""}>
+            <video autoPlay loop style ={{width:"100vw"}}>
+                <source src={FMG_gif} type="video/mp4"/> 
+            </video>
+            </Col2>   
+    
+            <Col3> 
+
+            <p>Maddy takes the drugs as soon as you finish preparing them.</p>
+            <p>"{props.name}" Maddy looks at you. "Did you know I'm scared of walking from the building to my car at night?" Maddys tone of voice is cold and serious. "Some nights I want to go to the hill and I don't because I don't have anyone to go with, and I worry that some asshole or "nice guy" will perv on me."
+            </p>
+            <p>"Did you know I took a loan to buy a car. Because in this city the subway is filled with men who can't keep their hands yo themselves. DID YOU KNOW THAT I'M TIRED OF BEING WEAK?!" Maddy shouts, her voice distorting.</p>
+            <p>"I feel it" Maddy gnarls. "It's warm under my skin. My M...Muscleess are twitching. FLEXING!" Maddy is struggling to keep her composture. "I feel so strong!!" Maddy roars.</p>
+           <p>GOD I AM HORNY!</p>
+    
+            <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {MADYAQGoBack}>Maddy grabs your arm</button>
+                </Link> 
+            </Col3>
+            </>
+  
+      )
+    } else if(props.flags.includes("MADYAQMaddyGrabsYouAndFucksYouAfterResearchII")){
+        let MADYAQGoBack = () =>{
+            props.onSpliceFlag("MADYAQMaddyGrabsYouAndFucksYouAfterResearchII");
+            props.onAddMinutes(10);
+            props.onChangeRelationship("Maddy",10);
+        }
+
+
+        
+        return(
+            <>
+            <Col1><SetCol1/></Col1>
+            
+            <Col2 BackImage = {""}>
+            <video autoPlay loop controls>
+                <source src={RippedAbsWomanFuckedInCouch} type="video/mp4"/> 
+            </video>
+            </Col2>   
+    
+            <Col3> 
+
+            <p>Maddy takes you to a small private room in the company. Well, she drags you there.</p>
+            <p>Maddys head thudded against the couch, heat pulsing through her blood from the point where your dick is driving Maddy mad. Maddys legs are fixated on you. Her strong thigs flexing you further into her. Your sweat filling the room with sensual aromas.</p>
+    
+            <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {MADYAQGoBack}>Fuck...</button>
                 </Link> 
             </Col3>
             </>
@@ -832,6 +1427,11 @@ const TheLab = (props) => {
         let TLQGoToCompany = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("TLQGoToCompany");
+        }
+
+        let TLQGoToDescriptions = () =>{
+            props.onAddMinutes(10);
+            props.onPushFlag("TLQGoToDescriptions");
         }
 
 
@@ -876,6 +1476,9 @@ const TheLab = (props) => {
                 <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {TLQGoToCompany}>Company</button>
                 </Link>  
+                <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {TLQGoToDescriptions}>Drug descriptions</button>
+                </Link> 
                 <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {TLQClaimSalary} style = {{display: (props.lab.lastPaidWeek !== props.date.getWeek() ? " " : "none")}}>Claim funding</button>
                 </Link>  
