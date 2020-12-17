@@ -175,6 +175,11 @@ const App = ( props ) => {
             <Route exact path="/TheLabOutside" component={ApartmentSwitch} />
             <Route exact path="/TheGalleryOutside" component={ApartmentSwitch} />
             <Route exact path="/TheGallery" component={ApartmentSwitch} />
+
+            <Route exact path="/TheAcademyOutside" component={ApartmentSwitch} />
+            <Route exact path="/TheAcademy" component={ApartmentSwitch} />
+            <Route exact path="/TheAcademyDorm" component={ApartmentSwitch} />
+
           {/*I messed the routing so hard. that everything is mixed up. I think I should only route from one place?
           Thing is, that I am indeed writing the function separate. Get good with this routing stuff.
           */}

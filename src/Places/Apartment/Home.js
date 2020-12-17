@@ -297,6 +297,35 @@ const Home = ( props ) => {
             </Col3>
             </>
             )
+    } else if(props.flags.includes("SeeYourselfInMirrorAtHome")){
+        let finishMirrorHome = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("SeeYourselfInMirrorAtHome");
+        }
+    
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {Bedroom}>
+                
+            </Col2>  
+            
+            <Col3 > 
+
+                
+                
+                   
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {finishMirrorHome} >Back.</button>
+                </Link>  
+            </Col3>
+            </>
+  
+      )
     }
     
     
@@ -314,6 +343,11 @@ const Home = ( props ) => {
         }
         let goToSandyApartment = () =>{
             props.onAddMinutes(10);
+        }
+
+        let SeeYourselfInMirror = () =>{
+            props.onAddMinutes(10);
+            props.onPushFlag("SeeYourselfInMirrorAtHome");
         }
         return(
             <>
@@ -343,6 +377,9 @@ const Home = ( props ) => {
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick ={SleepForXTime} style={{width: props.standardButtonWidth}}>Sleep for 4 hours</button>
+                </Link>
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick ={SeeYourselfInMirror} style={{width: props.standardButtonWidth}}>Mirror</button>
                 </Link>
 
                 <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>

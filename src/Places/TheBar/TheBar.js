@@ -722,12 +722,14 @@ const TheBar = (props) => {
             props.onAddMoney(-50);
             props.onPushFlag("GALLERY_DISCOVERED");
             props.onPushFlag("EVEMQEveWillBeAtGallery");
+            props.onPushFlag("EVEMQEveWillBeAtGallery_Outside");
         }
 
         let leaveBarGalleryDiscovered = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("GALLERY_DISCOVERED");
             props.onPushFlag("EVEMQEveWillBeAtGallery");
+            props.onPushFlag("EVEMQEveWillBeAtGallery_Outside");
         }
         return(
             <>

@@ -29,6 +29,9 @@ import TheLabOutside from "./TheLab/TheLabOutside";
 import TheLab from "./TheLab/TheLab";
 import TheGallery from "./TheGallery/TheGallery";
 import TheGalleryOutside from "./TheGallery/TheGalleryOutside";
+import TheAcademy from "./TheAcademy/TheAcademy";
+import TheAcademyOutside from "./TheAcademy/TheAcademyOutside";
+import TheAcademyDorm from "./TheAcademy/TheAcademyDorm";
 
 ///Characters
 import AnriRhoadesBlueCowgirlBikini_transparent from "../Images/Characters/Anri_Rhoades_2/AnriRhoadesBlueCowgirlBikini_transparent.png";
@@ -75,6 +78,8 @@ import Sandy_b8_h2_f1_m2_s3 from "../Images/Characters/Sandy/Sandy_b8_h2_f1_m2_s
 //Maddy
 import MaddyBusiness_transparent_b_1 from "../Images/Characters/Maddeline/MaddyBusiness_transparent_b_1.png";
 import Maddy_S4_H4_t from "../Images/Characters/Maddeline/Maddy_S4_H4_t.png";
+
+//Yourself.
 
 
 //Images
@@ -1247,6 +1252,192 @@ const Apartment = ( props ) => {
       );
     };    
 
+    let GoToTheAcademy = () =>{
+      return (
+        <TheAcademy
+        money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+        relations = {props.relations}
+        onSetResearchTime = {props.onSetResearchTime}
+        researchTime = {props.researchTime}
+        lab = {props.lab}
+        onSetLab = {props.onSetLab}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+        EveImageS2 = {EveImageS2}
+        EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+        fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
+        ></TheAcademy>
+      );
+    };    
+
+    let GoToTheAcademyOutside = () =>{
+      return (
+        <TheAcademyOutside
+        money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+        relations = {props.relations}
+        onSetResearchTime = {props.onSetResearchTime}
+        researchTime = {props.researchTime}
+        lab = {props.lab}
+        onSetLab = {props.onSetLab}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+        EveImageS2 = {EveImageS2}
+        EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+        fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
+        ></TheAcademyOutside>
+      );
+    };  
+    
+    let GoToTheAcademyDorm = () =>{
+      return (
+        <TheAcademyDorm
+        money = {props.money}
+          standardButtonWidth = {standardButtonWidth}
+          col2Height = {col2Height}
+        energy = {props.energy}
+        date = {props.date}
+        onAddMinutes = {props.onAddMinutes}
+        onSpliceFlag = {props.onSpliceFlag}
+        onPushFlag = {props.onPushFlag}
+        onSetHour = {props.onSetHour}
+        flags = {props.flags}
+        onAddEnergy = {props.onAddEnergy}
+        onSetEnergy = {props.onSetEnergy}
+        onAddItem = {props.onAddItem}
+        items ={props.items}
+        onChangeRelationship = {props.onChangeRelationship}
+        physical = {props.physical}
+        Sandy = {props.Sandy}
+        attractiveness = {props.attractiveness}
+        onAddMoney = {props.onAddMoney}
+        name = {props.name}
+        relations = {props.relations}
+        onSetResearchTime = {props.onSetResearchTime}
+        researchTime = {props.researchTime}
+        lab = {props.lab}
+        onSetLab = {props.onSetLab}
+
+        characterImageHeight = {characterImageHeight}
+        characterImageWidth   = {characterImageWidth}
+          onSetCharacterStats = {props.onSetCharacterStats}
+          charactersStats = {props.charactersStats}  
+        SandyImage = {SandyImage}
+        SandyImageNaked = {SandyImageNaked}
+        AmyImage = {AmyImage}
+        AmyImageNaked = {AmyImageNaked}
+        AmyImageNaked_2_down = {AmyImageNaked_2_down}
+        AmyImageFight = {AmyImageFight}
+        AmyImageFight1 = {AmyImageFight1}
+        AmyImageFight2 = {AmyImageFight2}
+        AmyImageFight3 = {AmyImageFight3}
+        AmyImageFight4 = {AmyImageFight4}
+        MariaImage = {MariaImage}
+        EveImage = {EveImage}
+        EveImageButt = {EveImageButt}
+        MaddyImage = {MaddyImage}
+        EveImageS1 = {EveImageS1}
+        EveImageS2 = {EveImageS2}
+        EveImageS3 = {EveImageS3}
+          AmyImageS1 = {AmyImageS1}
+          AmyImageS2 = {AmyImageS2}
+          AmyImageS3 = {AmyImageS3}
+          SandyImageS1 = {SandyImageS1}
+          SandyImageS2 = {SandyImageS2}
+          SandyImageS3 = {SandyImageS3}  
+        fuckingEveVideo_s4 = {fuckingEveVideo_s4}
+          DrugStealthModifier = {DrugStealthModifier}
+        ></TheAcademyDorm>
+      );
+    };  
+
    
 
     
@@ -1288,8 +1479,12 @@ const Apartment = ( props ) => {
                 <Route exact path="/TheLab" component={GoToTheLab} />
                 <Route exact path="/TheLabOutside" component={GoToTheLabOutside} />
 
-                {/* <Route exact path="/TheGalleryOutside" component={GoToTheGalleryOutside} />
-                <Route exact path="/TheGallery" component={GoToTheGallery} /> */}
+                <Route exact path="/TheGalleryOutside" component={GoToTheGalleryOutside} />
+                <Route exact path="/TheGallery" component={GoToTheGallery} />
+
+                <Route exact path="/TheAcademyOutside" component={GoToTheAcademyOutside} />
+                <Route exact path="/TheAcademy" component={GoToTheAcademy} />
+                <Route exact path="/TheAcademyDorm" component={GoToTheAcademyDorm} />
 
 
                 

@@ -967,7 +967,7 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                        <img alt ={"Not found"} src={TruckAndLogo} style ={{width : "70vw", height: props.characterImageHeight}}></img>
+                    <img alt ={"Not found"} src={TruckAndLogo} style ={{width : "70vw", height: props.characterImageHeight}}></img>
             </Col2>
 
             <Col3 > 
@@ -993,6 +993,39 @@ const GoOutside = ( props ) => {
 
             </>
         )
+    } else if(props.flags.includes("AMYwillShowYouAcademy")){
+        let AMY_WILL_SHOW_ACADEMY_0 = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("AMYwillShowYouAcademy");
+            props.onPushFlag("ACADEMY_DISCOVERED");
+            props.onPushFlag("AMY_WILL_SHOW_ACADEMY_0");
+        }
+        
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {OutsideApartment}>
+            <img alt ={"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>
+
+            <Col3 > 
+            
+                
+            <p>"Hey! {props.name}, I heard you had some fun at the gallery." Amy snickers. "You really are weak. But I have an offer for you." Amy gets closer to you. "There is an academy. Just outside the city. I'm supposed to be there but those bitches are too dumb for me..." Amy pauses. "But for you... Well, you could easily take my spot. If you want to take up the offer, I'll be at the academy."</p>
+            
+
+
+            <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick ={AMY_WILL_SHOW_ACADEMY_0} style = {{width: props.standardButtonWidth}} style = {{width: props.standardButtonWidth}}>Game map</button>
+            </Link>
+
+            </Col3>
+
+            </>
+        )
     }
     
     
@@ -1004,7 +1037,6 @@ const GoOutside = ( props ) => {
                 />
             </Col1>
             <Col2 BackImage = {OutsideApartment}>
-                
             </Col2>
     
             <Col3 > 

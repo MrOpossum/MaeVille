@@ -556,6 +556,7 @@ const Evelyn = (props) => {
         let GoBack = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQEveWillBeAtGallery");
+            props.onPushFlag("EVEMQEveWillBeAtGallery_Outside");
             props.onPushFlag("GALLERY_DISCOVERED");
         }    
         
