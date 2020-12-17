@@ -29,7 +29,7 @@ import TheLabOutside from "./TheLab/TheLabOutside";
 import TheLab from "./TheLab/TheLab";
 import TheGallery from "./TheGallery/TheGallery";
 import TheGalleryOutside from "./TheGallery/TheGalleryOutside";
-import TheAcademy from "./TheAcademy/TheAcademy";
+import TheAcademyOffice from "./TheAcademy/TheAcademyOffice";
 import TheAcademyOutside from "./TheAcademy/TheAcademyOutside";
 import TheAcademyDorm from "./TheAcademy/TheAcademyDorm";
 
@@ -81,6 +81,8 @@ import Maddy_S4_H4_t from "../Images/Characters/Maddeline/Maddy_S4_H4_t.png";
 
 //Yourself.
 
+//Lisa
+import Lisa_b7_h2_f1_m2 from "../Images/Characters/Lisa/Lisa_b7_h2_f1_m2.png";
 
 //Images
 
@@ -198,6 +200,8 @@ const Apartment = ( props ) => {
     MaddyImage = Maddy_S4_H4_t;
   }
 
+  //Lisa
+  var LisaImage = Lisa_b7_h2_f1_m2;
 
 
   var DrugStealthModifier = 1;
@@ -234,6 +238,7 @@ const Apartment = ( props ) => {
           onSetItem = {props.onSetItem}
 
           characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}       
@@ -297,6 +302,7 @@ const Apartment = ( props ) => {
           onAddMoney = {props.onAddMoney}
 
           characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -415,6 +421,7 @@ const Apartment = ( props ) => {
           physical = {props.physical}
 
           characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -475,6 +482,7 @@ const Apartment = ( props ) => {
 
 
           characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -532,6 +540,7 @@ const Apartment = ( props ) => {
           onChangeRelationship = {props.onChangeRelationship}
 
           characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -587,6 +596,7 @@ const Apartment = ( props ) => {
 
 
           characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -651,6 +661,7 @@ const Apartment = ( props ) => {
           onAddMoney = {props.onAddMoney}
 
           characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -702,6 +713,7 @@ const Apartment = ( props ) => {
         onChangeRelationship = {props.onChangeRelationship}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -750,6 +762,7 @@ const Apartment = ( props ) => {
         onChangeRelationship = {props.onChangeRelationship}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -807,6 +820,7 @@ const Apartment = ( props ) => {
         
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
         onSetCharacterStats = {props.onSetCharacterStats}
         charactersStats = {props.charactersStats}  
@@ -865,6 +879,7 @@ const Apartment = ( props ) => {
         name = {props.name}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -921,6 +936,7 @@ const Apartment = ( props ) => {
         name = {props.name}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -978,6 +994,7 @@ const Apartment = ( props ) => {
         relations = {props.relations}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1035,6 +1052,7 @@ const Apartment = ( props ) => {
         relations = {props.relations}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1096,6 +1114,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1158,6 +1177,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1220,6 +1240,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1252,9 +1273,9 @@ const Apartment = ( props ) => {
       );
     };    
 
-    let GoToTheAcademy = () =>{
+    let GoToTheAcademyOffice = () =>{
       return (
-        <TheAcademy
+        <TheAcademyOffice
         money = {props.money}
           standardButtonWidth = {standardButtonWidth}
           col2Height = {col2Height}
@@ -1282,6 +1303,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1310,7 +1332,7 @@ const Apartment = ( props ) => {
           SandyImageS3 = {SandyImageS3}  
         fuckingEveVideo_s4 = {fuckingEveVideo_s4}
           DrugStealthModifier = {DrugStealthModifier}
-        ></TheAcademy>
+        ></TheAcademyOffice>
       );
     };    
 
@@ -1344,6 +1366,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1406,6 +1429,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          LisaImage = {props.LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1483,7 +1507,7 @@ const Apartment = ( props ) => {
                 <Route exact path="/TheGallery" component={GoToTheGallery} />
 
                 <Route exact path="/TheAcademyOutside" component={GoToTheAcademyOutside} />
-                <Route exact path="/TheAcademy" component={GoToTheAcademy} />
+                <Route exact path="/TheAcademyOffice" component={GoToTheAcademyOffice} />
                 <Route exact path="/TheAcademyDorm" component={GoToTheAcademyDorm} />
 
 

@@ -7,7 +7,7 @@ import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
 
 //Images
-
+import AcademyOutside from "../../Images/TheAcademy/AcademyOutside.jpg"
 
 const TheAcademyOutside = (props) => {
 
@@ -25,7 +25,7 @@ const TheAcademyOutside = (props) => {
                 <SetCol1
                 />
             </Col1>
-            <Col2 BackImage = {asdasd}>
+            <Col2 BackImage = {AcademyOutside}>
                 <img alt ={"Not found"} src={props.AmyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>  
             
@@ -54,8 +54,8 @@ const TheAcademyOutside = (props) => {
                 <SetCol1
                 />
             </Col1>
-            <Col2 BackImage = {asdasd}>
-                <img alt ={"Not found"} src={middelAgeWoamnDirectorLisaAnn} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            <Col2 BackImage = {AcademyOutside}>
+                <img alt ={"Not found"} src={props.LisaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>  
             
             <Col3 > 
@@ -86,7 +86,7 @@ const TheAcademyOutside = (props) => {
                 <SetCol1
                 />
             </Col1>
-            <Col2 BackImage = {asdasd}>
+            <Col2 BackImage = {AcademyOutside}>
                     
             </Col2>  
     

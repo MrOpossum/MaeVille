@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
+import TextField from '@material-ui/core/TextField';
 
 import Col1 from "../../components/col1";
 import Col2 from "../../components/col2";
@@ -7,9 +8,10 @@ import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
 
 //Images
+import TheOffice from "../../Images/TheAcademy/TheOffice.jpg"
 
 
-const TheAcademy = (props) => {
+const TheAcademyOffice = (props) => {
 
     const [inputTextValue, setInputTextValue] = useEffect("");
 
@@ -27,8 +29,8 @@ const TheAcademy = (props) => {
                 <SetCol1
                 />
             </Col1>
-            <Col2 BackImage = {asdasd}>
-                
+            <Col2 BackImage = {TheOffice}>
+            <img alt ={"Not found"} src={props.LisaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>  
             
             <Col3 > 
@@ -45,7 +47,7 @@ const TheAcademy = (props) => {
                 
                    
                 <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToDormInAcademy} >Go to dorm</button>
+                    <button type="button" className="btn btn-primary" onClick = {GoToDormAtAcademyAfterIntroduction} >Go to dorm</button>
                 </Link>  
             </Col3>
             </>
@@ -66,7 +68,8 @@ const TheAcademy = (props) => {
                 <SetCol1
                 />
             </Col1>
-            <Col2 BackImage = {asdasd}>
+            <Col2 BackImage = {TheOffice}>
+            <img alt ={"Not found"} src={props.LisaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
                     
             </Col2>  
     
@@ -87,4 +90,4 @@ const TheAcademy = (props) => {
 }
 
 
-export default TheAcademy;
+export default TheAcademyOffice;

@@ -177,7 +177,7 @@ const App = ( props ) => {
             <Route exact path="/TheGallery" component={ApartmentSwitch} />
 
             <Route exact path="/TheAcademyOutside" component={ApartmentSwitch} />
-            <Route exact path="/TheAcademy" component={ApartmentSwitch} />
+            <Route exact path="/TheAcademyOffice" component={ApartmentSwitch} />
             <Route exact path="/TheAcademyDorm" component={ApartmentSwitch} />
 
           {/*I messed the routing so hard. that everything is mixed up. I think I should only route from one place?
