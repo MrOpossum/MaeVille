@@ -104,6 +104,13 @@ const GameMap = ( props ) => {
                 >
                     <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The gallery</button>
                 </Link>
+
+                <Link to={"/TheAcademyOutside"} style = {{
+                        display:(props.flags.includes("ACADEMY_DISCOVERED") ? "": "none")
+                    }}
+                >
+                    <button type="button" className="btn btn-primary" onClick={goToHomeClick} style = {{width: props.standardButtonWidth}}>The Academy</button>
+                </Link>                
                 
                    
     

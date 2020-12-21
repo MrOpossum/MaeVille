@@ -291,7 +291,24 @@ const reducer = (state = mainCharacter, action) =>{
                 }
             }
         }
-            
+
+        case actionTypes.SET_PENIS:{
+            return{
+                fullState:{
+                    ...state.fullState,
+                    penis: action.penisToSet
+                }
+            }
+        }
+         
+        case actionTypes.SET_ANYTHING_FULLSTATE:{
+            return{
+                fullState:{
+                    ...state.fullState,
+                    [action.toSetFullstate]: action.valueToSetFullState
+                }
+            }
+        }
 
 
         default:

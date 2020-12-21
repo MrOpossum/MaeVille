@@ -37,7 +37,6 @@ const _0_Start = ( props ) => {
         props.onPushFlag("BAR_DISCOVERED");
         props.onPushFlag("HILL_DISCOVERED");
         props.onPushFlag("EVEMQMeetEveAtTheBar");
-        props.onPushFlag("SCIENCELABQSStart");
         props.onAddMoney(300);
 
     }

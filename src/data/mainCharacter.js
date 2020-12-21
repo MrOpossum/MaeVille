@@ -2,7 +2,9 @@ const mainCharacter = {
     fullState : {
         date: new Date(2020,0,1,0,0),
         name : "Max",
-        gender : "M",
+        gender : 9,
+        penis: true,
+        
     
         physical : 10,
         mind : 10,
@@ -110,6 +112,26 @@ const mainCharacter = {
                 mindControl : 0,
                 lust : 0,
                 strength : 8,
+            },
+            Mary:{
+                breast : 2,
+                height : 2,
+                Fat : 1,
+                muscle : 2,
+                lactation : 0,
+                mindControl : 0,
+                lust : 0,
+                strength : 8,
+            },
+            Nikki:{
+                breast : 3,
+                height : 2,
+                Fat : 1,
+                muscle : 2,
+                lactation : 0,
+                mindControl : 0,
+                lust : 0,
+                strength : 10,
             }
         },
         researchTime:{

@@ -1411,6 +1411,9 @@ const TheLab = (props) => {
         let TLQGoToResearch = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("TLQGoToResearch");
+            if(props.energy < 21 ){
+                alert("You don't have enough enery to research right now.")
+            }
         }
         let TLQGoToIngredients = () =>{
             props.onAddMinutes(10);

@@ -167,7 +167,6 @@ const TheHill = (props) => {
         let EVEMQEveWillBeAtGallery = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQEveWillBeAtGallery");
-            props.onPushFlag("EVEMQEveWillBeAtGallery_Outside");
             props.onSpliceFlag("EVEMQApproachEveAtHillGood");
             props.onPushFlag("GALLERY_DISCOVERED");
         }
@@ -311,7 +310,6 @@ const TheHill = (props) => {
         let EVEMQEveWillBeAtGallery = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQEveWillBeAtGallery");
-            props.onPushFlag("EVEMQEveWillBeAtGallery_Outside");
             props.onSpliceFlag("EVEMQGiveMoonstoneToEveAthill");
             props.onPushFlag("GALLERY_DISCOVERED");
         }

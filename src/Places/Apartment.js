@@ -80,9 +80,42 @@ import MaddyBusiness_transparent_b_1 from "../Images/Characters/Maddeline/MaddyB
 import Maddy_S4_H4_t from "../Images/Characters/Maddeline/Maddy_S4_H4_t.png";
 
 //Yourself.
+import You_male_9 from "../Images/Characters/You/You-male-9.png";
+import You_male_8 from "../Images/Characters/You/You-male-8.png";
 
 //Lisa
 import Lisa_b7_h2_f1_m2 from "../Images/Characters/Lisa/Lisa_b7_h2_f1_m2.png";
+
+//Mary
+import Mary_b2_h2_f1_m2_s1 from "../Images/Characters/Mary/Mary-b2-h2-f1-m2_s1.png";
+import Mary_b2_h2_f1_m2_s2 from "../Images/Characters/Mary/Mary-b2-h2-f1-m2_s2.png";
+import Mary_b2_h2_f1_m2_s3 from "../Images/Characters/Mary/Mary-b2-h2-f1-m2_s3.png";
+import Mary_b2_h2_f1_m2_naked from "../Images/Characters/Mary/Mary-b2-h2-f1-m2-naked.png";
+import Mary_b4_h2_f1_m2_s1 from "../Images/Characters/Mary/Mary-b4-h2-f1-m2_s1.png";
+import Mary_b4_h2_f1_m2_s2 from "../Images/Characters/Mary/Mary-b4-h2-f1-m2_s2.png";
+import Mary_b4_h2_f1_m2_s3 from "../Images/Characters/Mary/Mary-b4-h2-f1-m2_s3.png";
+import Mary_b7_h2_f1_m2_s1 from "../Images/Characters/Mary/Mary-b7-h2-f1-m2_s1.png";
+import Mary_b7_h2_f1_m2_s2 from "../Images/Characters/Mary/Mary-b7-h2-f1-m2_s2.png";
+import Mary_b7_h2_f1_m2_s3 from "../Images/Characters/Mary/Mary-b7-h2-f1-m2_s3.png";
+
+//Nikki
+import Nikki_b3_h2_f1_m2_s1 from "../Images/Characters/Nikki/Nikki-b3-h2-f1-m2_s1.png";
+import Nikki_b3_h2_f1_m2_s2 from "../Images/Characters/Nikki/Nikki-b3-h2-f1-m2_s2.png";
+import Nikki_b3_h2_f1_m2_s3 from "../Images/Characters/Nikki/Nikki-b3-h2-f1-m2_s3.png";
+import Nikki_b3_h2_f1_m2_Towel from "../Images/Characters/Nikki/Nikki-b3-h2-f1-m2-towel.png";
+import Nikki_b5_h2_f1_m2_s1 from "../Images/Characters/Nikki/Nikki-b5-h2-f1-m2_s1.png";
+import Nikki_b5_h2_f1_m2_s2 from "../Images/Characters/Nikki/Nikki-b5-h2-f1-m2_s2.png";
+import Nikki_b5_h2_f1_m2_s3 from "../Images/Characters/Nikki/Nikki-b5-h2-f1-m2_s3.png";
+import Nikki_b6_h2_f1_m2_s1 from "../Images/Characters/Nikki/Nikki-b6-h2-f1-m2_s1.png";
+import Nikki_b6_h2_f1_m2_s2 from "../Images/Characters/Nikki/Nikki-b6-h2-f1-m2_s2.png";
+import Nikki_b6_h2_f1_m2_s3 from "../Images/Characters/Nikki/Nikki-b6-h2-f1-m2_s3.png";
+import Nikki_b8_h2_f1_m2_s1 from "../Images/Characters/Nikki/Nikki-b8-h2-f1-m2_s1.png";
+import Nikki_b8_h2_f1_m2_s2 from "../Images/Characters/Nikki/Nikki-b8-h2-f1-m2_s2.png";
+import Nikki_b8_h2_f1_m2_s3 from "../Images/Characters/Nikki/Nikki-b8-h2-f1-m2_s3.png";
+import Nikki_b9_h2_f1_m2_s1 from "../Images/Characters/Nikki/Nikki-b9-h2-f1-m2_s1.png";
+import Nikki_b9_h2_f1_m2_s2 from "../Images/Characters/Nikki/Nikki-b9-h2-f1-m2_s2.png";
+import Nikki_b9_h2_f1_m2_s3 from "../Images/Characters/Nikki/Nikki-b9-h2-f1-m2_s3.png";
+
 
 //Images
 
@@ -93,7 +126,7 @@ const Apartment = ( props ) => {
   if(window.screen.width < 600){
     characterImageWidth = "45vw";
   } else if(window.screen.width < 1280){
-    characterImageWidth = "35vw";
+    characterImageWidth = "32vw";
   }
 
 
@@ -194,14 +227,82 @@ const Apartment = ( props ) => {
 
 
   //Maddy
-  if(props.charactersStats.Maddy.breast <= 3 && props.charactersStats.Maddy.heigth < 4 && props.charactersStats.Maddy.muscle < 4){
+  if(props.charactersStats.Maddy.breast <= 3 && props.charactersStats.Maddy.height < 4 && props.charactersStats.Maddy.muscle < 4){
     MaddyImage = MaddyBusiness_transparent_b_1;
-  }else if(props.charactersStats.Maddy.breast < 4 && props.charactersStats.Maddy.heigth >= 4 && props.charactersStats.Maddy.muscle >= 4){
+  }else if(props.charactersStats.Maddy.breast < 4 && props.charactersStats.Maddy.height >= 4 && props.charactersStats.Maddy.muscle >= 4){
     MaddyImage = Maddy_S4_H4_t;
   }
 
   //Lisa
   var LisaImage = Lisa_b7_h2_f1_m2;
+
+  //Nikki
+  var NikkiImage;
+  var NikkiImageTowel;
+  var NikkiImageS1;
+  var NikkiImageS2;
+  var NikkiImageS3;
+  if(props.charactersStats.Nikki.breast <= 3 && props.charactersStats.Nikki.height < 5 && props.charactersStats.Nikki.muscle < 5){
+    NikkiImage = Nikki_b3_h2_f1_m2_s1;
+    NikkiImageTowel = Nikki_b3_h2_f1_m2_Towel;
+    NikkiImageS1 = Nikki_b3_h2_f1_m2_s1;
+    NikkiImageS2 = Nikki_b3_h2_f1_m2_s2;
+    NikkiImageS3 = Nikki_b3_h2_f1_m2_s3;
+  } else if(props.charactersStats.Nikki.breast <= 5 && props.charactersStats.Nikki.height < 5 && props.charactersStats.Nikki.muscle < 5){
+    NikkiImage = Nikki_b5_h2_f1_m2_s1;
+    NikkiImageS1 = Nikki_b5_h2_f1_m2_s1;
+    NikkiImageS2 = Nikki_b5_h2_f1_m2_s2;
+    NikkiImageS3 = Nikki_b5_h2_f1_m2_s3;
+  } else if(props.charactersStats.Nikki.breast <= 6 && props.charactersStats.Nikki.height < 5 && props.charactersStats.Nikki.muscle < 5){
+    NikkiImage = Nikki_b6_h2_f1_m2_s1;
+    NikkiImageS1 = Nikki_b6_h2_f1_m2_s1;
+    NikkiImageS2 = Nikki_b6_h2_f1_m2_s2;
+    NikkiImageS3 = Nikki_b6_h2_f1_m2_s3;
+  } else if(props.charactersStats.Nikki.breast <= 8 && props.charactersStats.Nikki.height < 5 && props.charactersStats.Nikki.muscle < 5){
+    NikkiImage = Nikki_b8_h2_f1_m2_s1;
+    NikkiImageS1 = Nikki_b8_h2_f1_m2_s1;
+    NikkiImageS2 = Nikki_b8_h2_f1_m2_s2;
+    NikkiImageS3 = Nikki_b8_h2_f1_m2_s3;
+  } else if(props.charactersStats.Nikki.breast <= 9 && props.charactersStats.Nikki.height < 5 && props.charactersStats.Nikki.muscle < 5){
+    NikkiImage = Nikki_b9_h2_f1_m2_s1;
+    NikkiImageS1 = Nikki_b9_h2_f1_m2_s1;
+    NikkiImageS2 = Nikki_b9_h2_f1_m2_s2;
+    NikkiImageS3 = Nikki_b9_h2_f1_m2_s3;
+  } 
+
+  //Mary
+  var MaryImage;
+  var MaryImageNaked;
+  var MaryImageS1;
+  var MaryImageS2;
+  var MaryImageS3;
+  if(props.charactersStats.Mary.breast <= 2 && props.charactersStats.Mary.height < 5 && props.charactersStats.Mary.muscle < 5){
+    MaryImage = Mary_b2_h2_f1_m2_s1;
+    MaryImageNaked = Mary_b2_h2_f1_m2_naked;
+    MaryImageS1 = Mary_b2_h2_f1_m2_s1;
+    MaryImageS2 = Mary_b2_h2_f1_m2_s2;
+    MaryImageS3 = Mary_b2_h2_f1_m2_s3;
+  } else if(props.charactersStats.Mary.breast <= 4 && props.charactersStats.Mary.height < 5 && props.charactersStats.Mary.muscle < 5){
+    MaryImage = Mary_b4_h2_f1_m2_s1;
+    MaryImageS1 = Mary_b4_h2_f1_m2_s1;
+    MaryImageS2 = Mary_b4_h2_f1_m2_s2;
+    MaryImageS3 = Mary_b4_h2_f1_m2_s3;
+  } else if(props.charactersStats.Mary.breast <= 7 && props.charactersStats.Mary.height < 5 && props.charactersStats.Mary.muscle < 5){
+    MaryImage = Mary_b7_h2_f1_m2_s1;
+    MaryImageS1 = Mary_b7_h2_f1_m2_s1;
+    MaryImageS2 = Mary_b7_h2_f1_m2_s2;
+    MaryImageS3 = Mary_b7_h2_f1_m2_s3;
+  } 
+
+
+  ///Yourself
+  var YourselfImage;
+  if(props.gender >= 9 && props.penis == true){
+    YourselfImage = You_male_9;
+  } else if(props.gender >= 8 && props.penis == true){
+    YourselfImage = You_male_8;
+  }
+
 
 
   var DrugStealthModifier = 1;
@@ -230,6 +331,7 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+          onSetFullState = {props.onSetFullState}
           onAddEnergy = {props.onAddEnergy}
           onSetEnergy = {props.onSetEnergy}
           onAddItem = {props.onAddItem}
@@ -238,7 +340,24 @@ const Apartment = ( props ) => {
           onSetItem = {props.onSetItem}
 
           characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+
+          LisaImage = {LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}       
@@ -296,13 +415,30 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
           onChangeRelationship = {props.onChangeRelationship}
           name = {props.name}
           onSetItem = {props.onSetItem}
           onAddMoney = {props.onAddMoney}
 
           characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -347,6 +483,7 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
           onChangeRelationship = {props.onChangeRelationship}
           ></LacBraQHelpSandyOpenDoor>
         );
@@ -365,6 +502,7 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
           onChangeRelationship = {props.onChangeRelationship}
           ></LacBraQAmyMovingIn>
         );
@@ -389,6 +527,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onChangeRelationship = {props.onChangeRelationship}
         onAddEnergy = {props.onAddEnergy}
         ></SleepAtHome>
@@ -409,6 +548,7 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
           onAddEnergy = {props.onAddEnergy}
           onSetEnergy = {props.onSetEnergy}
           onAddItem = {props.onAddItem}
@@ -421,7 +561,23 @@ const Apartment = ( props ) => {
           physical = {props.physical}
 
           characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -468,6 +624,7 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
           onAddEnergy = {props.onAddEnergy}
           onSetEnergy = {props.onSetEnergy}
           onAddItem = {props.onAddItem}
@@ -475,14 +632,29 @@ const Apartment = ( props ) => {
           name = {props.name}
           onChangeRelationship = {props.onChangeRelationship}
           Amy = {props.Amy}
-          mind = {props.mind}
           onSetItem = {props.onSetItem}
           Sandy = {props.Sandy}
           physical = {props.physical}
 
 
           characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -533,6 +705,7 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
           name = {props.name}
           onAddItem = {props.onAddItem}
           onAddAttractiveness = {props.onAddAttractiveness}
@@ -540,7 +713,23 @@ const Apartment = ( props ) => {
           onChangeRelationship = {props.onChangeRelationship}
 
           characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -586,6 +775,7 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
           name = {props.name}
           onAddItem = {props.onAddItem}
           onAddSkills = {props.onAddSkills}
@@ -596,7 +786,23 @@ const Apartment = ( props ) => {
 
 
           characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -651,6 +857,7 @@ const Apartment = ( props ) => {
           onPushFlag = {props.onPushFlag}
           onSetHour = {props.onSetHour}
           flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
           name = {props.name}
           onAddItem = {props.onAddItem}
           onAddSkills = {props.onAddSkills}
@@ -661,7 +868,23 @@ const Apartment = ( props ) => {
           onAddMoney = {props.onAddMoney}
 
           characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
           characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -706,6 +929,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -713,7 +937,23 @@ const Apartment = ( props ) => {
         onChangeRelationship = {props.onChangeRelationship}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -755,6 +995,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -762,7 +1003,23 @@ const Apartment = ( props ) => {
         onChangeRelationship = {props.onChangeRelationship}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -809,6 +1066,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -820,7 +1078,23 @@ const Apartment = ( props ) => {
         
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
         onSetCharacterStats = {props.onSetCharacterStats}
         charactersStats = {props.charactersStats}  
@@ -867,6 +1141,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -879,7 +1154,23 @@ const Apartment = ( props ) => {
         name = {props.name}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -924,6 +1215,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -936,7 +1228,23 @@ const Apartment = ( props ) => {
         name = {props.name}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -981,6 +1289,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -994,7 +1303,23 @@ const Apartment = ( props ) => {
         relations = {props.relations}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1039,6 +1364,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -1052,7 +1378,23 @@ const Apartment = ( props ) => {
         relations = {props.relations}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1097,6 +1439,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -1114,7 +1457,23 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1160,6 +1519,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -1177,7 +1537,23 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1223,6 +1599,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -1240,7 +1617,23 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1286,6 +1679,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -1303,7 +1697,23 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1349,6 +1759,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -1366,7 +1777,23 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  
@@ -1412,6 +1839,7 @@ const Apartment = ( props ) => {
         onPushFlag = {props.onPushFlag}
         onSetHour = {props.onSetHour}
         flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
         onAddEnergy = {props.onAddEnergy}
         onSetEnergy = {props.onSetEnergy}
         onAddItem = {props.onAddItem}
@@ -1429,7 +1857,23 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
-          LisaImage = {props.LisaImage}
+          mind = {props.mind}
+          gender = {props.gender}
+          onSetGender = {props.onSetGender}
+          onSetPenis = {props.onSetPenis}
+          penis = {props.penis}
+          YourselfImage = {YourselfImage}
+          NikkiImage = {NikkiImage}
+          NikkiImageTowel = {NikkiImageTowel}
+          NikkiImageS1 = {NikkiImageS1}
+          NikkiImageS2 = {NikkiImageS2}
+          NikkiImageS3 = {NikkiImageS3}
+          MaryImage = {MaryImage}
+          MaryImageNaked = {MaryImageNaked}
+          MaryImageS1 = {MaryImageS1}
+          MaryImageS2 = {MaryImageS2}
+          MaryImageS3 = {MaryImageS3}
+          LisaImage = {LisaImage}
         characterImageWidth   = {characterImageWidth}
           onSetCharacterStats = {props.onSetCharacterStats}
           charactersStats = {props.charactersStats}  

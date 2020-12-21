@@ -44,13 +44,26 @@ const Evelyn = (props) => {
 
     let stealthTakeDrug = () =>{
         props.onPushFlag("WITH_EVE");
-        if( (Math.random() * 100 + props.mind + props.relations.Eve)  * props.DrugStealthModifier  > 125  ){
-            props.onPushFlag("STEALTH_TAKE_DRUG_SUCCESS"); 
-        } else{
-            props.onPushFlag("STEALTH_TAKE_DRUG_FAIL");
-            props.onChangeRelationship("Eve",-15);
-        }
 
+        let doYouHaveDrugs = false;
+        Object.keys(props.items).forEach(currItem =>{
+            if(currItem.includes("drug")){
+                if(props.items[currItem] > 0){
+                    doYouHaveDrugs = true;
+                }
+            }
+        })
+    
+        if(doYouHaveDrugs == true){
+            if( (Math.random() * 100 + props.mind + props.relations.Eve)  * props.DrugStealthModifier  > 125  ){
+                props.onPushFlag("STEALTH_TAKE_DRUG_SUCCESS"); 
+            } else{
+                props.onPushFlag("STEALTH_TAKE_DRUG_FAIL");
+                props.onChangeRelationship("Eve",-15);
+            }
+        }else{
+            alert("You have no drugs");
+        }
     }
 
 
@@ -556,7 +569,6 @@ const Evelyn = (props) => {
         let GoBack = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQEveWillBeAtGallery");
-            props.onPushFlag("EVEMQEveWillBeAtGallery_Outside");
             props.onPushFlag("GALLERY_DISCOVERED");
         }    
         

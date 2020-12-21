@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import React from "react";
-
+import React, {useEffect, useState} from "react";
+import TextField from '@material-ui/core/TextField';
 
 import Col2 from "../components/col2";
 import Col3 from "../components/col3";
@@ -8,6 +8,9 @@ import * as actionTypes from "../redux/actions";
 import {connect} from "react-redux";
 
 const Sandy = (props) => {
+
+
+    const [inputTextValue, setInputTextValue] = useState("");
 
   let GoToGameMap = () =>{
     props.onAddMinutes(10)
@@ -44,13 +47,25 @@ let convinceTakeDrug = () =>{
 
 let stealthTakeDrug = () =>{
     props.onPushFlag("WITH_SANDY");
-    if( (Math.random() * 100 + props.mind + props.relations.Sandy)  * props.DrugStealthModifier  > 125  ){
-        props.onPushFlag("STEALTH_TAKE_DRUG_SUCCESS"); 
-    } else{
-        props.onPushFlag("STEALTH_TAKE_DRUG_FAIL");
-        props.onChangeRelationship("Sandy",-15);
-    }
+    let doYouHaveDrugs = false;
+    Object.keys(props.items).forEach(currItem =>{
+        if(currItem.includes("drug")){
+            if(props.items[currItem] > 0){
+                doYouHaveDrugs = true;
+            }
+        }
+    })
 
+    if(doYouHaveDrugs == true){
+        if( (Math.random() * 100 + props.mind + props.relations.Sandy)  * props.DrugStealthModifier  > 125  ){
+            props.onPushFlag("STEALTH_TAKE_DRUG_SUCCESS"); 
+        } else{
+            props.onPushFlag("STEALTH_TAKE_DRUG_FAIL");
+            props.onChangeRelationship("Sandy",-15);
+        }
+    } else{
+        alert("You have no drugs");
+    }
 }
 
 
@@ -155,7 +170,7 @@ if(props.flags.includes("FLIRTED_SANDY")){
 
         <Col3 > 
                
-            <p>SANDY giggles. "You ARE smart", I like you {props.name}</p>
+            <p>Sandy smiles. "You make me feel nice"</p>
 
             <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick = {GoToSeduce}>Seduce</button>
@@ -197,7 +212,7 @@ if(props.flags.includes("FLIRTED_SANDY")){
 
         <Col3 > 
                
-            <p>SANDY look at your eyes. "You know, you are a star" She says. SANDY gets closer to you and fixes her hair.</p>
+            <p>Sandy gets closer to you. She leans her body against yours. And holds your hand. "I know I talk a lot but I just like talking to you"</p>
 
             <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick = {GoToKiss}>Kiss</button>
@@ -240,8 +255,7 @@ if(props.flags.includes("FLIRTED_SANDY")){
 
         <Col3 > 
 
-            <p>SANDY kisses you gently, then with increasing pressure. Her tounge moving as if she had wanted this for so long.</p>
-            <p>SANDY pushes herself towards you, arms around your head.</p>
+            <p>“‘Kiss me, {props.name},’ whispers sandy. You slips your lips against Sandys and you open her my mouth with your tongue. Sandy moans and pulls your body down tightly, skin to skin. Sandy feels you. All of you. You suck on Sandy's lower lip. And your fingers run through her hair.</p>
             
 
             <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
@@ -275,10 +289,18 @@ if(props.flags.includes("FLIRTED_SANDY")){
 
         <Col3 > 
 
-        <p>Passion pushes you togheter, SANDY can't get enough of you. SANDY is tired but does not care, she does not want rest. SANDY craved the ache, SANDY wants you inside her. All. The. Time. You put your weight on top of her, she squeezes you in further and further. You see SANDY's face, and your sweat dropping on her body. SANDY then mounts you, she holds you in and gets you inside her.</p>
-            <p>You two go mad. Your cock splitting her in two. SANDY holds you down, her breasts to your face, your hands exploring her body.</p>
-            <p>You heave and pant, there is no end to the pleasure. And you two copy each others movements, lick, kiss, fuck each other. It all culminates in SANDY cumming and collapsing over your stomach.</p>
-            
+            <p>Sandy kisses your ear, ‘I don’t want either of us to ever forget this night.’ Sandy whispers</p>
+            <p>
+                “You plaster your mouth on hers and you kiss her in a way she’d never thought possible, Sandy's hips moving against your, knowing there must be more. You settle between her legs. Sandy cradles your hips with her thighs. And now you are at the portal. And now, nothing, absolutely nothing in this world, could feel as good as the sensation of you slowly sliding into Sandy.</p>
+                <p></p>
+                <TextField
+                    value={inputTextValue}
+                    onChange={(event) => setInputTextValue(event.target.value)}
+                    placeholder={"Are you okay?"}
+                    style = {{marginLeft: "15px", backgroundColor:"white"}}
+                />
+                <p></p>
+            <p>“Sandy arches and stretchs beneath You. Her movements send you deeper, and Sandy likes that. ‘I’ve never been better,’ Sandy practically purrs.”</p>
         
 
             <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
@@ -303,7 +325,7 @@ else if (props.flags.includes("FLIRTED_SANDY_BAD") || props.flags.includes("SEDU
 
         <Col3 > 
 
-            <p>Sandy looks at you quizzically. "I have to go" and leaves.</p>
+            <p>Sandy looks at you quizzically. "That's not really nice" and leaves.</p>
             
             <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
@@ -424,7 +446,7 @@ else if (props.flags.includes("FLIRTED_SANDY_BAD") || props.flags.includes("SEDU
 
         <Col3 > 
 
-            <p>I do like having new experiences. Hit me, what do you want me to take?</p>
+            <p>"I don't usually take medicine. I do all natural you know. But let's try it. It's the city after all."</p>
 
             {
             itemKeys.map((item, indexKey)=>{
@@ -446,7 +468,7 @@ else if (props.flags.includes("FLIRTED_SANDY_BAD") || props.flags.includes("SEDU
 
             
             <Link to={props.CurrentLocation} style={{ textDecoration: "none" }}>
-                <button type="button" className="btn btn-primary" onClick = {GoBackFromDrug} style ={{width: "190px"}}>NSANDYrmind</button>
+                <button type="button" className="btn btn-primary" onClick = {GoBackFromDrug} style ={{width: "190px"}}>Nevermind</button>
             </Link>  
 
             
@@ -468,40 +490,40 @@ else if (props.flags.includes("FLIRTED_SANDY_BAD") || props.flags.includes("SEDU
         
         if(drugToTake.includes("breast")){
             if(effectivenessMod > Math.random()){
-                props.onSetCharacterStats("SANDY","breast", props.charactersStats.SANDY.breast + 1)
+                props.onSetCharacterStats("Sandy","breast", props.charactersStats.Sandy.breast + 1)
             }
             props.onAddMinutes(10);
-            props.onPushFlag("SANDYCommentsOnLargerBreasts6");
+            props.onPushFlag("SANDYCommentsOnLargerBreasts");
         } else if(drugToTake.includes("height")){
             if(effectivenessMod > Math.random()){
-                props.onSetCharacterStats("SANDY","height", props.charactersStats.SANDY.height + 1)
+                props.onSetCharacterStats("Sandy","height", props.charactersStats.Sandy.height + 1)
             }
             props.onAddMinutes(10);
-            props.onPushFlag("SANDYCommentsOnTaller4");
+            props.onPushFlag("SANDYCommentsOnTaller");
         } else if(drugToTake.includes("lactation")){
             if(effectivenessMod > Math.random()){
-                props.onSetCharacterStats("SANDY","lactation", props.charactersStats.SANDY.lactation + 1)
+                props.onSetCharacterStats("Sandy","lactation", props.charactersStats.Sandy.lactation + 1)
             }
             props.onAddMinutes(10);
-            props.onPushFlag("SANDYCommentsOnMilk1");
+            props.onPushFlag("SANDYCommentsOnMilk");
         }else if(drugToTake.includes("mindControl")){
             if(effectivenessMod > Math.random()){
-                props.onSetCharacterStats("SANDY","mindControl", props.charactersStats.SANDY.mindControl + 1)
+                props.onSetCharacterStats("Sandy","mindControl", props.charactersStats.Sandy.mindControl + 1)
             }
             props.onAddMinutes(10);
-            props.onPushFlag("SANDYCommentsOnMindControl1");
+            props.onPushFlag("SANDYCommentsOnMindControl");
         }else if(drugToTake.includes("lust")){
             if(effectivenessMod > Math.random()){
-                props.onSetCharacterStats("SANDY","lust", props.charactersStats.SANDY.lust + 1)
+                props.onSetCharacterStats("Sandy","lust", props.charactersStats.Sandy.lust + 1)
             }
             props.onAddMinutes(10);
-            props.onPushFlag("SANDYCommentsOnLust1");
+            props.onPushFlag("SANDYCommentsOnLust");
         }else if(drugToTake.includes("strength")){
             if(effectivenessMod > Math.random()){
-                props.onSetCharacterStats("SANDY","strength", props.charactersStats.SANDY.strength + 1)
+                props.onSetCharacterStats("Sandy","strength", props.charactersStats.Sandy.strength + 1)
             }
             props.onAddMinutes(10);
-            props.onPushFlag("SANDYCommentsOnStrength11");
+            props.onPushFlag("SANDYCommentsOnStrength");
         }
         props.onSpliceFlag("STEALTH_TAKE_DRUG_SUCCESS");
     }
@@ -551,8 +573,6 @@ else if (props.flags.includes("FLIRTED_SANDY_BAD") || props.flags.includes("SEDU
         </>
 
   )
-} else if(props.flags.includes("STEALTH_TAKE_DRUG_FAIL")){
-
 }
 
 else {

@@ -25,6 +25,7 @@ const App = ( props ) => {
     return (
       <Beginning
       flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
       date = {props.date}
       onSetLink = {props.onSetLink}
       currentLink = {props.currentLink}
@@ -76,6 +77,7 @@ const App = ( props ) => {
       onPushFlag = {props.onPushFlag}
       onSetHour = {props.onSetHour}
       flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
       onChangeRelationship = {props.onChangeRelationship}
       onAddEnergy = {props.onAddEnergy}
       onSetEnergy = {props.onSetEnergy}
@@ -93,6 +95,8 @@ const App = ( props ) => {
       onAddSkills = {props.onAddSkills}
       onSetCharacterStats = {props.onSetCharacterStats}
       charactersStats = {props.charactersStats}
+      onSetPenis = {props.onSetPenis}
+      penis = {props.penis}
       attractiveness = {props.attractiveness}
       relations = {props.relations}
       onSetResearchTime = {props.onSetResearchTime}
@@ -117,6 +121,7 @@ const App = ( props ) => {
       onPushFlag = {props.onPushFlag}
       onSetHour = {props.onSetHour}
       flags = {props.flags}
+      onSetFullState = {props.onSetFullState}
       onChangeRelationship = {props.onChangeRelationship}
       onAddEnergy = {props.onAddEnergy}
       onSetEnergy = {props.onSetEnergy}
@@ -134,6 +139,8 @@ const App = ( props ) => {
       onAddSkills = {props.onAddSkills}
       onSetCharacterStats = {props.onSetCharacterStats}
       charactersStats = {props.charactersStats}
+      onSetPenis = {props.onSetPenis}
+      penis = {props.penis}
       ></GameMap>
       </>
     );
@@ -221,6 +228,7 @@ const mapStateToProps = state =>{
     researchTime: state.fullState.researchTime,
     lab: state.fullState.lab,
     charactersStats: state.fullState.charactersStats,
+    penis : state.fullState.penis,
   };
 }
 
@@ -253,7 +261,9 @@ const mapDispatchToProps = dispatch =>{
     onSetLab: (_labItem, _setLabItem) => dispatch({type: actionTypes.SET_LAB, labItem: _labItem, setLabItem: _setLabItem}),
     onSetCharacterStats: (_character, _characterStatToChange, _NewStat) => dispatch({type: actionTypes.SET_CHARACTER_STATS, character: _character, characterStatToChange: _characterStatToChange, NewStat: _NewStat}),
     onSetGender: (_genderToSet) => dispatch({type: actionTypes.SET_GENDER, genderToSet: _genderToSet}),
-
+    onSetPenis: (_penisToSet) => dispatch({type: actionTypes.SET_PENIS, penisToSet: _penisToSet}),
+    onSetFullState: (_toSetFullstate, _valueToSetFullState) => dispatch({type: actionTypes.SET_ANYTHING_FULLSTATE, toSetFullstate: _toSetFullstate, valueToSetFullState: _valueToSetFullState}),
+    
     
   }
 }

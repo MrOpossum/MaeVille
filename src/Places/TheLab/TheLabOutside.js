@@ -6,6 +6,8 @@ import Col2 from "../../components/col2";
 import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
 
+import FindingTheGirls from "../../components/FindingTheGirls";
+
 //Images
 import outsideLab from "../../Images/TheLab/TheLabOutside.jpg"
 
@@ -165,6 +167,7 @@ const TheLabOutside = (props) => {
     
     
     else {
+        
         let GoToGameMap = () =>{
             props.onAddMinutes(10);
         }
@@ -172,8 +175,56 @@ const TheLabOutside = (props) => {
         let EnterTheLab = () =>{
             props.onAddMinutes(10);
         }
-    
-    
+
+        let theLinks = () =>{
+            return(
+                <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {EnterTheLab} disabled = {(props.flags.includes("CanAccessLab") ? false:true)}>Go to the lab</button>
+                </Link>  
+            )  
+        }
+        
+        var randomNumFindGirls = Math.random();
+        if(randomNumFindGirls < .15){
+            return(
+                <FindingTheGirls
+                    backImageChar = {outsideLab}
+                    characterImageWidth = {props.characterImageWidth}
+                    characterImageHeight = {props.characterImageHeight}
+                    CurrentLocation = {"/TheLabOutside"}
+                    DrugStealthModifier = {props.DrugStealthModifier}
+                    theLinks = {theLinks}
+                    flags = {props.flags}
+                    randomNumFindGirls = {randomNumFindGirls}
+                    
+                    //Sandy
+                    SandyImage = {props.SandyImage}
+                    SandyImageS1 = {props.SandyImageS1}
+                    SandyImageS2 = {props.SandyImageS2}
+                    SandyImageS3 = {props.SandyImageS3}
+                    fuckingSandyVideo_s4 = {props.fuckingSandyVideo_s4}
+                    SandyTalks = {<p>Hey {props.name} This place is huuuuge. In my farm there was no building taller than two floor. And that was an important building</p>}
+                    
+                    //Amy
+                    AmyImage = {props.AmyImage}
+                    AmyImageS1 = {props.AmyImageS1}
+                    AmyImageS2 = {props.AmyImageS2} 
+                    AmyImageS3 = {props.AmyImageS3}
+                    fuckingAmyVideo_s4 = {props.fuckingAmyVideo_s4}
+                    AmyTalks = {<p>Hello {props.name} I heard this place is into some fishy research. I'm looking for some information.</p>}
+        
+                    //Evelyn
+                    EveImage = {props.EveImage}
+                    EveImageS1 = {props.EveImageS1}
+                    EveImageS1 = {props.EveImageS1}
+                    EveImageS3 = {props.EveImageS3}
+                    fuckingEveVideo_s4 = {props.fuckingEveVideo_s4}
+                    EveTalks = {<p>Hey {props.name} Even tough I hate coorporations. I have to admit the design of the building is kindof nice</p>}
+                />
+                )
+        }
+        
+
         return(
             <>
             <Col1>
@@ -184,8 +235,6 @@ const TheLabOutside = (props) => {
             </Col2>  
     
             <Col3 > 
-                   
-                   <p></p>
     
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
@@ -197,6 +246,8 @@ const TheLabOutside = (props) => {
             </>
   
       )
+
+        
 
     }
 

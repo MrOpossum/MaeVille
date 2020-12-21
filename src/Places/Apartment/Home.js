@@ -336,7 +336,7 @@ const Home = ( props ) => {
 
         let SleepForXTime = () =>{
             props.onAddMinutes(240);
-            props.onAddEnergy(40);
+            props.onAddEnergy(70);
             if(props.energy > 100){
                 setEnergy100();
             }

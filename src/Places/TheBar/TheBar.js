@@ -36,7 +36,10 @@ const TheBar = (props) => {
             props.onSpliceFlag("EVEMQMeetEveAtTheBar");
             props.onPushFlag("BAR_DISCOVERED");
             props.onPushFlag("MET_EVE");
-            props.onPushFlag("SCIENCELABQSStart");
+            if(!props.flags.includes("LAB_DISCOVERED")){
+                props.onPushFlag("SCIENCELABQSStart");
+            }
+            
         }
 
         let ABInfoMeteorShowerAskForTip = () =>{
@@ -44,7 +47,9 @@ const TheBar = (props) => {
             props.onPushFlag("ABInfoMeteorShowerAskForTip"); 
             props.onPushFlag("BAR_DISCOVERED");
             props.onSpliceFlag("EVEMQMeetEveAtTheBar");
-            props.onPushFlag("SCIENCELABQSStart");
+            if(!props.flags.includes("LAB_DISCOVERED")){
+                props.onPushFlag("SCIENCELABQSStart");
+            }
         }
     
         return(
@@ -685,9 +690,11 @@ const TheBar = (props) => {
         let ABInfoLeaveBarDiscoverTheCompany = () =>{
             props.onAddMinutes(10);
             props.onSpliceFlag("ABIAnythingElseGoingOnAfterMeetingEve");
-            props.onSpliceFlag("SCIENCELABQSStart");
             props.onPushFlag("LAB_DISCOVERED");
-            props.onPushFlag("SCIENCELABQSStartInLab");
+            if(!props.flags.includes("LAB_DISCOVERED")){
+                props.onSpliceFlag("SCIENCELABQSStart");
+                props.onPushFlag("SCIENCELABQSStartInLab");
+            }
         }
     
         return(
@@ -722,14 +729,12 @@ const TheBar = (props) => {
             props.onAddMoney(-50);
             props.onPushFlag("GALLERY_DISCOVERED");
             props.onPushFlag("EVEMQEveWillBeAtGallery");
-            props.onPushFlag("EVEMQEveWillBeAtGallery_Outside");
         }
 
         let leaveBarGalleryDiscovered = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("GALLERY_DISCOVERED");
             props.onPushFlag("EVEMQEveWillBeAtGallery");
-            props.onPushFlag("EVEMQEveWillBeAtGallery_Outside");
         }
         return(
             <>

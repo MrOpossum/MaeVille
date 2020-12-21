@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
 
@@ -13,12 +13,12 @@ import TheOffice from "../../Images/TheAcademy/TheOffice.jpg"
 
 const TheAcademyOffice = (props) => {
 
-    const [inputTextValue, setInputTextValue] = useEffect("");
+    const [inputTextValue, setInputTextValue] = useState("");
 
     if(props.flags.includes("LISA_DIRECTOR_GRABS_YOU_INTO_ACADEMY")){
         let GoToDormAtAcademyAfterIntroduction = () =>{
             props.onAddMinutes(10);
-            props.onPushFlags("GoToDormAtAcademyAfterIntroduction");
+            props.onPushFlag("GoToDormAtAcademyAfterIntroduction");
             props.onSpliceFlag("LISA_DIRECTOR_GRABS_YOU_INTO_ACADEMY");
         }
     
@@ -30,7 +30,7 @@ const TheAcademyOffice = (props) => {
                 />
             </Col1>
             <Col2 BackImage = {TheOffice}>
-            <img alt ={"Not found"} src={props.LisaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.LisaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
             </Col2>  
             
             <Col3 > 
@@ -38,11 +38,14 @@ const TheAcademyOffice = (props) => {
                 <p>The woman takes you to a massive office. She sits down and glances at you briefly.</p>
                 <p>"Mss. {props.name}. You will start our program tomorrow moring. For now you should go to the dorm with your new roomates." The woman says</p>
                 <p>"Oh, and Mss. {props.name}, You should think of a proper name for yourself."</p>
+                <p></p>
                 <TextField
                     value={inputTextValue}
                     onChange={(event) => setInputTextValue(event.target.value)}
                     placeholder={props.name}
+                    style = {{marginLeft: "15px", backgroundColor:"white"}}
                 />
+                <p></p>
 
                 
                    

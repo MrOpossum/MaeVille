@@ -14,8 +14,9 @@ const TheAcademyOutside = (props) => {
     if(props.flags.includes("AMY_WILL_SHOW_ACADEMY_0")){
         let MIDDLE_AGE_WOMAN_AT_ACADEMY_INTRODUCTION = () =>{
             props.onAddMinutes(10);
-            props.onPushFlags("MIDDLE_AGE_WOMAN_AT_ACADEMY_INTRODUCTION");
+            props.onPushFlag("MIDDLE_AGE_WOMAN_AT_ACADEMY_INTRODUCTION");
             props.onSpliceFlag("AMY_WILL_SHOW_ACADEMY_0");
+            props.onChangeRelationship("Amy",3);
         }
     
     
@@ -43,7 +44,7 @@ const TheAcademyOutside = (props) => {
     } else if(props.flags.includes("MIDDLE_AGE_WOMAN_AT_ACADEMY_INTRODUCTION")){
         let LISA_DIRECTOR_GRABS_YOU_INTO_ACADEMY = () =>{
             props.onAddMinutes(10);
-            props.onPushFlags("LISA_DIRECTOR_GRABS_YOU_INTO_ACADEMY");
+            props.onPushFlag("LISA_DIRECTOR_GRABS_YOU_INTO_ACADEMY");
             props.onSpliceFlag("MIDDLE_AGE_WOMAN_AT_ACADEMY_INTRODUCTION");
         }
     
@@ -64,7 +65,7 @@ const TheAcademyOutside = (props) => {
                 <p>"You must be the new student." The woman scoffs. "Too masculine for my taste, but we can fix that" She hits your sholder and pushes your back. "Bad posture. No breasts, no butt, ugly... Girl, you will be work" The cougar chuckles. "Luckly your family paid a lot for this.. I can se why."</p>
                 <p>The woman grabs your arm. She's really strong. "Let's go."</p>
                    
-                <Link to={"/TheAcademy"} style={{ textDecoration: "none" }}>
+                <Link to={"/TheAcademyOffice"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LISA_DIRECTOR_GRABS_YOU_INTO_ACADEMY} >The woman drags you in.</button>
                 </Link>  
             </Col3>
@@ -79,6 +80,9 @@ const TheAcademyOutside = (props) => {
             props.onAddMinutes(10);
         }
     
+        let goToDorm = () =>{
+            props.onAddMinutes(10);
+        }
     
         return(
             <>
@@ -92,7 +96,11 @@ const TheAcademyOutside = (props) => {
     
             <Col3 > 
                    
-                   
+
+
+                <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {goToDorm}>Go to dorm</button>
+                </Link>     
     
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>

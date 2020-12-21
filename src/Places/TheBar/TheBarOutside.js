@@ -204,7 +204,7 @@ const TheBarOutside = (props) => {
                 CurrentLocation = {CurrentLocation}
                 DrugStealthModifier = {props.DrugStealthModifier}
             > 
-                <p>Hello {props.name} I come here to see the stars and relax. </p>
+                <p>Hello {props.name} I come here for inspiration. These people can be... Asthetic </p>
                 {theLinks()}
             </Evelyn>
             </>
@@ -228,7 +228,7 @@ const TheBarOutside = (props) => {
                 CurrentLocation = {CurrentLocation}
                 DrugStealthModifier = {props.DrugStealthModifier}
             > 
-                <p>Hey! This is a really nice place to study the stars</p>
+                <p>Hey! There are some really important people here</p>
                 {theLinks()}
             </Amy>
             </>
@@ -252,7 +252,7 @@ const TheBarOutside = (props) => {
                 CurrentLocation = {CurrentLocation}
                 DrugStealthModifier = {props.DrugStealthModifier}
             > 
-                <p>Howdy {props.name}. I love this place, away from all the mess of the city</p>
+                <p>Howdy {props.name}. I love this place, It has great cocktails and interesting people. </p>
                 {theLinks()}
             </Sandy>
             </>

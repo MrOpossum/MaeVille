@@ -45,13 +45,25 @@ const Amy = (props) => {
 
     let stealthTakeDrug = () =>{
         props.onPushFlag("WITH_AMY");
-        if( (Math.random() * 100 + props.mind + props.relations.Amy)  * props.DrugStealthModifier  > 125  ){
-            props.onPushFlag("STEALTH_TAKE_DRUG_SUCCESS"); 
+        let doYouHaveDrugs = false;
+        Object.keys(props.items).forEach(currItem =>{
+            if(currItem.includes("drug")){
+                if(props.items[currItem] > 0){
+                    doYouHaveDrugs = true;
+                }
+            }
+        })
+    
+        if(doYouHaveDrugs == true){
+            if( (Math.random() * 100 + props.mind + props.relations.Amy)  * props.DrugStealthModifier  > 125  ){
+                props.onPushFlag("STEALTH_TAKE_DRUG_SUCCESS"); 
+            } else{
+                props.onPushFlag("STEALTH_TAKE_DRUG_FAIL");
+                props.onChangeRelationship("Amy",-15);
+            }
         } else{
-            props.onPushFlag("STEALTH_TAKE_DRUG_FAIL");
-            props.onChangeRelationship("Amy",-15);
+            alert("You don't have drugs")
         }
-
     }
 
 
