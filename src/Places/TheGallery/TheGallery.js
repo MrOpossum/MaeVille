@@ -211,7 +211,7 @@ const TheGallery = (props) => {
     } 
     else if(props.flags.includes("finishedEveGalleryExhibitOne")){
         
-        let  = () =>{
+        let x = () =>{
             setOpenDialog(true);
             props.onAddMinutes(10);
             props.onSpliceFlag("finishedEveGalleryExhibitOne");
@@ -224,7 +224,7 @@ const TheGallery = (props) => {
                 <SetCol1
                 />
             </Col1>
-            <Col2 >
+            <Col2 BackImage = {GalleryInside}>
             <img alt ={"Not found"} src={props.EveImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
 
                 <SimpleDialog
