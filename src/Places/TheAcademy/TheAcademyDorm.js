@@ -530,6 +530,10 @@ const TheAcademyDorm = (props) => {
             <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick = {finishClass} style ={{display:(canContinue ? "" : "none")}}>Finish class</button>
             </Link>  
+            
+            <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {finishClass}>Skip class</button>
+            </Link> 
 
             </Col3>
             </>
@@ -721,7 +725,10 @@ const TheAcademyDorm = (props) => {
     
             <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick = {finishClass} style ={{display:(canContinue ? "" : "none")}}>Finish class</button>
-            </Link>  
+            </Link> 
+            <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {finishClass}>Finish class</button>
+            </Link>   
 
             </Col3>
             </>

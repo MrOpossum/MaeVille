@@ -193,7 +193,7 @@ const TheGallery = (props) => {
                    
                    <p></p>
 
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <Link to={"/TheGallery"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {CompleteTheExhibition} style = {{display: canContinue ? "": "none"}}>Complete the exhibition</button>
                 </Link>  
 
@@ -209,9 +209,59 @@ const TheGallery = (props) => {
   
       )
     } 
-    // else if(props.flags.includes("finishedEveGalleryExhibitOne")){
-    //     //TODO do this
-    // }
+    else if(props.flags.includes("finishedEveGalleryExhibitOne")){
+        
+        let  = () =>{
+            setOpenDialog(true);
+            props.onAddMinutes(10);
+            props.onSpliceFlag("finishedEveGalleryExhibitOne");
+            props.onPushFlag("");
+        }
+
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 >
+            <img alt ={"Not found"} src={props.EveImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+
+                <SimpleDialog
+                    openDialog={openDialog}
+                    handleDialogClose = {()=>{
+                            setOpenDialog(false);
+                            props.onAddMinutes(10);
+                        }
+                    }
+                    >
+                    
+                    <img alt ={"Not found"} src={props.EveImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                    <p style={{color:"black"}}>"You saw it all!" Eve jumps happily. And hugs you. "Did you like it? What do you think of it?"</p>
+                    <TextField
+                    value={inputTextValue}
+                    onChange={(event) => setInputTextValue(event.target.value)}
+                    style = {{marginLeft: "15px", backgroundColor:"white"}}
+                    />
+
+                    
+                    </SimpleDialog>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                   <p></p>
+
+                
+    
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                </Link>  
+            </Col3>
+            </>
+  
+      )
+    }
     
     
     
