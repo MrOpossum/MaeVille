@@ -31,7 +31,6 @@ const _0_Start = ( props ) => {
         props.onSpliceFlag("FARM_UNVISITED");
         props.onPushFlag("MET_AMY");
         props.onPushFlag("MET_SANDY");
-        props.onPushFlag("MET_EVE");
         props.onPushFlag("STORE_DISCOVERED");
         props.onPushFlag("FUR_FOREST_DISCOVERED");
         props.onPushFlag("BAR_DISCOVERED");

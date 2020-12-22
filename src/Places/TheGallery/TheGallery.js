@@ -173,6 +173,7 @@ const TheGallery = (props) => {
                             props.onChangeRelationship("Eve",20);
                             props.onSpliceFlag("EVEMQExhibitionArtWithEveOne");
                             props.onPushFlag("finishedEveGalleryExhibitOne");
+                            props.onPushFlag("finishedEveGalleryExhibitOneGalleryFlag");
                         }
                     }
                     >
@@ -209,12 +210,12 @@ const TheGallery = (props) => {
   
       )
     } 
-    else if(props.flags.includes("finishedEveGalleryExhibitOne")){
+    else if(props.flags.includes("finishedEveGalleryExhibitOneGalleryFlag")){
         
         let x = () =>{
             setOpenDialog(true);
             props.onAddMinutes(10);
-            props.onSpliceFlag("finishedEveGalleryExhibitOne");
+            props.onSpliceFlag("finishedEveGalleryExhibitOneGalleryFlag");  //finishedEveGalleryExhibitOne is necessary to open class at academy. Keep it and break it when you go to class.
             props.onPushFlag("");
         }
 

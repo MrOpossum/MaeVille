@@ -751,6 +751,7 @@ const TheAcademyDorm = (props) => {
         let goToClass = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("AcademyThirdClass"); 
+            props.onSpliceFlag("finishedEveGalleryExhibitOne");
         }
         return(
             <>

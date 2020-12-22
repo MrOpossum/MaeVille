@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { IgnorePlugin } from 'webpack';
 import Col1 from "../../components/col1";
 import Col2 from "../../components/col2";
 import Col3 from "../../components/col3";
@@ -297,11 +298,27 @@ const Home = ( props ) => {
             </Col3>
             </>
             )
-    } else if(props.flags.includes("SeeYourselfInMirrorAtHome")){
-        let finishMirrorHome = () =>{
+    } else if(props.flags.includes("Hint")){
+        let backHome = () =>{
             props.onAddMinutes(10);
-            props.onSpliceFlag("SeeYourselfInMirrorAtHome");
+            props.onSpliceFlag("Hint");
         }
+
+        let GiveHint = () =>{
+            if(!props.flags.includes("MET_EVE")){
+                alert("You should go to the bar");
+            } else if(!props.flags.includes("GALLERY_DISCOVERED")){
+                alert("You might want to check the hill. Or the bar");
+            } else if(props.flags.includes("AMYwillShowYouAcademy")){
+                alert("Try going outside.");
+            } else if(props.flags.includes("ResearchHeightI") && props.flags.includes("ResearchStrengthI")){
+                alert("Maddy at the lab would appreciate if you researched height or strength.");
+            }
+            else if(props.flags.includes("finishedEveGalleryExhibitOne")){
+                alert("This is as far as The game gets, for now. You can try moving around and finding girls and flirting with them. Or become rich making drugs at the lab.")
+            }
+        }
+        
     
     
         return(
@@ -317,10 +334,12 @@ const Home = ( props ) => {
             <Col3 > 
 
                 
-                
+                <Link to={"/Home"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GiveHint} >Give me a hint</button>
+                </Link>  
                    
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {finishMirrorHome} >Back.</button>
+                    <button type="button" className="btn btn-primary" onClick = {backHome} >Back.</button>
                 </Link>  
             </Col3>
             </>
@@ -345,9 +364,9 @@ const Home = ( props ) => {
             props.onAddMinutes(10);
         }
 
-        let SeeYourselfInMirror = () =>{
+        let Hint = () =>{
             props.onAddMinutes(10);
-            props.onPushFlag("SeeYourselfInMirrorAtHome");
+            props.onPushFlag("Hint");
         }
         return(
             <>
@@ -379,7 +398,7 @@ const Home = ( props ) => {
                     <button type="button" className="btn btn-primary" onClick ={SleepForXTime} style={{width: props.standardButtonWidth}}>Sleep for 4 hours</button>
                 </Link>
                 <Link to={"/Home"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick ={SeeYourselfInMirror} style={{width: props.standardButtonWidth}}>Mirror</button>
+                    <button type="button" className="btn btn-primary" onClick ={Hint} style={{width: props.standardButtonWidth}}>Hint</button>
                 </Link>
 
                 <Link to={"/AmyApartment"} style={{ textDecoration: "none" }}>
