@@ -204,8 +204,9 @@ const TheLabOutside = (props) => {
             </>
   
       ) 
-    }else if(props.flags.includes("GotCreamFromCopper") && props.items["heavyCream"] > 0 && props.items["sucklingSpider"] > 0 ){
-        // remove this from inventory props.items[sucklingSpiders] > 0 and heavyCream
+    }else if(props.flags.includes("GotCreamFromCopper") && props.items["heavyCream"] > 0 && props.items["sucklingSpider"] > 0 && props.flags.includes("gotSucklingSpiderForKomperaQuestLabAliens")){
+        // remove this from inventory props.items[sucklingSpider] > 0 and heavyCream
+        //TODO after getting cream and spiders
 
     }
     

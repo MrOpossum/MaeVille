@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
+import SimpleDialog from "../../components/SimpleDialog";
 
 import Col1 from "../../components/col1";
 import Col2 from "../../components/col2";
@@ -23,6 +24,12 @@ import SmallBreastsGoblinGangbangNoPregnant from "../../Images/TheFurForest/SANT
 import BlackFox_transparent from "../../Images/TheFurForest/SANTMQ/BlackFox_transparent.png";
 import Goblin_transparent from "../../Images/TheFurForest/SANTMQ/Goblin_transparent.png";
 
+//Monster girls
+import butterflyBushMonsterGirl_t from "../../Images/TheFurForest/MonsterGirlsBugBush/butterflyBushMonsterGirl_t.png";
+import larvaSnakeMonsterGurl_t from "../../Images/TheFurForest/MonsterGirlsBugBush/larvaSnakeMonsterGurl_t.png";
+import snakeGurlBush_t from "../../Images/TheFurForest/MonsterGirlsBugBush/snakeGurlBush_t.png";
+import spiderGurlMonsterForestBush_t from "../../Images/TheFurForest/MonsterGirlsBugBush/spiderGurlMonsterForestBush_t.png";
+
 
 var myRoll = 0;
 var sandyRoll = 0;
@@ -32,6 +39,9 @@ var CurrentLocation = "/TheFurForest";
 
 
 const TheFurForest = (props) => {
+
+    const [openDialog, setOpenDialog] = useState(false);
+    const [openDialog2, setOpenDialog2] = useState(false);
 
     function normal_distribution() {
         let u = 0, v = 0;
@@ -776,16 +786,85 @@ const TheFurForest = (props) => {
         let GoToGameMap = () =>{
             props.onAddMinutes(10);
         }
+
+        let findBugsInTheBushes = () =>{
+            alert("You get closer to the bushes, and feel something in your hand, suddenly your vision distorts.");
+            alert("You better just pick the suckling spider and leave.");
+            setOpenDialog(true);
+        }
+
+        let IncorrectBushBug = () =>{
+            alert("That's not what you are looking for. Some bug bites you again, the oitment will cost you at least 30$");
+            props.onAddMoney(-30);
+            props.onAddMinutes(10);
+        }
+
+        let correctBushBug = () =>{
+            setOpenDialog(false);
+            props.onSpliceFlag("KomperaAliensInLabPart1FURFOREST");
+            props.onPushFlag("gotSucklingSpiderForKomperaQuestLabAliens");
+            props.onAddItem("sucklingSpider",1);
+        }
         return(
-            
             <>
-            <p>Building quest...</p>
-            
-            <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {TheFurForestEntrance}>
+                <img alt ={"Not found"} src={props.SandyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                 {/* Find bugs */}
+                 <SimpleDialog
+                    openDialog={openDialog}
+                    handleDialogClose = {()=>{
+                            setOpenDialog(false);
+                            props.onAddMinutes(10);
+                        }
+                    }
+                >
+                    <Link to={"/TheFurForest"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {IncorrectBushBug}>
+                        <img alt ={"Not found"} src={butterflyBushMonsterGirl_t} style ={{width : props.characterImageWidth, height: "230px"}}></img>
+                        </button>
+                    </Link> 
+                    <Link to={"/TheFurForest"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {IncorrectBushBug}>
+                        <img alt ={"Not found"} src={larvaSnakeMonsterGurl_t} style ={{width : props.characterImageWidth, height: "230px"}}></img>
+                        </button>
+                    </Link> 
+                    <Link to={"/TheFurForest"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {IncorrectBushBug}>
+                        <img alt ={"Not found"} src={snakeGurlBush_t} style ={{width : props.characterImageWidth, height: "230px"}}></img>
+                        </button>
+                    </Link> 
+                    <Link to={"/TheFurForest"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {correctBushBug}>
+                        <img alt ={"Not found"} src={spiderGurlMonsterForestBush_t} style ={{width : props.characterImageWidth, height: "230px"}}></img>
+                        </button>
+                    </Link> 
+
+                </SimpleDialog>
+            </Col2>  
+    
+            <Col3 > 
+                   
+
+            <p>You see sandy looking for something in the bushes near the entrance. She stands up and sighs. She notices you "Well hello! You allways come at the best times." Sandy smiles. "I'm looking for some bugs in the bushes. I used to do this when I lived at my farm. You can end up finding some amazing bugs around, I heard there were hardback beetles, one-horned spiders, Two headed mantis, suckling spiders and even golden ladybugs aroung here!</p>
+            <p>Just peek into the bushes, but be careful, something might bite you.</p>
+    
+    
+            <Link to={"/TheFurForest"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {findBugsInTheBushes}>Find bugs in the bushes</button>
             </Link>  
+
+            <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game Map</button>
+            </Link>  
+
+            </Col3>
             </>
-        )
+  
+      )
     }
     
     
