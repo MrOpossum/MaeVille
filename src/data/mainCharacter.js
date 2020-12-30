@@ -29,6 +29,8 @@ const mainCharacter = {
             farmCowMilkBottle: 0,
             LacBracelet: 0,
             moonStone: 0,
+            heavyCream: 0,
+            sucklingSpider: 0,
             elvenPowder: 0,
             cowgirlMilk: 0,
             enhancedSilicone: 0,
@@ -132,6 +134,9 @@ const mainCharacter = {
                 mindControl : 0,
                 lust : 0,
                 strength : 10,
+            },
+            Copper:{
+                cowTf:0,
             }
         },
         researchTime:{

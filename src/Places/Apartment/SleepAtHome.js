@@ -29,6 +29,7 @@ const SleepAtHome = (props) => {
     if (props.flags.includes("NO_MORE_ENERGY")) {
       props.onSpliceFlag("NO_MORE_ENERGY");
     }
+    alert("If you are stuck, try getting afull night sleep, instead of just returning exhausted to home.")
   };
 
   if (props.flags.includes("NO_MORE_ENERGY")) {

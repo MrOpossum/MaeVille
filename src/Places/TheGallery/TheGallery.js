@@ -152,6 +152,7 @@ const TheGallery = (props) => {
             props.onAddMinutes(10);
             props.onSpliceFlag("EVEMQExhibitionArtWithEveOne");
             props.onPushFlag("finishedEveGalleryExhibitOne");
+            props.onPushFlag("finishedEveGalleryExhibitOneGalleryFlag");
         }
 
         return(
@@ -198,7 +199,7 @@ const TheGallery = (props) => {
                     <button type="button" className="btn btn-primary" onClick = {CompleteTheExhibition} style = {{display: canContinue ? "": "none"}}>Complete the exhibition</button>
                 </Link>  
 
-                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <Link to={"/TheGallery"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {LeaveTheExhibition} >Leave the exhibition unfinished</button>
                 </Link>  
     
@@ -212,11 +213,12 @@ const TheGallery = (props) => {
     } 
     else if(props.flags.includes("finishedEveGalleryExhibitOneGalleryFlag")){
         
-        let x = () =>{
+        let leaveGallery = () =>{
             setOpenDialog(true);
             props.onAddMinutes(10);
             props.onSpliceFlag("finishedEveGalleryExhibitOneGalleryFlag");  //finishedEveGalleryExhibitOne is necessary to open class at academy. Keep it and break it when you go to class.
-            props.onPushFlag("");
+            props.onPushFlag("KomperaAliensInLabPart0");
+            alert("Maybe I should check out what's going on at the lab...");
         }
 
         return(
@@ -227,36 +229,17 @@ const TheGallery = (props) => {
             </Col1>
             <Col2 BackImage = {GalleryInside}>
             <img alt ={"Not found"} src={props.EveImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
-
-                <SimpleDialog
-                    openDialog={openDialog}
-                    handleDialogClose = {()=>{
-                            setOpenDialog(false);
-                            props.onAddMinutes(10);
-                        }
-                    }
-                    >
-                    
-                    <img alt ={"Not found"} src={props.EveImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
-                    <p style={{color:"black"}}>"You saw it all!" Eve jumps happily. And hugs you. "Did you like it? What do you think of it?"</p>
-                    <TextField
-                    value={inputTextValue}
-                    onChange={(event) => setInputTextValue(event.target.value)}
-                    style = {{marginLeft: "15px", backgroundColor:"white"}}
-                    />
-
-                    
-                    </SimpleDialog>
             </Col2>  
     
             <Col3 > 
                    
-                   <p></p>
+                <p>"I hope you enjoyed the exhibition" Says a womans voice.</p>
+                <p>You see Eve talking to some smug looking people. You distinguish what they say "I heard the guys at the company are working with some..." They pause and look around. You manage to disimulate and keep listening. "Some creatures" the voice whispers.</p>
 
                 
     
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                    <button type="button" className="btn btn-primary" onClick = {leaveGallery}>Game map</button>
                 </Link>  
             </Col3>
             </>

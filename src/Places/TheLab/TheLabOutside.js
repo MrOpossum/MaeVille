@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 
 import Col1 from "../../components/col1";
@@ -162,6 +162,51 @@ const TheLabOutside = (props) => {
             </>
   
       ) 
+    } else if(props.flags.includes("KomperaAliensInLabPart0")){
+        let GoToGameMap = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("KomperaAliensInLabPart0");
+            props.onPushFlag("KomperaAliensInLabPart1FARM");
+            props.onPushFlag("KomperaAliensInLabPart1FURFOREST");
+        }
+
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {outsideLab}>
+                    <img alt = {"Not found"} src = {props.MaddyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                   <p>When you approach the lab Maddeline stops you before going in.</p>
+                   <p>You, intern. I need you to help me with something... And by the way, you can't say no, it's in your contract.</p>
+                   <p>Maddy gets inside the lab and you follow. She goes around many hallyways you had never seen before, and stops. There is only a wall in front on you. Maddy takes some kind of card out and waves it. A flash of light blinds you. And the wall opens exactly in the middle, and you go in.</p>
+                   <p>"Look intern. This is not rocket science, I'll need you to supervise some girls we have gathered...</p>
+                   <p>"We were contacted by some..." Maddy pauses. "Associates. and we needed a few..." Maddy pauses again. "Volunteers"</p>
+                   <p>You get to a room with a two way mirror, you can see room full of young woman, no female older than 30. The room is all white, white marbel floors,the walls and cealing are the same, no doors, no windows.</p>
+                   <p>The woman have an IV bag attached to them. A thick, green gunk flowing to their veins.</p>
+                   <p>"They are fine" Says Maddy. But you see a woman scratching herself and looking for the IV. When she found the IV, a small grey being materialized and the girl fainted.</p>
+                   <p>"They are our clients" Maddy comments. "And they pay amazing money, so don't mess this up."</p>
+                   <p>You look inside the room again, the woman who just fainted has no breasts, and no hips, or ass. But you can notice she's muscular, she was probably an athlete</p>
+                   <p>"Notice the bands they are wearing in their abdomens, and the bandages on their chests. Also notice the empty juggs beside their beds. Thats where you come in." Maddy looks at you. "I need you to find two things, first, you need to find a suckling spider. We need them to stimulate the girls. I also need you to find more heavy cream, It's a special kind that can only be found in the farm" </p>
+                   <p>"I'm sure you can manage to find those two things. So go to the farm, and to the fur forest, get me the spiders and the cream. And you'll be rewarded." Maddy scribbles some things on her tablet. And points at you to leave.</p>
+  
+                
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                </Link>  
+            </Col3>
+            </>
+  
+      ) 
+    }else if(props.flags.includes("GotCreamFromCopper") && props.items["heavyCream"] > 0 && props.items["sucklingSpider"] > 0 ){
+        // remove this from inventory props.items[sucklingSpiders] > 0 and heavyCream
+
     }
     
     

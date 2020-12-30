@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
@@ -7,10 +7,9 @@ import * as actionTypes from "../redux/actions";
 
 var fileDownload = require('js-file-download');
 
-var currentFlags = [];
+var sessionHistory = []
 
 const SetCol1 = (props) => {
-
     const [randomNumber, setRandomNumber] = React.useState(Math.random())
 
 
@@ -20,55 +19,62 @@ const SetCol1 = (props) => {
         props.onPushFlag("NO_MORE_ENERGY");  
       } 
     }
-
-      let quickSave = () =>{
-        let newCurrentLink = window.location.pathname;
-        props.onSetLink(newCurrentLink);
-        let currentFlagObject = {...props.currentFullState.flags};
-        let currentFlags = Object.values(currentFlagObject);
-        let myFullState = {
-          fullState: {
-            ...props.currentFullState,
-            stateHistory: []
-          }
-        }  
-        myFullState.fullState.flags = currentFlags;
-        props.onPushHistory(myFullState);
-
-        console.log(props.stateHistory);
-      }
-
-      let quickLoad = ()=>{
-        console.log("loaded state: ", props.stateHistory);
-        props.onSetState(props.stateHistory[props.stateHistory.length - 1]);
-        setRandomNumber(Math.random());
-      }
         
-      
-
-
-      let downloadCharacterdata = () =>{
-        //Change link here
-        let newCurrentLink = window.location.pathname;
-        props.onSetLink(newCurrentLink);
-        console.log(newCurrentLink);
-        let myFullState = {
-          fullState: props.currentFullState
+    let saveState = () =>{
+      let newCurrentLink = window.location.pathname;
+      let currentFlagObject = {...props.currentFullState.flags};
+      let currentFlags = Object.values(currentFlagObject);
+        
+      let currentFullState = {
+        fullState: {
+          ...props.currentFullState,
+          currentLink: newCurrentLink,
+          stateHistory: [],
+          flags: currentFlags
         }
-        var myCharacterJSON = JSON.stringify(myFullState);
-        var myCharacterFromJSON = JSON.parse(myCharacterJSON);
-        console.log(myCharacterFromJSON);
-        fileDownload(myCharacterJSON, 'myCharacter.json');
       }
+      sessionHistory.push(currentFullState);
+      if(sessionHistory.length > 5){
+        sessionHistory.shift();
+      }
+    }
+    
+
+    saveState();
+
+    let back = () =>{
+      props.onSetState(sessionHistory[sessionHistory.length - 2]);
+      setRandomNumber();
+    }
+
+
+    let downloadCharacterdata = () =>{
+      //Change link here
+      let newCurrentLink = window.location.pathname;
+      let myFullState = {
+        fullState: props.currentFullState,
+        currentLink: newCurrentLink
+      }
+      var myCharacterJSON = JSON.stringify(myFullState);
+      var myCharacterFromJSON = JSON.parse(myCharacterJSON);
+      console.log(myCharacterFromJSON);
+      fileDownload(myCharacterJSON, 'myCharacter.json');
+    }
+
+    if(sessionHistory.length > 1){
+      var backLink = sessionHistory[sessionHistory.length - 2].fullState.currentLink;
+    } else{
+      var backLink = "/Home"
+    }
 
       return(
         <>
         <p> Energy: {props.energy.toFixed(1)}  &nbsp;   {props.date.toString().slice(0,21)} &nbsp;  Cash: ${props.money} &nbsp; 
           <Button color="secondary" style = {{marginLeft:"-10px", width:"100px"}} onClick = {downloadCharacterdata}>Save</Button>&nbsp; 
-          <Button color="primary" style = {{marginLeft:"-10px", width:"130px"}} onClick = {quickSave}>quick save</Button>&nbsp;
+          {/* <Button color="primary" style = {{marginLeft:"-10px", width:"130px"}} onClick = {quickSave}>quick save</Button>&nbsp; */}
           
-          <Link to={props.currentLink} style={{ textDecoration: "none" }}>
-            <Button color="secondary" style = {{marginLeft:"-10px", width:"130px"}} onClick = {quickLoad} disabled = {props.stateHistory.length === 0} >Quick load</Button>
+          <Link to={backLink} style={{ textDecoration: "none" }}>
+            <Button color="primary" style = {{marginLeft:"-10px", width:"130px"}} onClick = {back} disabled = {sessionHistory.length === 0} >Back</Button>
           </Link>
         
         </p>
@@ -100,7 +106,13 @@ const mapStateToProps = state =>{
     relations: state.fullState.relations,
     currentLink: state.fullState.currentLink,
     currentFullState : state.fullState,
-    stateHistory : state.fullState.stateHistory
+    stateHistory : state.fullState.stateHistory,
+    Amy: state.fullState.Amy,
+    Sandy: state.fullState.Sandy,
+    researchTime: state.fullState.researchTime,
+    lab: state.fullState.lab,
+    charactersStats: state.fullState.charactersStats,
+    penis : state.fullState.penis,
   };
 }
 
@@ -127,7 +139,17 @@ const mapDispatchToProps = dispatch =>{
     onSetLink: (_linkToSet) => dispatch({type:actionTypes.SET_CURRENT_LINK, linkToSet: _linkToSet}),
     onPushHistory: (_historyToPush) => dispatch({type:actionTypes.PUSH_STATE_HISTORY, historyToPush: _historyToPush}),
     onSetState: (_stateToSet) => dispatch({type:actionTypes.SET_STATE, stateToSet: _stateToSet}),
-
+    onAddAttractiveness: (_attractivenessToAdd) => dispatch({type:actionTypes.ADD_ATTRACTIVENESS, attractivenessToAdd : _attractivenessToAdd}),
+    onSetItem: (_itemToSet, _newItemAmmount) => dispatch({type: actionTypes.SET_ITEMS, itemToSet: _itemToSet, newItemAmmount: _newItemAmmount}),
+    onAddMoney: (_moneyToAdd) => dispatch({type:actionTypes.ADD_MONEY, moneyToAdd: _moneyToAdd}),
+    onAddSkills: (_skillToAdd, _skillAmmountToAdd) => dispatch({type:actionTypes.ADD_SKILLS, skillToAdd: _skillToAdd, skillAmmountToAdd: _skillAmmountToAdd}),
+    onSetResearchTime: (_researchType, _researchTimeToSet) => dispatch({type:actionTypes.SET_RESEARCH_TIMES, researchType: _researchType, researchTimeToSet: _researchTimeToSet}),
+    onSetLab: (_labItem, _setLabItem) => dispatch({type: actionTypes.SET_LAB, labItem: _labItem, setLabItem: _setLabItem}),
+    onSetCharacterStats: (_character, _characterStatToChange, _NewStat) => dispatch({type: actionTypes.SET_CHARACTER_STATS, character: _character, characterStatToChange: _characterStatToChange, NewStat: _NewStat}),
+    onSetGender: (_genderToSet) => dispatch({type: actionTypes.SET_GENDER, genderToSet: _genderToSet}),
+    onSetPenis: (_penisToSet) => dispatch({type: actionTypes.SET_PENIS, penisToSet: _penisToSet}),
+    onSetFullState: (_toSetFullstate, _valueToSetFullState) => dispatch({type: actionTypes.SET_ANYTHING_FULLSTATE, toSetFullstate: _toSetFullstate, valueToSetFullState: _valueToSetFullState}),
+    
 
     
   }

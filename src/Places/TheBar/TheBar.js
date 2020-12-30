@@ -138,7 +138,6 @@ const TheBar = (props) => {
       )
     }  else if(props.flags.includes("EVEMQApproachEveAtTheBarMeetHerHello")){
         let complimentRoll = Math.round(props.attractiveness * normal_distribution()*2,0);
-        console.log(complimentRoll);
         let EVEMQIamPropsName = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQIamPropsName");

@@ -116,6 +116,11 @@ import Nikki_b9_h2_f1_m2_s1 from "../Images/Characters/Nikki/Nikki-b9-h2-f1-m2_s
 import Nikki_b9_h2_f1_m2_s2 from "../Images/Characters/Nikki/Nikki-b9-h2-f1-m2_s2.png";
 import Nikki_b9_h2_f1_m2_s3 from "../Images/Characters/Nikki/Nikki-b9-h2-f1-m2_s3.png";
 
+//Copper
+import CopperTF0 from "../Images/Characters/Copper/Copper_tf-0.png";
+import CopperTF1 from "../Images/Characters/Copper/Copper_tf-1.png";
+import CopperTF2 from "../Images/Characters/Copper/Copper_tf-2.png";
+import CopperTF3 from "../Images/Characters/Copper/Copper_tf-3.png";
 
 //Images
 
@@ -294,6 +299,17 @@ const Apartment = ( props ) => {
     MaryImageS3 = Mary_b7_h2_f1_m2_s3;
   } 
 
+  //Copper
+  var CopperImage;
+  if(props.charactersStats.Copper.cowTf <= 0){
+    CopperImage = CopperTF0;
+  } else if(props.charactersStats.Copper.cowTf <= 1){
+    CopperImage = CopperTF1;
+  }else if(props.charactersStats.Copper.cowTf <= 2){
+    CopperImage = CopperTF2;
+  }else if(props.charactersStats.Copper.cowTf <= 3){
+    CopperImage = CopperTF3;
+  }
 
   ///Yourself
   var YourselfImage;
@@ -340,6 +356,7 @@ const Apartment = ( props ) => {
           onSetItem = {props.onSetItem}
 
           characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -422,6 +439,7 @@ const Apartment = ( props ) => {
           onAddMoney = {props.onAddMoney}
 
           characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -561,6 +579,7 @@ const Apartment = ( props ) => {
           physical = {props.physical}
 
           characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -638,6 +657,7 @@ const Apartment = ( props ) => {
 
 
           characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -713,6 +733,7 @@ const Apartment = ( props ) => {
           onChangeRelationship = {props.onChangeRelationship}
 
           characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -786,6 +807,7 @@ const Apartment = ( props ) => {
 
 
           characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -868,6 +890,7 @@ const Apartment = ( props ) => {
           onAddMoney = {props.onAddMoney}
 
           characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -937,6 +960,7 @@ const Apartment = ( props ) => {
         onChangeRelationship = {props.onChangeRelationship}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1003,6 +1027,7 @@ const Apartment = ( props ) => {
         onChangeRelationship = {props.onChangeRelationship}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1078,6 +1103,7 @@ const Apartment = ( props ) => {
         
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1154,6 +1180,7 @@ const Apartment = ( props ) => {
         name = {props.name}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1228,6 +1255,7 @@ const Apartment = ( props ) => {
         name = {props.name}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1303,6 +1331,7 @@ const Apartment = ( props ) => {
         relations = {props.relations}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1378,6 +1407,7 @@ const Apartment = ( props ) => {
         relations = {props.relations}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1457,6 +1487,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1537,6 +1568,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1617,6 +1649,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1697,6 +1730,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1777,6 +1811,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}
@@ -1857,6 +1892,7 @@ const Apartment = ( props ) => {
         onSetLab = {props.onSetLab}
 
         characterImageHeight = {characterImageHeight}
+          CopperImage = {CopperImage}
           mind = {props.mind}
           gender = {props.gender}
           onSetGender = {props.onSetGender}

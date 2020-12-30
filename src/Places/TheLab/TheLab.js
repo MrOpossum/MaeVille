@@ -1,12 +1,13 @@
 import Grid from '@material-ui/core/Grid';
 import { Link } from "react-router-dom";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 
 import Col1 from "../../components/col1";
 import Col2 from "../../components/col2";
 import Col3 from "../../components/col3";
 import SetCol1 from "../../components/SetCol1";
+import SimpleDialog from "../../components/SimpleDialog";
 
 //Images
 import TheLabInside from "../../Images/TheLab/TheLabInside.jpg";
@@ -14,9 +15,25 @@ import TheLabInside from "../../Images/TheLab/TheLabInside.jpg";
 import FMG_gif from "../../Images/TheLab/MADYAQ/FMG_gif.mp4"
 import RippedAbsWomanFuckedInCouch from "../../Images/TheLab/MADYAQ/RippedAbsWomanFuckedInCouch.mp4"
 
+import engorgedGame_1 from "../../Images/TheLab/BovineDrugEngorgedBreast/engorgedGame (1).jpg";
+import engorgedGame_2 from "../../Images/TheLab/BovineDrugEngorgedBreast/engorgedGame (2).jpg";
+import engorgedGame_3 from "../../Images/TheLab/BovineDrugEngorgedBreast/engorgedGame (3).jpg";
+import engorgedGame_4 from "../../Images/TheLab/BovineDrugEngorgedBreast/engorgedGame (4).jpg";
+import engorgedGame_5 from "../../Images/TheLab/BovineDrugEngorgedBreast/engorgedGame (5).jpg";
 
 let currentYear = 2020;
+let correctAnswerCount = 0;
+let imageIdentifiercount = 0;
 const TheLab = (props) => {
+
+    let GoToGameMap = () =>{
+        props.onAddMinutes(10);
+    }
+
+    const [openDialog, setOpenDialog] = useState(false);
+    const [openDialog2, setOpenDialog2] = useState(false);
+    const [openDialog3, setOpenDialog3] = useState(false);
+    const [canContinue, setCanContinue] = useState(false);
 
     const ingredientList = [
         {
@@ -1391,6 +1408,110 @@ const TheLab = (props) => {
             </>
   
       )
+    } else if(props.flags.includes("CanDoBovineDrugOnceAtLabMinigame_game")){
+        
+        let StartGame = () =>{
+            setOpenDialog(true)
+        }
+
+        let engorgedCorrect = () =>{
+            correctAnswerCount += 1;
+            imageIdentifiercount += 1;
+            if(imageIdentifiercount == 5){
+                if(correctAnswerCount >= 4){
+                    alert("You did it! You now have a bovine drug for Copper!")
+                    props.onSpliceFlag("CanDoBovineDrugOnceAtLabMinigame_game");
+                    props.onSpliceFlag("CanDoBovineDrugOnceAtLabMinigame");
+                    props.onPushFlag("BovineDrugForCopperSucesfullyBuilt");
+                }else{
+                    props.onSpliceFlag("CanDoBovineDrugOnceAtLabMinigame_game");
+                    alert("You did not manage to research the drug correctly.")
+                }
+                imageIdentifiercount = 0;
+                correctAnswerCount = 0;
+            }
+        }
+
+        let nonEngorged = () =>{
+            props.onAddMinutes(10);
+            imageIdentifiercount += 1;
+            if(imageIdentifiercount == 5){
+                if(correctAnswerCount >= 4){
+                    alert("You did it! You now have a bovine drug for Copper!")
+                    props.onSpliceFlag("CanDoBovineDrugOnceAtLabMinigame_game");
+                    props.onSpliceFlag("CanDoBovineDrugOnceAtLabMinigame");
+                    props.onPushFlag("BovineDrugForCopperSucesfullyBuilt");
+                } else{
+                    props.onSpliceFlag("CanDoBovineDrugOnceAtLabMinigame_game");
+                    alert("You did not manage to research the drug correctly.")
+                }
+
+                imageIdentifiercount = 0;
+                correctAnswerCount = 0;
+            }
+        }
+
+        var currentMinigameImage;
+        switch(imageIdentifiercount) {
+            case 0:
+              currentMinigameImage = engorgedGame_1;
+              break;
+            case 1:
+                currentMinigameImage = engorgedGame_2;
+              break;
+            case 2:
+                currentMinigameImage = engorgedGame_3;
+                break;
+            case 3:
+                currentMinigameImage = engorgedGame_4;
+                break;
+            case 4:
+                currentMinigameImage = engorgedGame_5;
+              break;
+            default:
+                currentMinigameImage = engorgedGame_3;
+          } 
+        
+        return(
+            <>
+            <Col1><SetCol1/></Col1>
+            
+            <Col2 BackImage = {TheLabInside}>
+                {/* Spot engorged minigame */}
+                <SimpleDialog
+                    openDialog={openDialog}
+                    handleDialogClose = {()=>{
+                            setOpenDialog(false);
+                            props.onAddMinutes(10);
+                            props.onAddMoney(-10);
+                        }
+                    }
+                >
+                    <img alt ={"Not found"} src={currentMinigameImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                    <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {engorgedCorrect}>Milk</button>
+                    </Link> 
+                    <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                        <button type="button" className="btn btn-primary" onClick = {nonEngorged}>No milk</button>
+                    </Link> 
+                </SimpleDialog>
+            </Col2>   
+    
+            <Col3> 
+
+            <p>To make this drug you have to have a keen eye spotting engorged breasts. Identify at least 4 of 5 to research the drug sucessfully</p>
+            <p>Each attempt costs you 10$</p>
+    
+            <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {StartGame}>Play {correctAnswerCount+1}/5</button>
+            </Link> 
+            <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+            </Link> 
+            </Col3>
+            </>
+  
+      )
     }
     
     
@@ -1437,6 +1558,11 @@ const TheLab = (props) => {
             props.onPushFlag("TLQGoToDescriptions");
         }
 
+        let WorkOnBovineDrug = () =>{
+            props.onAddMinutes(10);
+            props.onPushFlag("CanDoBovineDrugOnceAtLabMinigame_game");
+        }
+
 
         console.log()
         let TLQClaimSalary = () =>{
@@ -1449,6 +1575,8 @@ const TheLab = (props) => {
                 currentYear += 1;
             }
         }
+
+        console.log("includeBovie, ", props.flags.includes("CanDoBovineDrugOnceAtLabMinigame"))
     
         return(
             <>
@@ -1488,7 +1616,12 @@ const TheLab = (props) => {
 
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                </Link> 
+
+                <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {WorkOnBovineDrug} style = {{display: (props.flags.includes("CanDoBovineDrugOnceAtLabMinigame") ? " " : "none") }}>Work on the bovine drug.</button>
                 </Link>  
+                
             </Col3>
             </>
   

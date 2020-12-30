@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
+
 
 import Col1 from "../components/col1";
 import Col2 from "../components/col2";
@@ -13,6 +14,7 @@ import Window_black_pink_flash from "../Images/Bedroom/Window_black_pink_flash.p
 
 const _0_Start = ( props ) => {
 
+
     function changeNameFunc(){
         if(document.getElementById("_0_Start_name_input").value === ""){
             props.changeName("Max");    
@@ -22,6 +24,7 @@ const _0_Start = ( props ) => {
     }
 
     function LetsGoNoTut(){
+        alert(`Lets give you some juicy spoilers then. \n What you need to know is that two witches (Amy, and Sandy) just moved into your apartment building. \n Turns out that one of them accidentally involved you into a world of magic. \n Amy comes from a long dinasty of wizards, and her family is pretty wealthy. Sandy is a "new blood" witch. Which means that she is the first in her family to learn magic. \n The witches moved here because this city, Maeville, has awakened strong (lewd) magic. And plenty of wizards have come to try their luck and discover what this place has to offer. But be careful, magic can change you in unexpected ways. \n In this game I'm building an open world where you can choose your path. Will you become a scientist who wants do know why magic works? Will you become a fighter who wants to become stronger than anyone else? Will you find runes to transform yourself, or seduce others?`);
         if(document.getElementById("_0_Start_name_input").value === ""){
             props.changeName("Max");    
         } else{
@@ -37,7 +40,6 @@ const _0_Start = ( props ) => {
         props.onPushFlag("HILL_DISCOVERED");
         props.onPushFlag("EVEMQMeetEveAtTheBar");
         props.onAddMoney(300);
-
     }
 
     return(
@@ -62,19 +64,8 @@ const _0_Start = ( props ) => {
             
             <p>Hello! This game is in early development, and I realized that the beginning might be confusing. So if you want to see some kindof random events with some sexy scenes attached, you are most welcome. ( ͡° ͜ʖ ͡°)</p>
             <p>Else. If you want to start the game ASAP. Just read the following <a>spoilers</a> </p>
-            <p>.Do.</p>
-            <p>.You.</p>
-            <p>.To.</p>
-            <p>.Read.</p>
-            <p>.The.</p>
-            <p>.Spoilers.</p>
-            <p>.?.</p>
-            <p>Lets give you some juicy spoilers then.</p>
-            <p>What you need to know is that two witches (Amy, and Sandy) just moved into your apartment building.</p>
-            <p>Turns out that one of them accidentally involved you into a world of magic.</p>
-            <p>Amy comes from a long dinasty of wizards, and her family is pretty wealthy. Sandy is a "new blood" witch. Which means that she is the first in her family to learn magic.</p>
-            <p>The witches moved here because this city, Maeville, has awakened strong (lewd) magic. And plenty of wizards have come to try their luck and discover what this place has to offer. But be careful, magic can change you in unexpected ways.</p>
-            <p>In this game I'm building an open world where you can choose your path. Will you become a scientist who wants do know why magic works? Will you become a fighter who wants to become stronger than anyone else? Will you find runes to transform yourself, or seduce others?</p>
+            
+            
             <Link to={"/Home"} style={{ textDecoration: "none" }}>
                 <button type="button" className="btn btn-primary" onClick={LetsGoNoTut}>Let's go.</button>
             </Link>

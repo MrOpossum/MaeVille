@@ -481,37 +481,37 @@ const Amy = (props) => {
             if(drugToTake.includes("breast")){
                 if(effectivenessMod > Math.random()){
                     console.log("asldjsalkdjdslkfaahdslfjkahdsflkahsdfl")
-                    props.onSetCharacterStats("Amy","breast", props.charactersStats.AMY.breast + 1)
+                    props.onSetCharacterStats("Amy","breast", props.charactersStats.Amy.breast + 1)
                 }
                 props.onAddMinutes(10);
                 props.onPushFlag("AMYCommentsOnLargerBreasts6");
             } else if(drugToTake.includes("height")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","height", props.charactersStats.AMY.height + 1)
+                    props.onSetCharacterStats("Amy","height", props.charactersStats.Amy.height + 1)
                 }
                 props.onAddMinutes(10);
                 props.onPushFlag("AMYCommentsOnTaller4");
             } else if(drugToTake.includes("lactation")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","lactation", props.charactersStats.AMY.lactation + 1)
+                    props.onSetCharacterStats("Amy","lactation", props.charactersStats.Amy.lactation + 1)
                 }
                 props.onAddMinutes(10);
                 props.onPushFlag("AMYCommentsOnMilk1");
             }else if(drugToTake.includes("mindControl")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","mindControl", props.charactersStats.AMY.mindControl + 1)
+                    props.onSetCharacterStats("Amy","mindControl", props.charactersStats.Amy.mindControl + 1)
                 }
                 props.onAddMinutes(10);
                 props.onPushFlag("AMYCommentsOnMindControl1");
             }else if(drugToTake.includes("lust")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","lust", props.charactersStats.AMY.lust + 1)
+                    props.onSetCharacterStats("Amy","lust", props.charactersStats.Amy.lust + 1)
                 }
                 props.onAddMinutes(10);
                 props.onPushFlag("AMYCommentsOnLust1");
             }else if(drugToTake.includes("strength")){
                 if(effectivenessMod > Math.random()){
-                    props.onSetCharacterStats("Amy","strength", props.charactersStats.AMY.strength + 1)
+                    props.onSetCharacterStats("Amy","strength", props.charactersStats.Amy.strength + 1)
                 }
                 props.onAddMinutes(10);
                 props.onPushFlag("AMYCommentsOnStrength11");

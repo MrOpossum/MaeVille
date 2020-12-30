@@ -771,15 +771,40 @@ const TheFurForest = (props) => {
             </>
   
       )
+    } else if(props.flags.includes("KomperaAliensInLabPart1FURFOREST")){
+        //TODO Kompera aliens fur forest suckling spider
+        let GoToGameMap = () =>{
+            props.onAddMinutes(10);
+        }
+        return(
+            
+            <>
+            <p>Building quest...</p>
+            
+            <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+            </Link>  
+            </>
+        )
     }
     
     
     
     
     else if(props.flags.includes("GoToTheFoxesHideoutFirstTime")){
-        ///////////////////////////////////////////////////////////////////////////////
+        //TODO Fur forest quest.
+        let GoToGameMap = () =>{
+            props.onAddMinutes(10);
+        }
         return(
+            
+            <>
             <p>Building quest...</p>
+            
+            <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+            </Link>  
+            </>
         )
     }
     

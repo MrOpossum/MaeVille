@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IgnorePlugin } from 'webpack';
 import Col1 from "../../components/col1";
 import Col2 from "../../components/col2";
 import Col3 from "../../components/col3";
@@ -11,7 +10,6 @@ import SetCol1 from "../../components/SetCol1";
 import Bedroom from "../../Images/Bedroom/Apartment.jpg";
 
 
-const buttonWidth = "300px";
 const Home = ( props ) => {
     const addMinutesFunc = () =>{
         props.onAddMinutes(20)
@@ -311,10 +309,29 @@ const Home = ( props ) => {
                 alert("You might want to check the hill. Or the bar");
             } else if(props.flags.includes("AMYwillShowYouAcademy")){
                 alert("Try going outside.");
-            } else if(props.flags.includes("ResearchHeightI") && props.flags.includes("ResearchStrengthI")){
-                alert("Maddy at the lab would appreciate if you researched height or strength.");
             }
-            else if(props.flags.includes("finishedEveGalleryExhibitOne")){
+            else if (props.flags.includes("LacAndBEResearchBoost")){
+                alert("You should research breast and lactation drugs at the lab. Nikki would like it")
+            }
+            else if (props.flags.includes("AfterSecondClass")){
+                alert("You are now mentally strong enough to go to the gallery!")
+            }
+            else if(props.flags.includes("KomperaAliensInLabPart0")){
+                alert("It seems that there is something going on at the lab.")
+            } else if(props.flags.includes("CanDoBovineDrugOnceAtLabMinigame")){
+                alert("Try going to the lab to work on a bovine drug for Copper");
+            } else if(props.flags.includes("BovineDrugForCopperSucesfullyBuilt")){
+                alert("Copper might be at the farm");
+            } else if(props.flags.includes("GotCreamFromCopper")){
+                alert("You should look for suckling spiders in the fur forest");
+            }
+            
+            
+            
+            else if(props.flags.includes("ResearchHeightI") && props.flags.includes("ResearchStrengthI")){
+                alert("Maddy at the lab would appreciate if you researched height or strength.");
+            } 
+            else{
                 alert("This is as far as The game gets, for now. You can try moving around and finding girls and flirting with them. Or become rich making drugs at the lab.")
             }
         }

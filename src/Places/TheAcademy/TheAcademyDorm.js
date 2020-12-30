@@ -596,10 +596,10 @@ const TheAcademyDorm = (props) => {
                                 if(props.researchTime.breast > 10){
                                     props.onSetResearchTime("breast",10);
                                 }
+                                props.onPushFlag("LacAndBEResearchBoost");
+                                alert("You recieved a bonus to lactation and breast growth reasearch");
+                                alert("The next class will be availiable after your research.");
                             }
-                            props.onPushFlag("LacAndBEResearchBoost");                
-                            alert("You recieved a bonus to lactation and breast growth reasearch");
-                            alert("The next class will be availiable after your research.");
                         }
                     }
                 >
@@ -651,6 +651,7 @@ const TheAcademyDorm = (props) => {
             alert("Sit down through the whole video. Or you won't be able to advance. Be a nice player, you'll like it ;)");
             alert("It's around 6 minutes and an optional 2 minute bonus round. Be prepared...");
             props.onAddMinutes(10);
+            props.onSpliceFlag("LacAndBEResearchBoost");
             props.onSpliceFlag("AcademySecondClass");
             props.onPushFlag("AcademySecondClassStart");
         }
@@ -752,6 +753,7 @@ const TheAcademyDorm = (props) => {
             props.onAddMinutes(10);
             props.onPushFlag("AcademyThirdClass"); 
             props.onSpliceFlag("finishedEveGalleryExhibitOne");
+            props.onSpliceFlag("AfterSecondClass");
         }
         return(
             <>
@@ -832,6 +834,7 @@ const TheAcademyDorm = (props) => {
   
       )
     }
+    //TODO AcademyThirdClassFlag
 
 
     else {
