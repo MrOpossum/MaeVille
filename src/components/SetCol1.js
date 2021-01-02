@@ -42,16 +42,19 @@ const SetCol1 = (props) => {
 
       //! Remember that if you change to node server this will probably have to go as well.
       //Update to database 
-      var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-      var url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/maevilleusersstate-kwmuc/service/userPatch/incoming_webhook/patchUser';
-
-      var data = {mongoUser:props.mongoUser,fullState:props.fullState}
-      fetch(proxyUrl + url, {
-        method: 'PATCH', // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
-      }).then(res => res.json())
-      .catch(error => console.error('Updating error:', error))
-      .then(response => console.log('Updating success', response));
+      if(Math.random() < .3){
+        var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        var url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/maevilleusersstate-kwmuc/service/userPatch/incoming_webhook/patchUser';
+  
+        var data = {mongoUser:props.mongoUser,fullState:props.fullState}
+        fetch(proxyUrl + url, {
+          method: 'PATCH', // or 'PUT'
+          body: JSON.stringify(data), // data can be `string` or {object}!
+        }).then(res => res.json())
+        .catch(error => console.error('Updating error:', error))
+        .then(response => console.log('Updating success', response));
+      }
+      
     }
     
 
