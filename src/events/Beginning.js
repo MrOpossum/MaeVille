@@ -39,7 +39,6 @@ const Beginning = ( props ) => {
             .then(response => {
                 console.log('Success:', response)
                 response.forEach((res)=>{
-                    console.log(res)
                     let parsedJSON = EJSON.parse(JSON.stringify(res));
                     if(res.mongoUser.toLowerCase() == currentMongoUser.toLowerCase()){
                         console.log("MATCH", currentMongoUser);

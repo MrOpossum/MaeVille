@@ -11,6 +11,11 @@ var fileDownload = require('js-file-download');
 
 var sessionHistory = []
 
+
+var proxyUrl;
+var url;
+  
+var data;
 const SetCol1 = (props) => {
     const [randomNumber, setRandomNumber] = useState(Math.random())
 
@@ -43,11 +48,10 @@ const SetCol1 = (props) => {
       //! Remember that if you change to node server this will probably have to go as well.
       //Update to database 
       if(Math.random() < .3){
-        var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        var url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/maevilleusersstate-kwmuc/service/userPatch/incoming_webhook/patchUser';
-  
-        var data = {mongoUser:props.mongoUser,fullState:props.fullState}
+        let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        let url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/maevilleusersstate-kwmuc/service/userPatch/incoming_webhook/patchUser';
         console.log("ENTER UPDATE");
+        let data = {mongoUser:props.mongoUser,fullState:props.fullState}
         console.log("Data to pass", JSON.stringify(data));
         fetch(proxyUrl + url, {
           method: 'PATCH', // or 'PUT'
