@@ -47,6 +47,8 @@ const SetCol1 = (props) => {
         var url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/maevilleusersstate-kwmuc/service/userPatch/incoming_webhook/patchUser';
   
         var data = {mongoUser:props.mongoUser,fullState:props.fullState}
+
+        console.log("Data to pass", JSON.stringify(data));
         fetch(proxyUrl + url, {
           method: 'PATCH', // or 'PUT'
           body: JSON.stringify(data), // data can be `string` or {object}!
