@@ -1,5 +1,7 @@
 const mainCharacter = {
+    mongoUser: "",
     fullState : {
+        lastPlayDate : new Date(),
         date: new Date(2020,0,1,0,0),
         name : "Max",
         gender : 9,

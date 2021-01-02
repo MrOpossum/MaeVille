@@ -5,13 +5,14 @@ import Button from '@material-ui/core/Button';
 
 import * as actionTypes from "../redux/actions";
 
+import TextField from '@material-ui/core/TextField';
+
 var fileDownload = require('js-file-download');
 
 var sessionHistory = []
 
 const SetCol1 = (props) => {
-    const [randomNumber, setRandomNumber] = React.useState(Math.random())
-
+    const [randomNumber, setRandomNumber] = useState(Math.random())
 
     //Checking energy
     if(props.energy < 0 && !props.flags.includes("NO_MORE_ENERGY")){
@@ -26,6 +27,7 @@ const SetCol1 = (props) => {
       let currentFlags = Object.values(currentFlagObject);
         
       let currentFullState = {
+        ...props.state,
         fullState: {
           ...props.currentFullState,
           currentLink: newCurrentLink,
@@ -37,6 +39,19 @@ const SetCol1 = (props) => {
       if(sessionHistory.length > 5){
         sessionHistory.shift();
       }
+
+      //! Remember that if you change to node server this will probably have to go as well.
+      //Update to database 
+      var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      var url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/maevilleusersstate-kwmuc/service/userPatch/incoming_webhook/patchUser';
+
+      var data = {mongoUser:props.mongoUser,fullState:props.fullState}
+      fetch(proxyUrl + url, {
+        method: 'PATCH', // or 'PUT'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+      }).then(res => res.json())
+      .catch(error => console.error('Updating error:', error))
+      .then(response => console.log('Updating success', response));
     }
     
 
@@ -49,11 +64,9 @@ const SetCol1 = (props) => {
 
 
     let downloadCharacterdata = () =>{
-      //Change link here
-      let newCurrentLink = window.location.pathname;
       let myFullState = {
+        mongoUser: props.mongoUser,
         fullState: props.currentFullState,
-        currentLink: newCurrentLink
       }
       var myCharacterJSON = JSON.stringify(myFullState);
       var myCharacterFromJSON = JSON.parse(myCharacterJSON);
@@ -75,7 +88,7 @@ const SetCol1 = (props) => {
           
           <Link to={backLink} style={{ textDecoration: "none" }}>
             <Button color="primary" style = {{marginLeft:"-10px", width:"130px"}} onClick = {back} disabled = {sessionHistory.length === 0} >Back</Button>
-          </Link>
+          </Link>          
         
         </p>
         </>
@@ -113,6 +126,8 @@ const mapStateToProps = state =>{
     lab: state.fullState.lab,
     charactersStats: state.fullState.charactersStats,
     penis : state.fullState.penis,
+    mongoUser : state.mongoUser,
+    fullState : state.fullState,
   };
 }
 
@@ -149,6 +164,7 @@ const mapDispatchToProps = dispatch =>{
     onSetGender: (_genderToSet) => dispatch({type: actionTypes.SET_GENDER, genderToSet: _genderToSet}),
     onSetPenis: (_penisToSet) => dispatch({type: actionTypes.SET_PENIS, penisToSet: _penisToSet}),
     onSetFullState: (_toSetFullstate, _valueToSetFullState) => dispatch({type: actionTypes.SET_ANYTHING_FULLSTATE, toSetFullstate: _toSetFullstate, valueToSetFullState: _valueToSetFullState}),
+    onSetMongoUser: (_updatedMongoUser) => dispatch({type: actionTypes.SET_MONGO_USER, updatedMongoUser: _updatedMongoUser}),
     
 
     

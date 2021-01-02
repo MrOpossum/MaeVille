@@ -782,7 +782,6 @@ const TheFurForest = (props) => {
   
       )
     } else if(props.flags.includes("KomperaAliensInLabPart1FURFOREST")){
-        //TODO Kompera aliens fur forest suckling spider
         let GoToGameMap = () =>{
             props.onAddMinutes(10);
         }

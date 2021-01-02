@@ -5,6 +5,7 @@ const reducer = (state = mainCharacter, action) =>{
     switch(action.type){
         case actionTypes.CHANGE_NAME:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     name : action.newName
@@ -17,6 +18,7 @@ const reducer = (state = mainCharacter, action) =>{
             newDate.setMinutes(currentMinutes + action.minutesToAdd);
             
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     date :  newDate,
@@ -27,6 +29,7 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.ADD_LUST:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     lust: state.fullState.lust + action.lustToAdd,
@@ -36,6 +39,7 @@ const reducer = (state = mainCharacter, action) =>{
         case actionTypes.SET_LUST:
             if(state.fullState.lust > 100){
                 return{
+                    ...state,
                     fullState: {
                         ...state.fullState,
                         lust: 100
@@ -43,6 +47,7 @@ const reducer = (state = mainCharacter, action) =>{
                 }
             } else{
                 return{
+                    ...state,
                     fullState: {
                         ...state.fullState,
                         lust: action.lustToSet,
@@ -56,6 +61,7 @@ const reducer = (state = mainCharacter, action) =>{
             let newSkills = state.fullState.skills;
             newSkills[action.skillToAdd] += action.skillAmmountToAdd;
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     skills : newSkills 
@@ -69,6 +75,7 @@ const reducer = (state = mainCharacter, action) =>{
                 newFlags.push(action.flagToAdd)    
             }
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     flags: newFlags
@@ -78,6 +85,7 @@ const reducer = (state = mainCharacter, action) =>{
         
         case actionTypes.CHANGE_RELATIONSHIP:
             return{
+                ...state,
                 fullState:{
                     ...state.fullState,
                     relations:{
@@ -90,6 +98,7 @@ const reducer = (state = mainCharacter, action) =>{
             let newStatusAdd = state.fullState.status;
             newStatusAdd.push(action.statusToAdd)
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     status: newStatusAdd
@@ -102,6 +111,7 @@ const reducer = (state = mainCharacter, action) =>{
                 newStatusSplice.splice(newStatusSplice.indexOf(action.statusToRemove),1); //Before i just had this. I hope it works
             }
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     status : newStatusSplice
@@ -115,6 +125,7 @@ const reducer = (state = mainCharacter, action) =>{
                 newStateFlagSplice.splice(newStateFlagSplice.indexOf(action.flagToRemove),1); //Before i just had this. I hope it works
             }
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     flags: newStateFlagSplice
@@ -123,6 +134,7 @@ const reducer = (state = mainCharacter, action) =>{
         
         case actionTypes.ADD_CHEST:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     chest: state.fullState.chest += action.chestToAdd
@@ -136,6 +148,7 @@ const reducer = (state = mainCharacter, action) =>{
             }         
         case actionTypes.ADD_BELLY:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     belly: state.fullState.belly += action.bellyToAdd
@@ -146,6 +159,7 @@ const reducer = (state = mainCharacter, action) =>{
             let newItems = state.fullState.items
             newItems[action.itemToAdd] = newItems[action.itemToAdd] += action.itemAmmountToAdd;
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     items:newItems
@@ -156,6 +170,7 @@ const reducer = (state = mainCharacter, action) =>{
             const newDateHour = state.fullState.date;
             newDateHour.setHours(action.hourToSet);
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     date :  newDateHour
@@ -164,6 +179,7 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.ADD_ENERGY:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     energy: state.fullState.energy += action.energyToAdd
@@ -172,6 +188,7 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.SET_ENERGY:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     energy: action.energyToSet
@@ -183,6 +200,7 @@ const reducer = (state = mainCharacter, action) =>{
             //Weird small bug. The minutes you pass get set twice. So Imma just divide by 2. If I remove strict mode, this does not happen
             
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     date :  newDateToSet
@@ -198,6 +216,7 @@ const reducer = (state = mainCharacter, action) =>{
         
         case actionTypes.SET_CURRENT_LINK:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     currentLink: action.linkToSet
@@ -206,6 +225,7 @@ const reducer = (state = mainCharacter, action) =>{
         
             case actionTypes.ADD_ATTRACTIVENESS:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     attractiveness: state.fullState.attractiveness + action.attractivenessToAdd
@@ -216,6 +236,7 @@ const reducer = (state = mainCharacter, action) =>{
             let setItems = state.fullState.items
             setItems[action.itemToSet] = action.newItemAmmount;
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     items:setItems
@@ -224,6 +245,7 @@ const reducer = (state = mainCharacter, action) =>{
         
         case actionTypes.ADD_MONEY:
             return{
+                ...state,
                 fullState: {
                     ...state.fullState,
                     money: state.fullState.money + action.moneyToAdd
@@ -237,6 +259,7 @@ const reducer = (state = mainCharacter, action) =>{
                 newHistory.shift();
             }
             return{
+                ...state,
                 fullState:{
                     ...state.fullState,
                     stateHistory: newHistory
@@ -246,7 +269,8 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.SET_RESEARCH_TIMES:{
             return{
-                fullState:{
+                ...state,
+                fullState: {
                     ...state.fullState,
                     researchTime:{
                         ...state.fullState.researchTime,
@@ -258,7 +282,8 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.SET_LAB:{
             return{
-                fullState:{
+                ...state,
+                fullState: {
                     ...state.fullState,
                     lab:{
                         ...state.fullState.lab,
@@ -270,7 +295,8 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.SET_CHARACTER_STATS:{
             return{
-                fullState:{
+                ...state,
+                fullState: {
                     ...state.fullState,
                     charactersStats:{
                         ...state.fullState.charactersStats,
@@ -285,7 +311,8 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.SET_GENDER:{
             return{
-                fullState:{
+                ...state,
+                fullState: {
                     ...state.fullState,
                     gender: action.genderToSet
                 }
@@ -294,7 +321,8 @@ const reducer = (state = mainCharacter, action) =>{
 
         case actionTypes.SET_PENIS:{
             return{
-                fullState:{
+                ...state,
+                fullState: {
                     ...state.fullState,
                     penis: action.penisToSet
                 }
@@ -303,12 +331,23 @@ const reducer = (state = mainCharacter, action) =>{
          
         case actionTypes.SET_ANYTHING_FULLSTATE:{
             return{
-                fullState:{
+                ...state,
+                fullState: {
                     ...state.fullState,
                     [action.toSetFullstate]: action.valueToSetFullState
                 }
             }
         }
+
+        case actionTypes.SET_MONGO_USER:{
+            return{
+                mongoUser: action.updatedMongoUser,
+                fullState:{
+                    ...state.fullState
+                }
+            }
+        }
+        
 
 
         default:

@@ -20,7 +20,6 @@ var CurrentLocation = "/TheBarOutside";
 
 const TheBarOutside = (props) => {
 
-
     if(props.flags.includes("NO_MORE_ENERGY")){
         return(
             <>
@@ -41,12 +40,6 @@ const TheBarOutside = (props) => {
         }
 
     else if(props.flags.includes("SANTMQSandyWillBeInBar")){
-        let GoToGameMap = () =>{
-            props.onAddMinutes(10);
-            props.onPushFlag("EVEMQMeetEveAtTheBar");
-            props.onSpliceFlag("SANTMQSandyWillBeInBar");
-            props.onPushFlag("BAR_DISCOVERED");
-        }
         let GoToTheBar = () =>{
             props.onAddMinutes(10);
             props.onPushFlag("EVEMQMeetEveAtTheBar");
@@ -89,8 +82,9 @@ const TheBarOutside = (props) => {
     
     else {
 
+        console.log("Else outside bar");
 
-        if(!props.flags.includes("GALLERY_DISCOVERED")){
+        if(!props.flags.includes("GALLERY_DISCOVERED") && !props.flags.includes("BartenderWillTellYouAboutTheGallery")){
             props.onPushFlag("BartenderWillTellYouAboutTheGallery");
         }
 
@@ -272,7 +266,7 @@ const TheBarOutside = (props) => {
     
             <Col3 > 
                    
-                   <p></p>
+                <p></p>
     
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>

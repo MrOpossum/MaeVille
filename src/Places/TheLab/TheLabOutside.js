@@ -10,13 +10,17 @@ import FindingTheGirls from "../../components/FindingTheGirls";
 
 //Images
 import outsideLab from "../../Images/TheLab/TheLabOutside.jpg"
-
+import TheMarblelRoomForKomperaAliens from "../../Images/TheLab/TheMarblelRoomForKomperaAliens.png";
 ////SANTMQ
 
 
-
+var enterKomperaAliensStory = 0;
 
 const TheLabOutside = (props) => {
+
+    let GoToGameMap = () =>{
+        props.onAddMinutes(10)
+    }
 
     if(props.flags.includes("SCIENCELABQSStartInLab")){
         
@@ -205,9 +209,187 @@ const TheLabOutside = (props) => {
   
       ) 
     }else if(props.flags.includes("GotCreamFromCopper") && props.items["heavyCream"] > 0 && props.items["sucklingSpider"] > 0 && props.flags.includes("gotSucklingSpiderForKomperaQuestLabAliens")){
-        // remove this from inventory props.items[sucklingSpider] > 0 and heavyCream
-        //TODO after getting cream and spiders
+        let IDoHaveTheIngredients = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("GotCreamFromCopper");
+            props.onSpliceFlag("gotSucklingSpiderForKomperaQuestLabAliens");
+            props.onAddItem("heavyCream",-1);
+            props.onAddItem("sucklingSpider",-1);
+            props.onPushFlag("IDoHaveTheIngredientsKomperaAliens2");
+            alert("Perfect! Says maddy, follow me.");
+        }
 
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {outsideLab}>
+                    <img alt = {"Not found"} src = {props.MaddyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                <p>When you get to the lab Maddy touches your shoulder. "Intern, do you have the ingredients?"</p>
+                
+                <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {IDoHaveTheIngredients}>I do have the ingredients</button>
+                </Link>  
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Go to game map</button>
+                </Link>  
+            </Col3>
+            </>
+  
+      ) 
+
+    } else if(props.flags.includes("IDoHaveTheIngredientsKomperaAliens2")){
+        let leaveNowYouHaveAccessToAliensStory = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("IDoHaveTheIngredientsKomperaAliens2");
+            props.onPushFlag("KomperaAliensStoryButton");
+            props.onPushFlag("KomperaAliensStory3");
+        }
+
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {outsideLab}>
+                    <img alt = {"Not found"} src = {props.MaddyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                <p>You follow Maddy into the same labirinth of walls you went through before. Finally the large door opens and you see a white room filled with woman, you notice the athletic woman from last time is still there.</p>
+                <p>Maddy raises her voice. "It seems that you noticed Carly as well. She has become the most promising subject in here. We doubled her doses. and now that you got us a large supply of heavy cream, we can increase it even further.</p>
+                <p>The woman has indeed changed, her arms and legs are thinner, but the bandages around her waist are becoming stretched. Her abdomen just a little bloated. It would be unnoticeable if she was wearing proper clothing.</p>
+                <p>Maddy breaks the scilence again. "It seems that you are interested in this experiment. I like that. You know, I'll teach you how to get here and give you credentials, come back whenever you want, there might be some progress with the girls" With that maddy gives you a card, the card has a map in it. It also says `Experiment 001` "That's also your ID" Maddy says, the giantic door opens and Maddy leaves.</p>
+                <p>You stare at the woman for a while. You see Carly dragging the metal pole with the IV around with her, she's desperately attempting not to lose her mind. The other subjets loafed about. The woman were growing weak, and their hope was in the trash.</p>
+                
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {leaveNowYouHaveAccessToAliensStory}>Game map</button>
+                </Link>  
+                
+            </Col3>
+            </>
+  
+      ) 
+
+    } else if(props.flags.includes("KomperaAliensStory3") && enterKomperaAliensStory > 0){
+        
+        let ChangeBodiesWithCarlyForKomperaAliens = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("KomperaAliensStory3");
+            props.onPushFlag("ChangeBodiesWithCarlyForKomperaAliens");
+        }
+
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {TheMarblelRoomForKomperaAliens}>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                <p>The large door opens and you see the subjects again. You stare at them for what seems hours, you are fixated on Carly. Her aura traps you. You approach the two side mirror, you touch it, you want to get closer. Carly moves her gaze towards you, she should not know where you are, but your eyes are locked. Suddelny Carly faints.</p>
+                
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {ChangeBodiesWithCarlyForKomperaAliens}>A flash of light blinds you</button>
+                </Link>  
+                
+            </Col3>
+            </>
+  
+      ) 
+    } else if(props.flags.includes("ChangeBodiesWithCarlyForKomperaAliens") && enterKomperaAliensStory > 0){
+        let InCarlyBodyKompera_1 = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("ChangeBodiesWithCarlyForKomperaAliens");
+            props.onPushFlag("InCarlyBodyKompera_1");
+        }
+
+        let leaveCarlyBody = () =>{
+            props.onAddMinutes(240);
+            props.onAddMoney(-50);
+            enterKomperaAliensStory = 0;
+            alert("You manage to leave her body. You are now outside the lab. Your body feels weak, you had to buy a 50$ antidote to go back to normal.");
+        }
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {TheMarblelRoomForKomperaAliens}>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                <p>Your body feels heavy, weak, your mind feelz dizzy, you open your eyes and all you see is white walls, there is a metal pole with a bag filled with green slime, and it's being injected directly into your bloodsteam... The realization hits you, you are Carly, you are in her body. You try to move... But you can't. You can feel what Carly feels, you can see what she sees. You are trapped inside her body.</p>
+
+                
+                <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {InCarlyBodyKompera_1}>It's late, and Carly is about to fall alsleep</button>
+                </Link>  
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {leaveCarlyBody}>Focus all your might on going back to your body</button>
+                </Link>  
+                
+            </Col3>
+            </>
+  
+      ) 
+    }else if(props.flags.includes("InCarlyBodyKompera_1") && enterKomperaAliensStory > 0){
+        //TODO Continue compera alien story
+        let asd = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("InCarlyBodyKompera_1");
+            props.onPushFlag("");
+        }
+
+        let leaveCarlyBody = () =>{
+            props.onAddMinutes(240);
+            props.onAddMoney(-50);
+            enterKomperaAliensStory = 0;
+            alert("You manage to leave her body. You are now outside the lab. Your body feels weak, you had to buy a 50$ antidote to go back to normal.");
+        }
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {TheMarblelRoomForKomperaAliens}>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                <p></p>
+
+                
+                <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {asd}></button>
+                </Link>  
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {leaveCarlyBody}>Focus all your might on going back to your body</button>
+                </Link>  
+                
+            </Col3>
+            </>
+  
+      ) 
     }
     
     
@@ -220,6 +402,15 @@ const TheLabOutside = (props) => {
 
         let EnterTheLab = () =>{
             props.onAddMinutes(10);
+        }
+
+        let goToKomperaAliensStory = () =>{
+            props.onAddMinutes(10);
+            if(Math.random() < .3){
+                alert("Wait a little more before checking on the experiment");
+            } else{
+                enterKomperaAliensStory += 1;
+            }
         }
 
         let theLinks = () =>{
@@ -287,6 +478,10 @@ const TheLabOutside = (props) => {
                 </Link>  
                 <Link to={"/TheLab"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {EnterTheLab} disabled = {(props.flags.includes("CanAccessLab") ? false:true)}>Go to the lab</button>
+                </Link>  
+
+                <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {goToKomperaAliensStory} style ={{display:(props.flags.includes("KomperaAliensStoryButton") ? "" : "none")}}>Go see the experiment 001 subjects</button>
                 </Link>  
             </Col3>
             </>

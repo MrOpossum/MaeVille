@@ -17,7 +17,6 @@ import Apartment from "./Places/Apartment";
 import GameMap from "./Places/GameMap";
 
 const App = ( props ) => {
-
   var standardButtonWidth = "300px";
 
   
@@ -29,6 +28,10 @@ const App = ( props ) => {
       date = {props.date}
       onSetLink = {props.onSetLink}
       currentLink = {props.currentLink}
+      onSetMongoUser = {props.onSetMongoUser}
+      mongoUser = {props.mongoUser}
+      onSetState = {props.onSetState}
+      fullState = {props.fullState}
       ></Beginning>
     );
   };
@@ -203,6 +206,7 @@ const App = ( props ) => {
 } //End of App.
 
 const mapStateToProps = state =>{
+  // console.log("TheState:", state)
   return{
     myName: state.fullState.name,
     date: state.fullState.date,
@@ -229,6 +233,8 @@ const mapStateToProps = state =>{
     lab: state.fullState.lab,
     charactersStats: state.fullState.charactersStats,
     penis : state.fullState.penis,
+    mongoUser : state.mongoUser,
+    fullState : state.fullState,
   };
 }
 
@@ -263,7 +269,8 @@ const mapDispatchToProps = dispatch =>{
     onSetGender: (_genderToSet) => dispatch({type: actionTypes.SET_GENDER, genderToSet: _genderToSet}),
     onSetPenis: (_penisToSet) => dispatch({type: actionTypes.SET_PENIS, penisToSet: _penisToSet}),
     onSetFullState: (_toSetFullstate, _valueToSetFullState) => dispatch({type: actionTypes.SET_ANYTHING_FULLSTATE, toSetFullstate: _toSetFullstate, valueToSetFullState: _valueToSetFullState}),
-    
+    onSetMongoUser: (_updatedMongoUser) => dispatch({type: actionTypes.SET_MONGO_USER, updatedMongoUser: _updatedMongoUser}),
+    onSetState: (_stateToSet) => dispatch({type:actionTypes.SET_STATE, stateToSet: _stateToSet}),
     
   }
 }
