@@ -82,8 +82,6 @@ const TheBarOutside = (props) => {
     
     else {
 
-        console.log("Else outside bar");
-
         if(!props.flags.includes("GALLERY_DISCOVERED") && !props.flags.includes("BartenderWillTellYouAboutTheGallery")){
             props.onPushFlag("BartenderWillTellYouAboutTheGallery");
         }
