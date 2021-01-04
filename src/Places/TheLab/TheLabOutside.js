@@ -351,11 +351,11 @@ const TheLabOutside = (props) => {
   
       ) 
     }else if(props.flags.includes("InCarlyBodyKompera_1") && enterKomperaAliensStory > 0){
-        //TODO Continue compera alien story
-        let asd = () =>{
+        
+        let InCarlyBodyKompera_2 = () =>{
             props.onAddMinutes(10);
             props.onSpliceFlag("InCarlyBodyKompera_1");
-            props.onPushFlag("");
+            props.onPushFlag("InCarlyBodyKompera_2");
         }
 
         let leaveCarlyBody = () =>{
@@ -376,16 +376,182 @@ const TheLabOutside = (props) => {
     
             <Col3 > 
                    
-                <p></p>
+                <p>A few days pass, and whenever you and Carly get some privacy, you notice, just like Carly notices, that just like the wraps around her waist, the wraps around her bossom are getting a little tighter. you are developing cleavage, cleavage Carly never had, cleavage that had never been allotted to any of the women when their breast wrap had first been fitted. Carly figured it is from all the cream she’d been gorging on. The fat had gone only to vulnerable places like her breasts, and perhaps her stomach.</p>
+                <p>The next moring you notice that one of the girls around you is gone. You can feel how Carly is frightened. Worried about what will happen to her next.</p>
 
                 
                 <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
-                    <button type="button" className="btn btn-primary" onClick = {asd}></button>
+                    <button type="button" className="btn btn-primary" onClick = {InCarlyBodyKompera_2}>Stay inside Carlys body</button>
                 </Link>  
                 <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
                     <button type="button" className="btn btn-primary" onClick = {leaveCarlyBody}>Focus all your might on going back to your body</button>
                 </Link>  
                 
+            </Col3>
+            </>
+  
+      ) 
+    }else if(props.flags.includes("InCarlyBodyKompera_2") && enterKomperaAliensStory > 0){
+        let InCarlyBodyKompera_3 = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("InCarlyBodyKompera_2");
+            props.onPushFlag("InCarlyBodyKompera_3");
+        }
+
+        let leaveCarlyBody = () =>{
+            props.onAddMinutes(240);
+            props.onAddMoney(-50);
+            enterKomperaAliensStory = 0;
+            alert("You manage to leave her body. You are now outside the lab. Your body feels weak, you had to buy a 50$ antidote to go back to normal.");
+        }
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {TheMarblelRoomForKomperaAliens}>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                <p>Through the days Carly’s personal problems grew slightly more drastic. Though her bandages were practically suffocating her, she refused to remove them, in fear of punishment from her captors. The bandages hid some of her growth, but the other girls surely must have noticed her weight gain, especially with a good portion of her breasts bulging over the wrap.</p>
+                <p>Carly's breasts had been smaller than most of the other woman's, They were still significantly larger than what they’d originally been. What had been hopeless AAs were now Bs. Plump Bs.</p>
+                <p>And then Carly realized something, this was the day when your personal problems became more than personal problems. You felt something – something strange – on Carly's breasts. She knew something was there. Attached to her nipples, subtly shaped, beneath her wrap – and it was moving!</p>
+                <p>Carly was terrified, but curiosity got the best of her. In an early morning, before the others had awoken, but the thing had woken her. Slowly, Carly pealed the wrap away from her right breast, and stared in shock at what she found.</p>
+                <p>You saw a small silver device, shaped like a large insect, and was latched to Carly's nipple, its six legs spread over her areola, opening and contracting, gently massaging her breast.</p>
+                <p>You notice that the device is identical to the suckling spider you got Maddy. Maddy... That name resonates in your consciousness, how long have you been here? Experiencing what this woman is experiencing, her fears, her worries... "What’s happening to me?" Carly wondered, closing her eyes. "What are they doing to me?"</p>
+
+                
+                <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {InCarlyBodyKompera_3}>Stay inside Carlys body</button>
+                </Link>  
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {leaveCarlyBody}>Focus all your might on going back to your body</button>
+                </Link>  
+                
+            </Col3>
+            </>
+  
+      ) 
+    }else if(props.flags.includes("InCarlyBodyKompera_3") && enterKomperaAliensStory > 0){
+        let InCarlyBodyKompera_4 = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("InCarlyBodyKompera_3");
+            props.onPushFlag("InCarlyBodyKompera_4");
+        }
+
+        let leaveCarlyBody = () =>{
+            props.onAddMinutes(240);
+            props.onAddMoney(-50);
+            enterKomperaAliensStory = 0;
+            alert("You manage to leave her body. You are now outside the lab. Your body feels weak, you had to buy a 50$ antidote to go back to normal.");
+        }
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {TheMarblelRoomForKomperaAliens}>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                
+                <p>After discovering the devices on her chest, over the next few hours, Carly could barely function. Having her breasts continually massaged, squeezed – whatever was happening – it was rather distracting. You could feel it as well, the constant tingling, like a tinnitus you could not ignore.</p>
+                <p>"Did the others notice the way her busom trembled? Did they know what was happening to her? Were they simply not telling her?" Carlys toughts resonated in your own.</p>
+                <p>Carlys bandages, your bandages grew yet tighter as they days rolled by, and your busom, bigger. She could see the others whispering by then, sometimes pointing at her.</p>
+                <p>And then, one day, the bandages encircling her stomach broke. It started with a simple rupture in a tendril until it broke in half, and immediately, the bandages unraveled, and her stomach pushed outward, and she could take in her first full breath in over a week. The others stared, and suddenly, you were surrounded by those thin beings, your 'associates' as Maddy would call them, with balled fingers, clammy gray skin, and elongated heads.</p> 
+                <p>"Was this what happened to the others? Was she about to be taken away?" Carlys toughts interrupt your own.</p>
+                <p>Then everything went black</p>
+
+
+                
+                <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {InCarlyBodyKompera_4}>Stay inside Carlys body</button>
+                </Link>  
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {leaveCarlyBody}>Focus all your might on going back to your body</button>
+                </Link>  
+                
+            </Col3>
+            </>
+  
+      ) 
+    }else if(props.flags.includes("InCarlyBodyKompera_4") && enterKomperaAliensStory > 0){
+        let MaddyTakesYouOutOfCarlyBody = () =>{
+            enterKomperaAliensStory = 0;
+            props.onSpliceFlag("InCarlyBodyKompera_4");
+            props.onPushFlag("GetBeatlesForMaddyToContinueCompera");
+        }
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {TheMarblelRoomForKomperaAliens}>
+            </Col2>  
+    
+            <Col3 > 
+                   
+
+                <p>You wake up in a private location, four 'associates' lowered Carly to a metal table, whisking away her tattered bandages before cutting her breast wrap apart. Her busom pushed outwards, electronic spiders keeping a firm hold.</p>
+                <p>For a moment, the beings stared down at you, one of them running its finger along Carlys swollen stomach. “It worked,” it said, in a rough, slithery, language. “Finally, it worked.”</p>
+                <p>The others too began to prod her stomach. “Alas, our race might be preserved.”</p>
+                <p>“This human is special.”</p>
+                <p>They continued to chatter and bicker in their odd tongue.</p>
+                <p>“And the specimen is responding well to the treatments. She’s becoming engorged,” another mentioned, glancing at the unconscious girl’s bosom. The bug-bots continued the stimulation process, massaging her mammarys and helping them swell.</p>
+                <p>The girl’s slacks had stopped buttoning, but had spread apart to make room for her belly. The first 'associate' continued to rub it. “Perhaps it’s time to increase the dosage. Our young are avid eaters.” Said one being. You are not sure why you can hear them so clearly, while Carly is completely unconscious.</p>
+                <p>When Carly awoke, on the cold marble floor, the other girls were crowded around her, staring at her...not her face...her body.</p>
+                <p>Carly’s clothes had been changed. She wore a long, flowing, purple gown, loose around her body, that zipped up the front, reaching only midway up her busom to reveal her plump – jiggling – cleavage. The electronic insects seemed more avid than before. It felt good to be free of the bandages, but at the same time...Carly stared at her abdomen, as did the others. She wasn’t fat, but bloated. Too bloated. Her belly was firm and stuck out, almost like...like...</p>
+                <p>She couldn’t be pregnant! She was only eighteen! No, no, not possible! You feel Carly think, anxious and scared.</p>
+                <p>Carly was left sitting on the cold marble floor, continuing to stare in panic at her burgeoning physique. She tentatively touched her stomach. She looked as though she could be five months pregnant!</p>
+                <p>Carly quickly dropped her hand. "No...it is just a little weight gain. A little gas." She reassured herself repetitively, her eyes drifting up the IV line to notice that the bag had doubled in size, the green gunk rolling freely into her veins.</p>
+                <p>You hear a voice inside your head. But it's not Carly's, It's Maddy! "I see you have been taking care of our special volunteer" Says Maddy. "But I need you to get something for me again..." Your conciousness is then janked away from Carly's</p>
+                
+                
+                <Link to={"/TheLabOutside"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {MaddyTakesYouOutOfCarlyBody}>Open your eyes</button>
+                </Link>  
+                
+            </Col3>
+            </>
+  
+      ) 
+    }else if(props.flags.includes("GetBeatlesForMaddyToContinueCompera")){
+        //TODO Maddy gives you beatle quest. This one is done. Do the rest of the quest.
+        let GoToGameMap = () =>{
+            props.onAddMinutes(10);
+            props.onSpliceFlag("GetBeatlesForMaddyToContinueCompera");
+            props.onPushFlag("KomperaAliensInLabGetBeatles");
+        }
+
+        
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1/>
+            </Col1>
+            <Col2 BackImage = {outsideLab}>
+                    <img alt = {"Not found"} src = {props.MaddyImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                    <img alt = {"Not found"} src = {props.YourselfImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                   <p>You look at Maddy, "I hope you were having fun." She says. "Now, you have to go and find a new creature. A sucking beatle. They are not that common, so you might have to do some digging to get them. I trust you can do it." Maddy then looks at you. She makes something that could be descrived as a curious but a bit disgusted gesture. "Pull yourself toghether. Being inside that woman has messed you up a bit."</p>
+                   <p>The fog in your mind slowly lifts. And you are left outside the lab, with something new to do.</p>
+  
+                
+                <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                    <button type="button" className="btn btn-primary" onClick = {GoToGameMap}>Game map</button>
+                </Link>  
             </Col3>
             </>
   

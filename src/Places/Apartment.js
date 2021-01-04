@@ -82,6 +82,7 @@ import Maddy_S4_H4_t from "../Images/Characters/Maddeline/Maddy_S4_H4_t.png";
 //Yourself.
 import You_male_9 from "../Images/Characters/You/You-male-9.png";
 import You_male_8 from "../Images/Characters/You/You-male-8.png";
+import You_male_7 from "../Images/Characters/You/You-male-7.png";
 
 //Lisa
 import Lisa_b7_h2_f1_m2 from "../Images/Characters/Lisa/Lisa_b7_h2_f1_m2.png";
@@ -317,6 +318,8 @@ const Apartment = ( props ) => {
     YourselfImage = You_male_9;
   } else if(props.gender >= 8 && props.penis == true){
     YourselfImage = You_male_8;
+  } else if(props.gender >= 7 && props.penis == true){
+    YourselfImage = You_male_7;
   }
 
 

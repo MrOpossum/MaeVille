@@ -19,10 +19,12 @@ import shower_back_men_8plus from "../../Images/TheAcademy/shower/shower-back-me
 import oliviaWildeNippleImage from "../../Images/TheAcademy/Dorm/oliviaWildeNippleImage.png";
 import classroomBackground from "../../Images/TheAcademy/classroom/classroomBackground.jpg";
 import StealingPantiesFeminizationGingerPOV720_cut from "../../Images/TheAcademy/classroom/StealingPantiesFeminizationGingerPOV720_cut.mp4";
-import cock_hero_ufeel_1_cut from "../../Images/TheAcademy/classroom/cock_hero_ufeel_1_cut.mp4"
-
-
+import cock_hero_ufeel_1_cut from "../../Images/TheAcademy/classroom/cock_hero_ufeel_1_cut.mp4";
+import hallwayAcademy from "../../Images/TheAcademy/hallwayAcademy.jpg";
 import bustyElf from "../../Images/TheAcademy/Dorm/bustyElf.jpg";
+import EyeContactChallenge from "../../Images/TheAcademy/Hallway/EyeContactChallenge.mp4";
+import You_gender_8_to_7 from "../../Images/Characters/You/YouMale8To7.gif";
+import NikkiMasturbating_cut from "../../Images/TheAcademy/Dorm/NikkiMasturbating_cut.mp4";
 
 const TheAcademyDorm = (props) => {
 
@@ -833,8 +835,187 @@ const TheAcademyDorm = (props) => {
             </>
   
       )
+    }else if(props.flags.includes("AcademyThirdClass")){
+        
+        let StartEyeContactLesson = () =>{
+            setOpenDialog(true);
+        }
+    
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {hallwayAcademy}>
+                <img alt ={"Not found"} src={props.LisaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+
+                <SimpleDialog
+                    openDialog={openDialog}
+                    handleDialogClose = {()=>{
+                            setOpenDialog(false);
+                            props.onAddMinutes(10);
+                            props.onSpliceFlag("AcademyThirdClass");
+                            props.onPushFlag("AfterThirdClassMisstressWillAskIfYouFeelMoreFeminine");  
+                        }
+                    }
+                >
+                    
+                    <video autoPlay loop controls>
+                        <source src={EyeContactChallenge} type="video/mp4"/>
+                    </video>
+                </SimpleDialog>
+            </Col2>  
+    
+            <Col3 > 
+                   
+            <p>You before going into the classroom the Headmistress Lisa intercepts you. "{props.name}" She commands. "Today I'll use one of your classmates to instruct the class. I've noticed your tendency to oogle the girls around here. And They don't appreciate that." Lisa then opens a dorm room. "Abbey. You are on time. Let's show your classmate a lesson on eye contact."</p>
+            <p>Abbey starts stripping, She slowly takes her straps off her shoulders, the green eyed, red-haired beauty reveals her large bossom. Your eyes drift towards her body.</p>
+            <p>*Bump* The mistress hits you in the back of the head. "This is what we need to correct." Abby looks at you intently.</p>
+            <p>"Don't break eye contact." The mistress instructs.</p>
+           
+    
+            <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {StartEyeContactLesson} >Don't break eye contact</button>
+            </Link>  
+
+
+            </Col3>
+            </>
+  
+      )
+    } else if(props.flags.includes("AfterThirdClassMisstressWillAskIfYouFeelMoreFeminine")){
+        
+        let genderLessOne = () =>{
+            setOpenDialog(true);
+        }
+    
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {hallwayAcademy}>
+                <img alt ={"Not found"} src={props.LisaImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+
+                <SimpleDialog
+                    openDialog={openDialog}
+                    handleDialogClose = {()=>{
+                            setOpenDialog(false);
+                            props.onAddMinutes(10);
+                            props.onSpliceFlag("AfterThirdClassMisstressWillAskIfYouFeelMoreFeminine");
+                            props.onPushFlag("AfterThirdClass_BackToDorm");   
+                            props.onSetGender(props.gender - 1);
+                        }
+                    }
+                >
+                    <p style={{color:"black"}}>You feel light headed, your stomach slims down. All your body hair falls out and you lose muscle in your chest and arms. Fat gathers in your butt and chest as your face reshapes itself. You hair grows longer. You are out of breath</p>
+                    <p>You fall to the ground, your knees wobbly. "Lovely" You hear the headmistress say.</p>
+                    <video autoPlay loop controls>
+                        <source src={You_gender_8_to_7} type="video/mp4"/>
+                    </video>
+                    
+                    
+                </SimpleDialog>
+            </Col2>  
+    
+            <Col3 > 
+                   
+            <p>"Not bad" Comments the headmistress. "But you still failed. Your gaze is too obvious." She waits a bit. "I think we should make you see the world in a more `womanly` manner"</p>            
+           
+    
+            <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {genderLessOne} >You feel light headed</button>
+            </Link>  
+
+
+            </Col3>
+            </>
+  
+      )
+    } else if(props.flags.includes("AfterThirdClass_BackToDorm")){
+        //TODO Do something after this part. The next class
+        let TalkToMary = () =>{
+            setOpenDialog(true);
+        }    
+
+        let TalkToNikki = () =>{
+            setOpenDialog2(true);
+        }
+    
+    
+        return(
+            <>
+            <Col1>
+                <SetCol1
+                />
+            </Col1>
+            <Col2 BackImage = {hallwayAcademy}>
+                <img alt ={"Not found"} src={props.NikkiImageS2} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                <img alt ={"Not found"} src={props.MaryImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+
+                {/* Talk to Mary */}
+                <SimpleDialog
+                    openDialog={openDialog}
+                    handleDialogClose = {()=>{
+                            setOpenDialog(false);
+                            props.onAddMinutes(10);                            
+                        }
+                    }
+                >
+                    
+                    <p style={{color:"black"}}>"I can’t believe Nicky is pushing this so far I can’t wait till she runs out of those stupid pills and I don’t have to hear about it anymore. Also Nicky didn’t listen to me about doing her clothes in warm water because her tops look like they’ve shrunk a little. Her sweaters all hang above her belly button now. I told her, but she never listens. She had better not think about borrowing my clothes." </p>
+                    <img alt ={"Not found"} src={props.MaryImage} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                </SimpleDialog>
+
+                {/* Talk to Nikki */}
+                <SimpleDialog
+                    openDialog={openDialog2}
+                    handleDialogClose = {()=>{
+                            setOpenDialog2(false);
+                            props.onAddMinutes(10);                            
+                        }
+                    }
+                >
+                    
+                    <img alt ={"Not found"} src={props.NikkiImageS2} style ={{width : props.characterImageWidth, height: props.characterImageHeight}}></img>
+                    <p style={{color:"black"}}>Nikki is touching her chest and looks at you. "I swear I only do this because I have to!" Nikki tells you. She's flustered. "I won't lie, I love it. Have you noticed my sweaters don't fit me anymore. They are growing! I feel it. I feel them swell all the time!" Nikki slides her hand down low under her blanket. "I guess I'll just have to endure this." Nikki starts to massage her breast harder with one hand, and you see some movement down her pants with her other hand. "I don't mind if you stare" She says.</p>
+                    <video autoPlay loop controls>
+                        <source src={NikkiMasturbating_cut} type="video/mp4"/>
+                    </video>
+                </SimpleDialog>
+            </Col2>  
+    
+            <Col3 > 
+                   
+                   <p>You go back to the dorm, you hear the sisters talk.</p>
+                   <p>"It's just that my breasts are so tender and sensitive" Says Nikki. "Just stop touching them while i'm around!" Compalins Mary. "I..." Nikki moans likely while touching her nipples. "I have to do it! It's the only way to make them feel better"</p>
+                   <p>You see Nikki taking two more pills right there.</p>
+    
+            <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {TalkToMary} >Talk to Mary</button>
+            </Link> 
+            <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {TalkToNikki} >Talk to Nikki</button>
+            </Link>     
+            <Link to={"/TheAcademyDorm"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {InspectTheCloset} >Inspect the closet</button>
+            </Link>  
+
+            <Link to={"/GameMap"} style={{ textDecoration: "none" }}>
+                <button type="button" className="btn btn-primary" onClick = {goToGameMap} >Game Map</button>
+            </Link>  
+
+
+            </Col3>
+            </>
+  
+      )
     }
-    //TODO AcademyThirdClassFlag
+    
 
 
     else {
