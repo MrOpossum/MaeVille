@@ -325,7 +325,7 @@ const Home = ( props ) => {
             } else if(props.flags.includes("GotCreamFromCopper")){
                 alert("You should look for suckling spiders in the fur forest");
             } else if(props.flags.includes("KomperaAliensInLabGetBeatles")){
-                alert("Find the beatles for Maddy. Tip: Ask people around when you find them.");
+                alert("Find the beatles for Maddy. Tip: Ask people around where to find them.");
             }
             
             

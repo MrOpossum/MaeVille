@@ -47,21 +47,21 @@ const SetCol1 = (props) => {
 
       //! Remember that if you change to node server this will probably have to go as well.
       //Update to database 
-      if(Math.random() < .3){
-        if(!(props.mongoUser == "")){
-          let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-          let url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/maevilleusersstate-kwmuc/service/userPatch/incoming_webhook/patchUser';
-          // console.log("ENTER UPDATE");
-          let data = {mongoUser:props.mongoUser,fullState:props.fullState}
-          // console.log("Data to pass", JSON.stringify(data));
-          fetch(proxyUrl + url, {
-            method: 'PATCH', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-          }).then(res => res.json())
-          .catch(error => console.error('Updating error:', error))
-          .then(response => console.log('Updating success', response));
-        }
+      
+      if(!(props.mongoUser == "")){
+        let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        let url = 'https://webhooks.mongodb-realm.com/api/client/v2.0/app/maevilleusersstate-kwmuc/service/userPatch/incoming_webhook/patchUser';
+        // console.log("ENTER UPDATE");
+        let data = {mongoUser:props.mongoUser,fullState:props.fullState}
+        // console.log("Data to pass", JSON.stringify(data));
+        fetch(proxyUrl + url, {
+          method: 'PATCH', // or 'PUT'
+          body: JSON.stringify(data), // data can be `string` or {object}!
+        }).then(res => res.json())
+        .catch(error => console.error('Updating error:', error))
+        .then(response => console.log('Updating success', response));
       }
+      
         
       
     }
@@ -120,7 +120,7 @@ const SetCol1 = (props) => {
             <Button color="primary" style = {{marginLeft:"-10px", width:"130px"}} onClick = {back} disabled = {sessionHistory.length === 0} >Back</Button>
           </Link>          
 
-          <p style={{display: ((props.mongoUser == "") ? "None" : "")}}>Logged in as {props.mongoUser}</p>
+          <a style={{display: ((props.mongoUser == "") ? "None" : "")}}>Logged in as {props.mongoUser}</a>
         
         </p>
         </>

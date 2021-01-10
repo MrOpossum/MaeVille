@@ -870,7 +870,7 @@ const TheFurForest = (props) => {
     
     
     else if(props.flags.includes("GoToTheFoxesHideoutFirstTime")){
-        //TODO Fur forest quest.
+        //TODO Fox hideout quest.
         let GoToGameMap = () =>{
             props.onAddMinutes(10);
         }

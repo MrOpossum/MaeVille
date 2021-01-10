@@ -56,7 +56,7 @@ const Beginning = ( props ) => {
                 })
 
                 if(found_user == 1){
-                    alert("Login succesfull")
+                    alert("Login succesful")
                 } else{
                     alert("No user found. Creating user...");
                     // In your JS
